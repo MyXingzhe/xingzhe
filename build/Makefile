@@ -478,6 +478,19 @@ i2c/fast:
 .PHONY : i2c/fast
 
 #=============================================================================
+# Target rules for targets named gpio
+
+# Build rule for target.
+gpio: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gpio
+.PHONY : gpio
+
+# fast build rule for target.
+gpio/fast:
+	$(MAKE) -f ear/CMakeFiles/gpio.dir/build.make ear/CMakeFiles/gpio.dir/build
+.PHONY : gpio/fast
+
+#=============================================================================
 # Target rules for targets named ear_node
 
 # Build rule for target.
@@ -540,6 +553,7 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... body_node"
 	@echo "... i2c"
+	@echo "... gpio"
 	@echo "... ear_node"
 	@echo "... eye_node"
 .PHONY : help

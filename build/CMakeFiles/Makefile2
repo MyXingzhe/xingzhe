@@ -245,7 +245,7 @@ gtest/preinstall:
 gtest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bbb/projects/xingzhe/build/CMakeFiles --progress-num=11,12 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bbb/projects/xingzhe/build/CMakeFiles --progress-num=13,14 "Built target gtest"
 .PHONY : gtest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -277,7 +277,7 @@ clean: gtest/CMakeFiles/gtest.dir/clean
 gtest/CMakeFiles/gtest_main.dir/all: gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bbb/projects/xingzhe/build/CMakeFiles --progress-num=13,14 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bbb/projects/xingzhe/build/CMakeFiles --progress-num=15,16 "Built target gtest_main"
 .PHONY : gtest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -874,12 +874,14 @@ clean: body/CMakeFiles/body_node.dir/clean
 
 # Convenience name for "all" pass in the directory.
 ear/all: ear/CMakeFiles/i2c.dir/all
+ear/all: ear/CMakeFiles/gpio.dir/all
 ear/all: ear/CMakeFiles/ear_node.dir/all
 
 .PHONY : ear/all
 
 # Convenience name for "clean" pass in the directory.
 ear/clean: ear/CMakeFiles/i2c.dir/clean
+ear/clean: ear/CMakeFiles/gpio.dir/clean
 ear/clean: ear/CMakeFiles/ear_node.dir/clean
 
 .PHONY : ear/clean
@@ -896,7 +898,7 @@ ear/preinstall:
 ear/CMakeFiles/i2c.dir/all:
 	$(MAKE) -f ear/CMakeFiles/i2c.dir/build.make ear/CMakeFiles/i2c.dir/depend
 	$(MAKE) -f ear/CMakeFiles/i2c.dir/build.make ear/CMakeFiles/i2c.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bbb/projects/xingzhe/build/CMakeFiles --progress-num=15,16 "Built target i2c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bbb/projects/xingzhe/build/CMakeFiles --progress-num=17,18 "Built target i2c"
 .PHONY : ear/CMakeFiles/i2c.dir/all
 
 # Include target in all.
@@ -923,6 +925,43 @@ ear/CMakeFiles/i2c.dir/clean:
 
 # clean rule for target.
 clean: ear/CMakeFiles/i2c.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target ear/CMakeFiles/gpio.dir
+
+# All Build rule for target.
+ear/CMakeFiles/gpio.dir/all:
+	$(MAKE) -f ear/CMakeFiles/gpio.dir/build.make ear/CMakeFiles/gpio.dir/depend
+	$(MAKE) -f ear/CMakeFiles/gpio.dir/build.make ear/CMakeFiles/gpio.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bbb/projects/xingzhe/build/CMakeFiles --progress-num=11,12 "Built target gpio"
+.PHONY : ear/CMakeFiles/gpio.dir/all
+
+# Include target in all.
+all: ear/CMakeFiles/gpio.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+ear/CMakeFiles/gpio.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bbb/projects/xingzhe/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 ear/CMakeFiles/gpio.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bbb/projects/xingzhe/build/CMakeFiles 0
+.PHONY : ear/CMakeFiles/gpio.dir/rule
+
+# Convenience name for target.
+gpio: ear/CMakeFiles/gpio.dir/rule
+
+.PHONY : gpio
+
+# clean rule for target.
+ear/CMakeFiles/gpio.dir/clean:
+	$(MAKE) -f ear/CMakeFiles/gpio.dir/build.make ear/CMakeFiles/gpio.dir/clean
+.PHONY : ear/CMakeFiles/gpio.dir/clean
+
+# clean rule for target.
+clean: ear/CMakeFiles/gpio.dir/clean
 
 .PHONY : clean
 

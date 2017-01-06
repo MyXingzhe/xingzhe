@@ -276,6 +276,9 @@ eye_BINARY_DIR:STATIC=/home/bbb/projects/xingzhe/build/eye
 //Value Computed by CMake
 eye_SOURCE_DIR:STATIC=/home/bbb/projects/xingzhe/src/eye
 
+//Dependencies for target
+gpio_LIB_DEPENDS:STATIC=
+
 //Value Computed by CMake
 gtest_BINARY_DIR:STATIC=/home/bbb/projects/xingzhe/build/gtest
 

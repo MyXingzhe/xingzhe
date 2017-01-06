@@ -200,6 +200,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "arm/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/DependInfo.cmake"
   "body/CMakeFiles/body_node.dir/DependInfo.cmake"
   "ear/CMakeFiles/i2c.dir/DependInfo.cmake"
+  "ear/CMakeFiles/gpio.dir/DependInfo.cmake"
   "ear/CMakeFiles/ear_node.dir/DependInfo.cmake"
   "eye/CMakeFiles/eye_node.dir/DependInfo.cmake"
   )

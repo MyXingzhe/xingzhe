@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/bbb/projects/xingzhe/src/i2c/i2c_dev.cpp" "/home/bbb/projects/xingzhe/build/ear/CMakeFiles/i2c.dir/__/i2c/i2c_dev.cpp.o"
+  "/home/bbb/projects/xingzhe/src/gpio/gpio.cpp" "/home/bbb/projects/xingzhe/build/ear/CMakeFiles/gpio.dir/__/gpio/gpio.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

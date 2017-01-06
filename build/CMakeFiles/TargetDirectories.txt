@@ -53,11 +53,12 @@
 /home/bbb/projects/xingzhe/build/ear/CMakeFiles/install/strip.dir
 /home/bbb/projects/xingzhe/build/ear/CMakeFiles/list_install_components.dir
 /home/bbb/projects/xingzhe/build/ear/CMakeFiles/test.dir
+/home/bbb/projects/xingzhe/build/ear/CMakeFiles/install.dir
 /home/bbb/projects/xingzhe/build/ear/CMakeFiles/i2c.dir
 /home/bbb/projects/xingzhe/build/ear/CMakeFiles/install/local.dir
+/home/bbb/projects/xingzhe/build/ear/CMakeFiles/gpio.dir
 /home/bbb/projects/xingzhe/build/ear/CMakeFiles/rebuild_cache.dir
 /home/bbb/projects/xingzhe/build/ear/CMakeFiles/ear_node.dir
-/home/bbb/projects/xingzhe/build/ear/CMakeFiles/install.dir
 /home/bbb/projects/xingzhe/build/eye/CMakeFiles/rebuild_cache.dir
 /home/bbb/projects/xingzhe/build/eye/CMakeFiles/edit_cache.dir
 /home/bbb/projects/xingzhe/build/eye/CMakeFiles/install/strip.dir

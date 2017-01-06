@@ -99,6 +99,18 @@ test/fast: test
 
 .PHONY : test/fast
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -120,18 +132,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -181,6 +181,21 @@ i2c/fast:
 .PHONY : i2c/fast
 
 # Convenience name for target.
+ear/CMakeFiles/gpio.dir/rule:
+	cd /home/bbb/projects/xingzhe/build && $(MAKE) -f CMakeFiles/Makefile2 ear/CMakeFiles/gpio.dir/rule
+.PHONY : ear/CMakeFiles/gpio.dir/rule
+
+# Convenience name for target.
+gpio: ear/CMakeFiles/gpio.dir/rule
+
+.PHONY : gpio
+
+# fast build rule for target.
+gpio/fast:
+	cd /home/bbb/projects/xingzhe/build && $(MAKE) -f ear/CMakeFiles/gpio.dir/build.make ear/CMakeFiles/gpio.dir/build
+.PHONY : gpio/fast
+
+# Convenience name for target.
 ear/CMakeFiles/ear_node.dir/rule:
 	cd /home/bbb/projects/xingzhe/build && $(MAKE) -f CMakeFiles/Makefile2 ear/CMakeFiles/ear_node.dir/rule
 .PHONY : ear/CMakeFiles/ear_node.dir/rule
@@ -194,6 +209,33 @@ ear_node: ear/CMakeFiles/ear_node.dir/rule
 ear_node/fast:
 	cd /home/bbb/projects/xingzhe/build && $(MAKE) -f ear/CMakeFiles/ear_node.dir/build.make ear/CMakeFiles/ear_node.dir/build
 .PHONY : ear_node/fast
+
+__/gpio/gpio.o: __/gpio/gpio.cpp.o
+
+.PHONY : __/gpio/gpio.o
+
+# target to build an object file
+__/gpio/gpio.cpp.o:
+	cd /home/bbb/projects/xingzhe/build && $(MAKE) -f ear/CMakeFiles/gpio.dir/build.make ear/CMakeFiles/gpio.dir/__/gpio/gpio.cpp.o
+.PHONY : __/gpio/gpio.cpp.o
+
+__/gpio/gpio.i: __/gpio/gpio.cpp.i
+
+.PHONY : __/gpio/gpio.i
+
+# target to preprocess a source file
+__/gpio/gpio.cpp.i:
+	cd /home/bbb/projects/xingzhe/build && $(MAKE) -f ear/CMakeFiles/gpio.dir/build.make ear/CMakeFiles/gpio.dir/__/gpio/gpio.cpp.i
+.PHONY : __/gpio/gpio.cpp.i
+
+__/gpio/gpio.s: __/gpio/gpio.cpp.s
+
+.PHONY : __/gpio/gpio.s
+
+# target to generate assembly for a file
+__/gpio/gpio.cpp.s:
+	cd /home/bbb/projects/xingzhe/build && $(MAKE) -f ear/CMakeFiles/gpio.dir/build.make ear/CMakeFiles/gpio.dir/__/gpio/gpio.cpp.s
+.PHONY : __/gpio/gpio.cpp.s
 
 __/i2c/i2c_dev.o: __/i2c/i2c_dev.cpp.o
 
@@ -286,11 +328,15 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... test"
+	@echo "... install"
 	@echo "... i2c"
 	@echo "... install/local"
+	@echo "... gpio"
 	@echo "... rebuild_cache"
 	@echo "... ear_node"
-	@echo "... install"
+	@echo "... __/gpio/gpio.o"
+	@echo "... __/gpio/gpio.i"
+	@echo "... __/gpio/gpio.s"
 	@echo "... __/i2c/i2c_dev.o"
 	@echo "... __/i2c/i2c_dev.i"
 	@echo "... __/i2c/i2c_dev.s"

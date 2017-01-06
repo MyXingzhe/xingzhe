@@ -20,6 +20,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/opt/ros/kinetic/include"
   "/home/bbb/projects/xingzhe/src/ear/../i2c"
+  "/home/bbb/projects/xingzhe/src/ear/../gpio"
   "/home/bbb/projects/xingzhe/src/ear/./include/ear"
   )
 

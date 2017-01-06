@@ -116,11 +116,13 @@ catkin_package(
 include_directories(
   ${catkin_INCLUDE_DIRS}
   ../i2c/
+  ../gpio/
   ./include/ear/
 )
 
 ## Declare a C++ library
  add_library(i2c ../i2c/i2c_dev.cpp)
+ add_library(gpio ../gpio/gpio.cpp)
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
