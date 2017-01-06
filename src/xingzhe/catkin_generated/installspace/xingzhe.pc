@@ -1,0 +1,8 @@
+prefix=/home/bbb/projects/xingzhe/install
+
+Name: xingzhe
+Description: Description of xingzhe
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/bbb/projects/xingzhe/install/lib 
+Requires: 

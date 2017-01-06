@@ -1,0 +1,8 @@
+prefix=/home/bbb/projects/src/ear/devel
+
+Name: ear
+Description: Description of ear
+Version: 0.0.0
+Cflags: -I/home/bbb/projects/src/ear/include
+Libs: -L/home/bbb/projects/src/ear/devel/lib -lear
+Requires: roscpp std_msgs
