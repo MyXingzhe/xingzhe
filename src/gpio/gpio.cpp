@@ -175,11 +175,40 @@ Gpio::Gpio()
     gpio_addr[1] = NULL;
     gpio_addr[2] = NULL;
     gpio_addr[3] = NULL;
+
+    ROS_DEBUG("GPIO Constructor");
 }
 
 Gpio::~Gpio()
 {
+    ROS_DEBUG("GPIO Destructor");
+}
 
+int Gpio::GpioInit()
+{
+    if(gpio_fd != -1)
+        return 0;    // have already initialized
+
+    StartMmap();
+    ROS_DEBUG("Gpio init OK");
+
+    return 0;
+}
+
+int Gpio::GpioExit()
+{
+    StopMmap();
+
+    ROS_DEBUG("GOOD BYE GPIO!");
+
+    gpio_fd = -1;
+    ctrl_addr = NULL;
+    gpio_addr[0] = NULL;
+    gpio_addr[1] = NULL;
+    gpio_addr[2] = NULL;
+    gpio_addr[3] = NULL;
+
+    return 0;
 }
 
 void Gpio::StartMmap()
@@ -215,13 +244,18 @@ void Gpio::StopMmap()
     if(gpio_fd > 0)
     {
         munmap((void *)ctrl_addr, CONTROL_LEN);
-        munmap((void *)&gpio_base[0], GPIOX_LEN);
-        munmap((void *)&gpio_base[1], GPIOX_LEN);
-        munmap((void *)&gpio_base[2], GPIOX_LEN);
-        munmap((void *)&gpio_base[3], GPIOX_LEN);
+        munmap((void *)&gpio_addr[0], GPIOX_LEN);
+        munmap((void *)&gpio_addr[1], GPIOX_LEN);
+        munmap((void *)&gpio_addr[2], GPIOX_LEN);
+        munmap((void *)&gpio_addr[3], GPIOX_LEN);
 
         close(gpio_fd);
         gpio_fd = -1;
+        ctrl_addr = NULL;
+        gpio_addr[0] = NULL;
+        gpio_addr[1] = NULL;
+        gpio_addr[2] = NULL;
+        gpio_addr[3] = NULL;
     }
 }
 
@@ -243,8 +277,6 @@ int Gpio::SetDir(int connector, int pin, int dir)
     if(gpio_bank[port] == -1)
         return -1;
 
-    StartMmap();
-
     reg = (unsigned int *)(gpio_addr[gpio_bank[port]] + GPIO_OE_OFFSET);
 
     if (dir == DIR_OUT)
@@ -252,7 +284,6 @@ int Gpio::SetDir(int connector, int pin, int dir)
     else
         *reg |= gpio_bitfield[port];
     
-    StopMmap();
     return 0;
 }
 
@@ -272,9 +303,7 @@ int Gpio::GetDir(int connector, int pin)
     if(gpio_bank[port] == -1)
         return -1;
 
-    StartMmap();
     value = *(unsigned int *)(gpio_addr[gpio_bank[port]] + GPIO_OE_OFFSET);
-    StopMmap();
 
     if((value & gpio_bitfield[port]) == 0)
     {
@@ -290,9 +319,7 @@ int Gpio::SetHigh(int connector, int pin)
 {
     int port = (connector == 8)?pin-1:pin+45;
 
-    StartMmap();
     *((unsigned int *)(gpio_addr[gpio_bank[port]] + GPIO_SETDATAOUT_OFFSET)) = gpio_bitfield[port];
-    StopMmap();
     return 0;
 }
 
@@ -300,9 +327,7 @@ int Gpio::SetLow(int connector, int pin)
 {
     int port = (connector == 8)?pin-1:pin-1+46;
 
-    StartMmap();
     *((unsigned int *)(gpio_addr[gpio_bank[port]] + GPIO_CLEARDATAOUT_OFFSET)) = gpio_bitfield[port];
-    StopMmap();
 
     return 0;
 }
@@ -311,7 +336,6 @@ int Gpio::SetIrqMode(int connector, int pin, enum GPIO_IRQ_MODE mode)
 {
     int port = (connector == 8)?pin-1:pin+45;
 
-    StartMmap();
     switch(mode)
     {
         case GPIO_IRQ_LOW_LEVEL:
@@ -330,7 +354,6 @@ int Gpio::SetIrqMode(int connector, int pin, enum GPIO_IRQ_MODE mode)
             break;
     }
 
-    StopMmap();
 
     return 0;
 }
@@ -340,18 +363,16 @@ bool Gpio::IsHigh(int connector, int pin)
     int port = (connector == 8)?pin-1:pin+45;
     StartMmap();
     int value = *(unsigned int *)(gpio_addr[gpio_bank[port]] + GPIO_DATAIN_OFFSET) & gpio_bitfield[port];
-    StopMmap();
     return (value!=0);
 }
 
 bool Gpio::IsLow(int connector, int pin)
 {
     int port = (connector == 8)?pin-1:pin+45;
-    StartMmap();
     int value = *(unsigned int *)(gpio_addr[gpio_bank[port]] + GPIO_DATAIN_OFFSET) & gpio_bitfield[port];
-    StopMmap();
     return (value==0);
 }
+
 #if 0
 void regist_gpio(int connector, int pin, int dir)
 {
@@ -428,31 +449,6 @@ static void print_all_mode()
         printf("P9_%d,DIR=%d\n", i+1, gpio_get_dir(9, i+1));
     }
     printf("################################\n");
-}
-
-
-int gpio_init()
-{
-    int i;
-    
-    printf("gpio init ....\n");
-
-    if(varify_gpio()<0)
-        return -1;
-
-    start_mmap();
-
-    for(i = 0;i < sizeof(gpio_used)/sizeof(gpio_used[0]);i++)
-    {
-        if(gpio_used[i][0] == 0)
-            break;
-
-        gpio_set_dir(gpio_used[i][1], gpio_used[i][2], gpio_used[i][3]);
-    }
-
-    stop_mmap();
-
-	return 0;
 }
 
 int gpio_exit()

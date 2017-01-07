@@ -17,6 +17,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "/home/bbb/projects/xingzhe/devel/include"
   "/opt/ros/kinetic/include"
   "/home/bbb/projects/xingzhe/src/ear/../i2c"
   "/home/bbb/projects/xingzhe/src/ear/../gpio"

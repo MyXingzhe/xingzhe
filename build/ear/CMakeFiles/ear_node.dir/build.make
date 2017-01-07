@@ -136,6 +136,8 @@ ear_node_EXTERNAL_OBJECTS =
 /home/bbb/projects/xingzhe/devel/lib/ear/ear_node: /usr/lib/i386-linux-gnu/libpthread.so
 /home/bbb/projects/xingzhe/devel/lib/ear/ear_node: /usr/lib/i386-linux-gnu/libconsole_bridge.so
 /home/bbb/projects/xingzhe/devel/lib/ear/ear_node: /home/bbb/projects/xingzhe/devel/lib/libi2c.so
+/home/bbb/projects/xingzhe/devel/lib/ear/ear_node: /home/bbb/projects/xingzhe/devel/lib/libgpio.so
+/home/bbb/projects/xingzhe/devel/lib/ear/ear_node: /home/bbb/projects/xingzhe/devel/lib/libi2cfunc.so
 /home/bbb/projects/xingzhe/devel/lib/ear/ear_node: ear/CMakeFiles/ear_node.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bbb/projects/xingzhe/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable /home/bbb/projects/xingzhe/devel/lib/ear/ear_node"
 	cd /home/bbb/projects/xingzhe/build/ear && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ear_node.dir/link.txt --verbose=$(VERBOSE)

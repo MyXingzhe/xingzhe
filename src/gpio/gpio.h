@@ -78,8 +78,10 @@ public:
     int  SetDir(int connector, int pin, int dir);
     int  GetDir(int connector, int pin);
 
+    int  GpioInit();
+    int  GpioExit();
+
 private:
-    void Init();
     void StartMmap();
     void StopMmap();
 

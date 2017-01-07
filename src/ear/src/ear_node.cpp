@@ -10,7 +10,7 @@ int main(int argc, char **argv)
 	ros::NodeHandle n;
 	int rate = 2;
 
-	Ear *m_ear = new Ear();
+	Ear *m_ear = new Ear(0, 0);
 
 	// message used for publishing actuator control value
 	std_msgs::Float32 actuator_msg;

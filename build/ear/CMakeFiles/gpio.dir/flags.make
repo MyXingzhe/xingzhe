@@ -6,5 +6,5 @@ CXX_FLAGS = -fPIC
 
 CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"ear\" -Dgpio_EXPORTS
 
-CXX_INCLUDES = -I/opt/ros/kinetic/include -I/home/bbb/projects/xingzhe/src/ear/../i2c -I/home/bbb/projects/xingzhe/src/ear/../gpio -I/home/bbb/projects/xingzhe/src/ear/./include/ear 
+CXX_INCLUDES = -I/home/bbb/projects/xingzhe/devel/include -I/opt/ros/kinetic/include -I/home/bbb/projects/xingzhe/src/ear/../i2c -I/home/bbb/projects/xingzhe/src/ear/../gpio -I/home/bbb/projects/xingzhe/src/ear/./include/ear 
 

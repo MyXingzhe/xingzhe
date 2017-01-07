@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/bbb/projects/xingzhe/src/i2c/i2c_func.cpp
+stdio.h
+-
+iostream
+-
+i2c_func.h
+/home/bbb/projects/xingzhe/src/i2c/i2c_func.h
+
+/home/bbb/projects/xingzhe/src/i2c/i2c_func.h
+sys/ioctl.h
+-
+linux/i2c-dev.h
+-
+fcntl.h
+-
+errno.h
+-
+time.h
+-
+

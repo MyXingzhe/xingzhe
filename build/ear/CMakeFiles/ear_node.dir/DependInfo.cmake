@@ -18,6 +18,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "/home/bbb/projects/xingzhe/devel/include"
   "/opt/ros/kinetic/include"
   "/home/bbb/projects/xingzhe/src/ear/../i2c"
   "/home/bbb/projects/xingzhe/src/ear/../gpio"
@@ -27,6 +28,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/bbb/projects/xingzhe/build/ear/CMakeFiles/i2c.dir/DependInfo.cmake"
+  "/home/bbb/projects/xingzhe/build/ear/CMakeFiles/gpio.dir/DependInfo.cmake"
+  "/home/bbb/projects/xingzhe/build/ear/CMakeFiles/i2cfunc.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

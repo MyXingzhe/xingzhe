@@ -7,7 +7,7 @@ project(ear)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   std_msgs
-#  message_generation
+  message_generation
 )
 
 ## System dependencies are found with CMake's conventions
@@ -44,11 +44,11 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   DIRECTORY ../msg
-#   FILES
-#   usonic.msg
-# )
+ add_message_files(
+   DIRECTORY ../msg
+   FILES
+   usonic.msg
+ )
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -65,10 +65,10 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs
-# )
+ generate_messages(
+   DEPENDENCIES
+   std_msgs
+ )
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -122,6 +122,7 @@ include_directories(
 
 ## Declare a C++ library
  add_library(i2c ../i2c/i2c_dev.cpp)
+ add_library(i2cfunc ../i2c/i2c_func.cpp)
  add_library(gpio ../gpio/gpio.cpp)
 
 ## Add cmake target dependencies of the library
@@ -139,7 +140,7 @@ include_directories(
 ## Specify libraries to link a library or executable target against
  target_link_libraries(ear_node
    ${catkin_LIBRARIES}
-   i2c
+   i2c gpio i2cfunc
  )
 
 #############

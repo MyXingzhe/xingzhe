@@ -1,6 +1,6 @@
 set(_CATKIN_CURRENT_PACKAGE "ear")
 set(ear_VERSION "0.0.0")
-set(ear_MAINTAINER "bbb <bbb@todo.todo>")
+set(ear_MAINTAINER "bbb <2676902@qq.com>")
 set(ear_PACKAGE_FORMAT "1")
 set(ear_BUILD_DEPENDS "roscpp" "std_msgs" "message_generation")
 set(ear_BUILD_EXPORT_DEPENDS "roscpp" "std_msgs" "message_runtime")
