@@ -10,18 +10,27 @@
 class I2cFunc
 {
 public:
-	I2cFunc();
+	I2cFunc(unsigned char bus, unsigned char addr);
 	~I2cFunc();
 
-	int I2cWriteByte(int file, unsigned char command, unsigned char value);
-	int I2cReadByte(int file, unsigned char command);
+	int I2cWriteByteData(unsigned char command, unsigned char value);
+	int I2cWriteByte(unsigned char value);
 
-	int I2cOpen(unsigned char bus, unsigned char addr);
+	int I2cReadByteData(unsigned char command);
+	int I2cReadByte();
+
+	int I2cOpen();
 
 private:
-	int I2cSmbusAccess(int file, char read_write, unsigned char command, 
+	int I2cSmbusAccess(int fd, char read_write, unsigned char command, 
                                      int size, union i2c_smbus_data *data);
 
+public:
+
+private:
+	int m_fd;
+	unsigned char m_bus;
+	unsigned char m_addr;
 
 };
 

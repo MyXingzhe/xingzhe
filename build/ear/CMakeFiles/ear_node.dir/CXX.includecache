@@ -6,12 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/bbb/projects/xingzhe/src/ear/../gpio/gpio.h
-iostream
--
-stdint.h
--
-
 /home/bbb/projects/xingzhe/src/ear/../i2c/i2c_dev.h
 linux/types.h
 -
@@ -67,16 +61,12 @@ i2c_dev.h
 /home/bbb/projects/xingzhe/src/ear/./include/ear/i2c_dev.h
 i2c_func.h
 /home/bbb/projects/xingzhe/src/ear/./include/ear/i2c_func.h
-gpio.h
-/home/bbb/projects/xingzhe/src/ear/./include/ear/gpio.h
 
 /home/bbb/projects/xingzhe/src/ear/src/ear.cpp
 ros/ros.h
 /home/bbb/projects/xingzhe/src/ear/src/ros/ros.h
 ear.h
 /home/bbb/projects/xingzhe/src/ear/src/ear.h
-gpio.h
-/home/bbb/projects/xingzhe/src/ear/src/gpio.h
 
 /home/bbb/projects/xingzhe/src/ear/src/ear_node.cpp
 ros/ros.h

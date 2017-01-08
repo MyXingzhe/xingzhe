@@ -9,19 +9,17 @@
 #include "ros/ros.h"
 #include "i2c_dev.h"
 #include "i2c_func.h"
-#include "gpio.h"
 
+#define USONIC_0_ADDR  (0x70)
 
 // actually, this is ULTRA-SONIC SENSOR
-class Ear: public I2cFunc
-{
-
+class Ear: public I2cFunc {
 public:
-	Ear(int connector, int pin);
+	Ear(unsigned char bus, unsigned char addr);
 	~Ear();
 
 private:
-	int EarInit();
+	int EarInit(int connector, int pin);
 
 private:
 	uint32_t  ObjDistance;
