@@ -11,7 +11,8 @@ I2cFunc::I2cFunc(unsigned char bus, unsigned char addr)
 
 I2cFunc::~I2cFunc()
 {
-	
+	if(m_fd != -1)
+		close(m_fd);
 }
 
 int I2cFunc::I2cSmbusAccess(int fd, char read_write, unsigned char command, 
