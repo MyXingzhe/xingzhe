@@ -9,7 +9,11 @@
 /home/bbb/projects/xingzhe/src/i2c/i2c_func.cpp
 stdio.h
 -
+stdlib.h
+-
 iostream
+-
+unistd.h
 -
 i2c_func.h
 /home/bbb/projects/xingzhe/src/i2c/i2c_func.h

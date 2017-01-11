@@ -28,7 +28,7 @@ private:
 	int m_pin;
 
 public:
-	uint32_t  DoListen();
+	uint32_t DoListen();
 
 };
 

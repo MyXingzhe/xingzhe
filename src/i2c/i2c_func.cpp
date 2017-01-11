@@ -1,5 +1,7 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <iostream>
+#include <unistd.h>
 #include "i2c_func.h"
 
 I2cFunc::I2cFunc(unsigned char bus, unsigned char addr)

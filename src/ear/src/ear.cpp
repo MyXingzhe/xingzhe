@@ -19,7 +19,18 @@ Ear::~Ear()
 
 uint32_t Ear::DoListen()
 {
-	return 10;
+	uint32_t dist_hi, dist_lo;
+	I2cWriteByteData(2, 0xb4);
+
+    dist_hi = I2cReadByteData(2);
+    if(dist_hi < 0)
+        dist_hi = 0;
+
+    dist_lo = I2cReadByteData(3);
+    if(dist_lo < 0)
+        dist_lo = 0;
+
+ 	return dist_hi*255 + dist_lo;
 }
 
 int Ear::EarInit(int connector, int pin)
