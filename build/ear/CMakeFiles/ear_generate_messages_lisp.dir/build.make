@@ -57,9 +57,9 @@ ear/CMakeFiles/ear_generate_messages_lisp: /home/bbb/projects/xingzhe/devel/shar
 
 
 /home/bbb/projects/xingzhe/devel/share/common-lisp/ros/ear/msg/usonic.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
-/home/bbb/projects/xingzhe/devel/share/common-lisp/ros/ear/msg/usonic.lisp: /home/bbb/projects/xingzhe/src/msg/usonic.msg
+/home/bbb/projects/xingzhe/devel/share/common-lisp/ros/ear/msg/usonic.lisp: /home/bbb/projects/xingzhe/msg/usonic.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bbb/projects/xingzhe/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from ear/usonic.msg"
-	cd /home/bbb/projects/xingzhe/build/ear && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/bbb/projects/xingzhe/src/ear/../msg/usonic.msg -Iear:/home/bbb/projects/xingzhe/src/ear/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ear -o /home/bbb/projects/xingzhe/devel/share/common-lisp/ros/ear/msg
+	cd /home/bbb/projects/xingzhe/build/ear && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/bbb/projects/xingzhe/src/ear/../../msg/usonic.msg -Iear:/home/bbb/projects/xingzhe/src/ear/../../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ear -o /home/bbb/projects/xingzhe/devel/share/common-lisp/ros/ear/msg
 
 ear_generate_messages_lisp: ear/CMakeFiles/ear_generate_messages_lisp
 ear_generate_messages_lisp: /home/bbb/projects/xingzhe/devel/share/common-lisp/ros/ear/msg/usonic.lisp

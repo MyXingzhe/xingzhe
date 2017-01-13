@@ -58,9 +58,9 @@ ear/CMakeFiles/ear_generate_messages_py: /home/bbb/projects/xingzhe/devel/lib/py
 
 
 /home/bbb/projects/xingzhe/devel/lib/python2.7/dist-packages/ear/msg/_usonic.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/bbb/projects/xingzhe/devel/lib/python2.7/dist-packages/ear/msg/_usonic.py: /home/bbb/projects/xingzhe/src/msg/usonic.msg
+/home/bbb/projects/xingzhe/devel/lib/python2.7/dist-packages/ear/msg/_usonic.py: /home/bbb/projects/xingzhe/msg/usonic.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bbb/projects/xingzhe/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG ear/usonic"
-	cd /home/bbb/projects/xingzhe/build/ear && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/bbb/projects/xingzhe/src/ear/../msg/usonic.msg -Iear:/home/bbb/projects/xingzhe/src/ear/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ear -o /home/bbb/projects/xingzhe/devel/lib/python2.7/dist-packages/ear/msg
+	cd /home/bbb/projects/xingzhe/build/ear && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/bbb/projects/xingzhe/src/ear/../../msg/usonic.msg -Iear:/home/bbb/projects/xingzhe/src/ear/../../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ear -o /home/bbb/projects/xingzhe/devel/lib/python2.7/dist-packages/ear/msg
 
 /home/bbb/projects/xingzhe/devel/lib/python2.7/dist-packages/ear/msg/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
 /home/bbb/projects/xingzhe/devel/lib/python2.7/dist-packages/ear/msg/__init__.py: /home/bbb/projects/xingzhe/devel/lib/python2.7/dist-packages/ear/msg/_usonic.py

@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/bbb/projects/xingzhe/build
 include ear/CMakeFiles/_ear_generate_messages_check_deps_usonic.dir/progress.make
 
 ear/CMakeFiles/_ear_generate_messages_check_deps_usonic:
-	cd /home/bbb/projects/xingzhe/build/ear && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py ear /home/bbb/projects/xingzhe/src/ear/../msg/usonic.msg 
+	cd /home/bbb/projects/xingzhe/build/ear && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py ear /home/bbb/projects/xingzhe/src/ear/../../msg/usonic.msg 
 
 _ear_generate_messages_check_deps_usonic: ear/CMakeFiles/_ear_generate_messages_check_deps_usonic
 _ear_generate_messages_check_deps_usonic: ear/CMakeFiles/_ear_generate_messages_check_deps_usonic.dir/build.make

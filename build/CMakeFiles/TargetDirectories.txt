@@ -80,6 +80,13 @@
 /home/bbb/projects/xingzhe/build/eye/CMakeFiles/install/local.dir
 /home/bbb/projects/xingzhe/build/eye/CMakeFiles/install.dir
 /home/bbb/projects/xingzhe/build/eye/CMakeFiles/test.dir
+/home/bbb/projects/xingzhe/build/light/CMakeFiles/rebuild_cache.dir
+/home/bbb/projects/xingzhe/build/light/CMakeFiles/edit_cache.dir
+/home/bbb/projects/xingzhe/build/light/CMakeFiles/install/strip.dir
+/home/bbb/projects/xingzhe/build/light/CMakeFiles/install/local.dir
+/home/bbb/projects/xingzhe/build/light/CMakeFiles/install.dir
+/home/bbb/projects/xingzhe/build/light/CMakeFiles/test.dir
+/home/bbb/projects/xingzhe/build/light/CMakeFiles/list_install_components.dir
 /home/bbb/projects/xingzhe/build/wheel/CMakeFiles/rebuild_cache.dir
 /home/bbb/projects/xingzhe/build/wheel/CMakeFiles/edit_cache.dir
 /home/bbb/projects/xingzhe/build/wheel/CMakeFiles/install/strip.dir

@@ -1544,6 +1544,24 @@ clean: eye/CMakeFiles/eye_node.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Directory level rules for directory light
+
+# Convenience name for "all" pass in the directory.
+light/all:
+
+.PHONY : light/all
+
+# Convenience name for "clean" pass in the directory.
+light/clean:
+
+.PHONY : light/clean
+
+# Convenience name for "preinstall" pass in the directory.
+light/preinstall:
+
+.PHONY : light/preinstall
+
+#=============================================================================
 # Directory level rules for directory wheel
 
 # Convenience name for "all" pass in the directory.

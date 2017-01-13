@@ -1,6 +1,6 @@
 set(_CATKIN_CURRENT_PACKAGE "xingzhe")
 set(xingzhe_VERSION "0.0.0")
-set(xingzhe_MAINTAINER "bbb <bbb@todo.todo>")
+set(xingzhe_MAINTAINER "bbb <2676902@qq.com>")
 set(xingzhe_PACKAGE_FORMAT "1")
 set(xingzhe_BUILD_DEPENDS "roscpp" "std_msgs")
 set(xingzhe_BUILD_EXPORT_DEPENDS "roscpp" "std_msgs")

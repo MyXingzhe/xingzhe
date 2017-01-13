@@ -57,9 +57,9 @@ ear/CMakeFiles/ear_generate_messages_nodejs: /home/bbb/projects/xingzhe/devel/sh
 
 
 /home/bbb/projects/xingzhe/devel/share/gennodejs/ros/ear/msg/usonic.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
-/home/bbb/projects/xingzhe/devel/share/gennodejs/ros/ear/msg/usonic.js: /home/bbb/projects/xingzhe/src/msg/usonic.msg
+/home/bbb/projects/xingzhe/devel/share/gennodejs/ros/ear/msg/usonic.js: /home/bbb/projects/xingzhe/msg/usonic.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bbb/projects/xingzhe/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from ear/usonic.msg"
-	cd /home/bbb/projects/xingzhe/build/ear && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/bbb/projects/xingzhe/src/ear/../msg/usonic.msg -Iear:/home/bbb/projects/xingzhe/src/ear/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ear -o /home/bbb/projects/xingzhe/devel/share/gennodejs/ros/ear/msg
+	cd /home/bbb/projects/xingzhe/build/ear && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/bbb/projects/xingzhe/src/ear/../../msg/usonic.msg -Iear:/home/bbb/projects/xingzhe/src/ear/../../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ear -o /home/bbb/projects/xingzhe/devel/share/gennodejs/ros/ear/msg
 
 ear_generate_messages_nodejs: ear/CMakeFiles/ear_generate_messages_nodejs
 ear_generate_messages_nodejs: /home/bbb/projects/xingzhe/devel/share/gennodejs/ros/ear/msg/usonic.js

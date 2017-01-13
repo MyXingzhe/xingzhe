@@ -1,2 +1,2 @@
-arm:body:ear:eye:wheel:xingzhe
+arm:body:ear:eye:light:wheel:xingzhe
 -DCATKIN_DEVEL_PREFIX=/home/bbb/projects/xingzhe/devel -DCMAKE_INSTALL_PREFIX=/home/bbb/projects/xingzhe/install -G Unix Makefiles

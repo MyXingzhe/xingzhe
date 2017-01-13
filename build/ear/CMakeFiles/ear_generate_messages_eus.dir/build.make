@@ -58,9 +58,9 @@ ear/CMakeFiles/ear_generate_messages_eus: /home/bbb/projects/xingzhe/devel/share
 
 
 /home/bbb/projects/xingzhe/devel/share/roseus/ros/ear/msg/usonic.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-/home/bbb/projects/xingzhe/devel/share/roseus/ros/ear/msg/usonic.l: /home/bbb/projects/xingzhe/src/msg/usonic.msg
+/home/bbb/projects/xingzhe/devel/share/roseus/ros/ear/msg/usonic.l: /home/bbb/projects/xingzhe/msg/usonic.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bbb/projects/xingzhe/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from ear/usonic.msg"
-	cd /home/bbb/projects/xingzhe/build/ear && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/bbb/projects/xingzhe/src/ear/../msg/usonic.msg -Iear:/home/bbb/projects/xingzhe/src/ear/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ear -o /home/bbb/projects/xingzhe/devel/share/roseus/ros/ear/msg
+	cd /home/bbb/projects/xingzhe/build/ear && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/bbb/projects/xingzhe/src/ear/../../msg/usonic.msg -Iear:/home/bbb/projects/xingzhe/src/ear/../../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ear -o /home/bbb/projects/xingzhe/devel/share/roseus/ros/ear/msg
 
 /home/bbb/projects/xingzhe/devel/share/roseus/ros/ear/manifest.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bbb/projects/xingzhe/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp manifest code for ear"

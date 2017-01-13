@@ -1,0 +1,7 @@
+uint32 gyro_x
+uint32 gyro_y
+uint32 gyro_z
+uint32 accel_x
+uint32 accel_y
+uint32 accel_z
+---

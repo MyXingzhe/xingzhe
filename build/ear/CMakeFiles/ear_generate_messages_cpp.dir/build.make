@@ -57,10 +57,10 @@ ear/CMakeFiles/ear_generate_messages_cpp: /home/bbb/projects/xingzhe/devel/inclu
 
 
 /home/bbb/projects/xingzhe/devel/include/ear/usonic.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/bbb/projects/xingzhe/devel/include/ear/usonic.h: /home/bbb/projects/xingzhe/src/msg/usonic.msg
+/home/bbb/projects/xingzhe/devel/include/ear/usonic.h: /home/bbb/projects/xingzhe/msg/usonic.msg
 /home/bbb/projects/xingzhe/devel/include/ear/usonic.h: /opt/ros/kinetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bbb/projects/xingzhe/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from ear/usonic.msg"
-	cd /home/bbb/projects/xingzhe/build/ear && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bbb/projects/xingzhe/src/ear/../msg/usonic.msg -Iear:/home/bbb/projects/xingzhe/src/ear/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ear -o /home/bbb/projects/xingzhe/devel/include/ear -e /opt/ros/kinetic/share/gencpp/cmake/..
+	cd /home/bbb/projects/xingzhe/build/ear && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bbb/projects/xingzhe/src/ear/../../msg/usonic.msg -Iear:/home/bbb/projects/xingzhe/src/ear/../../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ear -o /home/bbb/projects/xingzhe/devel/include/ear -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 ear_generate_messages_cpp: ear/CMakeFiles/ear_generate_messages_cpp
 ear_generate_messages_cpp: /home/bbb/projects/xingzhe/devel/include/ear/usonic.h

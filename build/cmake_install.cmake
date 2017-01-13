@@ -121,6 +121,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/bbb/projects/xingzhe/build/body/cmake_install.cmake")
   include("/home/bbb/projects/xingzhe/build/ear/cmake_install.cmake")
   include("/home/bbb/projects/xingzhe/build/eye/cmake_install.cmake")
+  include("/home/bbb/projects/xingzhe/build/light/cmake_install.cmake")
   include("/home/bbb/projects/xingzhe/build/wheel/cmake_install.cmake")
   include("/home/bbb/projects/xingzhe/build/xingzhe/cmake_install.cmake")
 
