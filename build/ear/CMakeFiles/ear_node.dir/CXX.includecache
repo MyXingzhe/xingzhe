@@ -6,34 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/bbb/projects/xingzhe/src/ear/../i2c/i2c_dev.h
-linux/types.h
--
-sys/ioctl.h
--
-linux/i2c-dev.h
--
-errno.h
--
-string.h
--
-stdio.h
--
-stdlib.h
--
-unistd.h
--
-sys/ioctl.h
--
-sys/types.h
--
-sys/stat.h
--
-stdint.h
--
-fcntl.h
--
-
 /home/bbb/projects/xingzhe/src/ear/../i2c/i2c_func.h
 sys/ioctl.h
 -
@@ -45,6 +17,8 @@ errno.h
 -
 time.h
 -
+ros/ros.h
+/home/bbb/projects/xingzhe/src/ear/../i2c/ros/ros.h
 
 /home/bbb/projects/xingzhe/src/ear/./include/ear/ear.h
 limits
@@ -57,8 +31,6 @@ stdint.h
 -
 ros/ros.h
 /home/bbb/projects/xingzhe/src/ear/./include/ear/ros/ros.h
-i2c_dev.h
-/home/bbb/projects/xingzhe/src/ear/./include/ear/i2c_dev.h
 i2c_func.h
 /home/bbb/projects/xingzhe/src/ear/./include/ear/i2c_func.h
 

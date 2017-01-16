@@ -7,15 +7,15 @@
 #include <stdint.h>
 
 #include "ros/ros.h"
-#include "i2c_dev.h"
 #include "i2c_func.h"
 
 #define USONIC_0_ADDR  (0x70)
 
 // actually, this is ULTRA-SONIC SENSOR
-class Ear: public I2cFunc {
+class Ear {
 public:
-	Ear(unsigned char bus, unsigned char addr);
+	Ear();
+	Ear(uint8_t bus, uint8_t addr);
 	~Ear();
 
 private:
@@ -26,6 +26,8 @@ private:
 
 	int m_connector;
 	int m_pin;
+
+	I2cFunc *m_i2c;
 
 public:
 	uint32_t DoListen();
