@@ -296,7 +296,6 @@
 
 	/* -------------------------- USONIC --------------------- */
 	fragment@70 {
-		target = <&i2c1>;
 		target = <&am33xx_pinmux>;
 		__overlay__ {
 			bb_i2c1_pins: pinmux_bb_i2c1_pins {
