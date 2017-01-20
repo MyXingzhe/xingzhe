@@ -9,6 +9,7 @@
 #include "ros/ros.h"
 #include "i2c_func.h"
 
+#define USONIC_0_BUS   2
 #define USONIC_0_ADDR  (0x70)
 
 // actually, this is ULTRA-SONIC SENSOR
