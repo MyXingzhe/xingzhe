@@ -1,1 +1,0 @@
-/usr/bin/c++  -fPIC   -shared -Wl,-soname,libi2c.so -o /home/bbb/projects/xingzhe/devel/lib/libi2c.so CMakeFiles/i2c.dir/__/i2c/i2c_dev.cpp.o 

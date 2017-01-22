@@ -1,8 +1,0 @@
-prefix=/home/bbb/projects/xingzhe/install
-
-Name: eye
-Description: Description of eye
-Version: 0.0.0
-Cflags: -I/home/bbb/projects/xingzhe/install/include
-Libs: -L/home/bbb/projects/xingzhe/install/lib -leye
-Requires: roscpp std_msgs

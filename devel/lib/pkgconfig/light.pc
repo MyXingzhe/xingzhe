@@ -1,8 +1,0 @@
-prefix=/home/bbb/projects/xingzhe/devel
-
-Name: light
-Description: Description of light
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/bbb/projects/xingzhe/devel/lib 
-Requires: 

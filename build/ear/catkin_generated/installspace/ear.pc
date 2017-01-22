@@ -1,8 +1,0 @@
-prefix=/home/bbb/projects/xingzhe/install
-
-Name: ear
-Description: Description of ear
-Version: 0.0.0
-Cflags: -I/home/bbb/projects/xingzhe/install/include
-Libs: -L/home/bbb/projects/xingzhe/install/lib -lear
-Requires: roscpp std_msgs message_runtime

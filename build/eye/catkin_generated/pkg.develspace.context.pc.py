@@ -1,8 +1,0 @@
-# generated from catkin/cmake/template/pkg.context.pc.in
-CATKIN_PACKAGE_PREFIX = ""
-PROJECT_PKG_CONFIG_INCLUDE_DIRS = "/home/bbb/projects/xingzhe/src/eye/include".split(';') if "/home/bbb/projects/xingzhe/src/eye/include" != "" else []
-PROJECT_CATKIN_DEPENDS = "roscpp;std_msgs".replace(';', ' ')
-PKG_CONFIG_LIBRARIES_WITH_PREFIX = "-leye".split(';') if "-leye" != "" else []
-PROJECT_NAME = "eye"
-PROJECT_SPACE_DIR = "/home/bbb/projects/xingzhe/devel"
-PROJECT_VERSION = "0.0.0"
