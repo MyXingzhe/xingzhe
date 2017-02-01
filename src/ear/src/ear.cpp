@@ -2,19 +2,15 @@
 
 #include "ear.h"
 
+
 Ear::Ear()
 {
-	
-}
-
-Ear::Ear(uint8_t bus, uint8_t addr)
-{
-	ObjDistance = 0;
-	m_connector = 0;
-	m_pin = 0;
+	m_i2c = new mraa::I2c(1);
+	m_i2c->address(USONIC_0_ADDR);
 
 	ROS_DEBUG("Ear Constructor");
 }
+
 
 Ear::~Ear()
 {
@@ -24,15 +20,13 @@ Ear::~Ear()
 uint32_t Ear::DoListen()
 {
 	uint32_t dist_hi, dist_lo;
-	m_i2c->I2cWriteByteData(USONIC_0_BUS, USONIC_0_ADDR, 2, 0xb4);
 
-    dist_hi = I2cFunc::I2cReadByteData(USONIC_0_BUS, USONIC_0_ADDR, 2);
-    if(dist_hi < 0)
-        dist_hi = 0;
+	/* i don't care the first time */
+	dist_hi = m_i2c->readReg(2);
+	dist_lo = m_i2c->readReg(3);
 
-    dist_lo = I2cFunc::I2cReadByteData(USONIC_0_BUS, USONIC_0_ADDR, 3);
-    if(dist_lo < 0)
-        dist_lo = 0;
+	/* this is used for next time */
+	m_i2c->writeReg(2, CMD_DETECT_0_5_METER);
 
  	return dist_hi*255 + dist_lo;
 }

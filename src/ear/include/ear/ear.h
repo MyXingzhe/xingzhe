@@ -7,16 +7,19 @@
 #include <stdint.h>
 
 #include "ros/ros.h"
-#include "i2c_func.h"
+#include "mraa.hpp"
+#include "math.h"
 
 #define USONIC_0_BUS   2
 #define USONIC_0_ADDR  (0x70)
+
+#define CMD_DETECT_0_5_METER    0xb2
+#define CMD_DETECT_0_11_METER   0xba
 
 // actually, this is ULTRA-SONIC SENSOR
 class Ear {
 public:
 	Ear();
-	Ear(uint8_t bus, uint8_t addr);
 	~Ear();
 
 private:
@@ -28,7 +31,7 @@ private:
 	int m_connector;
 	int m_pin;
 
-	I2cFunc *m_i2c;
+	mraa::I2c *m_i2c;
 
 public:
 	uint32_t DoListen();

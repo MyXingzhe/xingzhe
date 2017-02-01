@@ -122,8 +122,8 @@ include_directories(
 
 ## Declare a C++ library
  add_library(i2c ../i2c/i2c_dev.cpp)
- add_library(i2cfunc ../i2c/i2c_func.cpp)
- add_library(gpio ../gpio/gpio.cpp)
+# add_library(i2cfunc ../i2c/i2c_func.cpp)
+# add_library(gpio ../gpio/gpio.cpp)
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
@@ -140,7 +140,7 @@ include_directories(
 ## Specify libraries to link a library or executable target against
  target_link_libraries(ear_node
    ${catkin_LIBRARIES}
-   i2c gpio i2cfunc
+   mraa
  )
 
 #############
