@@ -42,7 +42,8 @@ THE SOFTWARE.
  * @see MPU6050_DEFAULT_ADDRESS
  */
 MPU6050::MPU6050() {
-    devAddr = MPU6050_DEFAULT_ADDRESS;
+    m_i2c = new mraa::I2c(1);
+    m_i2c->address(MPU6050_DEFAULT_ADDRESS);
 }
 
 /** Specific address constructor.
@@ -52,7 +53,8 @@ MPU6050::MPU6050() {
  * @see MPU6050_ADDRESS_AD0_HIGH
  */
 MPU6050::MPU6050(uint8_t address) {
-    devAddr = address;
+    m_i2c = new mraa::I2c(1);
+    m_i2c->address(address);
 }
 
 /** Power on and prepare for general usage.
@@ -87,6 +89,7 @@ bool MPU6050::testConnection() {
  */
 uint8_t MPU6050::getAuxVDDIOLevel() {
     I2Cdev::readBit(devAddr, MPU6050_RA_YG_OFFS_TC, MPU6050_TC_PWR_MODE_BIT, buffer);
+    //m_i2c-
     return buffer[0];
 }
 /** Set the auxiliary I2C supply voltage level.
@@ -124,6 +127,7 @@ void MPU6050::setAuxVDDIOLevel(uint8_t level) {
  */
 uint8_t MPU6050::getRate() {
     I2Cdev::readByte(devAddr, MPU6050_RA_SMPLRT_DIV, buffer);
+    buffer[0] = m_i2c->readReg(MPU6050_RA_SMPLRT_DIV);
     return buffer[0];
 }
 /** Set gyroscope sample rate divider.

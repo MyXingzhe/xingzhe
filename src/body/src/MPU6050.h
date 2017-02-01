@@ -37,7 +37,7 @@ THE SOFTWARE.
 #ifndef _MPU6050_H_
 #define _MPU6050_H_
 
-
+#include "mraa.hpp"
 
 #include "i2c_dev.h"
 #include "helper_3dmath.h"
@@ -993,6 +993,8 @@ class MPU6050 {
     private:
         uint8_t devAddr;
         uint8_t buffer[14];
+        mraa::I2c* m_i2c;
+
 };
 
 #endif /* _MPU6050_H_ */

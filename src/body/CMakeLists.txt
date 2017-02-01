@@ -138,7 +138,7 @@ include_directories(
 # add_dependencies(body_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
- target_link_libraries(body_node ${catkin_LIBRARIES} i2c)
+ target_link_libraries(body_node ${catkin_LIBRARIES} i2c mraa)
 
 #############
 ## Install ##
