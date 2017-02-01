@@ -6,9 +6,13 @@
 Ear::Ear()
 {
 	m_i2c = new mraa::I2c(1);
+	if(m_i2c == NULL) {
+		ROS_DEBUG("Ear Constructor Failed!");
+		return NULL;
+	}
 	m_i2c->address(USONIC_0_ADDR);
 
-	ROS_DEBUG("Ear Constructor");
+	ROS_DEBUG("Ear Constructor Successfully");
 }
 
 

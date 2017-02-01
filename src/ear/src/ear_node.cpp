@@ -11,6 +11,10 @@ int main(int argc, char **argv)
 	int rate = 2;
 
 	Ear *m_ear = new Ear();
+	if(m_ear == NULL) {
+		ROS_DEBUG("m_ear OK!");
+		return -1;
+	}
 
 	// message used for publishing actuator control value
 	std_msgs::Float32 actuator_msg;
