@@ -24,7 +24,7 @@ Ear::~Ear()
 
 uint32_t Ear::DoListen()
 {
-	uint32_t dist_hi, dist_lo;
+	uint32_t dist_hi=0, dist_lo=0;
 	uint8_t rx_tx_buf[2];
 
 	if(cnt == 0) {
@@ -48,6 +48,7 @@ uint32_t Ear::DoListen()
 	rx_tx_buf[1] = CMD_DETECT_0_5_METER;
 	m_i2c->write(rx_tx_buf, 2);
 
+	/* the unit is MM */
  	return (dist_hi*255 + dist_lo)*34/200;
 }
 

@@ -8,7 +8,7 @@ int main(int argc, char **argv)
 	// Set up ROS node.
 	ros::init(argc, argv, "Ear");
 	ros::NodeHandle n;
-	int rate = 2;
+	int rate = 5;
 
 	Ear *m_ear = new Ear();
 	if(m_ear == NULL) {
