@@ -32,10 +32,14 @@ uint32_t Ear::DoListen()
 	} else {
 		/* i don't care the first time */
 		m_i2c->address(USONIC_0_ADDR);
-		dist_hi = m_i2c->readReg(2);
+		m_i2c->writeByte(2);
+		m_i2c->address(USONIC_0_ADDR);
+		dist_hi = m_i2c->readByte();
 
 		m_i2c->address(USONIC_0_ADDR);
-		dist_lo = m_i2c->readReg(3);
+		m_i2c->writeByte(3);
+		m_i2c->address(USONIC_0_ADDR);
+		dist_lo = m_i2c->readByte();
 	}
 
 	/* this is used for next time */
@@ -44,7 +48,7 @@ uint32_t Ear::DoListen()
 	rx_tx_buf[1] = CMD_DETECT_0_5_METER;
 	m_i2c->write(rx_tx_buf, 2);
 
- 	return dist_hi*255 + dist_lo;
+ 	return (dist_hi*255 + dist_lo)*34/200;
 }
 
 int Ear::EarInit(int connector, int pin)
