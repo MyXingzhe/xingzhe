@@ -11,6 +11,8 @@ Ear::Ear()
 		return;
 	}
 
+	cnt = 0;
+
 	ROS_DEBUG("Ear Constructor Successfully");
 }
 
@@ -25,12 +27,16 @@ uint32_t Ear::DoListen()
 	uint32_t dist_hi, dist_lo;
 	uint8_t rx_tx_buf[2];
 
-	/* i don't care the first time */
-	m_i2c->address(USONIC_0_ADDR);
-	dist_hi = m_i2c->readReg(2);
+	if(cnt == 0) {
+		cnt++;
+	} else {
+		/* i don't care the first time */
+		m_i2c->address(USONIC_0_ADDR);
+		dist_hi = m_i2c->readReg(2);
 
-	m_i2c->address(USONIC_0_ADDR);
-	dist_lo = m_i2c->readReg(3);
+		m_i2c->address(USONIC_0_ADDR);
+		dist_lo = m_i2c->readReg(3);
+	}
 
 	/* this is used for next time */
 	m_i2c->address(USONIC_0_ADDR);

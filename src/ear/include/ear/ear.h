@@ -31,6 +31,8 @@ private:
 	int m_connector;
 	int m_pin;
 
+	int cnt;
+
 	mraa::I2c *m_i2c;
 
 public:
