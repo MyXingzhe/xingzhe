@@ -13,8 +13,8 @@
 #define USONIC_0_BUS   2
 #define USONIC_0_ADDR  (0x70)
 
-#define CMD_DETECT_0_5_METER    0xb2
-#define CMD_DETECT_0_11_METER   0xba
+#define CMD_DETECT_0_5_METER    0xb0
+#define CMD_DETECT_0_11_METER   0xb8
 
 // actually, this is ULTRA-SONIC SENSOR
 class Ear {

@@ -50,7 +50,8 @@ uint32_t Ear::DoListen()
 
 ROS_INFO("--- %d:%d ---", dist_hi, dist_lo);
 	/* the unit is MM */
- 	return (dist_hi*255 + dist_lo)*34/200;
+// 	return (dist_hi*255 + dist_lo)*34/200;
+return dist_hi*255 + dist_lo;
 }
 
 int Ear::EarInit(int connector, int pin)

@@ -9,6 +9,7 @@ int main(int argc, char **argv)
 	ros::init(argc, argv, "Ear");
 	ros::NodeHandle n;
 	int rate = 5;
+	uint32_t dist;
 
 	Ear *m_ear = new Ear();
 	if(m_ear == NULL) {
@@ -34,9 +35,10 @@ int main(int argc, char **argv)
 		ros::spinOnce();
 
 		// Do some useful job, in this case pid controller computation
-		actuator_msg.data = m_ear->DoListen();
+		dist = m_ear->DoListen();
+		actuator_msg.data = dist;
 
-		ROS_INFO("Distance=%d", m_ear->DoListen());
+		ROS_INFO("Distance=%d", dist);
 
 		// publish required data
 		actuator_pub.publish(actuator_msg);
