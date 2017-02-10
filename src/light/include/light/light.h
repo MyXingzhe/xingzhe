@@ -12,6 +12,11 @@
 #define DEFAULT_LIGHT_CONN  8
 #define DEFAULT_LIGHT_PIN   7
 
+enum LIGHT_STATE {
+	LIGHT_OFF = 0,
+	LIGHT_ON
+};
+
 class Light {
 public:
 	Light();
@@ -21,12 +26,15 @@ public:
 	void LightOn();
 	void LightOff();
 
+	void LightBlink();
+
 private:
 	int LightInit();
 
 private:
 	int m_pin;
 	int m_conn;
+	int m_state;
 
 	mraa::Gpio *m_gpio;
 

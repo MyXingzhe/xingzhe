@@ -11,21 +11,25 @@ Light::Light()
 {
 	m_conn = DEFAULT_LIGHT_CONN;
 	m_pin = DEFAULT_LIGHT_PIN;
+	m_state = LIGHT_OFF;
 
 	LightInit();
+	LightOff();
 }
 
 Light::Light(int conn, int pin)
 {
 	m_conn = conn;
 	m_pin  = pin;
+	m_state = LIGHT_OFF;
 
 	LightInit();
+	LightOff();
 }
 
 Light::~Light()
 {
-
+	delete m_gpio;
 }
 
 void Light::LightOn()
@@ -36,6 +40,13 @@ void Light::LightOn()
 void Light::LightOff()
 {
 	m_gpio->write(0);
+}
+
+void Light::LightBlink()
+{
+	m_gpio->write(m_state);
+
+	m_state = (m_state == LIGHT_OFF)?LIGHT_ON:LIGHT_OFF;
 }
 
 int Light::LightInit()

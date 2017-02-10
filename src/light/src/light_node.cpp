@@ -1,12 +1,16 @@
 #include "ros/ros.h"
 #include "std_msgs/Float32.h"
 
+#include "light.h"
+
 int main(int argc, char **argv)
 {
 	// Set up ROS node.
 	ros::init(argc, argv, "Light");
 	ros::NodeHandle n;
-	int rate = 5;
+	int rate = 0.5;
+
+	Light *m_light = new Light();
 
 	// message used for publishing actuator control value
 	std_msgs::Float32 actuator_msg;
@@ -27,6 +31,9 @@ int main(int argc, char **argv)
 
 		// publish required data
 		actuator_pub.publish(actuator_msg);
+
+		m_light->LightBlink();
+
 
 		// sleep the node for the 1/rate seconds
 		r.sleep();
