@@ -1,0 +1,12 @@
+<launch>
+  <group ns="xingzhe">
+    <node pkg="ear" name="ear" type="ear_node"/>
+    <node pkg="light" name="light" type="light_node"/>
+  </group>
+
+  <node pkg="ear" name="ear" type="ear_node">
+  </node>
+  <node pkg="light" name="light" type="light_node">
+  </node>
+
+</launch>
