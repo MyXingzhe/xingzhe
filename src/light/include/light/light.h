@@ -10,7 +10,7 @@
 #include "mraa.hpp"
 
 #define DEFAULT_LIGHT_CONN  8
-#define DEFAULT_LIGHT_PIN   7
+#define DEFAULT_LIGHT_PIN   8
 
 enum LIGHT_STATE {
 	LIGHT_OFF = 0,

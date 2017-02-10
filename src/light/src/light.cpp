@@ -10,7 +10,7 @@
 Light::Light()
 {
 	m_conn = DEFAULT_LIGHT_CONN;
-	m_pin = DEFAULT_LIGHT_PIN;
+	m_pin  = DEFAULT_LIGHT_PIN;
 	m_state = LIGHT_OFF;
 
 	LightInit();
@@ -51,7 +51,7 @@ void Light::LightBlink()
 
 int Light::LightInit()
 {
-	int iopin = (m_conn - 8) * 44 + m_pin;
+	int iopin = (m_conn - 8) * 46 + m_pin;
 	m_gpio = new mraa::Gpio(iopin);
     if (m_gpio == NULL) {
         return mraa::ERROR_UNSPECIFIED;
@@ -62,4 +62,6 @@ int Light::LightInit()
         mraa::printError(response);
         return -1;
     }
+
+    m_gpio->useMmap(true);
 }
