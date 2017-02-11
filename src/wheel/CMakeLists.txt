@@ -114,12 +114,12 @@ catkin_package(
 # include_directories(include)
 include_directories(
   ${catkin_INCLUDE_DIRS}
+  ../prupwm/
+  ./include/wheel/
 )
 
 ## Declare a C++ library
-# add_library(wheel
-#   src/${PROJECT_NAME}/wheel.cpp
-# )
+ add_library(prupwm ../prupwm/pru.cpp)
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
@@ -127,16 +127,16 @@ include_directories(
 # add_dependencies(wheel ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Declare a C++ executable
-# add_executable(wheel_node src/wheel_node.cpp)
+ add_executable(wheel_node src/wheel_node.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
 # add_dependencies(wheel_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(wheel_node
-#   ${catkin_LIBRARIES}
-# )
+ target_link_libraries(wheel_node
+   ${catkin_LIBRARIES}
+ )
 
 #############
 ## Install ##
