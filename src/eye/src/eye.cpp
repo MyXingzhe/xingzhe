@@ -1,5 +1,5 @@
 
-#include "../include/eye/eye.h"
+#include "eye.h"
 
 Eye::Eye()
 {

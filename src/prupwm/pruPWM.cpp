@@ -17,10 +17,11 @@
  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
+#include <stdint.h>
  
- #include "pruPWM.h"
+#include "pruPWM.h"
 
-PRUPWM::PRUPWM(unsigned int frequency) : PRU(0) {
+PRUPWM::PRUPWM(uint32_t frequency) : PRU(0) {
 	this->stop();
 	this->setFrequency(frequency);
 	this->setFailsafeTimeout(0);
@@ -34,27 +35,29 @@ void PRUPWM::start() {
 	this->execute("pwm.bin");
 }
 
-void PRUPWM::setFrequency(unsigned int frequency) {
+void PRUPWM::setFrequency(uint32_t frequency) {
 	this->pwmFrequency = frequency;
 	this->setSharedMemoryInt(0, 1000000000 / (PRUPWM::nanosecondsPerCycle*this->pwmFrequency));
 }
 
-void PRUPWM::setChannelValue(unsigned int channel, unsigned long pwm_ns) {
+void PRUPWM::setChannelValue(uint32_t channel, unsigned long pwm_ns) {
 	this->setPRUDuty(channel, pwm_ns);
 }
-void PRUPWM::setFailsafeValue(unsigned int channel, unsigned long pwm_ns) {
+
+void PRUPWM::setFailsafeValue(uint32_t channel, unsigned long pwm_ns) {
 	this->setPRUDuty(channel+9, pwm_ns);
 }
 
-void PRUPWM::setFailsafeTimeout(unsigned int timeout_ms) {
+void PRUPWM::setFailsafeTimeout(uint32_t timeout_ms) {
 	this->failsafeTimeout = timeout_ms;
 	this->updateFailsafe();
 }
 
-void PRUPWM::setPRUDuty(unsigned int channel, unsigned long pwm_ns) {
-	this->setSharedMemoryInt(channel+1, (unsigned int)((unsigned long long)pwm_ns / PRUPWM::nanosecondsPerCycle));
+void PRUPWM::setPRUDuty(uint32_t channel, unsigned long pwm_ns) {
+	this->setSharedMemoryInt(channel+1, (uint32_t)((unsigned long long)pwm_ns / PRUPWM::nanosecondsPerCycle));
 	this->updateFailsafe();
 }
+
 void PRUPWM::updateFailsafe() {
 	this->setSharedMemoryInt(9, this->failsafeTimeout * this->pwmFrequency / 1000);
 }
