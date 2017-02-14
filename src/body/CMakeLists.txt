@@ -132,7 +132,7 @@ include_directories(
 # add_dependencies(body ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Declare a C++ executable
- add_executable(body_node src/body_node.cpp src/body.cpp src/MPU6050.cpp)
+ add_executable(body_node src/body_node.cpp src/body.cpp )
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above

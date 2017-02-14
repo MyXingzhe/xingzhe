@@ -32,8 +32,8 @@
 #include <string>
 
 // PRU Driver headers
-#include <prussdrv.h>
-#include <pruss_intc_mapping.h>	 
+#include "prussdrv.h"
+#include "pruss_intc_mapping.h"
 
 class PRU {
 public:
