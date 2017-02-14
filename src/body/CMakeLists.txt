@@ -7,6 +7,7 @@ project(body)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   std_msgs
+  sensor_msgs
   message_generation
 )
 
@@ -54,7 +55,6 @@ find_package(catkin REQUIRED COMPONENTS
  add_service_files(
    DIRECTORY ../../serv
    FILES
-   position.srv
 #   Service2.srv
  )
 
@@ -116,12 +116,13 @@ catkin_package(
 # include_directories(include)
 include_directories(
   ${catkin_INCLUDE_DIRS}
-  ../i2c/
+  ../libs/i2c/
+  ../libs/ims/
   ./include/body/
 )
 
 ## Declare a C++ library
-# add_library(i2c ../i2c/i2c_dev.cpp)
+ add_library(ims ../libs/ims/ros_mpu6050.cpp ../libs/ims/mpu6050.cpp)
 # add_library(body
 #   src/${PROJECT_NAME}/body.cpp
 # )
@@ -139,7 +140,7 @@ include_directories(
 # add_dependencies(body_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
- target_link_libraries(body_node ${catkin_LIBRARIES} i2c mraa)
+ target_link_libraries(body_node ${catkin_LIBRARIES} ims mraa)
 
 #############
 ## Install ##
