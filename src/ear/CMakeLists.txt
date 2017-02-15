@@ -115,12 +115,10 @@ catkin_package(
 # include_directories(include)
 include_directories(
   ${catkin_INCLUDE_DIRS}
-  ../libs/i2c/
   ./include/ear/
 )
 
 ## Declare a C++ library
- add_library(i2c ../libs/i2c/i2c_dev.cpp)
 # add_library(i2cfunc ../i2c/i2c_func.cpp)
 # add_library(gpio ../gpio/gpio.cpp)
 

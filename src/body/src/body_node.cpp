@@ -3,14 +3,15 @@
 
 #include "body.h"
 
+const double UPDATE_RATE = 50; // desired publication rate of IMU data
+
 int main(int argc, char **argv)
 {
 	// Set up ROS node.
 	ros::init(argc, argv, "Body");
 	ros::NodeHandle n;
 	int rate = 2;
-
-	Body *m_body = new Body();
+    ros::NodeHandle nh;  // create a node handle to pass to the class constructor
 
 	// message used for publishing actuator control value
 	std_msgs::Float32 actuator_msg;
@@ -21,24 +22,13 @@ int main(int argc, char **argv)
 	// Tell ROS how fast to run this node.
 	ros::Rate r(rate);
 
-	ROS_INFO("Start Ear Node");
+	ROS_INFO("Start Body Node");
+
+    ros::Rate sleep_timer(UPDATE_RATE/2);  // a timer for desired rate, 50Hz is a good speed. We set to half for 2 seperate sleeps
 
 	// Main loop.
 	while (n.ok())
 	{
-		// Run spin function at the beginning of the loop to acquire new data from ROS topics.
-		ros::spinOnce();
-
-		// Do some useful job, in this case pid controller computation
-		actuator_msg.data = m_body->DoListen();
-
-		ROS_INFO("Distance=%d", m_body->DoListen());
-
-		// publish required data
-		actuator_pub.publish(actuator_msg);
-
-		// sleep the node for the 1/rate seconds
-		r.sleep();
 	}
 
 	return 0;

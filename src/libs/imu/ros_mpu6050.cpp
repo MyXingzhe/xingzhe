@@ -10,7 +10,6 @@
 *
 *  Application: Low cost gait tracking.
 */
-#include <mraa.hpp>
 
 #include <ros_mpu6050.h>
 
@@ -49,12 +48,17 @@ ros_mpu6050::ros_mpu6050(ros::NodeHandle* nodehandle):nh_(*nodehandle)  {
 
 
     // Using GPIO to rise whenever we fetch I2C information
-    ROS_INFO("Setting direction of GPIO.");
 
-    m_gpio = new mraa::Gpio(GPIO);
-    ROS_INFO("Setting Direction Out & Low");
-    m_gpio->dir(mraa::DIR_OUT_LOW);
-    gpio_val = m_gpio->read();  // Verifying GPIO was set correctly
+    ROS_INFO("Exporting and setting direction of GPIO.");
+    
+    ROS_INFO("Exporting...");
+    gpio_export(GPIO);  // Exporting our GPIO pin
+    ROS_INFO("Setting Direction...");
+    gpio_set_dir(GPIO, OUTPUT_PIN);  // Setting GPIO pin as output
+    ROS_INFO("Setting Low...");
+    gpio_set_value(GPIO, LOW);  // Initialize GPIO at 0V
+    ROS_INFO("Getting Value...");
+    gpio_get_value(GPIO, &gpio_val);  // Verifying GPIO was set correctly
 
     if (gpio_val == 0)
         ROS_INFO("GPIO is set Low, success!");
@@ -69,7 +73,7 @@ ros_mpu6050::ros_mpu6050(ros::NodeHandle* nodehandle):nh_(*nodehandle)  {
 void ros_mpu6050::initializePublishers()  {
     ROS_INFO("Initializing Publishers: imu_publisher, gpio_publisher");
     imu_publisher = nh_.advertise<sensor_msgs::Imu>("mpu_6050", 1, true); // publish IMU data in package sensor_msgs::Imu
-///    gpio_publisher = nh_.advertise<tsn_bbb_msgs::GPIOOut>("gpio_out", 1, true);  // publish current GPIO value
+    gpio_publisher = nh_.advertise<tsn_bbb_msgs::GPIOOut>("gpio_out", 1, true);  // publish current GPIO value
 }
 
 // retrieve IMU angular and linear accel values from IMU registers
@@ -96,17 +100,42 @@ void ros_mpu6050::fetchValues()  {
 
 // set gpio high and publish 1
 void ros_mpu6050::setGPIOHigh()  {
-    m_gpio->write(1);
-///    gpio_data_out.header.stamp = ros::Time::now();  // time stamp the measurement
-///    gpio_data_out.data = 1;
-///    gpio_publisher.publish(gpio_data_out);
+    gpio_set_value(GPIO, HIGH);
+    gpio_data_out.header.stamp = ros::Time::now();  // time stamp the measurement
+    gpio_data_out.data = 1;
+    gpio_publisher.publish(gpio_data_out);
 }
 
 // set gpio low and publish 0
 void ros_mpu6050::setGPIOLow()  {
-    m_gpio->write(0);
-///    gpio_data_out.header.stamp = ros::Time::now();  // time stamp the measurement
-///    gpio_data_out.data = 0;
-///    gpio_publisher.publish(gpio_data_out);
+    gpio_set_value(GPIO, LOW);
+    gpio_data_out.header.stamp = ros::Time::now();  // time stamp the measurement
+    gpio_data_out.data = 0;
+    gpio_publisher.publish(gpio_data_out);
 }
+
+int main(int argc, char** argv)  {
+    
+    // ROS set-ups:
+    ros::init(argc, argv, "rosmpu6050"); // node name
+
+    ros::NodeHandle nh;  // create a node handle to pass to the class constructor
+
+    ROS_INFO("main: instantiating an object of type ros_mpu6050");
+    ros_mpu6050 rosmpu6050(&nh);  // instantiate an ros_mpu6050 object and pass in pointer to nodehandle for constructor to use
+    ros::Rate sleep_timer(UPDATE_RATE/2);  // a timer for desired rate, 50Hz is a good speed. We set to half for 2 seperate sleeps
+
+    ROS_INFO("Starting Data Recording From MPU6050");
+    // loop to constantly "fetch" values from the MPU-6050
+    while (ros::ok()) {
+
+        rosmpu6050.fetchValues();
+        rosmpu6050.setGPIOHigh();  // set GPIO pin high right after we get data
+        ros::spinOnce();
+        sleep_timer.sleep();  // leave HIGH and sleep half of our sleep time
+        rosmpu6050.setGPIOLow();  // set GPIO pin low so we can get rising edge when we get data again 
+        sleep_timer.sleep();  // finish sleep time
+    }
+    return 0;
+} 
 

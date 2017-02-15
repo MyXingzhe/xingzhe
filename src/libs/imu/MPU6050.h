@@ -48,7 +48,7 @@ myself, Theodore Nowak BSc., Case Western Reserve University. Enjoy!
 #ifndef _MPU6050_H_
 #define _MPU6050_H_
 
-#include "../i2c/i2c_dev.h"
+#include <mraa.hpp>
 
 #define MPU6050_ADDRESS_AD0_LOW     0x68 // address pin low (GND), default for InvenSense evaluation board
 #define MPU6050_ADDRESS_AD0_HIGH    0x69 // address pin high (VCC)
@@ -989,7 +989,7 @@ class MPU6050 {
 */
 
     private:
-        uint8_t devAddr;
+        mraa::I2c *m_dev;
         uint8_t buffer[14];
 };
 
