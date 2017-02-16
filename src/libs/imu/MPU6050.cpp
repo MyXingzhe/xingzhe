@@ -166,9 +166,7 @@ void MPU6050::setAuxVDDIOLevel(uint8_t level) {
  * @see MPU6050_RA_SMPLRT_DIV
  */
 uint8_t MPU6050::getRate() {
-    buffer[0] = m_dev->readReg(MPU6050_RA_SMPLRT_DIV);
-
-    return buffer[0];
+    return m_dev->readReg(MPU6050_RA_SMPLRT_DIV);
 }
 /** Set gyroscope sample rate divider.
  * @param rate New sample rate divider
@@ -262,7 +260,7 @@ void MPU6050::setExternalFrameSync(uint8_t sync) {
 uint8_t MPU6050::getDLPFMode() {
     buffer[0] = m_dev->readReg(MPU6050_RA_CONFIG);
 
-    uint8_t mask = ((1 << MPU6050_CFG_EXT_SYNC_SET_LENGTH) - 1) << (MPU6050_CFG_DLPF_CFG_BIT - MPU6050_CFG_DLPF_CFG_LENGTH + 1);
+    uint8_t mask = ((1 << MPU6050_CFG_DLPF_CFG_LENGTH) - 1) << (MPU6050_CFG_DLPF_CFG_BIT - MPU6050_CFG_DLPF_CFG_LENGTH + 1);
     buffer[0] &= mask;
     buffer[0] >>= (MPU6050_CFG_DLPF_CFG_BIT - MPU6050_CFG_DLPF_CFG_LENGTH + 1);
 
@@ -482,7 +480,7 @@ uint8_t MPU6050::getDHPFMode() {
  */
 void MPU6050::setDHPFMode(uint8_t bandwidth) {
     uint8_t mask = ((1 << MPU6050_ACONFIG_ACCEL_HPF_LENGTH) - 1) << (MPU6050_ACONFIG_ACCEL_HPF_BIT - MPU6050_ACONFIG_ACCEL_HPF_LENGTH + 1);
-    buffer[0] = m_dev->readReg(MPU6050_RA_CONFIG);
+    buffer[0] = m_dev->readReg(MPU6050_RA_ACCEL_CONFIG);
     bandwidth <<= (MPU6050_ACONFIG_ACCEL_HPF_BIT - MPU6050_ACONFIG_ACCEL_HPF_LENGTH + 1); // shift data into correct position
     bandwidth &= mask; // zero all non-important bits in data
     buffer[0] &= ~(mask); // zero all important bits in existing byte
@@ -541,9 +539,7 @@ void MPU6050::setFreefallDetectionThreshold(uint8_t threshold) {
  * @see MPU6050_RA_FF_DUR
  */
 uint8_t MPU6050::getFreefallDetectionDuration() {
-    buffer[0] = m_dev->readReg(MPU6050_RA_FF_DUR);
-
-    return buffer[0];
+    return  m_dev->readReg(MPU6050_RA_FF_DUR);
 }
 /** Get free-fall event duration threshold.
  * @param duration New free-fall duration threshold value (LSB = 1ms)
@@ -576,9 +572,7 @@ void MPU6050::setFreefallDetectionDuration(uint8_t duration) {
  * @see MPU6050_RA_MOT_THR
  */
 uint8_t MPU6050::getMotionDetectionThreshold() {
-    buffer[0] = m_dev->readReg(MPU6050_RA_MOT_THR);
-
-    return buffer[0];
+    return m_dev->readReg(MPU6050_RA_MOT_THR);
 }
 /** Set free-fall event acceleration threshold.
  * @param threshold New motion detection acceleration threshold value (LSB = 2mg)
@@ -607,9 +601,7 @@ void MPU6050::setMotionDetectionThreshold(uint8_t threshold) {
  * @see MPU6050_RA_MOT_DUR
  */
 uint8_t MPU6050::getMotionDetectionDuration() {
-    buffer[0] = m_dev->readReg(MPU6050_RA_MOT_DUR);
-
-    return buffer[0];
+    return m_dev->readReg(MPU6050_RA_MOT_DUR);
 }
 /** Set motion detection event duration threshold.
  * @param duration New motion detection duration threshold value (LSB = 1ms)
@@ -648,9 +640,7 @@ void MPU6050::setMotionDetectionDuration(uint8_t duration) {
  * @see MPU6050_RA_ZRMOT_THR
  */
 uint8_t MPU6050::getZeroMotionDetectionThreshold() {
-    buffer[0] = m_dev->readReg(MPU6050_RA_ZRMOT_THR);
-
-    return buffer[0];
+    return m_dev->readReg(MPU6050_RA_ZRMOT_THR);
 }
 /** Set zero motion detection event acceleration threshold.
  * @param threshold New zero motion detection acceleration threshold value (LSB = 2mg)
@@ -680,9 +670,7 @@ void MPU6050::setZeroMotionDetectionThreshold(uint8_t threshold) {
  * @see MPU6050_RA_ZRMOT_DUR
  */
 uint8_t MPU6050::getZeroMotionDetectionDuration() {
-    buffer[0] = m_dev->readReg(MPU6050_RA_ZRMOT_DUR);
-
-    return buffer[0];
+    return m_dev->readReg(MPU6050_RA_ZRMOT_DUR);
 }
 /** Set zero motion detection event duration threshold.
  * @param duration New zero motion detection duration threshold value (LSB = 1ms)
@@ -1078,9 +1066,8 @@ void MPU6050::setMasterClockSpeed(uint8_t speed) {
  */
 uint8_t MPU6050::getSlaveAddress(uint8_t num) {
     if (num > 3) return 0;
-    buffer[0] = m_dev->readReg(MPU6050_RA_I2C_SLV0_ADDR + num*3);
 
-    return buffer[0];
+    return m_dev->readReg(MPU6050_RA_I2C_SLV0_ADDR + num*3);
 }
 /** Set the I2C address of the specified slave (0-3).
  * @param num Slave number (0-3)
@@ -1090,6 +1077,7 @@ uint8_t MPU6050::getSlaveAddress(uint8_t num) {
  */
 void MPU6050::setSlaveAddress(uint8_t num, uint8_t address) {
     if (num > 3) return;
+
     m_dev->writeReg(MPU6050_RA_I2C_SLV0_ADDR + num*3, address);
 }
 /** Get the active internal register for the specified slave (0-3).
@@ -1105,9 +1093,8 @@ void MPU6050::setSlaveAddress(uint8_t num, uint8_t address) {
  */
 uint8_t MPU6050::getSlaveRegister(uint8_t num) {
     if (num > 3) return 0;
-    buffer[0] = m_dev->readReg(MPU6050_RA_I2C_SLV0_REG + num*3);
 
-    return buffer[0];
+    return m_dev->readReg(MPU6050_RA_I2C_SLV0_REG + num*3);
 }
 /** Set the active internal register for the specified slave (0-3).
  * @param num Slave number (0-3)
@@ -1117,6 +1104,7 @@ uint8_t MPU6050::getSlaveRegister(uint8_t num) {
  */
 void MPU6050::setSlaveRegister(uint8_t num, uint8_t reg) {
     if (num > 3) return;
+
     m_dev->writeReg(MPU6050_RA_I2C_SLV0_REG + num*3, reg);
 }
 /** Get the enabled value for the specified slave (0-3).
@@ -1142,6 +1130,7 @@ bool MPU6050::getSlaveEnabled(uint8_t num) {
  */
 void MPU6050::setSlaveEnabled(uint8_t num, bool enabled) {
     if (num > 3) return;
+    
     buffer[0] = m_dev->readReg(MPU6050_RA_I2C_SLV0_CTRL + num*3);
     buffer[0] = (enabled != 0) ? (buffer[0] | (1 << MPU6050_I2C_SLV_EN_BIT)) : (buffer[0] & ~(1 << MPU6050_I2C_SLV_EN_BIT));
     m_dev->writeReg(MPU6050_RA_I2C_SLV0_CTRL + num*3, buffer[0]);
@@ -1286,9 +1275,7 @@ void MPU6050::setSlaveDataLength(uint8_t num, uint8_t length) {
  * @see MPU6050_RA_I2C_SLV4_ADDR
  */
 uint8_t MPU6050::getSlave4Address() {
-    buffer[0] = m_dev->readReg(MPU6050_RA_I2C_SLV4_ADDR);
-
-    return buffer[0];
+    return m_dev->readReg(MPU6050_RA_I2C_SLV4_ADDR);
 }
 /** Set the I2C address of Slave 4.
  * @param address New address for Slave 4
@@ -1306,9 +1293,7 @@ void MPU6050::setSlave4Address(uint8_t address) {
  * @see MPU6050_RA_I2C_SLV4_REG
  */
 uint8_t MPU6050::getSlave4Register() {
-    buffer[0] = m_dev->readReg(MPU6050_RA_I2C_SLV4_REG);
-
-    return buffer[0];
+    return m_dev->readReg(MPU6050_RA_I2C_SLV4_REG);
 }
 /** Set the active internal register for Slave 4.
  * @param reg New active register for Slave 4
@@ -1444,9 +1429,7 @@ void MPU6050::setSlave4MasterDelay(uint8_t delay) {
  * @see MPU6050_RA_I2C_SLV4_DI
  */
 uint8_t MPU6050::getSlate4InputByte() {
-    buffer[0] = m_dev->readReg(MPU6050_RA_I2C_SLV4_DI);
-
-    return buffer[0];
+    return m_dev->readReg(MPU6050_RA_I2C_SLV4_DI);
 }
 
 // I2C_MST_STATUS register
@@ -1772,9 +1755,7 @@ void MPU6050::setClockOutputEnabled(bool enabled) {
  * @see MPU6050_INTERRUPT_FF_BIT
  **/
 uint8_t MPU6050::getIntEnabled() {
-    buffer[0] = m_dev->readReg(MPU6050_RA_INT_ENABLE);
-
-    return buffer[0];
+    return m_dev->readReg(MPU6050_RA_INT_ENABLE);
 }
 /** Set full interrupt enabled status.
  * Full register byte for all interrupts, for quick reading. Each bit should be
@@ -1937,9 +1918,7 @@ void MPU6050::setIntDataReadyEnabled(bool enabled) {
  * @see MPU6050_RA_INT_STATUS
  */
 uint8_t MPU6050::getIntStatus() {
-    buffer[0] = m_dev->readReg(MPU6050_RA_INT_STATUS);
-
-    return buffer[0];
+    return m_dev->readReg(MPU6050_RA_INT_STATUS);
 }
 /** Get Free Fall interrupt status.
  * This bit automatically sets to 1 when a Free Fall interrupt has been
@@ -2291,9 +2270,7 @@ int16_t MPU6050::getRotationZ() {
  * @return Byte read from register
  */
 uint8_t MPU6050::getExternalSensorByte(int position) {
-    buffer[0] = m_dev->readReg(MPU6050_RA_EXT_SENS_DATA_00 + position);
-
-    return buffer[0];
+    return m_dev->readReg(MPU6050_RA_EXT_SENS_DATA_00 + position);
 }
 /** Read word (2 bytes) from external sensor data registers.
  * @param position Starting position (0-21)
@@ -2406,6 +2383,7 @@ bool MPU6050::getZeroMotionDetected() {
  */
 void MPU6050::setSlaveOutputByte(uint8_t num, uint8_t data) {
     if (num > 3) return;
+
     m_dev->writeReg(MPU6050_RA_I2C_SLV0_DO + num, data);
 }
 
@@ -3128,9 +3106,7 @@ uint16_t MPU6050::getFIFOCount() {
  * @return Byte from FIFO buffer
  */
 uint8_t MPU6050::getFIFOByte() {
-    buffer[0] = m_dev->readReg(MPU6050_RA_FIFO_R_W);
-
-    return buffer[0];
+    return m_dev->readReg(MPU6050_RA_FIFO_R_W);
 }
 void MPU6050::getFIFOBytes(uint8_t *data, uint8_t length) {
     m_dev->readBytesReg(MPU6050_RA_FIFO_R_W, &buffer[0], length);
@@ -3259,9 +3235,7 @@ void MPU6050::setZGyroOffsetTC(int8_t offset) {
 // X_FINE_GAIN register
 
 int8_t MPU6050::getXFineGain() {
-    buffer[0] = m_dev->readReg(MPU6050_RA_X_FINE_GAIN);
-
-    return buffer[0];
+    return m_dev->readReg(MPU6050_RA_X_FINE_GAIN);
 }
 void MPU6050::setXFineGain(int8_t gain) {
     m_dev->writeReg(MPU6050_RA_X_FINE_GAIN, gain);
@@ -3270,9 +3244,7 @@ void MPU6050::setXFineGain(int8_t gain) {
 // Y_FINE_GAIN register
 
 int8_t MPU6050::getYFineGain() {
-    buffer[0] = m_dev->readReg(MPU6050_RA_Y_FINE_GAIN);
-
-    return buffer[0];
+    return m_dev->readReg(MPU6050_RA_Y_FINE_GAIN);
 }
 void MPU6050::setYFineGain(int8_t gain) {
     m_dev->writeReg(MPU6050_RA_Y_FINE_GAIN, gain);
@@ -3281,9 +3253,7 @@ void MPU6050::setYFineGain(int8_t gain) {
 // Z_FINE_GAIN register
 
 int8_t MPU6050::getZFineGain() {
-    buffer[0] = m_dev->readReg(MPU6050_RA_Z_FINE_GAIN);
-
-    return buffer[0];
+    return m_dev->readReg(MPU6050_RA_Z_FINE_GAIN);
 }
 void MPU6050::setZFineGain(int8_t gain) {
     m_dev->writeReg(MPU6050_RA_Z_FINE_GAIN, gain);

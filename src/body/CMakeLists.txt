@@ -45,11 +45,11 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
-#   Message1.msg
-#   Message2.msg
-# )
+ add_message_files(
+   DIRECTORY ../../msg
+   FILES
+   mpu6050_gpio.msg
+ )
 
 ## Generate services in the 'srv' folder
  add_service_files(
@@ -113,9 +113,10 @@ catkin_package(
 
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
-# include_directories(include)
-include_directories(
+#include_directories(include)
+include_directories(include
   ${catkin_INCLUDE_DIRS}
+  ${body_DEVEL_PREFIX}/include/body/
   ../libs/imu/
   ./include/body/
 )
@@ -136,7 +137,7 @@ include_directories(
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
-# add_dependencies(body_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+ add_dependencies(body_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
  target_link_libraries(body_node ${catkin_LIBRARIES} imu mraa)

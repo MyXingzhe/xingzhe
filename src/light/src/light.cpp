@@ -56,12 +56,13 @@ int Light::LightInit()
     if (m_gpio == NULL) {
         return mraa::ERROR_UNSPECIFIED;
     }
-
+    m_gpio->useMmap(true);
+    
 	mraa::Result response = m_gpio->dir(mraa::DIR_OUT);
     if (response != mraa::SUCCESS) {
         mraa::printError(response);
         return -1;
     }
 
-    m_gpio->useMmap(true);
+
 }
