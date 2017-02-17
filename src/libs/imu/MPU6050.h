@@ -50,6 +50,11 @@ myself, Theodore Nowak BSc., Case Western Reserve University. Enjoy!
 
 #include <mraa.hpp>
 
+#include "helper_3dmath.h"
+
+#define PROGMEM /* empty */
+
+
 #define MPU6050_ADDRESS_AD0_LOW     0x68 // address pin low (GND), default for InvenSense evaluation board
 #define MPU6050_ADDRESS_AD0_HIGH    0x69 // address pin high (VCC)
 #define MPU6050_DEFAULT_ADDRESS     MPU6050_ADDRESS_AD0_LOW
@@ -405,7 +410,7 @@ myself, Theodore Nowak BSc., Case Western Reserve University. Enjoy!
 #define MPU6050_DMP_MEMORY_CHUNK_SIZE   16
 
 // note: DMP code memory blocks defined at end of header file
-
+#define MPU6050_INCLUDE_DMP_MOTIONAPPS20
 class MPU6050 {
     public:
         MPU6050();
@@ -742,7 +747,7 @@ class MPU6050 {
         void setIntPLLReadyEnabled(bool enabled);
         bool getIntDMPEnabled();
         void setIntDMPEnabled(bool enabled);
-     /*
+     
         // DMP_INT_STATUS
         bool getDMPInt5Status();
         bool getDMPInt4Status();
@@ -770,10 +775,10 @@ class MPU6050 {
         uint8_t readMemoryByte();
         void writeMemoryByte(uint8_t data);
         void readMemoryBlock(uint8_t *data, uint16_t dataSize, uint8_t bank=0, uint8_t address=0);
-        bool writeMemoryBlock(const uint8_t *data, uint16_t dataSize, uint8_t bank=0, uint8_t address=0, bool verify=true, bool useProgMem=false);
-        bool writeProgMemoryBlock(const uint8_t *data, uint16_t dataSize, uint8_t bank=0, uint8_t address=0, bool verify=true);
+        bool writeMemoryBlock(const uint8_t *data, uint16_t dataSize, uint8_t bank=0, uint8_t address=0);
+        bool writeProgMemoryBlock(const uint8_t *data, uint16_t dataSize, uint8_t bank=0, uint8_t address=0);
 
-        bool writeDMPConfigurationSet(const uint8_t *data, uint16_t dataSize, bool useProgMem=false);
+        bool writeDMPConfigurationSet(const uint8_t *data, uint16_t dataSize);
         bool writeProgDMPConfigurationSet(const uint8_t *data, uint16_t dataSize);
 
         // DMP_CFG_1 register
@@ -986,7 +991,7 @@ class MPU6050 {
             void dmpOverrideQuaternion(long *q);
             uint16_t dmpGetFIFOPacketSize();
         #endif
-*/
+
 
     private:
         mraa::I2c *m_dev;

@@ -11,6 +11,7 @@ int8_t imuid=0;
 Body::Body(ros::NodeHandle* nodehandle)
      :nh_(*nodehandle)
 {
+    uint8_t status;
     
     ROS_INFO("in class constructor of Body");
 
@@ -28,6 +29,18 @@ Body::Body(ros::NodeHandle* nodehandle)
     // (sample rate is 8kHz divided by # in setRate function -- see MPU6050.cpp), disable 
     // sleep mode, and sleep for 1 second at start-up
     imu.initialize();
+
+    status = imu.dmpInitialize();
+
+    // supply your own gyro offsets here, scaled for min sensitivity
+    imu.setXAccelOffset(-1169);
+    imu.setYAccelOffset(744);
+    imu.setZAccelOffset(1620);
+    imu.setXGyroOffset(48);
+    imu.setYGyroOffset(47);
+    imu.setZGyroOffset(-8);
+
+    imu.setDMPEnabled(true);
 
     // Using GPIO to rise whenever we fetch I2C information
 
