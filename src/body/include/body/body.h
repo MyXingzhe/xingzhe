@@ -27,19 +27,22 @@ public:
 	void setGPIOHigh();
 	void setGPIOLow();
 	int GpioInit();
+	void Feeling();
 
 private:
 
 public:
+	uint16_t fifo_count;
+	uint16_t packet_size;
+	uint8_t fifo_buffer[64];
 
 private:
 	MPU6050 *m_imu;
 	MPU6050 imu;
 	mraa::Gpio *m_gpio;
 
-	uint8_t mpuIntStatus;
 	uint8_t dmpDataReady;
-	bool dmpReady;
+	bool m_ready;
 
 	ros::NodeHandle nh_;
 	ros::Publisher imu_publisher;
@@ -47,6 +50,16 @@ private:
 	sensor_msgs::Imu data_out;  // variable name for our sensor_msgs::Imu output
 	body::mpu6050_gpio gpio_data_out;  // variable name for our gpio output
 	int16_t ax, ay, az, gx, gy, gz;  // temp variables to store data from imu.getMotion6(...)
+
+
+	Quaternion q;           // [w, x, y, z]         quaternion container
+	VectorInt16 aa;         // [x, y, z]            accel sensor measurements
+	VectorInt16 aaReal;     // [x, y, z]            gravity-free accel sensor measurements
+	VectorInt16 aaWorld;    // [x, y, z]            world-frame accel sensor measurements
+	VectorFloat gravity;    // [x, y, z]            gravity vector
+	float euler[3];         // [psi, theta, phi]    Euler angle container
+	float ypr[3];           // [yaw, pitch, roll]   yaw/pitch/roll container and gravity vector
+
 
 };
 

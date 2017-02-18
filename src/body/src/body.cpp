@@ -8,6 +8,9 @@ const double limg = 1000;  // used to convert rotational accel to deg/s
 const double lima = 2*9.8;  // used to convert linear accel to m/s^2
 int8_t imuid=0;
 
+// packet structure for InvenSense teapot demo
+uint8_t teapotPacket[14] = { '$', 0x02, 0,0, 0,0, 0,0, 0,0, 0x00, 0x00, '\r', '\n' };
+
 Body::Body(ros::NodeHandle* nodehandle)
      :nh_(*nodehandle)
 {
@@ -33,20 +36,19 @@ Body::Body(ros::NodeHandle* nodehandle)
     status = imu.dmpInitialize();
 
     // supply your own gyro offsets here, scaled for min sensitivity
-    imu.setXAccelOffset(-1169);
-    imu.setYAccelOffset(744);
-    imu.setZAccelOffset(1620);
-    imu.setXGyroOffset(48);
-    imu.setYGyroOffset(47);
-    imu.setZGyroOffset(-8);
+    imu.setXGyroOffset(220);
+    imu.setYGyroOffset(76);
+    imu.setZGyroOffset(-85);
+    imu.setZAccelOffset(1788); // 1688 factory default for my test chip
 
-    imu.setDMPEnabled(true);
+    if(status == 0) {
+        ROS_INFO("Enable MPU6050 OK!");
+        imu.setDMPEnabled(true); 
+    }
 
-    // Using GPIO to rise whenever we fetch I2C information
-
-    ROS_INFO("Exporting and setting direction of GPIO.");
-
-    GpioInit();
+    m_ready = true;
+    // get expected DMP packet size for later comparison
+    packet_size = imu.dmpGetFIFOPacketSize();
 
     ROS_INFO("Done Initializing!"); 
 }
@@ -123,3 +125,62 @@ void Body::setGPIOLow()  {
     gpio_publisher.publish(gpio_data_out);
 }
 
+#define OUTPUT_READABLE_EULER
+#define OUTPUT_READABLE_REALACCEL
+void Body::Feeling()
+{
+    // get current FIFO count
+    fifo_count = imu.getFIFOCount();
+
+    imu.getFIFOBytes(fifo_buffer, packet_size);
+
+#ifdef OUTPUT_READABLE_EULER
+    // display Euler angles in degrees
+    imu.dmpGetQuaternion(&q, fifo_buffer);
+    imu.dmpGetEuler(euler, &q);
+    ROS_INFO("euler %f:%f:%f\t", euler[0] * 180/M_PI, euler[1] * 180/M_PI, euler[2] * 180/M_PI);
+#endif
+
+#ifdef OUTPUT_READABLE_YAWPITCHROLL
+    // display Euler angles in degrees
+    imu.dmpGetQuaternion(&q, fifo_buffer);
+    imu.dmpGetGravity(&gravity, &q);
+    imu.dmpGetYawPitchRoll(ypr, &q, &gravity);
+    ROS_INFO("ypr %f:%f:%f\t", ypr[0] * 180/M_PI, ypr[1] * 180/M_PI, ypr[2] * 180/M_PI);
+#endif
+
+#ifdef OUTPUT_READABLE_REALACCEL
+    // display real acceleration, adjusted to remove gravity
+    imu.dmpGetQuaternion(&q, fifo_buffer);
+    imu.dmpGetAccel(&aa, fifo_buffer);
+    imu.dmpGetGravity(&gravity, &q);
+    imu.dmpGetLinearAccel(&aaReal, &aa, &gravity);
+    ROS_INFO("areal %d:%d:%d\t", aaReal.x, aaReal.y, aaReal.z);
+#endif
+
+#ifdef OUTPUT_READABLE_WORLDACCEL
+    // display initial world-frame acceleration, adjusted to remove gravity
+    // and rotated based on known orientation from quaternion
+    imu.dmpGetQuaternion(&q, fifo_buffer);
+    imu.dmpGetAccel(&aa, fifo_buffer);
+    imu.dmpGetGravity(&gravity, &q);
+    imu.dmpGetLinearAccel(&aaReal, &aa, &gravity);
+    imu.dmpGetLinearAccelInWorld(&aaWorld, &aaReal, &q);
+    ROS_INFO("aworld  %d:%d:%d\t", aaWorld.x, aaWorld.y, aaWorld.z);
+#endif
+
+#ifdef OUTPUT_TEAPOT
+    // display quaternion values in InvenSense Teapot demo format:
+    teapotPacket[2] = fifo_buffer[0];
+    teapotPacket[3] = fifo_buffer[1];
+    teapotPacket[4] = fifo_buffer[4];
+    teapotPacket[5] = fifo_buffer[5];
+    teapotPacket[6] = fifo_buffer[8];
+    teapotPacket[7] = fifo_buffer[9];
+    teapotPacket[8] = fifo_buffer[12];
+    teapotPacket[9] = fifo_buffer[13];
+    Serial.write(teapotPacket, 14);
+    teapotPacket[11]++; // packetCount, loops at 0xFF on purpose
+#endif
+
+}
