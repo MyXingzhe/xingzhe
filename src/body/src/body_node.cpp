@@ -20,8 +20,9 @@ int main(int argc, char **argv)
     ROS_INFO("Starting Data Recording From MPU6050");
     // loop to constantly "fetch" values from the MPU-6050
     while (ros::ok()) {
-        body.Feeling();
         ros::spinOnce();
+
+        body.Feeling();
         sleep_timer.sleep();  // finish sleep time
     }
     return 0;

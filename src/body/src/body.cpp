@@ -133,6 +133,7 @@ void Body::Feeling()
     fifo_count = imu.getFIFOCount();
 
     imu.getFIFOBytes(fifo_buffer, packet_size);
+    fifoCount -= packet_size;
 
 #ifdef OUTPUT_READABLE_EULER
     // display Euler angles in degrees

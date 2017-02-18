@@ -3579,16 +3579,17 @@ uint8_t MPU6050::dmpInitialize() {
     setMemoryStartAddress(0x06);
     ROS_INFO("Checking hardware revision...");
     uint8_t hwRevision = readMemoryByte();
-//    ROS_INFO("Revision @ user[16][6] = ");
-//    ROS_INFOF(hwRevision, HEX);
+    ROS_INFO("Revision @ user[16][6] = 0x%x", hwRevision);
     ROS_INFO("Resetting memory bank selection to 0...");
     setMemoryBank(0, false, false);
 
     // check OTP bank valid
     ROS_INFO("Reading OTP bank valid flag...");
     uint8_t otpValid = getOTPBankValid();
-    ROS_INFO("OTP bank is ");
-//    ROS_INFO(otpValid ? "valid!" : "invalid!");
+    if(otpValid)
+        ROS_INFO("OTP bank is valid");
+    else
+        ROS_INFO("OTP bank is invalid");
 
     // get X/Y/Z gyro offsets
     ROS_INFO("Reading gyro offset TC values...");
@@ -3611,9 +3612,7 @@ uint8_t MPU6050::dmpInitialize() {
     usleep(20);
 
     // load DMP code into memory banks
-    ROS_INFO("Writing DMP code to MPU memory banks (");
-    ROS_INFO("%d", MPU6050_DMP_CODE_SIZE);
-    ROS_INFO(" bytes)");
+    ROS_INFO("Writing DMP code to MPU memory banks (%d bytes)", MPU6050_DMP_CODE_SIZE);
     if (writeProgMemoryBlock(dmpMemory, MPU6050_DMP_CODE_SIZE)) {
         ROS_INFO("Success! DMP code written and verified.");
 
