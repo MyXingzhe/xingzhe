@@ -34,25 +34,13 @@ THE SOFTWARE.
 ===============================================
 */
 
-/*
-===============================================
-Although Jeff Rowberg generously created the inital library, edits were made 
-so that it would work with the Beaglebone Black. A significant amount of this
-editing was made by Nagavenkat Adurthi, a Ph.D. candidate at the University of 
-Buffalo. His code can be found on his website. All other edits were made by
-myself, Theodore Nowak BSc., Case Western Reserve University. Enjoy! 
-* Insert non-liability rant from above. *
-===============================================
-*/
-
 #ifndef _MPU6050_H_
 #define _MPU6050_H_
 
-#include <mraa.hpp>
+#include "I2Cdev.h"
+//#include <avr/pgmspace.h>
 
-#include "helper_3dmath.h"
-
-#define PROGMEM /* empty */
+#define pgm_read_byte(p) (*(uint8_t *)(p))
 
 
 #define MPU6050_ADDRESS_AD0_LOW     0x68 // address pin low (GND), default for InvenSense evaluation board
@@ -410,7 +398,7 @@ myself, Theodore Nowak BSc., Case Western Reserve University. Enjoy!
 #define MPU6050_DMP_MEMORY_CHUNK_SIZE   16
 
 // note: DMP code memory blocks defined at end of header file
-#define MPU6050_INCLUDE_DMP_MOTIONAPPS20
+
 class MPU6050 {
     public:
         MPU6050();
@@ -695,16 +683,16 @@ class MPU6050 {
         // XG_OFFS_TC register
         uint8_t getOTPBankValid();
         void setOTPBankValid(bool enabled);
-        int8_t getXGyroOffsetTC();
-        void setXGyroOffsetTC(int8_t offset);
+        int8_t getXGyroOffset();
+        void setXGyroOffset(int8_t offset);
 
         // YG_OFFS_TC register
-        int8_t getYGyroOffsetTC();
-        void setYGyroOffsetTC(int8_t offset);
+        int8_t getYGyroOffset();
+        void setYGyroOffset(int8_t offset);
 
         // ZG_OFFS_TC register
-        int8_t getZGyroOffsetTC();
-        void setZGyroOffsetTC(int8_t offset);
+        int8_t getZGyroOffset();
+        void setZGyroOffset(int8_t offset);
 
         // X_FINE_GAIN register
         int8_t getXFineGain();
@@ -731,23 +719,23 @@ class MPU6050 {
         void setZAccelOffset(int16_t offset);
 
         // XG_OFFS_USR* registers
-        int16_t getXGyroOffset();
-        void setXGyroOffset(int16_t offset);
+        int16_t getXGyroOffsetUser();
+        void setXGyroOffsetUser(int16_t offset);
 
         // YG_OFFS_USR* register
-        int16_t getYGyroOffset();
-        void setYGyroOffset(int16_t offset);
+        int16_t getYGyroOffsetUser();
+        void setYGyroOffsetUser(int16_t offset);
 
         // ZG_OFFS_USR* register
-        int16_t getZGyroOffset();
-        void setZGyroOffset(int16_t offset);
+        int16_t getZGyroOffsetUser();
+        void setZGyroOffsetUser(int16_t offset);
         
         // INT_ENABLE register (DMP functions)
         bool getIntPLLReadyEnabled();
         void setIntPLLReadyEnabled(bool enabled);
         bool getIntDMPEnabled();
         void setIntDMPEnabled(bool enabled);
-     
+        
         // DMP_INT_STATUS
         bool getDMPInt5Status();
         bool getDMPInt4Status();
@@ -775,10 +763,10 @@ class MPU6050 {
         uint8_t readMemoryByte();
         void writeMemoryByte(uint8_t data);
         void readMemoryBlock(uint8_t *data, uint16_t dataSize, uint8_t bank=0, uint8_t address=0);
-        bool writeMemoryBlock(const uint8_t *data, uint16_t dataSize, uint8_t bank=0, uint8_t address=0);
-        bool writeProgMemoryBlock(const uint8_t *data, uint16_t dataSize, uint8_t bank=0, uint8_t address=0);
+        bool writeMemoryBlock(const uint8_t *data, uint16_t dataSize, uint8_t bank=0, uint8_t address=0, bool verify=true, bool useProgMem=false);
+        bool writeProgMemoryBlock(const uint8_t *data, uint16_t dataSize, uint8_t bank=0, uint8_t address=0, bool verify=true);
 
-        bool writeDMPConfigurationSet(const uint8_t *data, uint16_t dataSize);
+        bool writeDMPConfigurationSet(const uint8_t *data, uint16_t dataSize, bool useProgMem=false);
         bool writeProgDMPConfigurationSet(const uint8_t *data, uint16_t dataSize);
 
         // DMP_CFG_1 register
@@ -992,9 +980,8 @@ class MPU6050 {
             uint16_t dmpGetFIFOPacketSize();
         #endif
 
-
     private:
-        mraa::I2c *m_dev;
+        uint8_t devAddr;
         uint8_t buffer[14];
 };
 
