@@ -37,11 +37,12 @@ THE SOFTWARE.
 #ifndef _MPU6050_H_
 #define _MPU6050_H_
 
-#include "I2Cdev.h"
-//#include <avr/pgmspace.h>
+#include "helper_3dmath.h"
+#include "../xzio/xzio.h"
 
 #define pgm_read_byte(p) (*(uint8_t *)(p))
 
+#define MPU6050_INCLUDE_DMP_MOTIONAPPS20
 
 #define MPU6050_ADDRESS_AD0_LOW     0x68 // address pin low (GND), default for InvenSense evaluation board
 #define MPU6050_ADDRESS_AD0_HIGH    0x69 // address pin high (VCC)
@@ -981,7 +982,7 @@ class MPU6050 {
         #endif
 
     private:
-        uint8_t devAddr;
+        XZIO *m_dev;
         uint8_t buffer[14];
 };
 

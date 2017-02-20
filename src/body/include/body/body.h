@@ -9,11 +9,12 @@
 #include <ros/ros.h>
 #include <sensor_msgs/Imu.h>
 // message type used to communicate GPIO output
-#include <body/mpu6050_gpio.h>
 
 #include "MPU6050.h"
+#include "mraa.hpp"
 
 // actually, this is MPU6050 SENSOR
+
 
 class Body
 {
@@ -23,11 +24,8 @@ public:
 	~Body();
 
 	void initializePublishers();
-	void fetchValues();
-	void setGPIOHigh();
-	void setGPIOLow();
-	int GpioInit();
 	void Feeling();
+	int Setup();
 
 private:
 
@@ -48,7 +46,6 @@ private:
 	ros::Publisher imu_publisher;
 	ros::Publisher gpio_publisher;
 	sensor_msgs::Imu data_out;  // variable name for our sensor_msgs::Imu output
-	body::mpu6050_gpio gpio_data_out;  // variable name for our gpio output
 	int16_t ax, ay, az, gx, gy, gz;  // temp variables to store data from imu.getMotion6(...)
 
 

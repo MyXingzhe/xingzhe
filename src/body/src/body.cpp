@@ -2,11 +2,47 @@
 #include "body.h"
 #include "mraa.hpp"
 
-const unsigned int GPIO = 30;
+MPU6050 mpu;
+
+// uncomment "OUTPUT_READABLE_QUATERNION" if you want to see the actual
+// quaternion components in a [w, x, y, z] format (not best for parsing
+// on a remote host such as Processing or something though)
+#define OUTPUT_READABLE_QUATERNION
+
+// uncomment "OUTPUT_READABLE_EULER" if you want to see Euler angles
+// (in degrees) calculated from the quaternions coming from the FIFO.
+// Note that Euler angles suffer from gimbal lock (for more info, see
+// http://en.wikipedia.org/wiki/Gimbal_lock)
+//#define OUTPUT_READABLE_EULER
+
+// uncomment "OUTPUT_READABLE_YAWPITCHROLL" if you want to see the yaw/
+// pitch/roll angles (in degrees) calculated from the quaternions coming
+// from the FIFO. Note this also requires gravity vector calculations.
+// Also note that yaw/pitch/roll angles suffer from gimbal lock (for
+// more info, see: http://en.wikipedia.org/wiki/Gimbal_lock)
+#define OUTPUT_READABLE_YAWPITCHROLL
+
 const double UPDATE_RATE = 50; // desired publication rate of IMU data
 const double limg = 1000;  // used to convert rotational accel to deg/s
 const double lima = 2*9.8;  // used to convert linear accel to m/s^2
-int8_t imuid=0;
+const unsigned int GPIO = 30;   // Pin 11, pg. 84 BBB SRM: GPIO1_13 = (1x32) + 13 = 45
+
+
+bool dmpReady = false;  // set true if DMP init was successful
+uint8_t mpuIntStatus;   // holds actual interrupt status byte from MPU
+uint8_t devStatus;      // return status after each device operation (0 = success, !0 = error)
+uint16_t packetSize;    // expected DMP packet size (default is 42 bytes)
+uint16_t fifoCount;     // count of all bytes currently in FIFO
+uint8_t fifoBuffer[64]; // FIFO storage buffer
+
+// orientation/motion vars
+Quaternion q;           // [w, x, y, z]         quaternion container
+VectorInt16 aa;         // [x, y, z]            accel sensor measurements
+VectorInt16 aaReal;     // [x, y, z]            gravity-free accel sensor measurements
+VectorInt16 aaWorld;    // [x, y, z]            world-frame accel sensor measurements
+VectorFloat gravity;    // [x, y, z]            gravity vector
+float euler[3];         // [psi, theta, phi]    Euler angle container
+float ypr[3];           // [yaw, pitch, roll]   yaw/pitch/roll container and gravity vector
 
 // packet structure for InvenSense teapot demo
 uint8_t teapotPacket[14] = { '$', 0x02, 0,0, 0,0, 0,0, 0,0, 0x00, 0x00, '\r', '\n' };
@@ -14,43 +50,6 @@ uint8_t teapotPacket[14] = { '$', 0x02, 0,0, 0,0, 0,0, 0,0, 0x00, 0x00, '\r', '\
 Body::Body(ros::NodeHandle* nodehandle)
      :nh_(*nodehandle)
 {
-    uint8_t status;
-    
-    ROS_INFO("in class constructor of Body");
-
-    initializePublishers();
-
-    ROS_INFO("Starting MPU6050");
-    // Type 0 to use the default address value for the MPU-6050 (Typically 68)
-    if (imuid > 0)
-        MPU6050 imu(imuid);
-    else
-        MPU6050 imu();
-
-    ROS_INFO("Initializing MPU6050...");
-    // Initialize the IMU setting the clock source, gyro-scale, accel-scale, sample rate 
-    // (sample rate is 8kHz divided by # in setRate function -- see MPU6050.cpp), disable 
-    // sleep mode, and sleep for 1 second at start-up
-    imu.initialize();
-
-    status = imu.dmpInitialize();
-
-    // supply your own gyro offsets here, scaled for min sensitivity
-    imu.setXGyroOffset(220);
-    imu.setYGyroOffset(76);
-    imu.setZGyroOffset(-85);
-    imu.setZAccelOffset(1788); // 1688 factory default for my test chip
-
-    if(status == 0) {
-        ROS_INFO("Enable MPU6050 OK!");
-        imu.setDMPEnabled(true); 
-    }
-
-    m_ready = true;
-    // get expected DMP packet size for later comparison
-    packet_size = imu.dmpGetFIFOPacketSize();
-
-    ROS_INFO("Done Initializing!"); 
 }
 
 Body::~Body()
@@ -58,25 +57,46 @@ Body::~Body()
 
 }
 
-int Body::GpioInit()
+int Body::Setup()
 {
-    uint8_t value;
-    m_gpio = new mraa::Gpio(GPIO);
-    m_gpio->useMmap(true);
-    mraa::Result response = m_gpio->dir(mraa::DIR_OUT_LOW);
-    if (response != mraa::SUCCESS) {
-        mraa::printError(response);
-        return -1;
+    // initialize device
+    printf("Initializing I2C devices...\n");
+    mpu.initialize();
+
+    // verify connection
+    printf("Testing device connections...\n");
+    printf(mpu.testConnection() ? "MPU6050 connection successful\n" : "MPU6050 connection failed\n");
+
+    // load and configure the DMP
+    printf("Initializing DMP...\n");
+    devStatus = mpu.dmpInitialize();
+    
+    // make sure it worked (returns 0 if so)
+    if (devStatus == 0) {
+        // turn on the DMP, now that it's ready
+        printf("Enabling DMP...\n");
+        mpu.setDMPEnabled(true);
+
+        // enable Arduino interrupt detection
+        //Serial.println(F("Enabling interrupt detection (Arduino external interrupt 0)..."));
+        //attachInterrupt(0, dmpDataReady, RISING);
+        mpuIntStatus = mpu.getIntStatus();
+
+        // set our DMP Ready flag so the main loop() function knows it's okay to use it
+        printf("DMP ready!\n");
+        dmpReady = true;
+
+        // get expected DMP packet size for later comparison
+        packetSize = mpu.dmpGetFIFOPacketSize();
+    } else {
+        // ERROR!
+        // 1 = initial memory load failed
+        // 2 = DMP configuration updates failed
+        // (if it's going to break, usually the code will be 1)
+        printf("DMP Initialization failed (code %d)\n", devStatus);
     }
 
-    value = m_gpio->read();  // Verifying GPIO was set correctly
-
-    if (value == 0)
-        ROS_INFO("GPIO is set Low, success!");
-    else
-        ROS_WARN("GPIO is set High, error!");
-
-    return 0;    
+    return 0;
 }
 
 
@@ -84,104 +104,78 @@ int Body::GpioInit()
 void Body::initializePublishers()  {
     ROS_INFO("Initializing Publishers: imu_publisher, gpio_publisher");
     imu_publisher = nh_.advertise<sensor_msgs::Imu>("mpu_6050", 1, true); // publish IMU data in package sensor_msgs::Imu
-    gpio_publisher = nh_.advertise<body::mpu6050_gpio>("gpio_out", 1, true);  // publish current GPIO value
 }
 
-// retrieve IMU angular and linear accel values from IMU registers
-void Body::fetchValues()  {
-    // Retrieve IMU register gyro/accel data
-    imu.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
-
-    data_out.header.stamp = ros::Time::now();  // time stamp the measurement
-
-    data_out.linear_acceleration.x = (double)((ax+32767)*2*lima)/65534-lima;  // acc
-    data_out.linear_acceleration.y = (double)((ay+32767)*2*lima)/65534-lima;
-    data_out.linear_acceleration.z = (double)((az+32767)*2*lima)/65534-lima;
-
-    data_out.angular_velocity.x = (double)((gx+32767)*2*limg)/65534-limg;  // gyro
-    data_out.angular_velocity.y = (double)((gy+32767)*2*limg)/65534-limg;
-    data_out.angular_velocity.z = (double)((gz+32767)*2*limg)/65534-limg;
-
-    data_out.angular_velocity.x = data_out.angular_velocity.x*3.1415926/180;  // change to rad/s
-    data_out.angular_velocity.y = data_out.angular_velocity.y*3.1415926/180;
-    data_out.angular_velocity.z = data_out.angular_velocity.z*3.1415926/180;
-  
-    imu_publisher.publish(data_out);  // publish
-}
-
-// set gpio high and publish 1
-void Body::setGPIOHigh()  {
-    m_gpio->write(1);
-    gpio_data_out.header.stamp = ros::Time::now();  // time stamp the measurement
-    gpio_data_out.data = 1;
-    gpio_publisher.publish(gpio_data_out);
-}
-
-// set gpio low and publish 0
-void Body::setGPIOLow()  {
-    m_gpio->write(0);
-    gpio_data_out.header.stamp = ros::Time::now();  // time stamp the measurement
-    gpio_data_out.data = 0;
-    gpio_publisher.publish(gpio_data_out);
-}
-
-#define OUTPUT_READABLE_EULER
-#define OUTPUT_READABLE_REALACCEL
 void Body::Feeling()
 {
+    // if programming failed, don't try to do anything
+    if (!dmpReady) return;
     // get current FIFO count
-    fifo_count = imu.getFIFOCount();
+    fifoCount = mpu.getFIFOCount();
 
-    imu.getFIFOBytes(fifo_buffer, packet_size);
-    fifo_count -= packet_size;
+    if (fifoCount == 1024) {
+        // reset so we can continue cleanly
+        mpu.resetFIFO();
+        printf("FIFO overflow!\n");
 
-#ifdef OUTPUT_READABLE_EULER
-    // display Euler angles in degrees
-    imu.dmpGetQuaternion(&q, fifo_buffer);
-    imu.dmpGetEuler(euler, &q);
-    ROS_INFO("euler %f:%f:%f\t", euler[0] * 180/M_PI, euler[1] * 180/M_PI, euler[2] * 180/M_PI);
-#endif
+    // otherwise, check for DMP data ready interrupt (this should happen frequently)
+    } else if (fifoCount >= 42) {
+        // read a packet from FIFO
+        mpu.getFIFOBytes(fifoBuffer, packetSize);
+        
+        #ifdef OUTPUT_READABLE_QUATERNION
+            // display quaternion values in easy matrix form: w x y z
+            mpu.dmpGetQuaternion(&q, fifoBuffer);
+            printf("quat %7.2f %7.2f %7.2f %7.2f    ", q.w,q.x,q.y,q.z);
+        #endif
 
-#ifdef OUTPUT_READABLE_YAWPITCHROLL
-    // display Euler angles in degrees
-    imu.dmpGetQuaternion(&q, fifo_buffer);
-    imu.dmpGetGravity(&gravity, &q);
-    imu.dmpGetYawPitchRoll(ypr, &q, &gravity);
-    ROS_INFO("ypr %f:%f:%f\t", ypr[0] * 180/M_PI, ypr[1] * 180/M_PI, ypr[2] * 180/M_PI);
-#endif
+        #ifdef OUTPUT_READABLE_EULER
+            // display Euler angles in degrees
+            mpu.dmpGetQuaternion(&q, fifoBuffer);
+            mpu.dmpGetEuler(euler, &q);
+            printf("euler %7.2f %7.2f %7.2f    ", euler[0] * 180/M_PI, euler[1] * 180/M_PI, euler[2] * 180/M_PI);
+        #endif
 
-#ifdef OUTPUT_READABLE_REALACCEL
-    // display real acceleration, adjusted to remove gravity
-    imu.dmpGetQuaternion(&q, fifo_buffer);
-    imu.dmpGetAccel(&aa, fifo_buffer);
-    imu.dmpGetGravity(&gravity, &q);
-    imu.dmpGetLinearAccel(&aaReal, &aa, &gravity);
-    ROS_INFO("areal %d:%d:%d\t", aaReal.x, aaReal.y, aaReal.z);
-#endif
+        #ifdef OUTPUT_READABLE_YAWPITCHROLL
+            // display Euler angles in degrees
+            mpu.dmpGetQuaternion(&q, fifoBuffer);
+            mpu.dmpGetGravity(&gravity, &q);
+            mpu.dmpGetYawPitchRoll(ypr, &q, &gravity);
+            printf("ypr  %7.2f %7.2f %7.2f    ", ypr[0] * 180/M_PI, ypr[1] * 180/M_PI, ypr[2] * 180/M_PI);
+        #endif
 
-#ifdef OUTPUT_READABLE_WORLDACCEL
-    // display initial world-frame acceleration, adjusted to remove gravity
-    // and rotated based on known orientation from quaternion
-    imu.dmpGetQuaternion(&q, fifo_buffer);
-    imu.dmpGetAccel(&aa, fifo_buffer);
-    imu.dmpGetGravity(&gravity, &q);
-    imu.dmpGetLinearAccel(&aaReal, &aa, &gravity);
-    imu.dmpGetLinearAccelInWorld(&aaWorld, &aaReal, &q);
-    ROS_INFO("aworld  %d:%d:%d\t", aaWorld.x, aaWorld.y, aaWorld.z);
-#endif
+        #ifdef OUTPUT_READABLE_REALACCEL
+            // display real acceleration, adjusted to remove gravity
+            mpu.dmpGetQuaternion(&q, fifoBuffer);
+            mpu.dmpGetAccel(&aa, fifoBuffer);
+            mpu.dmpGetGravity(&gravity, &q);
+            mpu.dmpGetLinearAccel(&aaReal, &aa, &gravity);
+            printf("areal %6d %6d %6d    ", aaReal.x, aaReal.y, aaReal.z);
+        #endif
 
-#ifdef OUTPUT_TEAPOT
-    // display quaternion values in InvenSense Teapot demo format:
-    teapotPacket[2] = fifo_buffer[0];
-    teapotPacket[3] = fifo_buffer[1];
-    teapotPacket[4] = fifo_buffer[4];
-    teapotPacket[5] = fifo_buffer[5];
-    teapotPacket[6] = fifo_buffer[8];
-    teapotPacket[7] = fifo_buffer[9];
-    teapotPacket[8] = fifo_buffer[12];
-    teapotPacket[9] = fifo_buffer[13];
-    Serial.write(teapotPacket, 14);
-    teapotPacket[11]++; // packetCount, loops at 0xFF on purpose
-#endif
-
+        #ifdef OUTPUT_READABLE_WORLDACCEL
+            // display initial world-frame acceleration, adjusted to remove gravity
+            // and rotated based on known orientation from quaternion
+            mpu.dmpGetQuaternion(&q, fifoBuffer);
+            mpu.dmpGetAccel(&aa, fifoBuffer);
+            mpu.dmpGetGravity(&gravity, &q);
+            mpu.dmpGetLinearAccelInWorld(&aaWorld, &aaReal, &q);
+            printf("aworld %6d %6d %6d    ", aaWorld.x, aaWorld.y, aaWorld.z);
+        #endif
+    
+        #ifdef OUTPUT_TEAPOT
+            // display quaternion values in InvenSense Teapot demo format:
+            teapotPacket[2] = fifoBuffer[0];
+            teapotPacket[3] = fifoBuffer[1];
+            teapotPacket[4] = fifoBuffer[4];
+            teapotPacket[5] = fifoBuffer[5];
+            teapotPacket[6] = fifoBuffer[8];
+            teapotPacket[7] = fifoBuffer[9];
+            teapotPacket[8] = fifoBuffer[12];
+            teapotPacket[9] = fifoBuffer[13];
+            Serial.write(teapotPacket, 14);
+            teapotPacket[11]++; // packetCount, loops at 0xFF on purpose
+        #endif
+        printf("\n");
+    }
 }

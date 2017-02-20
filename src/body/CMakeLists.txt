@@ -123,6 +123,7 @@ include_directories(include
 
 ## Declare a C++ library
  add_library(imu ../libs/imu/MPU6050.cpp)
+ add_library(xzio ../libs/xzio/xzio.cpp)
 # add_library(body
 #   src/${PROJECT_NAME}/body.cpp
 # )
@@ -140,7 +141,7 @@ include_directories(include
  add_dependencies(body_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
- target_link_libraries(body_node ${catkin_LIBRARIES} imu mraa)
+ target_link_libraries(body_node ${catkin_LIBRARIES} imu xzio mraa)
 
 #############
 ## Install ##
