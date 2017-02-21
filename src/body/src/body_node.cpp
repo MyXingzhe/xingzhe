@@ -1,5 +1,6 @@
 #include "ros/ros.h"
 #include "std_msgs/Float32.h"
+#include "sensor_msgs/Imu.h"
 
 #include "body.h"
 
@@ -15,6 +16,7 @@ int main(int argc, char **argv)
 
     ROS_INFO("main: instantiating an object of type ros_mpu6050");
     Body body(&nh);  // instantiate an ros_mpu6050 object and pass in pointer to nodehandle for constructor to use
+    body.Setup();
     ros::Rate sleep_timer(UPDATE_RATE);  // a timer for desired rate, 50Hz is a good speed. We set to half for 2 seperate sleeps
 
     ROS_INFO("Starting Data Recording From MPU6050");

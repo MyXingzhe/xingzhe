@@ -30,27 +30,23 @@ public:
 private:
 
 public:
-	uint16_t fifo_count;
-	uint16_t packet_size;
-	uint8_t fifo_buffer[64];
 
 private:
 	MPU6050 *m_imu;
-	MPU6050 imu;
-	mraa::Gpio *m_gpio;
+	MPU6050 mpu;
 
-	uint8_t dmpDataReady;
 	bool m_ready;
+	uint8_t m_status;
+	uint16_t packet_size;    // expected DMP packet size (default is 42 bytes)
+	uint16_t fifo_count;     // count of all bytes currently in FIFO
+	uint8_t fifo_buffer[64]; // FIFO storage buffer
 
 	ros::NodeHandle nh_;
 	ros::Publisher imu_publisher;
-	ros::Publisher gpio_publisher;
-	sensor_msgs::Imu data_out;  // variable name for our sensor_msgs::Imu output
-	int16_t ax, ay, az, gx, gy, gz;  // temp variables to store data from imu.getMotion6(...)
-
+	sensor_msgs::Imu imu_data;  // variable name for our sensor_msgs::Imu output
 
 	Quaternion q;           // [w, x, y, z]         quaternion container
-	VectorInt16 aa;         // [x, y, z]            accel sensor measurements
+	VectorInt16 accel;      // [x, y, z]            accel sensor measurements
 	VectorInt16 aaReal;     // [x, y, z]            gravity-free accel sensor measurements
 	VectorInt16 aaWorld;    // [x, y, z]            world-frame accel sensor measurements
 	VectorFloat gravity;    // [x, y, z]            gravity vector

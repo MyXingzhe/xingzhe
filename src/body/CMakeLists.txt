@@ -48,7 +48,6 @@ find_package(catkin REQUIRED COMPONENTS
  add_message_files(
    DIRECTORY ../../msg
    FILES
-   mpu6050_gpio.msg
  )
 
 ## Generate services in the 'srv' folder
