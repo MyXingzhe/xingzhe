@@ -55,6 +55,8 @@ int Body::Setup()
         printf("DMP Initialization failed (code %d)\n", m_status);
     }
 
+    initializePublishers();
+
     return 0;
 }
 
@@ -117,7 +119,7 @@ void Body::Feeling()
         mpu.dmpGetGravity(&gravity, &q);
         mpu.dmpGetLinearAccelInWorld(&aaWorld, &aaReal, &q);
     #endif
-ROS_INFO("%f:%f:%f:%f", imu_data.orientation.w, imu_data.orientation.x, imu_data.orientation.y, imu_data.orientation.z);
+        ROS_DEBUG("%f:%f:%f:%f", imu_data.orientation.w, imu_data.orientation.x, imu_data.orientation.y, imu_data.orientation.z);
         imu_publisher.publish(imu_data);
     }
 }
