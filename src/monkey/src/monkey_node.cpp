@@ -1,59 +1,71 @@
+#include <GL/glut.h>
+
 #include "ros/ros.h"
 #include "sensor_msgs/Imu.h"
 
-/**
- * This tutorial demonstrates simple receipt of messages over the ROS system.
- */
 void TryFeeling(const sensor_msgs::Imu& msg)
 {
 //  ROS_INFO("I feel: [%f-%f-%f-%f]", msg.orientation.w, msg.orientation.x, msg.orientation.y, msg.orientation.z);
   ROS_INFO("I feel ...");
 }
 
+void init(void)
+{
+    glClearColor(0.0, 0.0, 0.0, 0.0);
+    glMatrixMode(GL_PROJECTION);
+    glOrtho(-5, 5, -5, 5, 5, 15);
+    glMatrixMode(GL_MODELVIEW);
+    gluLookAt(0, 0, 10, 0, 0, 0, 0, 1, 0);
+
+    return;
+}
+
+void display(void)
+{
+    glClear(GL_COLOR_BUFFER_BIT);
+    glColor3f(1.0, 0, 0);
+    glutWireTeapot(3);
+
+    glutSwapBuffers();
+    return;
+}
+
+
 int main(int argc, char **argv)
 {
-  /**
-   * The ros::init() function needs to see argc and argv so that it can perform
-   * any ROS arguments and name remapping that were provided at the command line.
-   * For programmatic remappings you can use a different version of init() which takes
-   * remappings directly, but for most command-line programs, passing argc and argv is
-   * the easiest way to do it.  The third argument to init() is the name of the node.
-   *
-   * You must call one of the versions of ros::init() before using any other
-   * part of the ROS system.
-   */
   ros::init(argc, argv, "MonkeySun");
 
-  /**
-   * NodeHandle is the main access point to communications with the ROS system.
-   * The first NodeHandle constructed will fully initialize this node, and the last
-   * NodeHandle destructed will close down the node.
-   */
   ros::NodeHandle n;
-
-  /**
-   * The subscribe() call is how you tell ROS that you want to receive messages
-   * on a given topic.  This invokes a call to the ROS
-   * master node, which keeps a registry of who is publishing and who
-   * is subscribing.  Messages are passed to a callback function, here
-   * called chatterCallback.  subscribe() returns a Subscriber object that you
-   * must hold on to until you want to unsubscribe.  When all copies of the Subscriber
-   * object go out of scope, this callback will automatically be unsubscribed from
-   * this topic.
-   *
-   * The second parameter to the subscribe() function is the size of the message
-   * queue.  If messages are arriving faster than they are being processed, this
-   * is the number of messages that will be buffered up before beginning to throw
-   * away the oldest ones.
-   */
+  int rate = 10;
   ros::Subscriber sub = n.subscribe("mpu6050", 1000, TryFeeling);
 
-  /**
-   * ros::spin() will enter a loop, pumping callbacks.  With this version, all
-   * callbacks will be called from within this thread (the main one).  ros::spin()
-   * will exit when Ctrl-C is pressed, or the node is shutdown by the master.
-   */
+  glutInit(&argc, argv);
+
+  glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE);
+  glutInitWindowPosition(0, 0);
+  glutInitWindowSize(300, 300);
+  glutCreateWindow("OpenGL 3D View");
+  init();
+  glutDisplayFunc(display);
+  glutMainLoop();
+
   ros::spin();
+
+  // Tell ROS how fast to run this node.
+  ros::Rate r(rate);
+
+  ROS_INFO("Start Light Node");
+
+  // Main loop.
+  while (n.ok())
+  {
+    // Run spin function at the beginning of the loop to acquire new data from ROS topics.
+    ros::spinOnce();
+
+//    display();
+
+    r.sleep();
+  }
 
   return 0;
 }
