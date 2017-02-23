@@ -33,6 +33,8 @@
 
 #include "pru.h"
 
+/*  */
+
 class PRUPWM: PRU {
 public:
 	PRUPWM(uint32_t frequency);
