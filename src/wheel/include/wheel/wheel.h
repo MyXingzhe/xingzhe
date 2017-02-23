@@ -1,4 +1,4 @@
-#include "pruPWM.h"
+#include "prupwm.h"
 
 class Wheel
 {

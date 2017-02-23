@@ -20,8 +20,8 @@
 
 // Class derived from node-pru Node.js module
  
-#ifndef pru_h
-#define pru_h
+#ifndef prupwm_h
+#define prupwm_h
 
 // System headers
 #include <stdio.h>
@@ -31,25 +31,23 @@
 #include <unistd.h>
 #include <string>
 
-// PRU Driver headers
-#include "prussdrv.h"
-#include "pruss_intc_mapping.h"
+#include "pru.h"
 
-class PRU {
+class PRUPWM: PRU {
 public:
-	PRU(int number = 0);
-	~PRU();
-	
-	void execute(const char * program);
-	void stop();
-	void setSharedMemoryInt(unsigned int index, unsigned int value);
-	void setSharedMemory(unsigned int * array, unsigned int start, unsigned int length);
-	unsigned int getSharedMemoryInt(unsigned int index);
-	void getSharedMemory(unsigned int * memory, unsigned int start, unsigned int length);
+	PRUPWM(uint32_t frequency);
 
+	void start();
+	void setFrequency(uint32_t frequency);
+	void setChannelValue(uint32_t channel, unsigned long pwm_ns);
+	void setFailsafeValue(uint32_t channel, unsigned long pwm_ns);
+	void setFailsafeTimeout(uint32_t timeout_ms);
+	void setPRUDuty(uint32_t channel, unsigned long pwm_ns);
+	void updateFailsafe();
 private:
-	int pruNumber;
-	static unsigned int* memoryPtr;
-	static const unsigned int OFFSET_SHAREDRAM = 2048;
+	uint32_t pwmFrequency;
+	uint32_t failsafeTimeout;
+	const static uint32_t nanosecondsPerCycle = 5;
 };
+
 #endif

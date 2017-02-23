@@ -19,7 +19,7 @@
  */
 #include <stdint.h>
  
-#include "pruPWM.h"
+#include "prupwm.h"
 
 PRUPWM::PRUPWM(uint32_t frequency) : PRU(0) {
 	this->stop();

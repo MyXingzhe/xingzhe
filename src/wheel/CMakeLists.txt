@@ -114,12 +114,12 @@ catkin_package(
 # include_directories(include)
 include_directories(
   ${catkin_INCLUDE_DIRS}
-  ../prupwm/
+  ../libs/prupwm/
   ./include/wheel/
 )
 
 ## Declare a C++ library
- add_library(prupwm ../prupwm/pru.cpp)
+ add_library(prupwm ../libs/prupwm/pru.cpp ../libs/prupwm/prupwm.cpp)
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
