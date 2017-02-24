@@ -5,12 +5,14 @@ project(eye)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  roscpp
-  std_msgs
-)
+  image_transport roscpp cv_bridge sensor_msgs nodelet camera_info_manager rostest roslint)
+
+find_package(OpenCV REQUIRED)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
+find_package(Boost REQUIRED COMPONENTS thread system)
+set(V4L2_LIBRARIES v4l2)
 
 
 ## Uncomment this if the package has a setup.py. This macro ensures
@@ -101,7 +103,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES eye
-  CATKIN_DEPENDS roscpp std_msgs
+  CATKIN_DEPENDS image_transport roscpp cv_bridge sensor_msgs nodelet camera_info_manager
 #  DEPENDS system_lib
 )
 
@@ -128,16 +130,17 @@ include_directories(
 # add_dependencies(eye ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Declare a C++ executable
- add_executable(eye_node src/eye_node.cpp src/eye.cpp)
+add_executable(eye_node src/eye_node.cpp src/eye.cpp src/uvc_cam.cpp)
+add_executable(uvc_stereo_node src/stereo_node.cpp src/stereo.cpp src/uvc_cam.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
- add_dependencies(eye_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(eye_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS} ${V4L2_LIBRARIES}) 
+add_dependencies(uvc_stereo_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS}) 
 
 ## Specify libraries to link a library or executable target against
- target_link_libraries(eye_node
-   ${catkin_LIBRARIES}
- )
+target_link_libraries(eye_node ${catkin_LIBRARIES} ${OpenCV_LIBS} ${V4L2_LIBRARIES})
+target_link_libraries(uvc_stereo_node ${catkin_LIBRARIES} ${OpenCV_LIBS} ${V4L2_LIBRARIES})
 
 #############
 ## Install ##
