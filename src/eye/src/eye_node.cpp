@@ -4,7 +4,7 @@
 #include "camera.h"
 
 int main (int argc, char **argv) {
-  ros::init(argc, argv, "uvc_camera");
+  ros::init(argc, argv, "eye");
 
   uvc_camera::Camera camera(ros::NodeHandle(), ros::NodeHandle("~"));
 

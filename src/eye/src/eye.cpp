@@ -22,15 +22,15 @@ Camera::Camera(ros::NodeHandle _comm_nh, ros::NodeHandle _param_nh) :
       info_mgr(_comm_nh, "camera"), cam(0) {
 
       /* default config values */
-      width = 320;
-      height = 240;
-      fps = 10;
+      width = 640;
+      height = 480;
+      fps = 5;
       skip_frames = 0;
       frames_to_skip = 0;
       device = "/dev/video0";
       frame = "camera";
       rotate = false;
-      format = "rgb";
+      format = "jpeg";
 
       /* set up information manager */
       std::string url, camera_name;
