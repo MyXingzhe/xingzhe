@@ -20,8 +20,8 @@
 
 // Class derived from node-pru Node.js module
  
-#ifndef prupwm_h
-#define prupwm_h
+#ifndef __prupwm_h
+#define __prupwm_h
 
 // System headers
 #include <stdio.h>
@@ -30,6 +30,7 @@
 #include <errno.h>
 #include <unistd.h>
 #include <string>
+#include <stdint.h>
 
 #include "pru.h"
 

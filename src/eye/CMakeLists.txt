@@ -117,11 +117,12 @@ catkin_package(
 include_directories(
   ${catkin_INCLUDE_DIRS}
   ./include/eye/
+  ../libs/prupwm/
+  ../libs/servo/
 )
 
 ## Declare a C++ library
-# add_library(eye
-#   src/${PROJECT_NAME}/src/eye.cpp
+ add_library(servo ../libs/servo/servo_motor.cpp)
 # )
 
 ## Add cmake target dependencies of the library
@@ -135,7 +136,7 @@ add_executable(uvc_stereo_node src/stereo_node.cpp src/stereo.cpp src/uvc_cam.cp
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
-add_dependencies(eye_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS} ${V4L2_LIBRARIES}) 
+add_dependencies(eye_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS}) 
 add_dependencies(uvc_stereo_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS}) 
 
 ## Specify libraries to link a library or executable target against

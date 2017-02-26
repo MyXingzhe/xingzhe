@@ -47,16 +47,8 @@
 		"P9.14",    /* gpio1.18 */
 
 	/* ------ PRU PWM ------ */
-        "P9.31",
-        "P9.29",
-        "p9.30",
-        "p9.28",
-        "p9.42",
-        "p9.27",
-        "p9.41",
-        "p9.25",
-        "p8.12",
-        "p8.11",
+        "P8.16",    /* pr1_pru0_pru_r31_14,  left side */
+        "P8.27",    /* pr1_pru1_pru_r31_8,  right side */
 		"pru0",
 		"pru1",
 		"pruss",
@@ -232,18 +224,8 @@
 			motor_decoder_pinmux: motor_decoder_pinmux {
 				status = "okay";
 				pinctrl-single,pins = <
-					0x030 0x06  /* P8_12 to PRU output */
-					0x034 0x06  /* P8_11 to PRU output */
-					0x190 0x05  /* P9_31 to PRU output */
-                    0x194 0x05  /* P9_29 to PRU output */
-					0x198 0x05  /* P9_30 to PRU output */
-					0x19C 0x05  /* P9_28 to PRU output */
-                    0x1A0 0x05  /* P9_42 to PRU output */
-					0x1A4 0x05  /* P9_27 to PRU output */
-                    0x1A8 0x05  /* P9_41 to PRU output */
-					0x1AC 0x05  /* P9_25 to PRU output */
-					0x1B4 0x20  /* CLKOUT2 to input as per datasheet (to enable P9_41) */
-					0x164 0x20  /* GPIO0_7 to input as per datasheet (to enable P9_42) */
+					0x38 0x2e   /* pr1_pru0_pru_r31_14, leftside, P8_16, mode6 in */
+					0xe0 0x2e   /* pr1_pru1_pru_r31_8, rightside, P8_27, mode6 in */
 				>;
 			};
 		};

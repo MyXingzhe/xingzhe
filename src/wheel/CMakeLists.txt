@@ -127,7 +127,7 @@ include_directories(
 # add_dependencies(wheel ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Declare a C++ executable
- add_executable(wheel_node src/wheel_node.cpp)
+ add_executable(wheel_node src/wheel_node.cpp src/dc_motor.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above

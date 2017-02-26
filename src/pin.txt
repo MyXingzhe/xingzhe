@@ -8,8 +8,8 @@
 08      GPIO67: GPIO 					8-8
 09      GPIO69: GPIO 					8-9
 10      GPIO68: GPIO 					8-10
-11      GPIO45: GPIO 					8-11
-12      GPIO44: GPIO 					8-12
+11      GPIO45: GPIO 					8-11	pr1_pru0_pru_r30_15
+12      GPIO44: GPIO 					8-12	pr1_pru0_pru_r30_14
 13      GPIO23: GPIO PWM  				8-13
 14      GPIO26: GPIO 					8-14
 15      GPIO47: GPIO 					8-15
@@ -25,68 +25,68 @@
 25     MMC1_D0: 						8-25
 26      GPIO61: GPIO 					8-26
 27      GPIO86: GPIO 					8-27
-28      GPIO88: GPIO 
-29      GPIO87: GPIO 
-30      GPIO89: GPIO 
-31      GPIO10: GPIO 
-32      GPIO11: GPIO 
-33       GPIO9: GPIO 
-34      GPIO81: GPIO PWM  
-35       GPIO8: GPIO 
-36      GPIO80: GPIO PWM  
-37      GPIO78: GPIO UART 
-38      GPIO79: GPIO UART 
-39      GPIO76: GPIO 
-40      GPIO77: GPIO 
-41      GPIO74: GPIO 
-42      GPIO75: GPIO 
-43      GPIO72: GPIO 
-44      GPIO73: GPIO 
-45      GPIO70: GPIO PWM  
-46      GPIO71: GPIO PWM  
-47         GND: 
-48         GND: 
-49        3.3V: 
-50        3.3V: 
-51          5V: 
-52          5V: 
-53          5V: 
-54          5V: 
-55         PWR: 
-56       RESET: 
-57      GPIO30: GPIO UART 
-58      GPIO60: GPIO 
-59      GPIO31: GPIO UART 
-60      GPIO50: GPIO PWM  
-61      GPIO48: GPIO 
-62      GPIO51: GPIO PWM  
-63     I2C1SCL: I2C  SPI  
-64     I2C1SDA: I2C  SPI  
-65     I2C2SCL: I2C  
-66     I2C2SDA: I2C  
-67       GPIO3: GPIO SPI  PWM  UART 
-68       GPIO2: GPIO SPI  PWM  UART 
-69      GPIO49: GPIO 
-70      GPIO15: GPIO UART 
-71     GPIO117: GPIO 
-72      GPIO14: GPIO UART 
-73     GPIO115: GPIO 
-74    MCASP0XX: SPI  
-75     MMC1_SD: 
-76     MMC2_SD: 
-77     MMC0_SD: 
-78     VDD_ADC: 
-79        AIN4: AIO  
-80     GND_ADC: 
-81        AIN6: AIO  
-82        AIN5: AIO  
-83        AIN2: AIO  
-84        AIN3: AIO  
-85        AIN0: AIO  
-86        AIN1: AIO  
-87      GPIO20: GPIO 
-88       GPIO7: GPIO 
-89         GND: 
-90         GND: 
-91         GND: 
-92         GND: 
+28      GPIO88: GPIO 					8-28
+29      GPIO87: GPIO  					8-29
+30      GPIO89: GPIO  					8-30
+31      GPIO10: GPIO  					8-31
+32      GPIO11: GPIO  					8-32
+33       GPIO9: GPIO  					8-33
+34      GPIO81: GPIO PWM  				8-34
+35       GPIO8: GPIO  					8-35
+36      GPIO80: GPIO PWM  				8-36
+37      GPIO78: GPIO UART 				8-37
+38      GPIO79: GPIO UART 				8-38
+39      GPIO76: GPIO  					8-39
+40      GPIO77: GPIO  					8-40
+41      GPIO74: GPIO  					8-41
+42      GPIO75: GPIO  					8-42
+43      GPIO72: GPIO  					8-43
+44      GPIO73: GPIO  					8-44
+45      GPIO70: GPIO PWM   				8-45
+46      GPIO71: GPIO PWM   				8-46
+47         GND: 						9-1
+48         GND: 						9-2
+49        3.3V: 						9-3
+50        3.3V: 						9-4
+51          5V: 						9-5
+52          5V: 						9-6
+53          5V: 						9-7
+54          5V: 						9-8
+55         PWR: 						9-9
+56       RESET: 						9-10
+57      GPIO30: GPIO UART 				9-11
+58      GPIO60: GPIO 					9-12
+59      GPIO31: GPIO UART 				9-13
+60      GPIO50: GPIO PWM  				9-14
+61      GPIO48: GPIO 					9-15
+62      GPIO51: GPIO PWM  				9-16
+63     I2C1SCL: I2C  SPI  				9-17
+64     I2C1SDA: I2C  SPI  				9-18
+65     I2C2SCL: I2C  					9-19
+66     I2C2SDA: I2C  					9-20
+67       GPIO3: GPIO SPI  PWM  UART 	9-21
+68       GPIO2: GPIO SPI  PWM  UART 	9-22
+69      GPIO49: GPIO 					9-23
+70      GPIO15: GPIO UART 				9-24
+71     GPIO117: GPIO  					9-25	pr1_pru0_pru_r30_7
+72      GPIO14: GPIO UART 				9-26
+73     GPIO115: GPIO  					9-27	pr1_pru0_pru_r30_5
+74    MCASP0XX: SPI   					9-28	pr1_pru0_pru_r30_3
+75     MMC1_SD: 						9-29	pr1_pru0_pru_r30_1
+76     MMC2_SD: 						9-30	pr1_pru0_pru_r30_2
+77     MMC0_SD: 						9-31	pr1_pru0_pru_r30_0
+78     VDD_ADC: 						9-32
+79        AIN4: AIO  					9-33
+80     GND_ADC: 						9-34
+81        AIN6: AIO   					9-35
+82        AIN5: AIO   					9-36
+83        AIN2: AIO   					9-37
+84        AIN3: AIO   					9-38
+85        AIN0: AIO   					9-39
+86        AIN1: AIO   					9-40
+87      GPIO20: GPIO  					9-41	pr1_pru0_pru_r30_6
+88       GPIO7: GPIO  					9-42	pr1_pru0_pru_r30_4
+89         GND: 						9-43
+90         GND: 						9-44
+91         GND: 						9-45
+92         GND: 						9-46
