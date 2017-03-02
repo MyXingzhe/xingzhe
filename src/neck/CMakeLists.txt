@@ -1,18 +1,16 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(eye)
+project(neck)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  image_transport roscpp cv_bridge sensor_msgs nodelet camera_info_manager rostest roslint)
-
-find_package(OpenCV REQUIRED)
+  roscpp
+  std_msgs
+)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
-find_package(Boost REQUIRED COMPONENTS thread system)
-set(V4L2_LIBRARIES v4l2)
 
 
 ## Uncomment this if the package has a setup.py. This macro ensures
@@ -101,9 +99,9 @@ set(V4L2_LIBRARIES v4l2)
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-  INCLUDE_DIRS include
-  LIBRARIES eye
-  CATKIN_DEPENDS image_transport roscpp cv_bridge sensor_msgs nodelet camera_info_manager
+#  INCLUDE_DIRS include
+#  LIBRARIES neck
+#  CATKIN_DEPENDS roscpp std_msgs
 #  DEPENDS system_lib
 )
 
@@ -116,28 +114,31 @@ catkin_package(
 # include_directories(include)
 include_directories(
   ${catkin_INCLUDE_DIRS}
-  ./include/eye/
+  ../libs/prupwm/
+  ../libs/pwmss/
+  ../libs/servo/
 )
 
 ## Declare a C++ library
+ add_library(servo ../libs/servo/servo_motor.cpp)
+ add_library(pwmss ../libs/pwmss/pwmss.cpp)
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
 ## either from message generation or dynamic reconfigure
-# add_dependencies(eye ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+# add_dependencies(neck ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Declare a C++ executable
-add_executable(eye_node src/eye_node.cpp src/eye.cpp src/uvc_cam.cpp)
-add_executable(uvc_stereo_node src/stereo_node.cpp src/stereo.cpp src/uvc_cam.cpp)
+ add_executable(neck_node src/neck_node.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
-add_dependencies(eye_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS}) 
-add_dependencies(uvc_stereo_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS}) 
+# add_dependencies(neck_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(eye_node ${catkin_LIBRARIES} ${OpenCV_LIBS} ${V4L2_LIBRARIES})
-target_link_libraries(uvc_stereo_node ${catkin_LIBRARIES} ${OpenCV_LIBS} ${V4L2_LIBRARIES})
+ target_link_libraries(neck_node
+   ${catkin_LIBRARIES}
+ )
 
 #############
 ## Install ##
@@ -154,18 +155,18 @@ target_link_libraries(uvc_stereo_node ${catkin_LIBRARIES} ${OpenCV_LIBS} ${V4L2_
 # )
 
 ## Mark executables and/or libraries for installation
- install(TARGETS eye_node
-   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
- )
+# install(TARGETS neck neck_node
+#   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+#   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+#   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+# )
 
 ## Mark cpp header files for installation
- install(DIRECTORY include/${PROJECT_NAME}/
-   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
-   FILES_MATCHING PATTERN "*.h"
-   PATTERN ".svn" EXCLUDE
- )
+# install(DIRECTORY include/${PROJECT_NAME}/
+#   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+#   FILES_MATCHING PATTERN "*.h"
+#   PATTERN ".svn" EXCLUDE
+# )
 
 ## Mark other files for installation (e.g. launch and bag files, etc.)
 # install(FILES
@@ -179,7 +180,7 @@ target_link_libraries(uvc_stereo_node ${catkin_LIBRARIES} ${OpenCV_LIBS} ${V4L2_
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_eye.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_neck.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
