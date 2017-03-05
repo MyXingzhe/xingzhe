@@ -9,8 +9,8 @@
 
 #include "pwmss.h"
 
-Pwmss::Pwmss(uint32_t pin) {
-	m_pwm = new mraa::Pwm(pin);
+Pwmss::Pwmss(uint32_t pin, int chipid) {
+	m_pwm = new mraa::Pwm(pin, true, chipid);
 }
 
 void Pwmss::start() {

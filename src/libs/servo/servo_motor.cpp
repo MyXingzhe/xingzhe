@@ -12,6 +12,10 @@ ServoMotor::ServoMotor(uint32_t channel, uint32_t mode)
 	m_channel = channel;
 
 	m_mode = mode;
+
+	if(m_mode == PWM_TYPE_PWMSS) {
+		m_pwm = new Pwmss(0, -1);
+	}
 }
 
 ServoMotor::~ServoMotor()

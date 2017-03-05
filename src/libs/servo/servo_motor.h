@@ -25,6 +25,10 @@ public:
 private:
 
 public:
+enum {
+	PWM_TYPE_PRUPWM = 0,
+	PWM_TYPE_PWMSS
+};
 
 private:
 	uint32_t m_channel;

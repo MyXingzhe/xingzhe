@@ -286,7 +286,7 @@
 		__overlay__ {
 			status = "okay";
 			pinctrl-names = "default";
-			pinctrl-0 = <&bb_i2c2_pins>;
+			pinctrl-0 = <&hm_gyro_pins>;
 
 			/* this is the configuration part */
 			clock-frequency = <100000>;
