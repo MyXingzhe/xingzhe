@@ -4,11 +4,11 @@
 #include <mraa.hpp>
 
 
-/* pwmss 0 eCAP0 <--> pwmchip0 */
 /* pwmss 0 pwm0  <--> pwmchip2 */
 /* pwmss 1 pwm1  <--> pwmchip4 */
-/* pwmss 2 eCAP0 <--> pwmchip1 */
 /* pwmss 2 pwm0  <--> pwmchip6 */
+/* pwmss 0 eCAP0 <--> pwmchip0 */
+/* pwmss 2 eCAP0 <--> pwmchip1 */
 
 class Pwmss {
 public:

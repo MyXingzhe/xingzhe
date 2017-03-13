@@ -7,13 +7,13 @@
  *
  * version 1.1 - 2013-08-01 initial version copied from 2191-R2.dts
  * version 1.2 - 2013-08-05 created version for BeBoPr with enable workaround.
- *               Can be used with all BeagleBone colors. On a BBB, use with
- *               uEnv.txt that disables HDMI and eMMC and loads this overlay,
- *               as shown below (optargs all on a single line!):
+ *			   Can be used with all BeagleBone colors. On a BBB, use with
+ *			   uEnv.txt that disables HDMI and eMMC and loads this overlay,
+ *			   as shown below (optargs all on a single line!):
  *
- *                  optargs=quiet capemgr.disable_partno=BB-BONELT-HDMI,\
- *                                                       BB-BONELT-HDMIN,\
- *                                capemgr.enable_partno=bone-robot-hm
+ *				  optargs=quiet capemgr.disable_partno=BB-BONELT-HDMI,\
+ *													   BB-BONELT-HDMIN,\
+ *								capemgr.enable_partno=bone-robot-hm
  *
  */
 /dts-v1/;
@@ -28,54 +28,54 @@
 	version = "00A0";
 
 	exclusive-use =
-	/* state the resources this cape uses */
+		/* state the resources this cape uses */
 
-	/* ------ PWM ------ */
-		"P8.13",    /* EHRPWM2B */
-		"P8.19",    /* EHRPWM2A */
-		"P9.21",    /* EHRPWM0B */
-		"P9.22",    /* EHRPWM0A */
+		/* ------ PWM ------ */
+		"P8.13",	/* EHRPWM2B */
+		"P8.19",	/* EHRPWM2A */
+		"P9.21",	/* EHRPWM0B */
+		"P9.22",	/* EHRPWM0A */
 		"ehrpwm2A",
 		"ehrpwm2B",
 		"ehrpwm0A",
 		"ehrpwm0B",
 
-	/* ------ DC MOTOR DIRECTION ------ */
-		"P9.11",    /* gpio0.30 */
-		"P9.12",    /* gpio1.28 */
-		"P9.13",    /* gpio0.31 */
-		"P9.14",    /* gpio1.18 */
+		/* ------ DC MOTOR DIRECTION ------ */
+		"P9.11",	/* gpio0.30 */
+		"P9.12",	/* gpio1.28 */
+		"P9.13",	/* gpio0.31 */
+		"P9.14",	/* gpio1.18 */
 
-	/* ------ PRU PWM ------ */
-        "P9.31",
-        "P9.29",
-        "p9.30",
-        "p9.28",
-        "p9.42",
-        "p9.27",
-        "p9.41",
-        "p9.25",
-        "p8.12",
-        "p8.11",
+		/* ------ PRU PWM ------ */
+		"P9.31",
+		"P9.29",
+		"p9.30",
+		"p9.28",
+		"p9.42",
+		"p9.27",
+		"p9.41",
+		"p9.25",
+		"p8.12",
+		"p8.11",
 		"pru0",
 		"pru1",
 		"pruss",
 
-	/* ------ KEYES LED ------ */
-        "P9.15",
-        "P9.16",
-        "P9.23",
+		/* ------ KEYES LED ------ */
+		"P9.15",
+		"P9.16",
+		"P9.23",
 
-    /* ------ USONIC ------ */
-    	"P9.18",		// i2c1_sda
-    	"P9.17",		// i2c1_scl
-    	"i2c1",
+		/* ------ USONIC ------ */
+		"P9.18",		// i2c1_sda
+		"P9.17",		// i2c1_scl
+		"i2c1",
 
-	/* ------ MPU6050 ------ */
+		/* ------ MPU6050 ------ */
 		/* the pin header uses */
 		"P9.20",	/* i2c2_sda */
 		"P9.19",	/* i2c2_scl */
-        "P8.7",     /* interrupt flag */
+		"P8.7",	 /* interrupt flag */
 		/* the hardware ip uses */
 		"i2c2";
 
@@ -168,7 +168,7 @@
 				pwm-names	= "left_wheel";
 				pinctrl-names	= "default";
 				pinctrl-0	= <&P8_13_ehrpwm_pin>;
-				enabled		= <0>;
+				enabled		= <1>;
 				duty		= <1500000>;
 				status		= "okay";
 			};
@@ -179,7 +179,7 @@
 				pwm-names	= "right_wheel";
 				pinctrl-names	= "default";
 				pinctrl-0	= <&P8_19_ehrpwm_pin>;
-				enabled		= <0>;
+				enabled		= <1>;
 				duty		= <1500000>;
 				status		= "okay";
 			};
@@ -190,7 +190,7 @@
 				pwm-names	= "servo_motor1";
 				pinctrl-names	= "default";
 				pinctrl-0	= <&P9_22_ehrpwm_pin>;
-				enabled		= <0>;
+				enabled		= <1>;
 				duty		= <1500000>;
 				status		= "okay";
 			};
@@ -201,7 +201,7 @@
 				pwm-names	= "servo_motor2";
 				pinctrl-names	= "default";
 				pinctrl-0	= <&P9_21_ehrpwm_pin>;
-				enabled		= <0>;
+				enabled		= <1>;
 				duty		= <1500000>;
 				status		= "okay";
 			};
@@ -235,12 +235,12 @@
 					0x030 0x06  /* P8_12 to PRU output */
 					0x034 0x06  /* P8_11 to PRU output */
 					0x190 0x05  /* P9_31 to PRU output */
-                    0x194 0x05  /* P9_29 to PRU output */
+					0x194 0x05  /* P9_29 to PRU output */
 					0x198 0x05  /* P9_30 to PRU output */
 					0x19C 0x05  /* P9_28 to PRU output */
-                    0x1A0 0x05  /* P9_42 to PRU output */
+					0x1A0 0x05  /* P9_42 to PRU output */
 					0x1A4 0x05  /* P9_27 to PRU output */
-                    0x1A8 0x05  /* P9_41 to PRU output */
+					0x1A8 0x05  /* P9_41 to PRU output */
 					0x1AC 0x05  /* P9_25 to PRU output */
 					0x1B4 0x20  /* CLKOUT2 to input as per datasheet (to enable P9_41) */
 					0x164 0x20  /* GPIO0_7 to input as per datasheet (to enable P9_42) */
@@ -276,7 +276,7 @@
 				pinctrl-single,pins = <
 					0x178 0x73	/* spi0_d1.i2c1_sda, SLEWCTRL_SLOW | INPUT_PULLUP | MODE2 */
 					0x17c 0x73	/* spi0_cs0.i2c1_scl, SLEWCTRL_SLOW | INPUT_PULLUP | MODE2 */
-                    0x90 0x37   /* gpio2[2] acts as the interrupt flag */
+					0x90 0x37   /* gpio2[2] acts as the interrupt flag */
 				>;
 			};
 		};
