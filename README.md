@@ -12,7 +12,7 @@ MPU6050
 
 
 * PRU
-PRU0 -- PWM using for dc-motor & servo-motor
+PRU0 -- PWM using for dc-motor & servo-motor<br>
 PRU0 Output pins
 Signal Pin Mode DT Offset Pin mux value
 pr1_pru0_pru_r30_0 P9_31 5 0x190 0x05
