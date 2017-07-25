@@ -2,5 +2,5 @@
 
 echo "Compiling the overlay from .dts to .dtbo"
 
-dtc -O dtb -o BONE-ROBOT-XINGZHE-00A0.dtbo -b 0 -@ BONE-ROBOT-XINGZHE-00A0.dts
+dtc -O dtb -o XINGZHE-00A0.dtbo -b 0 -@ XINGZHE-00A0.dts
 dtc -O dtb -o RoboticsCape-00A0.dtbo -b 0 -@ RoboticsCape-00A0.dts
