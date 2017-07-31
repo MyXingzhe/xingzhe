@@ -18,71 +18,47 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
  
-#include "pru.h"
+#include <stdio.h>
+#include <sys/mman.h>
+#include <fcntl.h>
+#include <errno.h>
+#include <unistd.h>
+#include <string.h>
 
-unsigned int* PRU::memoryPtr = NULL;
+// Driver header file
+#include "prussdrv.h"
+#include <pruss_intc_mapping.h>
 
-PRU::PRU(int number) {
-	// Store the PRU number (0 or 1)
-	if (number < 2) {
-		this->pruNumber = number;
-	} else {
-		this->pruNumber = 0;
-	}
+/******************************************************************************
+* Global Function Definitions                                                 *
+******************************************************************************/
 
-	// Initialise driver
-	prussdrv_init ();
-	
-	// Open interrupt
-	unsigned int ret = prussdrv_open(PRU_EVTOUT_0);
-	if (ret) {
-		printf("prussdrv_open open failed\n");
-		return;
-	}
-	
-	//Initialise interrupt
-	tpruss_intc_initdata pruss_intc_initdata = PRUSS_INTC_INITDATA;	
-	prussdrv_pruintc_init(&pruss_intc_initdata);
-	
-	// Allocate shared PRU memory
-	if (!this->memoryPtr) {
-		static void *sharedMem;
-		prussdrv_map_prumem(PRUSS0_SHARED_DATARAM, &sharedMem);
-		this->memoryPtr = (unsigned int*) sharedMem;
-	}
+#define PRU_BIN_NAME  "pru.bin"
+
+int main (void)
+{
+    unsigned int ret;
+    tpruss_intc_initdata pruss_intc_initdata = PRUSS_INTC_INITDATA;
+
+    printf("\nINFO: Starting PRU.\r\n");
+    /* Initialize the PRU */
+    prussdrv_init ();
+
+    /* Open PRU Interrupt */
+    ret = prussdrv_open(PRU_EVTOUT_0);
+    if (ret)
+    {
+        printf("prussdrv_open open failed\n");
+        return (ret);
+    }
+
+    /* Get the interrupt initialized */
+    prussdrv_pruintc_init(&pruss_intc_initdata);
+
+    /* Execute example on PRU */
+    printf("\tINFO: Executing PRU.\r\n");
+    prussdrv_exec_program (PRU_NUM, "PRU_BIN_NAME");
+
+
+    return(0);
 }
-
-PRU::~PRU() {
-	this->stop();
-    prussdrv_exit ();
-};
-
-void PRU::execute(const char * program) {
-	prussdrv_exec_program (this->pruNumber, (char *)program);
-	
-};
-
-void PRU::stop() {
-	prussdrv_pru_disable(this->pruNumber); 
-}
-
-void PRU::setSharedMemoryInt(unsigned int index, unsigned int value) {
-	this->memoryPtr[PRU::OFFSET_SHAREDRAM + index] = value;
-};
-
-void PRU::setSharedMemory(unsigned int * array, unsigned int start, unsigned int length) {
-	for (int i = 0; i<length; i++) {
-		this->setSharedMemoryInt(start + i, array[i]);
-	}
-};
-
-unsigned int PRU::getSharedMemoryInt(unsigned int index) {
-	return this->memoryPtr[PRU::OFFSET_SHAREDRAM + index];
-};
-
-void PRU::getSharedMemory(unsigned int * memory, unsigned int start, unsigned int length) {
-	for (unsigned int i = 0; i<length; i++) {
-		memory[i] = this->getSharedMemoryInt(start + i);
-	}
-};
-
