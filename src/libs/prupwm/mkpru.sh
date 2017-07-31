@@ -1,3 +1,3 @@
 #!/bin/sh
-./pasm -b pwm.p pwm.bin
+pasm -b pwm.p pwm
 
