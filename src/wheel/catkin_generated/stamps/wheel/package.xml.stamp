@@ -4,10 +4,7 @@
   <version>0.0.0</version>
   <description>The wheel package</description>
 
-  <!-- One maintainer tag required, multiple allowed, one person per tag --> 
-  <!-- Example:  -->
-  <!-- <maintainer email="jane.doe@example.com">Jane Doe</maintainer> -->
-  <maintainer email="bbb@todo.todo">bbb</maintainer>
+  <maintainer email="2676902@qq.com">bbb</maintainer>
 
 
   <!-- One license tag required, multiple allowed, one license per tag -->
@@ -16,10 +13,7 @@
   <license>TODO</license>
 
 
-  <!-- Url tags are optional, but mutiple are allowed, one per tag -->
-  <!-- Optional attribute type can be: website, bugtracker, or repository -->
-  <!-- Example: -->
-  <!-- <url type="website">http://wiki.ros.org/wheel</url> -->
+  <url type="website">https://github.com/MyXingzhe/xingzhe</url>
 
 
   <!-- Author tags are optional, mutiple are allowed, one per tag -->

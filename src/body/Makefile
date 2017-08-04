@@ -48,78 +48,13 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bbb/projects/xingzhe/src
+CMAKE_SOURCE_DIR = /home/bone/projects/xingzhe/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bbb/projects/xingzhe/src
+CMAKE_BINARY_DIR = /home/bone/projects/xingzhe/src
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
 
 # Special rule for the target install
 install: preinstall
@@ -133,16 +68,81 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # The main all target
 all: cmake_check_build_system
-	cd /home/bbb/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_progress_start /home/bbb/projects/xingzhe/src/CMakeFiles /home/bbb/projects/xingzhe/src/body/CMakeFiles/progress.marks
-	cd /home/bbb/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 body/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bbb/projects/xingzhe/src/CMakeFiles 0
+	cd /home/bone/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles /home/bone/projects/xingzhe/src/body/CMakeFiles/progress.marks
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 body/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/bbb/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 body/clean
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 body/clean
 .PHONY : clean
 
 # The main clean target
@@ -152,22 +152,217 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/bbb/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 body/preinstall
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 body/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/bbb/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 body/preinstall
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 body/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/bbb/projects/xingzhe/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/bone/projects/xingzhe/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
+body/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+.PHONY : body/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_nodejs: body/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+geometry_msgs_generate_messages_nodejs/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make body/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
+.PHONY : geometry_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+body/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+.PHONY : body/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_lisp: body/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_lisp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_lisp/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make body/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
+.PHONY : geometry_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+body/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+.PHONY : body/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_eus: body/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_eus
+
+# fast build rule for target.
+geometry_msgs_generate_messages_eus/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make body/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
+.PHONY : geometry_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+body/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+.PHONY : body/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_py: body/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_py
+
+# fast build rule for target.
+geometry_msgs_generate_messages_py/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make body/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+.PHONY : geometry_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+body/CMakeFiles/body_generate_messages_cpp.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/body_generate_messages_cpp.dir/rule
+.PHONY : body/CMakeFiles/body_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+body_generate_messages_cpp: body/CMakeFiles/body_generate_messages_cpp.dir/rule
+
+.PHONY : body_generate_messages_cpp
+
+# fast build rule for target.
+body_generate_messages_cpp/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/body_generate_messages_cpp.dir/build.make body/CMakeFiles/body_generate_messages_cpp.dir/build
+.PHONY : body_generate_messages_cpp/fast
+
+# Convenience name for target.
+body/CMakeFiles/body_genpy.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/body_genpy.dir/rule
+.PHONY : body/CMakeFiles/body_genpy.dir/rule
+
+# Convenience name for target.
+body_genpy: body/CMakeFiles/body_genpy.dir/rule
+
+.PHONY : body_genpy
+
+# fast build rule for target.
+body_genpy/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/body_genpy.dir/build.make body/CMakeFiles/body_genpy.dir/build
+.PHONY : body_genpy/fast
+
+# Convenience name for target.
+body/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+.PHONY : body/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_lisp: body/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_lisp
+
+# fast build rule for target.
+sensor_msgs_generate_messages_lisp/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make body/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
+.PHONY : sensor_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+body/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+.PHONY : body/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_py: body/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_py
+
+# fast build rule for target.
+sensor_msgs_generate_messages_py/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make body/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+.PHONY : sensor_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+body/CMakeFiles/body_generate_messages_eus.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/body_generate_messages_eus.dir/rule
+.PHONY : body/CMakeFiles/body_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+body_generate_messages_eus: body/CMakeFiles/body_generate_messages_eus.dir/rule
+
+.PHONY : body_generate_messages_eus
+
+# fast build rule for target.
+body_generate_messages_eus/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/body_generate_messages_eus.dir/build.make body/CMakeFiles/body_generate_messages_eus.dir/build
+.PHONY : body_generate_messages_eus/fast
+
+# Convenience name for target.
+body/CMakeFiles/body_geneus.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/body_geneus.dir/rule
+.PHONY : body/CMakeFiles/body_geneus.dir/rule
+
+# Convenience name for target.
+body_geneus: body/CMakeFiles/body_geneus.dir/rule
+
+.PHONY : body_geneus
+
+# fast build rule for target.
+body_geneus/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/body_geneus.dir/build.make body/CMakeFiles/body_geneus.dir/build
+.PHONY : body_geneus/fast
+
+# Convenience name for target.
+body/CMakeFiles/xzio.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/xzio.dir/rule
+.PHONY : body/CMakeFiles/xzio.dir/rule
+
+# Convenience name for target.
+xzio: body/CMakeFiles/xzio.dir/rule
+
+.PHONY : xzio
+
+# fast build rule for target.
+xzio/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/xzio.dir/build.make body/CMakeFiles/xzio.dir/build
+.PHONY : xzio/fast
+
+# Convenience name for target.
+body/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+.PHONY : body/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_cpp: body/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_cpp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_cpp/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make body/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+.PHONY : geometry_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+body/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+.PHONY : body/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_nodejs: body/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+sensor_msgs_generate_messages_nodejs/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make body/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
+.PHONY : sensor_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
 body/CMakeFiles/body_node.dir/rule:
-	cd /home/bbb/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/body_node.dir/rule
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/body_node.dir/rule
 .PHONY : body/CMakeFiles/body_node.dir/rule
 
 # Convenience name for target.
@@ -177,35 +372,212 @@ body_node: body/CMakeFiles/body_node.dir/rule
 
 # fast build rule for target.
 body_node/fast:
-	cd /home/bbb/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/body_node.dir/build.make body/CMakeFiles/body_node.dir/build
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/body_node.dir/build.make body/CMakeFiles/body_node.dir/build
 .PHONY : body_node/fast
 
-src/MPU6050.o: src/MPU6050.cpp.o
+# Convenience name for target.
+body/CMakeFiles/body_gennodejs.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/body_gennodejs.dir/rule
+.PHONY : body/CMakeFiles/body_gennodejs.dir/rule
 
-.PHONY : src/MPU6050.o
+# Convenience name for target.
+body_gennodejs: body/CMakeFiles/body_gennodejs.dir/rule
+
+.PHONY : body_gennodejs
+
+# fast build rule for target.
+body_gennodejs/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/body_gennodejs.dir/build.make body/CMakeFiles/body_gennodejs.dir/build
+.PHONY : body_gennodejs/fast
+
+# Convenience name for target.
+body/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+.PHONY : body/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_cpp: body/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_cpp
+
+# fast build rule for target.
+sensor_msgs_generate_messages_cpp/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make body/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
+.PHONY : sensor_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+body/CMakeFiles/body_generate_messages.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/body_generate_messages.dir/rule
+.PHONY : body/CMakeFiles/body_generate_messages.dir/rule
+
+# Convenience name for target.
+body_generate_messages: body/CMakeFiles/body_generate_messages.dir/rule
+
+.PHONY : body_generate_messages
+
+# fast build rule for target.
+body_generate_messages/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/body_generate_messages.dir/build.make body/CMakeFiles/body_generate_messages.dir/build
+.PHONY : body_generate_messages/fast
+
+# Convenience name for target.
+body/CMakeFiles/body_gencpp.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/body_gencpp.dir/rule
+.PHONY : body/CMakeFiles/body_gencpp.dir/rule
+
+# Convenience name for target.
+body_gencpp: body/CMakeFiles/body_gencpp.dir/rule
+
+.PHONY : body_gencpp
+
+# fast build rule for target.
+body_gencpp/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/body_gencpp.dir/build.make body/CMakeFiles/body_gencpp.dir/build
+.PHONY : body_gencpp/fast
+
+# Convenience name for target.
+body/CMakeFiles/body_genlisp.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/body_genlisp.dir/rule
+.PHONY : body/CMakeFiles/body_genlisp.dir/rule
+
+# Convenience name for target.
+body_genlisp: body/CMakeFiles/body_genlisp.dir/rule
+
+.PHONY : body_genlisp
+
+# fast build rule for target.
+body_genlisp/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/body_genlisp.dir/build.make body/CMakeFiles/body_genlisp.dir/build
+.PHONY : body_genlisp/fast
+
+# Convenience name for target.
+body/CMakeFiles/body_generate_messages_lisp.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/body_generate_messages_lisp.dir/rule
+.PHONY : body/CMakeFiles/body_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+body_generate_messages_lisp: body/CMakeFiles/body_generate_messages_lisp.dir/rule
+
+.PHONY : body_generate_messages_lisp
+
+# fast build rule for target.
+body_generate_messages_lisp/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/body_generate_messages_lisp.dir/build.make body/CMakeFiles/body_generate_messages_lisp.dir/build
+.PHONY : body_generate_messages_lisp/fast
+
+# Convenience name for target.
+body/CMakeFiles/body_generate_messages_nodejs.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/body_generate_messages_nodejs.dir/rule
+.PHONY : body/CMakeFiles/body_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+body_generate_messages_nodejs: body/CMakeFiles/body_generate_messages_nodejs.dir/rule
+
+.PHONY : body_generate_messages_nodejs
+
+# fast build rule for target.
+body_generate_messages_nodejs/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/body_generate_messages_nodejs.dir/build.make body/CMakeFiles/body_generate_messages_nodejs.dir/build
+.PHONY : body_generate_messages_nodejs/fast
+
+# Convenience name for target.
+body/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+.PHONY : body/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_eus: body/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_eus
+
+# fast build rule for target.
+sensor_msgs_generate_messages_eus/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make body/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
+.PHONY : sensor_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+body/CMakeFiles/body_generate_messages_py.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/body_generate_messages_py.dir/rule
+.PHONY : body/CMakeFiles/body_generate_messages_py.dir/rule
+
+# Convenience name for target.
+body_generate_messages_py: body/CMakeFiles/body_generate_messages_py.dir/rule
+
+.PHONY : body_generate_messages_py
+
+# fast build rule for target.
+body_generate_messages_py/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/body_generate_messages_py.dir/build.make body/CMakeFiles/body_generate_messages_py.dir/build
+.PHONY : body_generate_messages_py/fast
+
+# Convenience name for target.
+body/CMakeFiles/imu.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/imu.dir/rule
+.PHONY : body/CMakeFiles/imu.dir/rule
+
+# Convenience name for target.
+imu: body/CMakeFiles/imu.dir/rule
+
+.PHONY : imu
+
+# fast build rule for target.
+imu/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/imu.dir/build.make body/CMakeFiles/imu.dir/build
+.PHONY : imu/fast
+
+__/libs/imu/MPU6050.o: __/libs/imu/MPU6050.cpp.o
+
+.PHONY : __/libs/imu/MPU6050.o
 
 # target to build an object file
-src/MPU6050.cpp.o:
-	cd /home/bbb/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/body_node.dir/build.make body/CMakeFiles/body_node.dir/src/MPU6050.cpp.o
-.PHONY : src/MPU6050.cpp.o
+__/libs/imu/MPU6050.cpp.o:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/imu.dir/build.make body/CMakeFiles/imu.dir/__/libs/imu/MPU6050.cpp.o
+.PHONY : __/libs/imu/MPU6050.cpp.o
 
-src/MPU6050.i: src/MPU6050.cpp.i
+__/libs/imu/MPU6050.i: __/libs/imu/MPU6050.cpp.i
 
-.PHONY : src/MPU6050.i
+.PHONY : __/libs/imu/MPU6050.i
 
 # target to preprocess a source file
-src/MPU6050.cpp.i:
-	cd /home/bbb/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/body_node.dir/build.make body/CMakeFiles/body_node.dir/src/MPU6050.cpp.i
-.PHONY : src/MPU6050.cpp.i
+__/libs/imu/MPU6050.cpp.i:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/imu.dir/build.make body/CMakeFiles/imu.dir/__/libs/imu/MPU6050.cpp.i
+.PHONY : __/libs/imu/MPU6050.cpp.i
 
-src/MPU6050.s: src/MPU6050.cpp.s
+__/libs/imu/MPU6050.s: __/libs/imu/MPU6050.cpp.s
 
-.PHONY : src/MPU6050.s
+.PHONY : __/libs/imu/MPU6050.s
 
 # target to generate assembly for a file
-src/MPU6050.cpp.s:
-	cd /home/bbb/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/body_node.dir/build.make body/CMakeFiles/body_node.dir/src/MPU6050.cpp.s
-.PHONY : src/MPU6050.cpp.s
+__/libs/imu/MPU6050.cpp.s:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/imu.dir/build.make body/CMakeFiles/imu.dir/__/libs/imu/MPU6050.cpp.s
+.PHONY : __/libs/imu/MPU6050.cpp.s
+
+__/libs/xzio/xzio.o: __/libs/xzio/xzio.cpp.o
+
+.PHONY : __/libs/xzio/xzio.o
+
+# target to build an object file
+__/libs/xzio/xzio.cpp.o:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/xzio.dir/build.make body/CMakeFiles/xzio.dir/__/libs/xzio/xzio.cpp.o
+.PHONY : __/libs/xzio/xzio.cpp.o
+
+__/libs/xzio/xzio.i: __/libs/xzio/xzio.cpp.i
+
+.PHONY : __/libs/xzio/xzio.i
+
+# target to preprocess a source file
+__/libs/xzio/xzio.cpp.i:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/xzio.dir/build.make body/CMakeFiles/xzio.dir/__/libs/xzio/xzio.cpp.i
+.PHONY : __/libs/xzio/xzio.cpp.i
+
+__/libs/xzio/xzio.s: __/libs/xzio/xzio.cpp.s
+
+.PHONY : __/libs/xzio/xzio.s
+
+# target to generate assembly for a file
+__/libs/xzio/xzio.cpp.s:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/xzio.dir/build.make body/CMakeFiles/xzio.dir/__/libs/xzio/xzio.cpp.s
+.PHONY : __/libs/xzio/xzio.cpp.s
 
 src/body.o: src/body.cpp.o
 
@@ -213,7 +585,7 @@ src/body.o: src/body.cpp.o
 
 # target to build an object file
 src/body.cpp.o:
-	cd /home/bbb/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/body_node.dir/build.make body/CMakeFiles/body_node.dir/src/body.cpp.o
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/body_node.dir/build.make body/CMakeFiles/body_node.dir/src/body.cpp.o
 .PHONY : src/body.cpp.o
 
 src/body.i: src/body.cpp.i
@@ -222,7 +594,7 @@ src/body.i: src/body.cpp.i
 
 # target to preprocess a source file
 src/body.cpp.i:
-	cd /home/bbb/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/body_node.dir/build.make body/CMakeFiles/body_node.dir/src/body.cpp.i
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/body_node.dir/build.make body/CMakeFiles/body_node.dir/src/body.cpp.i
 .PHONY : src/body.cpp.i
 
 src/body.s: src/body.cpp.s
@@ -231,7 +603,7 @@ src/body.s: src/body.cpp.s
 
 # target to generate assembly for a file
 src/body.cpp.s:
-	cd /home/bbb/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/body_node.dir/build.make body/CMakeFiles/body_node.dir/src/body.cpp.s
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/body_node.dir/build.make body/CMakeFiles/body_node.dir/src/body.cpp.s
 .PHONY : src/body.cpp.s
 
 src/body_node.o: src/body_node.cpp.o
@@ -240,7 +612,7 @@ src/body_node.o: src/body_node.cpp.o
 
 # target to build an object file
 src/body_node.cpp.o:
-	cd /home/bbb/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/body_node.dir/build.make body/CMakeFiles/body_node.dir/src/body_node.cpp.o
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/body_node.dir/build.make body/CMakeFiles/body_node.dir/src/body_node.cpp.o
 .PHONY : src/body_node.cpp.o
 
 src/body_node.i: src/body_node.cpp.i
@@ -249,7 +621,7 @@ src/body_node.i: src/body_node.cpp.i
 
 # target to preprocess a source file
 src/body_node.cpp.i:
-	cd /home/bbb/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/body_node.dir/build.make body/CMakeFiles/body_node.dir/src/body_node.cpp.i
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/body_node.dir/build.make body/CMakeFiles/body_node.dir/src/body_node.cpp.i
 .PHONY : src/body_node.cpp.i
 
 src/body_node.s: src/body_node.cpp.s
@@ -258,7 +630,7 @@ src/body_node.s: src/body_node.cpp.s
 
 # target to generate assembly for a file
 src/body_node.cpp.s:
-	cd /home/bbb/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/body_node.dir/build.make body/CMakeFiles/body_node.dir/src/body_node.cpp.s
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f body/CMakeFiles/body_node.dir/build.make body/CMakeFiles/body_node.dir/src/body_node.cpp.s
 .PHONY : src/body_node.cpp.s
 
 # Help Target
@@ -267,17 +639,43 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
-	@echo "... install/strip"
-	@echo "... list_install_components"
-	@echo "... rebuild_cache"
-	@echo "... body_node"
-	@echo "... test"
-	@echo "... install/local"
 	@echo "... install"
-	@echo "... src/MPU6050.o"
-	@echo "... src/MPU6050.i"
-	@echo "... src/MPU6050.s"
+	@echo "... rebuild_cache"
+	@echo "... edit_cache"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... geometry_msgs_generate_messages_nodejs"
+	@echo "... geometry_msgs_generate_messages_lisp"
+	@echo "... geometry_msgs_generate_messages_eus"
+	@echo "... geometry_msgs_generate_messages_py"
+	@echo "... body_generate_messages_cpp"
+	@echo "... body_genpy"
+	@echo "... sensor_msgs_generate_messages_lisp"
+	@echo "... sensor_msgs_generate_messages_py"
+	@echo "... body_generate_messages_eus"
+	@echo "... body_geneus"
+	@echo "... xzio"
+	@echo "... geometry_msgs_generate_messages_cpp"
+	@echo "... sensor_msgs_generate_messages_nodejs"
+	@echo "... body_node"
+	@echo "... body_gennodejs"
+	@echo "... sensor_msgs_generate_messages_cpp"
+	@echo "... body_generate_messages"
+	@echo "... body_gencpp"
+	@echo "... body_genlisp"
+	@echo "... test"
+	@echo "... body_generate_messages_lisp"
+	@echo "... body_generate_messages_nodejs"
+	@echo "... list_install_components"
+	@echo "... sensor_msgs_generate_messages_eus"
+	@echo "... body_generate_messages_py"
+	@echo "... imu"
+	@echo "... __/libs/imu/MPU6050.o"
+	@echo "... __/libs/imu/MPU6050.i"
+	@echo "... __/libs/imu/MPU6050.s"
+	@echo "... __/libs/xzio/xzio.o"
+	@echo "... __/libs/xzio/xzio.i"
+	@echo "... __/libs/xzio/xzio.s"
 	@echo "... src/body.o"
 	@echo "... src/body.i"
 	@echo "... src/body.s"
@@ -295,6 +693,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/bbb/projects/xingzhe/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/bone/projects/xingzhe/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

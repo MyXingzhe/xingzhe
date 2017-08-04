@@ -48,13 +48,35 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bbb/projects/xingzhe/src
+CMAKE_SOURCE_DIR = /home/bone/projects/xingzhe/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bbb/projects/xingzhe/src
+CMAKE_BINARY_DIR = /home/bone/projects/xingzhe/src
 
 #=============================================================================
 # Targets provided globally by CMake.
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -78,6 +100,17 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
@@ -100,49 +133,16 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # The main all target
 all: cmake_check_build_system
-	cd /home/bbb/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_progress_start /home/bbb/projects/xingzhe/src/CMakeFiles /home/bbb/projects/xingzhe/src/wheel/CMakeFiles/progress.marks
-	cd /home/bbb/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 wheel/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bbb/projects/xingzhe/src/CMakeFiles 0
+	cd /home/bone/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles /home/bone/projects/xingzhe/src/wheel/CMakeFiles/progress.marks
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 wheel/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/bbb/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 wheel/clean
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 wheel/clean
 .PHONY : clean
 
 # The main clean target
@@ -152,18 +152,156 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/bbb/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 wheel/preinstall
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 wheel/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/bbb/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 wheel/preinstall
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 wheel/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/bbb/projects/xingzhe/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/bone/projects/xingzhe/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+# Convenience name for target.
+wheel/CMakeFiles/wheel_node.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 wheel/CMakeFiles/wheel_node.dir/rule
+.PHONY : wheel/CMakeFiles/wheel_node.dir/rule
+
+# Convenience name for target.
+wheel_node: wheel/CMakeFiles/wheel_node.dir/rule
+
+.PHONY : wheel_node
+
+# fast build rule for target.
+wheel_node/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/wheel_node.dir/build.make wheel/CMakeFiles/wheel_node.dir/build
+.PHONY : wheel_node/fast
+
+# Convenience name for target.
+wheel/CMakeFiles/prupwm.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 wheel/CMakeFiles/prupwm.dir/rule
+.PHONY : wheel/CMakeFiles/prupwm.dir/rule
+
+# Convenience name for target.
+prupwm: wheel/CMakeFiles/prupwm.dir/rule
+
+.PHONY : prupwm
+
+# fast build rule for target.
+prupwm/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/prupwm.dir/build.make wheel/CMakeFiles/prupwm.dir/build
+.PHONY : prupwm/fast
+
+__/libs/prupwm/pru.o: __/libs/prupwm/pru.cpp.o
+
+.PHONY : __/libs/prupwm/pru.o
+
+# target to build an object file
+__/libs/prupwm/pru.cpp.o:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/prupwm.dir/build.make wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/pru.cpp.o
+.PHONY : __/libs/prupwm/pru.cpp.o
+
+__/libs/prupwm/pru.i: __/libs/prupwm/pru.cpp.i
+
+.PHONY : __/libs/prupwm/pru.i
+
+# target to preprocess a source file
+__/libs/prupwm/pru.cpp.i:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/prupwm.dir/build.make wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/pru.cpp.i
+.PHONY : __/libs/prupwm/pru.cpp.i
+
+__/libs/prupwm/pru.s: __/libs/prupwm/pru.cpp.s
+
+.PHONY : __/libs/prupwm/pru.s
+
+# target to generate assembly for a file
+__/libs/prupwm/pru.cpp.s:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/prupwm.dir/build.make wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/pru.cpp.s
+.PHONY : __/libs/prupwm/pru.cpp.s
+
+__/libs/prupwm/prupwm.o: __/libs/prupwm/prupwm.cpp.o
+
+.PHONY : __/libs/prupwm/prupwm.o
+
+# target to build an object file
+__/libs/prupwm/prupwm.cpp.o:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/prupwm.dir/build.make wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/prupwm.cpp.o
+.PHONY : __/libs/prupwm/prupwm.cpp.o
+
+__/libs/prupwm/prupwm.i: __/libs/prupwm/prupwm.cpp.i
+
+.PHONY : __/libs/prupwm/prupwm.i
+
+# target to preprocess a source file
+__/libs/prupwm/prupwm.cpp.i:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/prupwm.dir/build.make wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/prupwm.cpp.i
+.PHONY : __/libs/prupwm/prupwm.cpp.i
+
+__/libs/prupwm/prupwm.s: __/libs/prupwm/prupwm.cpp.s
+
+.PHONY : __/libs/prupwm/prupwm.s
+
+# target to generate assembly for a file
+__/libs/prupwm/prupwm.cpp.s:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/prupwm.dir/build.make wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/prupwm.cpp.s
+.PHONY : __/libs/prupwm/prupwm.cpp.s
+
+src/dc_motor.o: src/dc_motor.cpp.o
+
+.PHONY : src/dc_motor.o
+
+# target to build an object file
+src/dc_motor.cpp.o:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/wheel_node.dir/build.make wheel/CMakeFiles/wheel_node.dir/src/dc_motor.cpp.o
+.PHONY : src/dc_motor.cpp.o
+
+src/dc_motor.i: src/dc_motor.cpp.i
+
+.PHONY : src/dc_motor.i
+
+# target to preprocess a source file
+src/dc_motor.cpp.i:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/wheel_node.dir/build.make wheel/CMakeFiles/wheel_node.dir/src/dc_motor.cpp.i
+.PHONY : src/dc_motor.cpp.i
+
+src/dc_motor.s: src/dc_motor.cpp.s
+
+.PHONY : src/dc_motor.s
+
+# target to generate assembly for a file
+src/dc_motor.cpp.s:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/wheel_node.dir/build.make wheel/CMakeFiles/wheel_node.dir/src/dc_motor.cpp.s
+.PHONY : src/dc_motor.cpp.s
+
+src/wheel_node.o: src/wheel_node.cpp.o
+
+.PHONY : src/wheel_node.o
+
+# target to build an object file
+src/wheel_node.cpp.o:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/wheel_node.dir/build.make wheel/CMakeFiles/wheel_node.dir/src/wheel_node.cpp.o
+.PHONY : src/wheel_node.cpp.o
+
+src/wheel_node.i: src/wheel_node.cpp.i
+
+.PHONY : src/wheel_node.i
+
+# target to preprocess a source file
+src/wheel_node.cpp.i:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/wheel_node.dir/build.make wheel/CMakeFiles/wheel_node.dir/src/wheel_node.cpp.i
+.PHONY : src/wheel_node.cpp.i
+
+src/wheel_node.s: src/wheel_node.cpp.s
+
+.PHONY : src/wheel_node.s
+
+# target to generate assembly for a file
+src/wheel_node.cpp.s:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/wheel_node.dir/build.make wheel/CMakeFiles/wheel_node.dir/src/wheel_node.cpp.s
+.PHONY : src/wheel_node.cpp.s
 
 # Help Target
 help:
@@ -171,13 +309,27 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... list_install_components"
+	@echo "... install"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... test"
+	@echo "... wheel_node"
+	@echo "... prupwm"
 	@echo "... install/strip"
 	@echo "... install/local"
-	@echo "... install"
-	@echo "... test"
-	@echo "... list_install_components"
+	@echo "... __/libs/prupwm/pru.o"
+	@echo "... __/libs/prupwm/pru.i"
+	@echo "... __/libs/prupwm/pru.s"
+	@echo "... __/libs/prupwm/prupwm.o"
+	@echo "... __/libs/prupwm/prupwm.i"
+	@echo "... __/libs/prupwm/prupwm.s"
+	@echo "... src/dc_motor.o"
+	@echo "... src/dc_motor.i"
+	@echo "... src/dc_motor.s"
+	@echo "... src/wheel_node.o"
+	@echo "... src/wheel_node.i"
+	@echo "... src/wheel_node.s"
 .PHONY : help
 
 
@@ -189,6 +341,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/bbb/projects/xingzhe/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/bone/projects/xingzhe/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

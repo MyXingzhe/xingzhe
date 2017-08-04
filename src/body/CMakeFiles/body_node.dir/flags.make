@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"body\"
 
-CXX_INCLUDES = -I/opt/ros/kinetic/include -I/home/bbb/projects/xingzhe/src/body/../i2c -I/home/bbb/projects/xingzhe/src/body/./include/body 
+CXX_INCLUDES = -I/home/bone/projects/xingzhe/src/body/include -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/include/body -I/home/bone/projects/xingzhe/src/body/../libs/imu -I/home/bone/projects/xingzhe/src/body/./include/body 
 

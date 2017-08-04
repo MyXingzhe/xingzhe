@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bbb/projects/xingzhe/src
+CMAKE_SOURCE_DIR = /home/bone/projects/xingzhe/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bbb/projects/xingzhe/src
+CMAKE_BINARY_DIR = /home/bone/projects/xingzhe/src
 
 # Include any dependencies generated for this target.
 include ear/CMakeFiles/ear_node.dir/depend.make
@@ -59,16 +59,16 @@ include ear/CMakeFiles/ear_node.dir/flags.make
 
 ear/CMakeFiles/ear_node.dir/src/ear_node.cpp.o: ear/CMakeFiles/ear_node.dir/flags.make
 ear/CMakeFiles/ear_node.dir/src/ear_node.cpp.o: ear/src/ear_node.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bbb/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object ear/CMakeFiles/ear_node.dir/src/ear_node.cpp.o"
-	cd /home/bbb/projects/xingzhe/src/ear && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ear_node.dir/src/ear_node.cpp.o -c /home/bbb/projects/xingzhe/src/ear/src/ear_node.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object ear/CMakeFiles/ear_node.dir/src/ear_node.cpp.o"
+	cd /home/bone/projects/xingzhe/src/ear && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ear_node.dir/src/ear_node.cpp.o -c /home/bone/projects/xingzhe/src/ear/src/ear_node.cpp
 
 ear/CMakeFiles/ear_node.dir/src/ear_node.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ear_node.dir/src/ear_node.cpp.i"
-	cd /home/bbb/projects/xingzhe/src/ear && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bbb/projects/xingzhe/src/ear/src/ear_node.cpp > CMakeFiles/ear_node.dir/src/ear_node.cpp.i
+	cd /home/bone/projects/xingzhe/src/ear && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bone/projects/xingzhe/src/ear/src/ear_node.cpp > CMakeFiles/ear_node.dir/src/ear_node.cpp.i
 
 ear/CMakeFiles/ear_node.dir/src/ear_node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ear_node.dir/src/ear_node.cpp.s"
-	cd /home/bbb/projects/xingzhe/src/ear && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bbb/projects/xingzhe/src/ear/src/ear_node.cpp -o CMakeFiles/ear_node.dir/src/ear_node.cpp.s
+	cd /home/bone/projects/xingzhe/src/ear && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bone/projects/xingzhe/src/ear/src/ear_node.cpp -o CMakeFiles/ear_node.dir/src/ear_node.cpp.s
 
 ear/CMakeFiles/ear_node.dir/src/ear_node.cpp.o.requires:
 
@@ -83,16 +83,16 @@ ear/CMakeFiles/ear_node.dir/src/ear_node.cpp.o.provides.build: ear/CMakeFiles/ea
 
 ear/CMakeFiles/ear_node.dir/src/ear.cpp.o: ear/CMakeFiles/ear_node.dir/flags.make
 ear/CMakeFiles/ear_node.dir/src/ear.cpp.o: ear/src/ear.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bbb/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object ear/CMakeFiles/ear_node.dir/src/ear.cpp.o"
-	cd /home/bbb/projects/xingzhe/src/ear && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ear_node.dir/src/ear.cpp.o -c /home/bbb/projects/xingzhe/src/ear/src/ear.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object ear/CMakeFiles/ear_node.dir/src/ear.cpp.o"
+	cd /home/bone/projects/xingzhe/src/ear && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ear_node.dir/src/ear.cpp.o -c /home/bone/projects/xingzhe/src/ear/src/ear.cpp
 
 ear/CMakeFiles/ear_node.dir/src/ear.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ear_node.dir/src/ear.cpp.i"
-	cd /home/bbb/projects/xingzhe/src/ear && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bbb/projects/xingzhe/src/ear/src/ear.cpp > CMakeFiles/ear_node.dir/src/ear.cpp.i
+	cd /home/bone/projects/xingzhe/src/ear && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bone/projects/xingzhe/src/ear/src/ear.cpp > CMakeFiles/ear_node.dir/src/ear.cpp.i
 
 ear/CMakeFiles/ear_node.dir/src/ear.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ear_node.dir/src/ear.cpp.s"
-	cd /home/bbb/projects/xingzhe/src/ear && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bbb/projects/xingzhe/src/ear/src/ear.cpp -o CMakeFiles/ear_node.dir/src/ear.cpp.s
+	cd /home/bone/projects/xingzhe/src/ear && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bone/projects/xingzhe/src/ear/src/ear.cpp -o CMakeFiles/ear_node.dir/src/ear.cpp.s
 
 ear/CMakeFiles/ear_node.dir/src/ear.cpp.o.requires:
 
@@ -113,35 +113,34 @@ ear_node_OBJECTS = \
 # External object files for target ear_node
 ear_node_EXTERNAL_OBJECTS =
 
-/home/bbb/projects/xingzhe/devel/lib/ear/ear_node: ear/CMakeFiles/ear_node.dir/src/ear_node.cpp.o
-/home/bbb/projects/xingzhe/devel/lib/ear/ear_node: ear/CMakeFiles/ear_node.dir/src/ear.cpp.o
-/home/bbb/projects/xingzhe/devel/lib/ear/ear_node: ear/CMakeFiles/ear_node.dir/build.make
-/home/bbb/projects/xingzhe/devel/lib/ear/ear_node: /opt/ros/kinetic/lib/libroscpp.so
-/home/bbb/projects/xingzhe/devel/lib/ear/ear_node: /usr/lib/i386-linux-gnu/libboost_signals.so
-/home/bbb/projects/xingzhe/devel/lib/ear/ear_node: /usr/lib/i386-linux-gnu/libboost_filesystem.so
-/home/bbb/projects/xingzhe/devel/lib/ear/ear_node: /opt/ros/kinetic/lib/librosconsole.so
-/home/bbb/projects/xingzhe/devel/lib/ear/ear_node: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
-/home/bbb/projects/xingzhe/devel/lib/ear/ear_node: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
-/home/bbb/projects/xingzhe/devel/lib/ear/ear_node: /usr/lib/i386-linux-gnu/liblog4cxx.so
-/home/bbb/projects/xingzhe/devel/lib/ear/ear_node: /usr/lib/i386-linux-gnu/libboost_regex.so
-/home/bbb/projects/xingzhe/devel/lib/ear/ear_node: /opt/ros/kinetic/lib/libxmlrpcpp.so
-/home/bbb/projects/xingzhe/devel/lib/ear/ear_node: /opt/ros/kinetic/lib/libroscpp_serialization.so
-/home/bbb/projects/xingzhe/devel/lib/ear/ear_node: /opt/ros/kinetic/lib/librostime.so
-/home/bbb/projects/xingzhe/devel/lib/ear/ear_node: /opt/ros/kinetic/lib/libcpp_common.so
-/home/bbb/projects/xingzhe/devel/lib/ear/ear_node: /usr/lib/i386-linux-gnu/libboost_system.so
-/home/bbb/projects/xingzhe/devel/lib/ear/ear_node: /usr/lib/i386-linux-gnu/libboost_thread.so
-/home/bbb/projects/xingzhe/devel/lib/ear/ear_node: /usr/lib/i386-linux-gnu/libboost_chrono.so
-/home/bbb/projects/xingzhe/devel/lib/ear/ear_node: /usr/lib/i386-linux-gnu/libboost_date_time.so
-/home/bbb/projects/xingzhe/devel/lib/ear/ear_node: /usr/lib/i386-linux-gnu/libboost_atomic.so
-/home/bbb/projects/xingzhe/devel/lib/ear/ear_node: /usr/lib/i386-linux-gnu/libpthread.so
-/home/bbb/projects/xingzhe/devel/lib/ear/ear_node: /usr/lib/i386-linux-gnu/libconsole_bridge.so
-/home/bbb/projects/xingzhe/devel/lib/ear/ear_node: /home/bbb/projects/xingzhe/devel/lib/libi2c.so
-/home/bbb/projects/xingzhe/devel/lib/ear/ear_node: ear/CMakeFiles/ear_node.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bbb/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable /home/bbb/projects/xingzhe/devel/lib/ear/ear_node"
-	cd /home/bbb/projects/xingzhe/src/ear && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ear_node.dir/link.txt --verbose=$(VERBOSE)
+devel/lib/ear/ear_node: ear/CMakeFiles/ear_node.dir/src/ear_node.cpp.o
+devel/lib/ear/ear_node: ear/CMakeFiles/ear_node.dir/src/ear.cpp.o
+devel/lib/ear/ear_node: ear/CMakeFiles/ear_node.dir/build.make
+devel/lib/ear/ear_node: /opt/ros/kinetic/lib/libroscpp.so
+devel/lib/ear/ear_node: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+devel/lib/ear/ear_node: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+devel/lib/ear/ear_node: /opt/ros/kinetic/lib/librosconsole.so
+devel/lib/ear/ear_node: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
+devel/lib/ear/ear_node: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
+devel/lib/ear/ear_node: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+devel/lib/ear/ear_node: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+devel/lib/ear/ear_node: /opt/ros/kinetic/lib/libxmlrpcpp.so
+devel/lib/ear/ear_node: /opt/ros/kinetic/lib/libroscpp_serialization.so
+devel/lib/ear/ear_node: /opt/ros/kinetic/lib/librostime.so
+devel/lib/ear/ear_node: /opt/ros/kinetic/lib/libcpp_common.so
+devel/lib/ear/ear_node: /usr/lib/x86_64-linux-gnu/libboost_system.so
+devel/lib/ear/ear_node: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+devel/lib/ear/ear_node: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+devel/lib/ear/ear_node: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+devel/lib/ear/ear_node: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+devel/lib/ear/ear_node: /usr/lib/x86_64-linux-gnu/libpthread.so
+devel/lib/ear/ear_node: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+devel/lib/ear/ear_node: ear/CMakeFiles/ear_node.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ../devel/lib/ear/ear_node"
+	cd /home/bone/projects/xingzhe/src/ear && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ear_node.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-ear/CMakeFiles/ear_node.dir/build: /home/bbb/projects/xingzhe/devel/lib/ear/ear_node
+ear/CMakeFiles/ear_node.dir/build: devel/lib/ear/ear_node
 
 .PHONY : ear/CMakeFiles/ear_node.dir/build
 
@@ -151,10 +150,10 @@ ear/CMakeFiles/ear_node.dir/requires: ear/CMakeFiles/ear_node.dir/src/ear.cpp.o.
 .PHONY : ear/CMakeFiles/ear_node.dir/requires
 
 ear/CMakeFiles/ear_node.dir/clean:
-	cd /home/bbb/projects/xingzhe/src/ear && $(CMAKE_COMMAND) -P CMakeFiles/ear_node.dir/cmake_clean.cmake
+	cd /home/bone/projects/xingzhe/src/ear && $(CMAKE_COMMAND) -P CMakeFiles/ear_node.dir/cmake_clean.cmake
 .PHONY : ear/CMakeFiles/ear_node.dir/clean
 
 ear/CMakeFiles/ear_node.dir/depend:
-	cd /home/bbb/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bbb/projects/xingzhe/src /home/bbb/projects/xingzhe/src/ear /home/bbb/projects/xingzhe/src /home/bbb/projects/xingzhe/src/ear /home/bbb/projects/xingzhe/src/ear/CMakeFiles/ear_node.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/bone/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bone/projects/xingzhe/src /home/bone/projects/xingzhe/src/ear /home/bone/projects/xingzhe/src /home/bone/projects/xingzhe/src/ear /home/bone/projects/xingzhe/src/ear/CMakeFiles/ear_node.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : ear/CMakeFiles/ear_node.dir/depend
 

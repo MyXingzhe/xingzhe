@@ -18,46 +18,39 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 #include <stdint.h>
- 
+#include <prussdrv.h>
+#include <pruss_intc_mapping.h>
+
 #include "prupwm.h"
 
-PRUPWM::PRUPWM(uint32_t frequency) : PRU(0) {
-	this->stop();
-	this->setFrequency(frequency);
-	this->setFailsafeTimeout(0);
-	for (int i = 0; i < 8; i++) {
-		this->setChannelValue(i, 1500000);
-		this->setFailsafeValue(i, 1500000);
-	}
+PRUPWM::PRUPWM(uint8_t channel) {
+	m_channel = channel;
+	prussdrv_map_prumem (PRUSS0_PRU0_DATARAM, &pruDataMem);
+	param = (struct pru_pwm_param *)pruDataMem;
+}
+
+PRUPWM::~PRUPWM()
+{
+//	munmap(pruDataMem);
 }
 
 void PRUPWM::start() {
-	this->execute("pwm.bin");
+	param->flag |= (m_channel << 1);
 }
 
-void PRUPWM::setFrequency(uint32_t frequency) {
-	this->pwmFrequency = frequency;
-	this->setSharedMemoryInt(0, 1000000000 / (PRUPWM::nanosecondsPerCycle*this->pwmFrequency));
+void PRUPWM::stop() {
+	param->flag &= ~(m_channel << 1);
 }
 
-void PRUPWM::setChannelValue(uint32_t channel, unsigned long pwm_ns) {
-	this->setPRUDuty(channel, pwm_ns);
+/* period is in micro seconds */
+void PRUPWM::set_period(uint32_t period) {
+	m_period = period;
+	param->period = MS_TO_CYCLE(period);
 }
 
-void PRUPWM::setFailsafeValue(uint32_t channel, unsigned long pwm_ns) {
-	this->setPRUDuty(channel+9, pwm_ns);
+void PRUPWM::set_duty(uint32_t duty) {
+	m_duty = duty;
+	param->duty[m_channel] = MS_TO_CYCLE(duty);
 }
 
-void PRUPWM::setFailsafeTimeout(uint32_t timeout_ms) {
-	this->failsafeTimeout = timeout_ms;
-	this->updateFailsafe();
-}
 
-void PRUPWM::setPRUDuty(uint32_t channel, unsigned long pwm_ns) {
-	this->setSharedMemoryInt(channel+1, (uint32_t)((unsigned long long)pwm_ns / PRUPWM::nanosecondsPerCycle));
-	this->updateFailsafe();
-}
-
-void PRUPWM::updateFailsafe() {
-	this->setSharedMemoryInt(9, this->failsafeTimeout * this->pwmFrequency / 1000);
-}

@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/bone/projects/xingzhe/src/libs/xzio/xzio.cpp
+xzio.h
+/home/bone/projects/xingzhe/src/libs/xzio/xzio.h
+
+/home/bone/projects/xingzhe/src/libs/xzio/xzio.h
+mraa.hpp
+-
+

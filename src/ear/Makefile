@@ -48,78 +48,13 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bbb/projects/xingzhe/src
+CMAKE_SOURCE_DIR = /home/bone/projects/xingzhe/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bbb/projects/xingzhe/src
+CMAKE_BINARY_DIR = /home/bone/projects/xingzhe/src
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
 
 # Special rule for the target install
 install: preinstall
@@ -133,16 +68,81 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
-	cd /home/bbb/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_progress_start /home/bbb/projects/xingzhe/src/CMakeFiles /home/bbb/projects/xingzhe/src/ear/CMakeFiles/progress.marks
-	cd /home/bbb/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 ear/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bbb/projects/xingzhe/src/CMakeFiles 0
+	cd /home/bone/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles /home/bone/projects/xingzhe/src/ear/CMakeFiles/progress.marks
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 ear/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/bbb/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 ear/clean
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 ear/clean
 .PHONY : clean
 
 # The main clean target
@@ -152,37 +152,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/bbb/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 ear/preinstall
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 ear/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/bbb/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 ear/preinstall
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 ear/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/bbb/projects/xingzhe/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/bone/projects/xingzhe/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-ear/CMakeFiles/i2c.dir/rule:
-	cd /home/bbb/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 ear/CMakeFiles/i2c.dir/rule
-.PHONY : ear/CMakeFiles/i2c.dir/rule
-
-# Convenience name for target.
-i2c: ear/CMakeFiles/i2c.dir/rule
-
-.PHONY : i2c
-
-# fast build rule for target.
-i2c/fast:
-	cd /home/bbb/projects/xingzhe/src && $(MAKE) -f ear/CMakeFiles/i2c.dir/build.make ear/CMakeFiles/i2c.dir/build
-.PHONY : i2c/fast
-
-# Convenience name for target.
 ear/CMakeFiles/ear_node.dir/rule:
-	cd /home/bbb/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 ear/CMakeFiles/ear_node.dir/rule
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 ear/CMakeFiles/ear_node.dir/rule
 .PHONY : ear/CMakeFiles/ear_node.dir/rule
 
 # Convenience name for target.
@@ -192,35 +177,188 @@ ear_node: ear/CMakeFiles/ear_node.dir/rule
 
 # fast build rule for target.
 ear_node/fast:
-	cd /home/bbb/projects/xingzhe/src && $(MAKE) -f ear/CMakeFiles/ear_node.dir/build.make ear/CMakeFiles/ear_node.dir/build
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f ear/CMakeFiles/ear_node.dir/build.make ear/CMakeFiles/ear_node.dir/build
 .PHONY : ear_node/fast
 
-__/i2c/i2c_dev.o: __/i2c/i2c_dev.cpp.o
+# Convenience name for target.
+ear/CMakeFiles/ear_genpy.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 ear/CMakeFiles/ear_genpy.dir/rule
+.PHONY : ear/CMakeFiles/ear_genpy.dir/rule
 
-.PHONY : __/i2c/i2c_dev.o
+# Convenience name for target.
+ear_genpy: ear/CMakeFiles/ear_genpy.dir/rule
 
-# target to build an object file
-__/i2c/i2c_dev.cpp.o:
-	cd /home/bbb/projects/xingzhe/src && $(MAKE) -f ear/CMakeFiles/i2c.dir/build.make ear/CMakeFiles/i2c.dir/__/i2c/i2c_dev.cpp.o
-.PHONY : __/i2c/i2c_dev.cpp.o
+.PHONY : ear_genpy
 
-__/i2c/i2c_dev.i: __/i2c/i2c_dev.cpp.i
+# fast build rule for target.
+ear_genpy/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f ear/CMakeFiles/ear_genpy.dir/build.make ear/CMakeFiles/ear_genpy.dir/build
+.PHONY : ear_genpy/fast
 
-.PHONY : __/i2c/i2c_dev.i
+# Convenience name for target.
+ear/CMakeFiles/ear_generate_messages_py.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 ear/CMakeFiles/ear_generate_messages_py.dir/rule
+.PHONY : ear/CMakeFiles/ear_generate_messages_py.dir/rule
 
-# target to preprocess a source file
-__/i2c/i2c_dev.cpp.i:
-	cd /home/bbb/projects/xingzhe/src && $(MAKE) -f ear/CMakeFiles/i2c.dir/build.make ear/CMakeFiles/i2c.dir/__/i2c/i2c_dev.cpp.i
-.PHONY : __/i2c/i2c_dev.cpp.i
+# Convenience name for target.
+ear_generate_messages_py: ear/CMakeFiles/ear_generate_messages_py.dir/rule
 
-__/i2c/i2c_dev.s: __/i2c/i2c_dev.cpp.s
+.PHONY : ear_generate_messages_py
 
-.PHONY : __/i2c/i2c_dev.s
+# fast build rule for target.
+ear_generate_messages_py/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f ear/CMakeFiles/ear_generate_messages_py.dir/build.make ear/CMakeFiles/ear_generate_messages_py.dir/build
+.PHONY : ear_generate_messages_py/fast
 
-# target to generate assembly for a file
-__/i2c/i2c_dev.cpp.s:
-	cd /home/bbb/projects/xingzhe/src && $(MAKE) -f ear/CMakeFiles/i2c.dir/build.make ear/CMakeFiles/i2c.dir/__/i2c/i2c_dev.cpp.s
-.PHONY : __/i2c/i2c_dev.cpp.s
+# Convenience name for target.
+ear/CMakeFiles/ear_gencpp.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 ear/CMakeFiles/ear_gencpp.dir/rule
+.PHONY : ear/CMakeFiles/ear_gencpp.dir/rule
+
+# Convenience name for target.
+ear_gencpp: ear/CMakeFiles/ear_gencpp.dir/rule
+
+.PHONY : ear_gencpp
+
+# fast build rule for target.
+ear_gencpp/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f ear/CMakeFiles/ear_gencpp.dir/build.make ear/CMakeFiles/ear_gencpp.dir/build
+.PHONY : ear_gencpp/fast
+
+# Convenience name for target.
+ear/CMakeFiles/_ear_generate_messages_check_deps_usonic.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 ear/CMakeFiles/_ear_generate_messages_check_deps_usonic.dir/rule
+.PHONY : ear/CMakeFiles/_ear_generate_messages_check_deps_usonic.dir/rule
+
+# Convenience name for target.
+_ear_generate_messages_check_deps_usonic: ear/CMakeFiles/_ear_generate_messages_check_deps_usonic.dir/rule
+
+.PHONY : _ear_generate_messages_check_deps_usonic
+
+# fast build rule for target.
+_ear_generate_messages_check_deps_usonic/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f ear/CMakeFiles/_ear_generate_messages_check_deps_usonic.dir/build.make ear/CMakeFiles/_ear_generate_messages_check_deps_usonic.dir/build
+.PHONY : _ear_generate_messages_check_deps_usonic/fast
+
+# Convenience name for target.
+ear/CMakeFiles/ear_generate_messages_cpp.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 ear/CMakeFiles/ear_generate_messages_cpp.dir/rule
+.PHONY : ear/CMakeFiles/ear_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+ear_generate_messages_cpp: ear/CMakeFiles/ear_generate_messages_cpp.dir/rule
+
+.PHONY : ear_generate_messages_cpp
+
+# fast build rule for target.
+ear_generate_messages_cpp/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f ear/CMakeFiles/ear_generate_messages_cpp.dir/build.make ear/CMakeFiles/ear_generate_messages_cpp.dir/build
+.PHONY : ear_generate_messages_cpp/fast
+
+# Convenience name for target.
+ear/CMakeFiles/ear_generate_messages.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 ear/CMakeFiles/ear_generate_messages.dir/rule
+.PHONY : ear/CMakeFiles/ear_generate_messages.dir/rule
+
+# Convenience name for target.
+ear_generate_messages: ear/CMakeFiles/ear_generate_messages.dir/rule
+
+.PHONY : ear_generate_messages
+
+# fast build rule for target.
+ear_generate_messages/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f ear/CMakeFiles/ear_generate_messages.dir/build.make ear/CMakeFiles/ear_generate_messages.dir/build
+.PHONY : ear_generate_messages/fast
+
+# Convenience name for target.
+ear/CMakeFiles/ear_geneus.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 ear/CMakeFiles/ear_geneus.dir/rule
+.PHONY : ear/CMakeFiles/ear_geneus.dir/rule
+
+# Convenience name for target.
+ear_geneus: ear/CMakeFiles/ear_geneus.dir/rule
+
+.PHONY : ear_geneus
+
+# fast build rule for target.
+ear_geneus/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f ear/CMakeFiles/ear_geneus.dir/build.make ear/CMakeFiles/ear_geneus.dir/build
+.PHONY : ear_geneus/fast
+
+# Convenience name for target.
+ear/CMakeFiles/ear_generate_messages_lisp.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 ear/CMakeFiles/ear_generate_messages_lisp.dir/rule
+.PHONY : ear/CMakeFiles/ear_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+ear_generate_messages_lisp: ear/CMakeFiles/ear_generate_messages_lisp.dir/rule
+
+.PHONY : ear_generate_messages_lisp
+
+# fast build rule for target.
+ear_generate_messages_lisp/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f ear/CMakeFiles/ear_generate_messages_lisp.dir/build.make ear/CMakeFiles/ear_generate_messages_lisp.dir/build
+.PHONY : ear_generate_messages_lisp/fast
+
+# Convenience name for target.
+ear/CMakeFiles/ear_genlisp.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 ear/CMakeFiles/ear_genlisp.dir/rule
+.PHONY : ear/CMakeFiles/ear_genlisp.dir/rule
+
+# Convenience name for target.
+ear_genlisp: ear/CMakeFiles/ear_genlisp.dir/rule
+
+.PHONY : ear_genlisp
+
+# fast build rule for target.
+ear_genlisp/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f ear/CMakeFiles/ear_genlisp.dir/build.make ear/CMakeFiles/ear_genlisp.dir/build
+.PHONY : ear_genlisp/fast
+
+# Convenience name for target.
+ear/CMakeFiles/ear_generate_messages_eus.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 ear/CMakeFiles/ear_generate_messages_eus.dir/rule
+.PHONY : ear/CMakeFiles/ear_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+ear_generate_messages_eus: ear/CMakeFiles/ear_generate_messages_eus.dir/rule
+
+.PHONY : ear_generate_messages_eus
+
+# fast build rule for target.
+ear_generate_messages_eus/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f ear/CMakeFiles/ear_generate_messages_eus.dir/build.make ear/CMakeFiles/ear_generate_messages_eus.dir/build
+.PHONY : ear_generate_messages_eus/fast
+
+# Convenience name for target.
+ear/CMakeFiles/ear_gennodejs.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 ear/CMakeFiles/ear_gennodejs.dir/rule
+.PHONY : ear/CMakeFiles/ear_gennodejs.dir/rule
+
+# Convenience name for target.
+ear_gennodejs: ear/CMakeFiles/ear_gennodejs.dir/rule
+
+.PHONY : ear_gennodejs
+
+# fast build rule for target.
+ear_gennodejs/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f ear/CMakeFiles/ear_gennodejs.dir/build.make ear/CMakeFiles/ear_gennodejs.dir/build
+.PHONY : ear_gennodejs/fast
+
+# Convenience name for target.
+ear/CMakeFiles/ear_generate_messages_nodejs.dir/rule:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 ear/CMakeFiles/ear_generate_messages_nodejs.dir/rule
+.PHONY : ear/CMakeFiles/ear_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+ear_generate_messages_nodejs: ear/CMakeFiles/ear_generate_messages_nodejs.dir/rule
+
+.PHONY : ear_generate_messages_nodejs
+
+# fast build rule for target.
+ear_generate_messages_nodejs/fast:
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f ear/CMakeFiles/ear_generate_messages_nodejs.dir/build.make ear/CMakeFiles/ear_generate_messages_nodejs.dir/build
+.PHONY : ear_generate_messages_nodejs/fast
 
 src/ear.o: src/ear.cpp.o
 
@@ -228,7 +366,7 @@ src/ear.o: src/ear.cpp.o
 
 # target to build an object file
 src/ear.cpp.o:
-	cd /home/bbb/projects/xingzhe/src && $(MAKE) -f ear/CMakeFiles/ear_node.dir/build.make ear/CMakeFiles/ear_node.dir/src/ear.cpp.o
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f ear/CMakeFiles/ear_node.dir/build.make ear/CMakeFiles/ear_node.dir/src/ear.cpp.o
 .PHONY : src/ear.cpp.o
 
 src/ear.i: src/ear.cpp.i
@@ -237,7 +375,7 @@ src/ear.i: src/ear.cpp.i
 
 # target to preprocess a source file
 src/ear.cpp.i:
-	cd /home/bbb/projects/xingzhe/src && $(MAKE) -f ear/CMakeFiles/ear_node.dir/build.make ear/CMakeFiles/ear_node.dir/src/ear.cpp.i
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f ear/CMakeFiles/ear_node.dir/build.make ear/CMakeFiles/ear_node.dir/src/ear.cpp.i
 .PHONY : src/ear.cpp.i
 
 src/ear.s: src/ear.cpp.s
@@ -246,7 +384,7 @@ src/ear.s: src/ear.cpp.s
 
 # target to generate assembly for a file
 src/ear.cpp.s:
-	cd /home/bbb/projects/xingzhe/src && $(MAKE) -f ear/CMakeFiles/ear_node.dir/build.make ear/CMakeFiles/ear_node.dir/src/ear.cpp.s
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f ear/CMakeFiles/ear_node.dir/build.make ear/CMakeFiles/ear_node.dir/src/ear.cpp.s
 .PHONY : src/ear.cpp.s
 
 src/ear_node.o: src/ear_node.cpp.o
@@ -255,7 +393,7 @@ src/ear_node.o: src/ear_node.cpp.o
 
 # target to build an object file
 src/ear_node.cpp.o:
-	cd /home/bbb/projects/xingzhe/src && $(MAKE) -f ear/CMakeFiles/ear_node.dir/build.make ear/CMakeFiles/ear_node.dir/src/ear_node.cpp.o
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f ear/CMakeFiles/ear_node.dir/build.make ear/CMakeFiles/ear_node.dir/src/ear_node.cpp.o
 .PHONY : src/ear_node.cpp.o
 
 src/ear_node.i: src/ear_node.cpp.i
@@ -264,7 +402,7 @@ src/ear_node.i: src/ear_node.cpp.i
 
 # target to preprocess a source file
 src/ear_node.cpp.i:
-	cd /home/bbb/projects/xingzhe/src && $(MAKE) -f ear/CMakeFiles/ear_node.dir/build.make ear/CMakeFiles/ear_node.dir/src/ear_node.cpp.i
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f ear/CMakeFiles/ear_node.dir/build.make ear/CMakeFiles/ear_node.dir/src/ear_node.cpp.i
 .PHONY : src/ear_node.cpp.i
 
 src/ear_node.s: src/ear_node.cpp.s
@@ -273,7 +411,7 @@ src/ear_node.s: src/ear_node.cpp.s
 
 # target to generate assembly for a file
 src/ear_node.cpp.s:
-	cd /home/bbb/projects/xingzhe/src && $(MAKE) -f ear/CMakeFiles/ear_node.dir/build.make ear/CMakeFiles/ear_node.dir/src/ear_node.cpp.s
+	cd /home/bone/projects/xingzhe/src && $(MAKE) -f ear/CMakeFiles/ear_node.dir/build.make ear/CMakeFiles/ear_node.dir/src/ear_node.cpp.s
 .PHONY : src/ear_node.cpp.s
 
 # Help Target
@@ -282,18 +420,26 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
-	@echo "... install/strip"
-	@echo "... list_install_components"
-	@echo "... test"
-	@echo "... i2c"
-	@echo "... install/local"
-	@echo "... rebuild_cache"
-	@echo "... ear_node"
 	@echo "... install"
-	@echo "... __/i2c/i2c_dev.o"
-	@echo "... __/i2c/i2c_dev.i"
-	@echo "... __/i2c/i2c_dev.s"
+	@echo "... rebuild_cache"
+	@echo "... install/local"
+	@echo "... ear_node"
+	@echo "... ear_genpy"
+	@echo "... edit_cache"
+	@echo "... ear_generate_messages_py"
+	@echo "... ear_gencpp"
+	@echo "... _ear_generate_messages_check_deps_usonic"
+	@echo "... ear_generate_messages_cpp"
+	@echo "... ear_generate_messages"
+	@echo "... test"
+	@echo "... ear_geneus"
+	@echo "... ear_generate_messages_lisp"
+	@echo "... ear_genlisp"
+	@echo "... list_install_components"
+	@echo "... install/strip"
+	@echo "... ear_generate_messages_eus"
+	@echo "... ear_gennodejs"
+	@echo "... ear_generate_messages_nodejs"
 	@echo "... src/ear.o"
 	@echo "... src/ear.i"
 	@echo "... src/ear.s"
@@ -311,6 +457,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/bbb/projects/xingzhe/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/bone/projects/xingzhe/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -1,8 +1,8 @@
-# Install script for directory: /home/bbb/projects/xingzhe/src/arm
+# Install script for directory: /home/bone/projects/xingzhe/src/arm
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/bbb/projects/xingzhe/install")
+  set(CMAKE_INSTALL_PREFIX "/usr/local")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,17 +33,17 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/bbb/projects/xingzhe/src/arm/catkin_generated/installspace/arm.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/bone/projects/xingzhe/src/arm/catkin_generated/installspace/arm.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arm/cmake" TYPE FILE FILES
-    "/home/bbb/projects/xingzhe/src/arm/catkin_generated/installspace/armConfig.cmake"
-    "/home/bbb/projects/xingzhe/src/arm/catkin_generated/installspace/armConfig-version.cmake"
+    "/home/bone/projects/xingzhe/src/arm/catkin_generated/installspace/armConfig.cmake"
+    "/home/bone/projects/xingzhe/src/arm/catkin_generated/installspace/armConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arm" TYPE FILE FILES "/home/bbb/projects/xingzhe/src/arm/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arm" TYPE FILE FILES "/home/bone/projects/xingzhe/src/arm/package.xml")
 endif()
 

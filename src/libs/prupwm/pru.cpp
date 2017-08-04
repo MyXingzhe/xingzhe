@@ -57,7 +57,7 @@ int main (void)
 
     /* Execute example on PRU */
     printf("\tINFO: Executing PRU.\r\n");
-    prussdrv_exec_program (PRU_NUM, "PRU_BIN_NAME");
+    prussdrv_exec_program (0, PRU_BIN_NAME);
 
 
     return(0);

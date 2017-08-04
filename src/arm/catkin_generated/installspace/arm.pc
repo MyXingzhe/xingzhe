@@ -1,8 +1,8 @@
-prefix=/home/bbb/projects/xingzhe/install
+prefix=/usr/local
 
 Name: arm
 Description: Description of arm
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/bbb/projects/xingzhe/install/lib 
+Libs: -L/usr/local/lib 
 Requires: 

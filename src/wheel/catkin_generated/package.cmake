@@ -1,6 +1,6 @@
 set(_CATKIN_CURRENT_PACKAGE "wheel")
 set(wheel_VERSION "0.0.0")
-set(wheel_MAINTAINER "bbb <bbb@todo.todo>")
+set(wheel_MAINTAINER "bbb <2676902@qq.com>")
 set(wheel_PACKAGE_FORMAT "1")
 set(wheel_BUILD_DEPENDS "roscpp" "std_msgs")
 set(wheel_BUILD_EXPORT_DEPENDS "roscpp" "std_msgs")

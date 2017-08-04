@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/bone/projects/xingzhe/src/libs/imu/MPU6050.cpp
+stdio.h
+-
+stdlib.h
+-
+unistd.h
+-
+string.h
+-
+stdint.h
+-
+MPU6050.h
+/home/bone/projects/xingzhe/src/libs/imu/MPU6050.h
+
+/home/bone/projects/xingzhe/src/libs/imu/MPU6050.h
+helper_3dmath.h
+/home/bone/projects/xingzhe/src/libs/imu/helper_3dmath.h
+../xzio/xzio.h
+/home/bone/projects/xingzhe/src/libs/xzio/xzio.h
+
+/home/bone/projects/xingzhe/src/libs/imu/helper_3dmath.h
+math.h
+-
+
+/home/bone/projects/xingzhe/src/libs/xzio/xzio.h
+mraa.hpp
+-
+

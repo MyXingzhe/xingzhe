@@ -32,25 +32,36 @@
 #include <string>
 #include <stdint.h>
 
-#include "pru.h"
+#define MS_TO_CYCLE(ms)    ((ms)*200000)
+
+const uint32_t default_period =100;
+const uint32_t default_duty  = 100;
 
 /*  */
 
-class PRUPWM: PRU {
+struct pru_pwm_param{
+	uint32_t flag;
+	uint32_t period;
+	uint32_t duty[8];
+};
+
+class PRUPWM {
 public:
-	PRUPWM(uint32_t frequency);
+	PRUPWM(uint8_t channel);
+	~PRUPWM();
 
 	void start();
-	void setFrequency(uint32_t frequency);
-	void setChannelValue(uint32_t channel, unsigned long pwm_ns);
-	void setFailsafeValue(uint32_t channel, unsigned long pwm_ns);
-	void setFailsafeTimeout(uint32_t timeout_ms);
-	void setPRUDuty(uint32_t channel, unsigned long pwm_ns);
-	void updateFailsafe();
+	void stop();
+	void set_period(uint32_t period);
+	void set_duty(uint32_t duty);
+
 private:
-	uint32_t pwmFrequency;
-	uint32_t failsafeTimeout;
-	const static uint32_t nanosecondsPerCycle = 5;
+	uint32_t m_period;
+	uint32_t m_duty;
+	uint8_t m_channel;
+
+	void *pruDataMem;
+	struct pru_pwm_param *param;
 };
 
 #endif

@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC   -shared -Wl,-soname,libprupwm.so -o ../devel/lib/libprupwm.so CMakeFiles/prupwm.dir/__/libs/prupwm/pru.cpp.o CMakeFiles/prupwm.dir/__/libs/prupwm/prupwm.cpp.o 

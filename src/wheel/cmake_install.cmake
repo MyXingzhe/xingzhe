@@ -1,8 +1,8 @@
-# Install script for directory: /home/bbb/projects/xingzhe/src/wheel
+# Install script for directory: /home/bone/projects/xingzhe/src/wheel
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/bbb/projects/xingzhe/install")
+  set(CMAKE_INSTALL_PREFIX "/usr/local")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,17 +33,17 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/bbb/projects/xingzhe/src/wheel/catkin_generated/installspace/wheel.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/bone/projects/xingzhe/src/wheel/catkin_generated/installspace/wheel.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/wheel/cmake" TYPE FILE FILES
-    "/home/bbb/projects/xingzhe/src/wheel/catkin_generated/installspace/wheelConfig.cmake"
-    "/home/bbb/projects/xingzhe/src/wheel/catkin_generated/installspace/wheelConfig-version.cmake"
+    "/home/bone/projects/xingzhe/src/wheel/catkin_generated/installspace/wheelConfig.cmake"
+    "/home/bone/projects/xingzhe/src/wheel/catkin_generated/installspace/wheelConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/wheel" TYPE FILE FILES "/home/bbb/projects/xingzhe/src/wheel/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/wheel" TYPE FILE FILES "/home/bone/projects/xingzhe/src/wheel/package.xml")
 endif()
 

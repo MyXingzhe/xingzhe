@@ -1,6 +1,6 @@
 set(_CATKIN_CURRENT_PACKAGE "arm")
 set(arm_VERSION "0.0.0")
-set(arm_MAINTAINER "bbb <bbb@todo.todo>")
+set(arm_MAINTAINER "bbb <2676902@qq.com>")
 set(arm_PACKAGE_FORMAT "1")
 set(arm_BUILD_DEPENDS "roscpp" "std_msgs")
 set(arm_BUILD_EXPORT_DEPENDS "roscpp" "std_msgs")

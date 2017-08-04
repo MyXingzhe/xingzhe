@@ -1,0 +1,3 @@
+/home/bone/projects/xingzhe/src/libs/prupwm/CMakeFiles/rebuild_cache.dir
+/home/bone/projects/xingzhe/src/libs/prupwm/CMakeFiles/edit_cache.dir
+/home/bone/projects/xingzhe/src/libs/prupwm/CMakeFiles/pru-pwm-tester.dir

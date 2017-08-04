@@ -30,9 +30,9 @@ START_PWM:
 
 LOOP_POINT:
     
-    LBCO    r0, CONST_DDR, 0, 4     // r0: switch flag of each pwm
-    LBCO    r1, CONST_DDR, 4, 4     // r1: period of PWM, all pwms used the same period
-    LBCO    r2, CONST_DDR, 8, 32   // r2~r9: duty of each pwm
+    LBCO    r0, CONST_PRUDRAM, 0, 4     // r0: switch flag of each pwm
+    LBCO    r1, CONST_PRUDRAM, 4, 4     // r1: period of PWM, all pwms used the same period
+    LBCO    r2, CONST_PRUDRAM, 8, 32   // r2~r9: duty of each pwm
 
     MOV     r10, 0x22000
     LBBO    r11, r10, 0xC, 4 // read the cycle counter into r11

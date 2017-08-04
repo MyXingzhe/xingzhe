@@ -11,6 +11,6 @@ private:
 public:
 
 private:
-	PRU *m_left_pwm;
-	PRU *m_right_pwm;
+	PRUPWM *m_left_pwm;
+	PRUPWM *m_right_pwm;
 };
