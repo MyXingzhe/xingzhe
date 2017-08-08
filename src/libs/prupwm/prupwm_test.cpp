@@ -19,19 +19,9 @@ struct pru_pwm_param{
 
 void init()
 {
-//	prussdrv_map_prumem (PRUSS0_PRU0_DATARAM, &pruDataMem);
-	pruDataMem = malloc(sizeof(struct pru_pwm_param));
+	prussdrv_map_prumem (PRUSS0_PRU0_DATARAM, &pruDataMem);
 	pwm_param = (struct pru_pwm_param *)pruDataMem;
-pwm_param->flag=7;
 	pwm_param->period = MS_TO_CYCLE(0.5);
-pwm_param->duty[0]=10;
-pwm_param->duty[1]=20;
-pwm_param->duty[2]=30;
-pwm_param->duty[3]=40;
-pwm_param->duty[4]=50;
-pwm_param->duty[5]=60;
-pwm_param->duty[6]=70;
-pwm_param->duty[7]=80;
 }
 
 void dump_pru_pwm()
