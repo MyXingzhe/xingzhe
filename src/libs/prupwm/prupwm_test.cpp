@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include <stdint.h>
 
-//#include <prussdrv.h>
-//#include <pruss_intc_mapping.h>
+#include <prussdrv.h>
+#include <pruss_intc_mapping.h>
 
 static void *pruDataMem;
 struct pru_pwm_param *pwm_param;
