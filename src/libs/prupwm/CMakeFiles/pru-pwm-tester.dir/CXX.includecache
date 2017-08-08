@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/bone/projects/xingzhe/src/libs/prupwm/prupwm_test.cpp
+stdlib.h
+-
+stdio.h
+-
+stdint.h
+-
+
