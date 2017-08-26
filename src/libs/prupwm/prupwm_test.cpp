@@ -19,7 +19,21 @@ struct pru_pwm_param{
 
 void init()
 {
+	int ret;
+
+	prussdrv_init ();
+	ret = prussdrv_open(PRU_EVTOUT_0);
+	if (ret)
+	{
+		printf("prussdrv_open open failed\n");
+		return ;
+	}
+
 	prussdrv_map_prumem (PRUSS0_PRU0_DATARAM, &pruDataMem);
+	if (!pruDataMem) {
+		printf("pruDataMem is NULL\n");
+		exit(0);
+	}
 	pwm_param = (struct pru_pwm_param *)pruDataMem;
 	pwm_param->period = MS_TO_CYCLE(0.5);
 }
