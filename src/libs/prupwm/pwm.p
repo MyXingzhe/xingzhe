@@ -39,6 +39,52 @@ LOOP_POINT:
     ADD     r21, r12, r1  // timeout of period
 
 
+PWM_0_Hi:
+    QBBC    PWM_1_Hi, r0, 0    // pwm_0 is not used
+    SET     r30.t0
+
+PWM_1_Hi:
+    QBBC    PWM_2_Hi, r0, 0    // pwm_0 is not used
+    SET     r30.t1
+
+PWM_2_Hi:
+    QBBC    PWM_3_Hi, r0, 0    // pwm_0 is not used
+    SET     r30.t2
+
+PWM_3_Hi:
+    QBBC    PWM_4_Hi, r0, 0    // pwm_0 is not used
+    SET     r30.t3
+
+PWM_4_Hi:
+    QBBC    PWM_5_Hi, r0, 0    // pwm_0 is not used
+    SET     r30.t4
+
+PWM_5_Hi:
+    QBBC    PWM_6_Hi, r0, 0    // pwm_0 is not used
+    SET     r30.t5
+
+PWM_6_Hi:
+    QBBC    PWM_7_Hi, r0, 0    // pwm_0 is not used
+    SET     r30.t6
+
+PWM_7_Hi:
+    QBBC    PWM_1_Hi, r0, 0    // pwm_0 is not used
+    SET     r30.t7
+
+
+WAITING_FOR_DUTY_OUT:
+
+
+
+    JMP LOOP_POINT
+
+
+
+
+
+
+
+
 PWM_0:
     QBBC    PWM_1, r0, 0    // pwm_0 is not used
     // IF duty is timeout, set to low
@@ -70,7 +116,7 @@ PWM_2_PERIOD_TIMEOUT:
     SET     r30.t2
 
 PWM_3:
-    QBBC    PWM_3, r0, 3    // pwm_0 is not used
+    QBBC    PWM_4, r0, 3    // pwm_0 is not used
     // IF duty is timeout, set to low
     ADD r20, r12, r5  // r20=expected timeout of pwm0 duty
     QBLE    PWM_3_PERIOD_TIMEOUT, r11, r20
@@ -90,7 +136,7 @@ PWM_4_PERIOD_TIMEOUT:
     SET     r30.t4
 
 PWM_5:
-    QBBC    PWM_2, r0, 5    // pwm_0 is not used
+    QBBC    PWM_6, r0, 5    // pwm_0 is not used
     // IF duty is timeout, set to low
     ADD r20, r12, r7  // r20=expected timeout of pwm0 duty
     QBLE    PWM_5_PERIOD_TIMEOUT, r11, r20
@@ -100,7 +146,7 @@ PWM_5_PERIOD_TIMEOUT:
     SET     r30.t5
 
 PWM_6:
-    QBBC    PWM_2, r0, 6    // pwm_0 is not used
+    QBBC    PWM_7, r0, 6    // pwm_0 is not used
     // IF duty is timeout, set to low
     ADD r20, r12, r8  // r20=expected timeout of pwm0 duty
     QBLE    PWM_6_PERIOD_TIMEOUT, r11, r20
@@ -110,7 +156,7 @@ PWM_6_PERIOD_TIMEOUT:
     SET     r30.t6
 
 PWM_7:
-    QBBC    PWM_2, r0, 7    // pwm_0 is not used
+    QBBC    LOOP_POINT, r0, 7    // pwm_0 is not used
     // IF duty is timeout, set to low
     ADD r20, r12, r9  // r20=expected timeout of pwm0 duty
     QBLE    PWM_7_PERIOD_TIMEOUT, r11, r20
@@ -121,10 +167,6 @@ PWM_7_PERIOD_TIMEOUT:
     QBLE    PWM_0, r11, r21
     SET     r30.t7
 
-
-    MOV     r10, 0x22000
-    LBBO    r11, r10, 0xC, 4 // read the cycle counter
-    MOV     r12, r11    // r12 stores start time of period
 
     JMP LOOP_POINT
 
