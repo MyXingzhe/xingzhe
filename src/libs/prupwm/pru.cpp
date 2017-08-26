@@ -33,11 +33,12 @@
 * Global Function Definitions                                                 *
 ******************************************************************************/
 
-#define PRU_BIN_NAME  "pru.bin"
+#define PRU_BIN_NAME  "/lib/firmware/pru0.bin"
 
 int main (void)
 {
-    unsigned int ret;
+
+    int ret;
     tpruss_intc_initdata pruss_intc_initdata = PRUSS_INTC_INITDATA;
 
     printf("\nINFO: Starting PRU.\r\n");
@@ -56,8 +57,8 @@ int main (void)
     prussdrv_pruintc_init(&pruss_intc_initdata);
 
     /* Execute example on PRU */
-    printf("\tINFO: Executing PRU.\r\n");
-    prussdrv_exec_program (0, PRU_BIN_NAME);
+    ret = prussdrv_exec_program (0, PRU_BIN_NAME);
+    printf("\tINFO: Executing PRU. ret=%d\r\n", ret);
 
 
     return(0);
