@@ -117,6 +117,8 @@ int main(int argc, char *argv[])
 				else
 					pwm_param->flag &= 0x7f;
 				break;
+			case 'p':
+				break;
 			case 'q':
 				goto quit;
 				break;
