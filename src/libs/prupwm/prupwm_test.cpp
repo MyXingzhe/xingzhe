@@ -36,6 +36,8 @@ void init()
 		printf("pruDataMem is NULL\n");
 		exit(0);
 	}
+
+	memset(&pruDataMem, sizeof(struct pru_pwm_param));
 	pwm_param = (struct pru_pwm_param *)pruDataMem;
 	pwm_param->period = MS_TO_CYCLE(0.5);
 }
@@ -46,7 +48,7 @@ void dump_pru_pwm()
 	printf("####################################\n");
 	for(i=0;i<8;i++)
 	{
-		printf("PWM%d: %s, period=%d, duty=%d\n", i, ((pwm_param->flag & (1<<i))?"USED":"UNUSED"), pwm_param->period, pwm_param->duty[i]);
+		printf("PWM%d: %s, period=%d, duty=%d, cycle=%d\n", i, ((pwm_param->flag & (1<<i))?"USED":"UNUSED"), pwm_param->period, pwm_param->duty[i], pwm_param->cycle[i]);
 	}
 	printf("####################################\n");
 }
