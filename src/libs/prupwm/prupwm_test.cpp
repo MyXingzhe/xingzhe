@@ -15,6 +15,8 @@ struct pru_pwm_param{
 	uint32_t flag;
 	uint32_t period;
 	uint32_t duty[8];
+
+	uint32_t cycle[8];
 };
 
 void init()
