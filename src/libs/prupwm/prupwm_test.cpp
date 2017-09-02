@@ -5,7 +5,7 @@
 #include <prussdrv.h>
 #include <pruss_intc_mapping.h>
 
-static void *pruDataMem;
+static void *sharedMem;
 struct pru_pwm_param *pwm_param;
 
 #define MS_TO_CYCLE(ms)    ((ms)*200000)
@@ -21,25 +21,10 @@ struct pru_pwm_param{
 
 void init()
 {
-	int ret;
 
-	prussdrv_init ();
-	ret = prussdrv_open(PRU_EVTOUT_0);
-	if (ret)
-	{
-		printf("prussdrv_open open failed\n");
-		return ;
-	}
+    prussdrv_map_prumem(PRUSS0_SHARED_DATARAM, &sharedMem);
+    pwm_param = (struct pru_pwm_param *) sharedMem;
 
-	prussdrv_map_prumem (PRUSS0_PRU0_DATARAM, &pruDataMem);
-	if (!pruDataMem) {
-		printf("pruDataMem is NULL\n");
-		exit(0);
-	}
-
-	memset(&pruDataMem, sizeof(struct pru_pwm_param));
-	pwm_param = (struct pru_pwm_param *)pruDataMem;
-	pwm_param->period = MS_TO_CYCLE(0.5);
 }
 
 void dump_pru_pwm()
@@ -127,7 +112,6 @@ int main(int argc, char *argv[])
 
 quit:
 
-	free(pruDataMem);
 
 	return 0;
 }

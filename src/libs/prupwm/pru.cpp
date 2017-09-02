@@ -24,6 +24,7 @@
 #include <errno.h>
 #include <unistd.h>
 #include <string.h>
+#include <stdint.h>
 
 // Driver header file
 #include "prussdrv.h"
@@ -33,7 +34,28 @@
 * Global Function Definitions                                                 *
 ******************************************************************************/
 
+#define DDR_BASEADDR     0x80000000
+#define OFFSET_DDR       0x00001000
+#define OFFSET_SHAREDRAM 2048       //equivalent with 0x00002000
+
+#define PRUSS0_SHARED_DATARAM    4
+
 #define PRU_BIN_NAME  "/lib/firmware/pru0.bin"
+
+#define MS_TO_CYCLE(ms)    ((ms)*200000)
+
+int mem_fd;
+static void *ddrMem;
+struct pru_pwm_param *pwm_param;
+
+struct pru_pwm_param{
+    uint32_t flag;
+    uint32_t period;
+    uint32_t duty[8];
+
+    uint32_t cycle[8];
+};
+
 
 int main (void)
 {
@@ -53,12 +75,36 @@ int main (void)
         return (ret);
     }
 
+    /* open the device */
+    mem_fd = open("/dev/mem", O_RDWR);
+    if (mem_fd < 0) {
+        printf("Failed to open /dev/mem (%s)\n", strerror(errno));
+        return -1;
+    }
+
+    /* map the DDR memory */
+    ddrMem = mmap(0, 0x0FFFFFFF, PROT_WRITE | PROT_READ, MAP_SHARED, mem_fd, DDR_BASEADDR);
+    if (ddrMem == NULL) {
+        printf("Failed to map the device (%s)\n", strerror(errno));
+        close(mem_fd);
+        return -1;
+    }
+
+    pwm_param = (struct pru_pwm_param *)(ddrMem + OFFSET_DDR);
+    memset(pwm_param, 0, sizeof(struct pru_pwm_param));
+    pwm_param->period = MS_TO_CYCLE(0.5);
+
     /* Get the interrupt initialized */
     prussdrv_pruintc_init(&pruss_intc_initdata);
 
     /* Execute example on PRU */
     ret = prussdrv_exec_program (0, PRU_BIN_NAME);
     printf("\tINFO: Executing PRU. ret=%d\r\n", ret);
+
+    while(1)
+    {
+        sleep(10);
+    }
 
 
     return(0);
