@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bone/projects/xingzhe/src
+CMAKE_SOURCE_DIR = /home/ubuntu/projects/xingzhe/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bone/projects/xingzhe/src
+CMAKE_BINARY_DIR = /home/ubuntu/projects/xingzhe/src
 
 #=============================================================================
 # Target rules for target CMakeFiles/clean_test_results.dir
@@ -66,14 +66,14 @@ CMAKE_BINARY_DIR = /home/bone/projects/xingzhe/src
 CMakeFiles/clean_test_results.dir/all:
 	$(MAKE) -f CMakeFiles/clean_test_results.dir/build.make CMakeFiles/clean_test_results.dir/depend
 	$(MAKE) -f CMakeFiles/clean_test_results.dir/build.make CMakeFiles/clean_test_results.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target clean_test_results"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target clean_test_results"
 .PHONY : CMakeFiles/clean_test_results.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/clean_test_results.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/clean_test_results.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : CMakeFiles/clean_test_results.dir/rule
 
 # Convenience name for target.
@@ -98,14 +98,14 @@ clean: CMakeFiles/clean_test_results.dir/clean
 CMakeFiles/run_tests.dir/all:
 	$(MAKE) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/depend
 	$(MAKE) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target run_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target run_tests"
 .PHONY : CMakeFiles/run_tests.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/run_tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/run_tests.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : CMakeFiles/run_tests.dir/rule
 
 # Convenience name for target.
@@ -130,14 +130,14 @@ clean: CMakeFiles/run_tests.dir/clean
 CMakeFiles/download_extra_data.dir/all:
 	$(MAKE) -f CMakeFiles/download_extra_data.dir/build.make CMakeFiles/download_extra_data.dir/depend
 	$(MAKE) -f CMakeFiles/download_extra_data.dir/build.make CMakeFiles/download_extra_data.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target download_extra_data"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target download_extra_data"
 .PHONY : CMakeFiles/download_extra_data.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/download_extra_data.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/download_extra_data.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : CMakeFiles/download_extra_data.dir/rule
 
 # Convenience name for target.
@@ -162,14 +162,14 @@ clean: CMakeFiles/download_extra_data.dir/clean
 CMakeFiles/tests.dir/all:
 	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/depend
 	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target tests"
 .PHONY : CMakeFiles/tests.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/tests.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : CMakeFiles/tests.dir/rule
 
 # Convenience name for target.
@@ -194,14 +194,14 @@ clean: CMakeFiles/tests.dir/clean
 CMakeFiles/doxygen.dir/all:
 	$(MAKE) -f CMakeFiles/doxygen.dir/build.make CMakeFiles/doxygen.dir/depend
 	$(MAKE) -f CMakeFiles/doxygen.dir/build.make CMakeFiles/doxygen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target doxygen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target doxygen"
 .PHONY : CMakeFiles/doxygen.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/doxygen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/doxygen.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : CMakeFiles/doxygen.dir/rule
 
 # Convenience name for target.
@@ -245,14 +245,14 @@ gtest/preinstall:
 gtest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=19,20 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=22,23 "Built target gtest"
 .PHONY : gtest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
 gtest/CMakeFiles/gtest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 gtest/CMakeFiles/gtest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : gtest/CMakeFiles/gtest.dir/rule
 
 # Convenience name for target.
@@ -277,14 +277,14 @@ clean: gtest/CMakeFiles/gtest.dir/clean
 gtest/CMakeFiles/gtest_main.dir/all: gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=21,22 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=24,25 "Built target gtest_main"
 .PHONY : gtest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
 gtest/CMakeFiles/gtest_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 gtest/CMakeFiles/gtest_main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : gtest/CMakeFiles/gtest_main.dir/rule
 
 # Convenience name for target.
@@ -341,14 +341,14 @@ arm/preinstall:
 arm/CMakeFiles/std_msgs_generate_messages_lisp.dir/all:
 	$(MAKE) -f arm/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make arm/CMakeFiles/std_msgs_generate_messages_lisp.dir/depend
 	$(MAKE) -f arm/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make arm/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_lisp"
 .PHONY : arm/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
 arm/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : arm/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -373,14 +373,14 @@ clean: arm/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
 arm/CMakeFiles/std_msgs_generate_messages_eus.dir/all:
 	$(MAKE) -f arm/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make arm/CMakeFiles/std_msgs_generate_messages_eus.dir/depend
 	$(MAKE) -f arm/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make arm/CMakeFiles/std_msgs_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_eus"
 .PHONY : arm/CMakeFiles/std_msgs_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
 arm/CMakeFiles/std_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/std_msgs_generate_messages_eus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : arm/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -405,14 +405,14 @@ clean: arm/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
 arm/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all:
 	$(MAKE) -f arm/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make arm/CMakeFiles/std_msgs_generate_messages_nodejs.dir/depend
 	$(MAKE) -f arm/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make arm/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_nodejs"
 .PHONY : arm/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
 arm/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : arm/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -437,14 +437,14 @@ clean: arm/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
 arm/CMakeFiles/roscpp_generate_messages_lisp.dir/all:
 	$(MAKE) -f arm/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make arm/CMakeFiles/roscpp_generate_messages_lisp.dir/depend
 	$(MAKE) -f arm/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make arm/CMakeFiles/roscpp_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target roscpp_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target roscpp_generate_messages_lisp"
 .PHONY : arm/CMakeFiles/roscpp_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
 arm/CMakeFiles/roscpp_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/roscpp_generate_messages_lisp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : arm/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -469,14 +469,14 @@ clean: arm/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
 arm/CMakeFiles/roscpp_generate_messages_nodejs.dir/all:
 	$(MAKE) -f arm/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make arm/CMakeFiles/roscpp_generate_messages_nodejs.dir/depend
 	$(MAKE) -f arm/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make arm/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target roscpp_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target roscpp_generate_messages_nodejs"
 .PHONY : arm/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
 arm/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : arm/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -501,14 +501,14 @@ clean: arm/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
 arm/CMakeFiles/roscpp_generate_messages_eus.dir/all:
 	$(MAKE) -f arm/CMakeFiles/roscpp_generate_messages_eus.dir/build.make arm/CMakeFiles/roscpp_generate_messages_eus.dir/depend
 	$(MAKE) -f arm/CMakeFiles/roscpp_generate_messages_eus.dir/build.make arm/CMakeFiles/roscpp_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target roscpp_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target roscpp_generate_messages_eus"
 .PHONY : arm/CMakeFiles/roscpp_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
 arm/CMakeFiles/roscpp_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/roscpp_generate_messages_eus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : arm/CMakeFiles/roscpp_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -533,14 +533,14 @@ clean: arm/CMakeFiles/roscpp_generate_messages_eus.dir/clean
 arm/CMakeFiles/std_msgs_generate_messages_cpp.dir/all:
 	$(MAKE) -f arm/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make arm/CMakeFiles/std_msgs_generate_messages_cpp.dir/depend
 	$(MAKE) -f arm/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make arm/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_cpp"
 .PHONY : arm/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
 arm/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : arm/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -565,14 +565,14 @@ clean: arm/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
 arm/CMakeFiles/roscpp_generate_messages_cpp.dir/all:
 	$(MAKE) -f arm/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make arm/CMakeFiles/roscpp_generate_messages_cpp.dir/depend
 	$(MAKE) -f arm/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make arm/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target roscpp_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target roscpp_generate_messages_cpp"
 .PHONY : arm/CMakeFiles/roscpp_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
 arm/CMakeFiles/roscpp_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/roscpp_generate_messages_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : arm/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -597,14 +597,14 @@ clean: arm/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
 arm/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all:
 	$(MAKE) -f arm/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make arm/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/depend
 	$(MAKE) -f arm/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make arm/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_nodejs"
 .PHONY : arm/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
 arm/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : arm/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -629,14 +629,14 @@ clean: arm/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
 arm/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all:
 	$(MAKE) -f arm/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make arm/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/depend
 	$(MAKE) -f arm/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make arm/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_eus"
 .PHONY : arm/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
 arm/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : arm/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -661,14 +661,14 @@ clean: arm/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
 arm/CMakeFiles/roscpp_generate_messages_py.dir/all:
 	$(MAKE) -f arm/CMakeFiles/roscpp_generate_messages_py.dir/build.make arm/CMakeFiles/roscpp_generate_messages_py.dir/depend
 	$(MAKE) -f arm/CMakeFiles/roscpp_generate_messages_py.dir/build.make arm/CMakeFiles/roscpp_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target roscpp_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target roscpp_generate_messages_py"
 .PHONY : arm/CMakeFiles/roscpp_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
 arm/CMakeFiles/roscpp_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/roscpp_generate_messages_py.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : arm/CMakeFiles/roscpp_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -693,14 +693,14 @@ clean: arm/CMakeFiles/roscpp_generate_messages_py.dir/clean
 arm/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all:
 	$(MAKE) -f arm/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make arm/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/depend
 	$(MAKE) -f arm/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make arm/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_cpp"
 .PHONY : arm/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
 arm/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : arm/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -725,14 +725,14 @@ clean: arm/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
 arm/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all:
 	$(MAKE) -f arm/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make arm/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/depend
 	$(MAKE) -f arm/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make arm/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_lisp"
 .PHONY : arm/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
 arm/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : arm/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -757,14 +757,14 @@ clean: arm/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
 arm/CMakeFiles/std_msgs_generate_messages_py.dir/all:
 	$(MAKE) -f arm/CMakeFiles/std_msgs_generate_messages_py.dir/build.make arm/CMakeFiles/std_msgs_generate_messages_py.dir/depend
 	$(MAKE) -f arm/CMakeFiles/std_msgs_generate_messages_py.dir/build.make arm/CMakeFiles/std_msgs_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_py"
 .PHONY : arm/CMakeFiles/std_msgs_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
 arm/CMakeFiles/std_msgs_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/std_msgs_generate_messages_py.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : arm/CMakeFiles/std_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -789,14 +789,14 @@ clean: arm/CMakeFiles/std_msgs_generate_messages_py.dir/clean
 arm/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all:
 	$(MAKE) -f arm/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make arm/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/depend
 	$(MAKE) -f arm/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make arm/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_py"
 .PHONY : arm/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
 arm/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : arm/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -854,7 +854,7 @@ body/clean: body/CMakeFiles/imu.dir/clean
 .PHONY : body/clean
 
 # Convenience name for "preinstall" pass in the directory.
-body/preinstall:
+body/preinstall: body/CMakeFiles/body_node.dir/preinstall
 
 .PHONY : body/preinstall
 
@@ -865,14 +865,14 @@ body/preinstall:
 body/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all:
 	$(MAKE) -f body/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make body/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/depend
 	$(MAKE) -f body/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make body/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_nodejs"
 .PHONY : body/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
 body/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : body/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -897,14 +897,14 @@ clean: body/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean
 body/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all:
 	$(MAKE) -f body/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make body/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/depend
 	$(MAKE) -f body/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make body/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_lisp"
 .PHONY : body/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
 body/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : body/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -929,14 +929,14 @@ clean: body/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
 body/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all:
 	$(MAKE) -f body/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make body/CMakeFiles/geometry_msgs_generate_messages_eus.dir/depend
 	$(MAKE) -f body/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make body/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_eus"
 .PHONY : body/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
 body/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : body/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -961,14 +961,14 @@ clean: body/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
 body/CMakeFiles/geometry_msgs_generate_messages_py.dir/all:
 	$(MAKE) -f body/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make body/CMakeFiles/geometry_msgs_generate_messages_py.dir/depend
 	$(MAKE) -f body/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make body/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_py"
 .PHONY : body/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
 body/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : body/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -993,14 +993,14 @@ clean: body/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
 body/CMakeFiles/body_generate_messages_cpp.dir/all: arm/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
 	$(MAKE) -f body/CMakeFiles/body_generate_messages_cpp.dir/build.make body/CMakeFiles/body_generate_messages_cpp.dir/depend
 	$(MAKE) -f body/CMakeFiles/body_generate_messages_cpp.dir/build.make body/CMakeFiles/body_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target body_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target body_generate_messages_cpp"
 .PHONY : body/CMakeFiles/body_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
 body/CMakeFiles/body_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/body_generate_messages_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : body/CMakeFiles/body_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -1025,14 +1025,14 @@ clean: body/CMakeFiles/body_generate_messages_cpp.dir/clean
 body/CMakeFiles/body_genpy.dir/all: body/CMakeFiles/body_generate_messages_py.dir/all
 	$(MAKE) -f body/CMakeFiles/body_genpy.dir/build.make body/CMakeFiles/body_genpy.dir/depend
 	$(MAKE) -f body/CMakeFiles/body_genpy.dir/build.make body/CMakeFiles/body_genpy.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target body_genpy"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target body_genpy"
 .PHONY : body/CMakeFiles/body_genpy.dir/all
 
 # Build rule for subdir invocation for target.
 body/CMakeFiles/body_genpy.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/body_genpy.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : body/CMakeFiles/body_genpy.dir/rule
 
 # Convenience name for target.
@@ -1057,14 +1057,14 @@ clean: body/CMakeFiles/body_genpy.dir/clean
 body/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all:
 	$(MAKE) -f body/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make body/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/depend
 	$(MAKE) -f body/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make body/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_lisp"
 .PHONY : body/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
 body/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : body/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -1089,14 +1089,14 @@ clean: body/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
 body/CMakeFiles/sensor_msgs_generate_messages_py.dir/all:
 	$(MAKE) -f body/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make body/CMakeFiles/sensor_msgs_generate_messages_py.dir/depend
 	$(MAKE) -f body/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make body/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_py"
 .PHONY : body/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
 body/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : body/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -1121,14 +1121,14 @@ clean: body/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
 body/CMakeFiles/body_generate_messages_eus.dir/all: arm/CMakeFiles/std_msgs_generate_messages_eus.dir/all
 	$(MAKE) -f body/CMakeFiles/body_generate_messages_eus.dir/build.make body/CMakeFiles/body_generate_messages_eus.dir/depend
 	$(MAKE) -f body/CMakeFiles/body_generate_messages_eus.dir/build.make body/CMakeFiles/body_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=1 "Built target body_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=1 "Built target body_generate_messages_eus"
 .PHONY : body/CMakeFiles/body_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
 body/CMakeFiles/body_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/body_generate_messages_eus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : body/CMakeFiles/body_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -1153,14 +1153,14 @@ clean: body/CMakeFiles/body_generate_messages_eus.dir/clean
 body/CMakeFiles/body_geneus.dir/all: body/CMakeFiles/body_generate_messages_eus.dir/all
 	$(MAKE) -f body/CMakeFiles/body_geneus.dir/build.make body/CMakeFiles/body_geneus.dir/depend
 	$(MAKE) -f body/CMakeFiles/body_geneus.dir/build.make body/CMakeFiles/body_geneus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target body_geneus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target body_geneus"
 .PHONY : body/CMakeFiles/body_geneus.dir/all
 
 # Build rule for subdir invocation for target.
 body/CMakeFiles/body_geneus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/body_geneus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : body/CMakeFiles/body_geneus.dir/rule
 
 # Convenience name for target.
@@ -1185,7 +1185,7 @@ clean: body/CMakeFiles/body_geneus.dir/clean
 body/CMakeFiles/xzio.dir/all:
 	$(MAKE) -f body/CMakeFiles/xzio.dir/build.make body/CMakeFiles/xzio.dir/depend
 	$(MAKE) -f body/CMakeFiles/xzio.dir/build.make body/CMakeFiles/xzio.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=46,47 "Built target xzio"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=55,56 "Built target xzio"
 .PHONY : body/CMakeFiles/xzio.dir/all
 
 # Include target in all.
@@ -1195,9 +1195,9 @@ all: body/CMakeFiles/xzio.dir/all
 
 # Build rule for subdir invocation for target.
 body/CMakeFiles/xzio.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/xzio.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : body/CMakeFiles/xzio.dir/rule
 
 # Convenience name for target.
@@ -1222,14 +1222,14 @@ clean: body/CMakeFiles/xzio.dir/clean
 body/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all:
 	$(MAKE) -f body/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make body/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/depend
 	$(MAKE) -f body/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make body/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_cpp"
 .PHONY : body/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
 body/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : body/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -1254,14 +1254,14 @@ clean: body/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
 body/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all:
 	$(MAKE) -f body/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make body/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/depend
 	$(MAKE) -f body/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make body/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_nodejs"
 .PHONY : body/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
 body/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : body/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -1317,7 +1317,7 @@ body/CMakeFiles/body_node.dir/all: body/CMakeFiles/body_generate_messages_py.dir
 body/CMakeFiles/body_node.dir/all: body/CMakeFiles/imu.dir/all
 	$(MAKE) -f body/CMakeFiles/body_node.dir/build.make body/CMakeFiles/body_node.dir/depend
 	$(MAKE) -f body/CMakeFiles/body_node.dir/build.make body/CMakeFiles/body_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=2,3,4 "Built target body_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=2,3,4,5 "Built target body_node"
 .PHONY : body/CMakeFiles/body_node.dir/all
 
 # Include target in all.
@@ -1327,15 +1327,25 @@ all: body/CMakeFiles/body_node.dir/all
 
 # Build rule for subdir invocation for target.
 body/CMakeFiles/body_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/body_node.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : body/CMakeFiles/body_node.dir/rule
 
 # Convenience name for target.
 body_node: body/CMakeFiles/body_node.dir/rule
 
 .PHONY : body_node
+
+# Pre-install relink rule for target.
+body/CMakeFiles/body_node.dir/preinstall:
+	$(MAKE) -f body/CMakeFiles/body_node.dir/build.make body/CMakeFiles/body_node.dir/preinstall
+.PHONY : body/CMakeFiles/body_node.dir/preinstall
+
+# Prepare target for install.
+preinstall: body/CMakeFiles/body_node.dir/preinstall
+
+.PHONY : preinstall
 
 # clean rule for target.
 body/CMakeFiles/body_node.dir/clean:
@@ -1354,14 +1364,14 @@ clean: body/CMakeFiles/body_node.dir/clean
 body/CMakeFiles/body_gennodejs.dir/all: body/CMakeFiles/body_generate_messages_nodejs.dir/all
 	$(MAKE) -f body/CMakeFiles/body_gennodejs.dir/build.make body/CMakeFiles/body_gennodejs.dir/depend
 	$(MAKE) -f body/CMakeFiles/body_gennodejs.dir/build.make body/CMakeFiles/body_gennodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target body_gennodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target body_gennodejs"
 .PHONY : body/CMakeFiles/body_gennodejs.dir/all
 
 # Build rule for subdir invocation for target.
 body/CMakeFiles/body_gennodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/body_gennodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : body/CMakeFiles/body_gennodejs.dir/rule
 
 # Convenience name for target.
@@ -1386,14 +1396,14 @@ clean: body/CMakeFiles/body_gennodejs.dir/clean
 body/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all:
 	$(MAKE) -f body/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make body/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/depend
 	$(MAKE) -f body/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make body/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_cpp"
 .PHONY : body/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
 body/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : body/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -1422,7 +1432,7 @@ body/CMakeFiles/body_generate_messages.dir/all: body/CMakeFiles/body_generate_me
 body/CMakeFiles/body_generate_messages.dir/all: body/CMakeFiles/body_generate_messages_py.dir/all
 	$(MAKE) -f body/CMakeFiles/body_generate_messages.dir/build.make body/CMakeFiles/body_generate_messages.dir/depend
 	$(MAKE) -f body/CMakeFiles/body_generate_messages.dir/build.make body/CMakeFiles/body_generate_messages.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target body_generate_messages"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target body_generate_messages"
 .PHONY : body/CMakeFiles/body_generate_messages.dir/all
 
 # Include target in all.
@@ -1432,9 +1442,9 @@ all: body/CMakeFiles/body_generate_messages.dir/all
 
 # Build rule for subdir invocation for target.
 body/CMakeFiles/body_generate_messages.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/body_generate_messages.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : body/CMakeFiles/body_generate_messages.dir/rule
 
 # Convenience name for target.
@@ -1459,14 +1469,14 @@ clean: body/CMakeFiles/body_generate_messages.dir/clean
 body/CMakeFiles/body_gencpp.dir/all: body/CMakeFiles/body_generate_messages_cpp.dir/all
 	$(MAKE) -f body/CMakeFiles/body_gencpp.dir/build.make body/CMakeFiles/body_gencpp.dir/depend
 	$(MAKE) -f body/CMakeFiles/body_gencpp.dir/build.make body/CMakeFiles/body_gencpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target body_gencpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target body_gencpp"
 .PHONY : body/CMakeFiles/body_gencpp.dir/all
 
 # Build rule for subdir invocation for target.
 body/CMakeFiles/body_gencpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/body_gencpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : body/CMakeFiles/body_gencpp.dir/rule
 
 # Convenience name for target.
@@ -1491,14 +1501,14 @@ clean: body/CMakeFiles/body_gencpp.dir/clean
 body/CMakeFiles/body_genlisp.dir/all: body/CMakeFiles/body_generate_messages_lisp.dir/all
 	$(MAKE) -f body/CMakeFiles/body_genlisp.dir/build.make body/CMakeFiles/body_genlisp.dir/depend
 	$(MAKE) -f body/CMakeFiles/body_genlisp.dir/build.make body/CMakeFiles/body_genlisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target body_genlisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target body_genlisp"
 .PHONY : body/CMakeFiles/body_genlisp.dir/all
 
 # Build rule for subdir invocation for target.
 body/CMakeFiles/body_genlisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/body_genlisp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : body/CMakeFiles/body_genlisp.dir/rule
 
 # Convenience name for target.
@@ -1523,14 +1533,14 @@ clean: body/CMakeFiles/body_genlisp.dir/clean
 body/CMakeFiles/body_generate_messages_lisp.dir/all: arm/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 	$(MAKE) -f body/CMakeFiles/body_generate_messages_lisp.dir/build.make body/CMakeFiles/body_generate_messages_lisp.dir/depend
 	$(MAKE) -f body/CMakeFiles/body_generate_messages_lisp.dir/build.make body/CMakeFiles/body_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target body_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target body_generate_messages_lisp"
 .PHONY : body/CMakeFiles/body_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
 body/CMakeFiles/body_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/body_generate_messages_lisp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : body/CMakeFiles/body_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -1555,14 +1565,14 @@ clean: body/CMakeFiles/body_generate_messages_lisp.dir/clean
 body/CMakeFiles/body_generate_messages_nodejs.dir/all: arm/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
 	$(MAKE) -f body/CMakeFiles/body_generate_messages_nodejs.dir/build.make body/CMakeFiles/body_generate_messages_nodejs.dir/depend
 	$(MAKE) -f body/CMakeFiles/body_generate_messages_nodejs.dir/build.make body/CMakeFiles/body_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target body_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target body_generate_messages_nodejs"
 .PHONY : body/CMakeFiles/body_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
 body/CMakeFiles/body_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/body_generate_messages_nodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : body/CMakeFiles/body_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -1587,14 +1597,14 @@ clean: body/CMakeFiles/body_generate_messages_nodejs.dir/clean
 body/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all:
 	$(MAKE) -f body/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make body/CMakeFiles/sensor_msgs_generate_messages_eus.dir/depend
 	$(MAKE) -f body/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make body/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_eus"
 .PHONY : body/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
 body/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : body/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -1619,14 +1629,14 @@ clean: body/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
 body/CMakeFiles/body_generate_messages_py.dir/all: arm/CMakeFiles/std_msgs_generate_messages_py.dir/all
 	$(MAKE) -f body/CMakeFiles/body_generate_messages_py.dir/build.make body/CMakeFiles/body_generate_messages_py.dir/depend
 	$(MAKE) -f body/CMakeFiles/body_generate_messages_py.dir/build.make body/CMakeFiles/body_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target body_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target body_generate_messages_py"
 .PHONY : body/CMakeFiles/body_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
 body/CMakeFiles/body_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/body_generate_messages_py.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : body/CMakeFiles/body_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -1651,7 +1661,7 @@ clean: body/CMakeFiles/body_generate_messages_py.dir/clean
 body/CMakeFiles/imu.dir/all:
 	$(MAKE) -f body/CMakeFiles/imu.dir/build.make body/CMakeFiles/imu.dir/depend
 	$(MAKE) -f body/CMakeFiles/imu.dir/build.make body/CMakeFiles/imu.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=23,24 "Built target imu"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=26,27 "Built target imu"
 .PHONY : body/CMakeFiles/imu.dir/all
 
 # Include target in all.
@@ -1661,9 +1671,9 @@ all: body/CMakeFiles/imu.dir/all
 
 # Build rule for subdir invocation for target.
 body/CMakeFiles/imu.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 body/CMakeFiles/imu.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : body/CMakeFiles/imu.dir/rule
 
 # Convenience name for target.
@@ -1708,7 +1718,7 @@ ear/clean: ear/CMakeFiles/ear_generate_messages_nodejs.dir/clean
 .PHONY : ear/clean
 
 # Convenience name for "preinstall" pass in the directory.
-ear/preinstall:
+ear/preinstall: ear/CMakeFiles/ear_node.dir/preinstall
 
 .PHONY : ear/preinstall
 
@@ -1738,7 +1748,7 @@ ear/CMakeFiles/ear_node.dir/all: ear/CMakeFiles/ear_generate_messages_eus.dir/al
 ear/CMakeFiles/ear_node.dir/all: ear/CMakeFiles/ear_generate_messages_nodejs.dir/all
 	$(MAKE) -f ear/CMakeFiles/ear_node.dir/build.make ear/CMakeFiles/ear_node.dir/depend
 	$(MAKE) -f ear/CMakeFiles/ear_node.dir/build.make ear/CMakeFiles/ear_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=12,13,14 "Built target ear_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=13,14,15,16 "Built target ear_node"
 .PHONY : ear/CMakeFiles/ear_node.dir/all
 
 # Include target in all.
@@ -1748,15 +1758,25 @@ all: ear/CMakeFiles/ear_node.dir/all
 
 # Build rule for subdir invocation for target.
 ear/CMakeFiles/ear_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 ear/CMakeFiles/ear_node.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : ear/CMakeFiles/ear_node.dir/rule
 
 # Convenience name for target.
 ear_node: ear/CMakeFiles/ear_node.dir/rule
 
 .PHONY : ear_node
+
+# Pre-install relink rule for target.
+ear/CMakeFiles/ear_node.dir/preinstall:
+	$(MAKE) -f ear/CMakeFiles/ear_node.dir/build.make ear/CMakeFiles/ear_node.dir/preinstall
+.PHONY : ear/CMakeFiles/ear_node.dir/preinstall
+
+# Prepare target for install.
+preinstall: ear/CMakeFiles/ear_node.dir/preinstall
+
+.PHONY : preinstall
 
 # clean rule for target.
 ear/CMakeFiles/ear_node.dir/clean:
@@ -1775,14 +1795,14 @@ clean: ear/CMakeFiles/ear_node.dir/clean
 ear/CMakeFiles/ear_genpy.dir/all: ear/CMakeFiles/ear_generate_messages_py.dir/all
 	$(MAKE) -f ear/CMakeFiles/ear_genpy.dir/build.make ear/CMakeFiles/ear_genpy.dir/depend
 	$(MAKE) -f ear/CMakeFiles/ear_genpy.dir/build.make ear/CMakeFiles/ear_genpy.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target ear_genpy"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target ear_genpy"
 .PHONY : ear/CMakeFiles/ear_genpy.dir/all
 
 # Build rule for subdir invocation for target.
 ear/CMakeFiles/ear_genpy.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 ear/CMakeFiles/ear_genpy.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : ear/CMakeFiles/ear_genpy.dir/rule
 
 # Convenience name for target.
@@ -1808,14 +1828,14 @@ ear/CMakeFiles/ear_generate_messages_py.dir/all: arm/CMakeFiles/std_msgs_generat
 ear/CMakeFiles/ear_generate_messages_py.dir/all: ear/CMakeFiles/_ear_generate_messages_check_deps_usonic.dir/all
 	$(MAKE) -f ear/CMakeFiles/ear_generate_messages_py.dir/build.make ear/CMakeFiles/ear_generate_messages_py.dir/depend
 	$(MAKE) -f ear/CMakeFiles/ear_generate_messages_py.dir/build.make ear/CMakeFiles/ear_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=10,11 "Built target ear_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=11,12 "Built target ear_generate_messages_py"
 .PHONY : ear/CMakeFiles/ear_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
 ear/CMakeFiles/ear_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 ear/CMakeFiles/ear_generate_messages_py.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : ear/CMakeFiles/ear_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -1840,14 +1860,14 @@ clean: ear/CMakeFiles/ear_generate_messages_py.dir/clean
 ear/CMakeFiles/ear_gencpp.dir/all: ear/CMakeFiles/ear_generate_messages_cpp.dir/all
 	$(MAKE) -f ear/CMakeFiles/ear_gencpp.dir/build.make ear/CMakeFiles/ear_gencpp.dir/depend
 	$(MAKE) -f ear/CMakeFiles/ear_gencpp.dir/build.make ear/CMakeFiles/ear_gencpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target ear_gencpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target ear_gencpp"
 .PHONY : ear/CMakeFiles/ear_gencpp.dir/all
 
 # Build rule for subdir invocation for target.
 ear/CMakeFiles/ear_gencpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 ear/CMakeFiles/ear_gencpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : ear/CMakeFiles/ear_gencpp.dir/rule
 
 # Convenience name for target.
@@ -1872,14 +1892,14 @@ clean: ear/CMakeFiles/ear_gencpp.dir/clean
 ear/CMakeFiles/_ear_generate_messages_check_deps_usonic.dir/all:
 	$(MAKE) -f ear/CMakeFiles/_ear_generate_messages_check_deps_usonic.dir/build.make ear/CMakeFiles/_ear_generate_messages_check_deps_usonic.dir/depend
 	$(MAKE) -f ear/CMakeFiles/_ear_generate_messages_check_deps_usonic.dir/build.make ear/CMakeFiles/_ear_generate_messages_check_deps_usonic.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target _ear_generate_messages_check_deps_usonic"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target _ear_generate_messages_check_deps_usonic"
 .PHONY : ear/CMakeFiles/_ear_generate_messages_check_deps_usonic.dir/all
 
 # Build rule for subdir invocation for target.
 ear/CMakeFiles/_ear_generate_messages_check_deps_usonic.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 ear/CMakeFiles/_ear_generate_messages_check_deps_usonic.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : ear/CMakeFiles/_ear_generate_messages_check_deps_usonic.dir/rule
 
 # Convenience name for target.
@@ -1905,14 +1925,14 @@ ear/CMakeFiles/ear_generate_messages_cpp.dir/all: arm/CMakeFiles/std_msgs_genera
 ear/CMakeFiles/ear_generate_messages_cpp.dir/all: ear/CMakeFiles/_ear_generate_messages_check_deps_usonic.dir/all
 	$(MAKE) -f ear/CMakeFiles/ear_generate_messages_cpp.dir/build.make ear/CMakeFiles/ear_generate_messages_cpp.dir/depend
 	$(MAKE) -f ear/CMakeFiles/ear_generate_messages_cpp.dir/build.make ear/CMakeFiles/ear_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=5 "Built target ear_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=6 "Built target ear_generate_messages_cpp"
 .PHONY : ear/CMakeFiles/ear_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
 ear/CMakeFiles/ear_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 ear/CMakeFiles/ear_generate_messages_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : ear/CMakeFiles/ear_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -1941,7 +1961,7 @@ ear/CMakeFiles/ear_generate_messages.dir/all: ear/CMakeFiles/ear_generate_messag
 ear/CMakeFiles/ear_generate_messages.dir/all: ear/CMakeFiles/ear_generate_messages_nodejs.dir/all
 	$(MAKE) -f ear/CMakeFiles/ear_generate_messages.dir/build.make ear/CMakeFiles/ear_generate_messages.dir/depend
 	$(MAKE) -f ear/CMakeFiles/ear_generate_messages.dir/build.make ear/CMakeFiles/ear_generate_messages.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target ear_generate_messages"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target ear_generate_messages"
 .PHONY : ear/CMakeFiles/ear_generate_messages.dir/all
 
 # Include target in all.
@@ -1951,9 +1971,9 @@ all: ear/CMakeFiles/ear_generate_messages.dir/all
 
 # Build rule for subdir invocation for target.
 ear/CMakeFiles/ear_generate_messages.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 ear/CMakeFiles/ear_generate_messages.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : ear/CMakeFiles/ear_generate_messages.dir/rule
 
 # Convenience name for target.
@@ -1978,14 +1998,14 @@ clean: ear/CMakeFiles/ear_generate_messages.dir/clean
 ear/CMakeFiles/ear_geneus.dir/all: ear/CMakeFiles/ear_generate_messages_eus.dir/all
 	$(MAKE) -f ear/CMakeFiles/ear_geneus.dir/build.make ear/CMakeFiles/ear_geneus.dir/depend
 	$(MAKE) -f ear/CMakeFiles/ear_geneus.dir/build.make ear/CMakeFiles/ear_geneus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target ear_geneus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target ear_geneus"
 .PHONY : ear/CMakeFiles/ear_geneus.dir/all
 
 # Build rule for subdir invocation for target.
 ear/CMakeFiles/ear_geneus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 ear/CMakeFiles/ear_geneus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : ear/CMakeFiles/ear_geneus.dir/rule
 
 # Convenience name for target.
@@ -2011,14 +2031,14 @@ ear/CMakeFiles/ear_generate_messages_lisp.dir/all: arm/CMakeFiles/std_msgs_gener
 ear/CMakeFiles/ear_generate_messages_lisp.dir/all: ear/CMakeFiles/_ear_generate_messages_check_deps_usonic.dir/all
 	$(MAKE) -f ear/CMakeFiles/ear_generate_messages_lisp.dir/build.make ear/CMakeFiles/ear_generate_messages_lisp.dir/depend
 	$(MAKE) -f ear/CMakeFiles/ear_generate_messages_lisp.dir/build.make ear/CMakeFiles/ear_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=8 "Built target ear_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=9 "Built target ear_generate_messages_lisp"
 .PHONY : ear/CMakeFiles/ear_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
 ear/CMakeFiles/ear_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 ear/CMakeFiles/ear_generate_messages_lisp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : ear/CMakeFiles/ear_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -2043,14 +2063,14 @@ clean: ear/CMakeFiles/ear_generate_messages_lisp.dir/clean
 ear/CMakeFiles/ear_genlisp.dir/all: ear/CMakeFiles/ear_generate_messages_lisp.dir/all
 	$(MAKE) -f ear/CMakeFiles/ear_genlisp.dir/build.make ear/CMakeFiles/ear_genlisp.dir/depend
 	$(MAKE) -f ear/CMakeFiles/ear_genlisp.dir/build.make ear/CMakeFiles/ear_genlisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target ear_genlisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target ear_genlisp"
 .PHONY : ear/CMakeFiles/ear_genlisp.dir/all
 
 # Build rule for subdir invocation for target.
 ear/CMakeFiles/ear_genlisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 ear/CMakeFiles/ear_genlisp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : ear/CMakeFiles/ear_genlisp.dir/rule
 
 # Convenience name for target.
@@ -2076,14 +2096,14 @@ ear/CMakeFiles/ear_generate_messages_eus.dir/all: arm/CMakeFiles/std_msgs_genera
 ear/CMakeFiles/ear_generate_messages_eus.dir/all: ear/CMakeFiles/_ear_generate_messages_check_deps_usonic.dir/all
 	$(MAKE) -f ear/CMakeFiles/ear_generate_messages_eus.dir/build.make ear/CMakeFiles/ear_generate_messages_eus.dir/depend
 	$(MAKE) -f ear/CMakeFiles/ear_generate_messages_eus.dir/build.make ear/CMakeFiles/ear_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=6,7 "Built target ear_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=7,8 "Built target ear_generate_messages_eus"
 .PHONY : ear/CMakeFiles/ear_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
 ear/CMakeFiles/ear_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 ear/CMakeFiles/ear_generate_messages_eus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : ear/CMakeFiles/ear_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -2108,14 +2128,14 @@ clean: ear/CMakeFiles/ear_generate_messages_eus.dir/clean
 ear/CMakeFiles/ear_gennodejs.dir/all: ear/CMakeFiles/ear_generate_messages_nodejs.dir/all
 	$(MAKE) -f ear/CMakeFiles/ear_gennodejs.dir/build.make ear/CMakeFiles/ear_gennodejs.dir/depend
 	$(MAKE) -f ear/CMakeFiles/ear_gennodejs.dir/build.make ear/CMakeFiles/ear_gennodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target ear_gennodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target ear_gennodejs"
 .PHONY : ear/CMakeFiles/ear_gennodejs.dir/all
 
 # Build rule for subdir invocation for target.
 ear/CMakeFiles/ear_gennodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 ear/CMakeFiles/ear_gennodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : ear/CMakeFiles/ear_gennodejs.dir/rule
 
 # Convenience name for target.
@@ -2141,14 +2161,14 @@ ear/CMakeFiles/ear_generate_messages_nodejs.dir/all: arm/CMakeFiles/std_msgs_gen
 ear/CMakeFiles/ear_generate_messages_nodejs.dir/all: ear/CMakeFiles/_ear_generate_messages_check_deps_usonic.dir/all
 	$(MAKE) -f ear/CMakeFiles/ear_generate_messages_nodejs.dir/build.make ear/CMakeFiles/ear_generate_messages_nodejs.dir/depend
 	$(MAKE) -f ear/CMakeFiles/ear_generate_messages_nodejs.dir/build.make ear/CMakeFiles/ear_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=9 "Built target ear_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=10 "Built target ear_generate_messages_nodejs"
 .PHONY : ear/CMakeFiles/ear_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
 ear/CMakeFiles/ear_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 ear/CMakeFiles/ear_generate_messages_nodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : ear/CMakeFiles/ear_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -2180,7 +2200,7 @@ light/clean: light/CMakeFiles/light_node.dir/clean
 .PHONY : light/clean
 
 # Convenience name for "preinstall" pass in the directory.
-light/preinstall:
+light/preinstall: light/CMakeFiles/light_node.dir/preinstall
 
 .PHONY : light/preinstall
 
@@ -2205,7 +2225,7 @@ light/CMakeFiles/light_node.dir/all: arm/CMakeFiles/std_msgs_generate_messages_p
 light/CMakeFiles/light_node.dir/all: arm/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
 	$(MAKE) -f light/CMakeFiles/light_node.dir/build.make light/CMakeFiles/light_node.dir/depend
 	$(MAKE) -f light/CMakeFiles/light_node.dir/build.make light/CMakeFiles/light_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=25,26,27 "Built target light_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=28,29,30,31 "Built target light_node"
 .PHONY : light/CMakeFiles/light_node.dir/all
 
 # Include target in all.
@@ -2215,15 +2235,25 @@ all: light/CMakeFiles/light_node.dir/all
 
 # Build rule for subdir invocation for target.
 light/CMakeFiles/light_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 light/CMakeFiles/light_node.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : light/CMakeFiles/light_node.dir/rule
 
 # Convenience name for target.
 light_node: light/CMakeFiles/light_node.dir/rule
 
 .PHONY : light_node
+
+# Pre-install relink rule for target.
+light/CMakeFiles/light_node.dir/preinstall:
+	$(MAKE) -f light/CMakeFiles/light_node.dir/build.make light/CMakeFiles/light_node.dir/preinstall
+.PHONY : light/CMakeFiles/light_node.dir/preinstall
+
+# Prepare target for install.
+preinstall: light/CMakeFiles/light_node.dir/preinstall
+
+.PHONY : preinstall
 
 # clean rule for target.
 light/CMakeFiles/light_node.dir/clean:
@@ -2284,7 +2314,7 @@ monkey/CMakeFiles/monkey_node.dir/all: body/CMakeFiles/sensor_msgs_generate_mess
 monkey/CMakeFiles/monkey_node.dir/all: body/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
 	$(MAKE) -f monkey/CMakeFiles/monkey_node.dir/build.make monkey/CMakeFiles/monkey_node.dir/depend
 	$(MAKE) -f monkey/CMakeFiles/monkey_node.dir/build.make monkey/CMakeFiles/monkey_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=28,29 "Built target monkey_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=32,33 "Built target monkey_node"
 .PHONY : monkey/CMakeFiles/monkey_node.dir/all
 
 # Include target in all.
@@ -2294,9 +2324,9 @@ all: monkey/CMakeFiles/monkey_node.dir/all
 
 # Build rule for subdir invocation for target.
 monkey/CMakeFiles/monkey_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 monkey/CMakeFiles/monkey_node.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : monkey/CMakeFiles/monkey_node.dir/rule
 
 # Convenience name for target.
@@ -2343,7 +2373,7 @@ neck/preinstall:
 neck/CMakeFiles/pwmss.dir/all:
 	$(MAKE) -f neck/CMakeFiles/pwmss.dir/build.make neck/CMakeFiles/pwmss.dir/depend
 	$(MAKE) -f neck/CMakeFiles/pwmss.dir/build.make neck/CMakeFiles/pwmss.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=35,36 "Built target pwmss"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=44,45 "Built target pwmss"
 .PHONY : neck/CMakeFiles/pwmss.dir/all
 
 # Include target in all.
@@ -2353,9 +2383,9 @@ all: neck/CMakeFiles/pwmss.dir/all
 
 # Build rule for subdir invocation for target.
 neck/CMakeFiles/pwmss.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 neck/CMakeFiles/pwmss.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : neck/CMakeFiles/pwmss.dir/rule
 
 # Convenience name for target.
@@ -2380,7 +2410,7 @@ clean: neck/CMakeFiles/pwmss.dir/clean
 neck/CMakeFiles/servo.dir/all:
 	$(MAKE) -f neck/CMakeFiles/servo.dir/build.make neck/CMakeFiles/servo.dir/depend
 	$(MAKE) -f neck/CMakeFiles/servo.dir/build.make neck/CMakeFiles/servo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=37,38 "Built target servo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=46,47 "Built target servo"
 .PHONY : neck/CMakeFiles/servo.dir/all
 
 # Include target in all.
@@ -2390,9 +2420,9 @@ all: neck/CMakeFiles/servo.dir/all
 
 # Build rule for subdir invocation for target.
 neck/CMakeFiles/servo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 neck/CMakeFiles/servo.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : neck/CMakeFiles/servo.dir/rule
 
 # Convenience name for target.
@@ -2417,7 +2447,7 @@ clean: neck/CMakeFiles/servo.dir/clean
 neck/CMakeFiles/neck_node.dir/all:
 	$(MAKE) -f neck/CMakeFiles/neck_node.dir/build.make neck/CMakeFiles/neck_node.dir/depend
 	$(MAKE) -f neck/CMakeFiles/neck_node.dir/build.make neck/CMakeFiles/neck_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=30,31 "Built target neck_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=34,35 "Built target neck_node"
 .PHONY : neck/CMakeFiles/neck_node.dir/all
 
 # Include target in all.
@@ -2427,9 +2457,9 @@ all: neck/CMakeFiles/neck_node.dir/all
 
 # Build rule for subdir invocation for target.
 neck/CMakeFiles/neck_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 neck/CMakeFiles/neck_node.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : neck/CMakeFiles/neck_node.dir/rule
 
 # Convenience name for target.
@@ -2444,6 +2474,475 @@ neck/CMakeFiles/neck_node.dir/clean:
 
 # clean rule for target.
 clean: neck/CMakeFiles/neck_node.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory prupwm
+
+# Convenience name for "all" pass in the directory.
+prupwm/all: prupwm/CMakeFiles/prupwm_generate_messages.dir/all
+prupwm/all: prupwm/CMakeFiles/prupwm_node.dir/all
+
+.PHONY : prupwm/all
+
+# Convenience name for "clean" pass in the directory.
+prupwm/clean: prupwm/CMakeFiles/prupwm_genpy.dir/clean
+prupwm/clean: prupwm/CMakeFiles/prupwm_generate_messages_eus.dir/clean
+prupwm/clean: prupwm/CMakeFiles/prupwm_gencpp.dir/clean
+prupwm/clean: prupwm/CMakeFiles/prupwm_generate_messages.dir/clean
+prupwm/clean: prupwm/CMakeFiles/prupwm_gennodejs.dir/clean
+prupwm/clean: prupwm/CMakeFiles/prupwm_generate_messages_cpp.dir/clean
+prupwm/clean: prupwm/CMakeFiles/prupwm_generate_messages_lisp.dir/clean
+prupwm/clean: prupwm/CMakeFiles/prupwm_geneus.dir/clean
+prupwm/clean: prupwm/CMakeFiles/prupwm_generate_messages_nodejs.dir/clean
+prupwm/clean: prupwm/CMakeFiles/prupwm_node.dir/clean
+prupwm/clean: prupwm/CMakeFiles/prupwm_genlisp.dir/clean
+prupwm/clean: prupwm/CMakeFiles/prupwm_generate_messages_py.dir/clean
+
+.PHONY : prupwm/clean
+
+# Convenience name for "preinstall" pass in the directory.
+prupwm/preinstall: prupwm/CMakeFiles/prupwm_node.dir/preinstall
+
+.PHONY : prupwm/preinstall
+
+#=============================================================================
+# Target rules for target prupwm/CMakeFiles/prupwm_genpy.dir
+
+# All Build rule for target.
+prupwm/CMakeFiles/prupwm_genpy.dir/all: prupwm/CMakeFiles/prupwm_generate_messages_py.dir/all
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_genpy.dir/build.make prupwm/CMakeFiles/prupwm_genpy.dir/depend
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_genpy.dir/build.make prupwm/CMakeFiles/prupwm_genpy.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target prupwm_genpy"
+.PHONY : prupwm/CMakeFiles/prupwm_genpy.dir/all
+
+# Build rule for subdir invocation for target.
+prupwm/CMakeFiles/prupwm_genpy.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 prupwm/CMakeFiles/prupwm_genpy.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
+.PHONY : prupwm/CMakeFiles/prupwm_genpy.dir/rule
+
+# Convenience name for target.
+prupwm_genpy: prupwm/CMakeFiles/prupwm_genpy.dir/rule
+
+.PHONY : prupwm_genpy
+
+# clean rule for target.
+prupwm/CMakeFiles/prupwm_genpy.dir/clean:
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_genpy.dir/build.make prupwm/CMakeFiles/prupwm_genpy.dir/clean
+.PHONY : prupwm/CMakeFiles/prupwm_genpy.dir/clean
+
+# clean rule for target.
+clean: prupwm/CMakeFiles/prupwm_genpy.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target prupwm/CMakeFiles/prupwm_generate_messages_eus.dir
+
+# All Build rule for target.
+prupwm/CMakeFiles/prupwm_generate_messages_eus.dir/all: arm/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_generate_messages_eus.dir/build.make prupwm/CMakeFiles/prupwm_generate_messages_eus.dir/depend
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_generate_messages_eus.dir/build.make prupwm/CMakeFiles/prupwm_generate_messages_eus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=39 "Built target prupwm_generate_messages_eus"
+.PHONY : prupwm/CMakeFiles/prupwm_generate_messages_eus.dir/all
+
+# Build rule for subdir invocation for target.
+prupwm/CMakeFiles/prupwm_generate_messages_eus.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 prupwm/CMakeFiles/prupwm_generate_messages_eus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
+.PHONY : prupwm/CMakeFiles/prupwm_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+prupwm_generate_messages_eus: prupwm/CMakeFiles/prupwm_generate_messages_eus.dir/rule
+
+.PHONY : prupwm_generate_messages_eus
+
+# clean rule for target.
+prupwm/CMakeFiles/prupwm_generate_messages_eus.dir/clean:
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_generate_messages_eus.dir/build.make prupwm/CMakeFiles/prupwm_generate_messages_eus.dir/clean
+.PHONY : prupwm/CMakeFiles/prupwm_generate_messages_eus.dir/clean
+
+# clean rule for target.
+clean: prupwm/CMakeFiles/prupwm_generate_messages_eus.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target prupwm/CMakeFiles/prupwm_gencpp.dir
+
+# All Build rule for target.
+prupwm/CMakeFiles/prupwm_gencpp.dir/all: prupwm/CMakeFiles/prupwm_generate_messages_cpp.dir/all
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_gencpp.dir/build.make prupwm/CMakeFiles/prupwm_gencpp.dir/depend
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_gencpp.dir/build.make prupwm/CMakeFiles/prupwm_gencpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target prupwm_gencpp"
+.PHONY : prupwm/CMakeFiles/prupwm_gencpp.dir/all
+
+# Build rule for subdir invocation for target.
+prupwm/CMakeFiles/prupwm_gencpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 prupwm/CMakeFiles/prupwm_gencpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
+.PHONY : prupwm/CMakeFiles/prupwm_gencpp.dir/rule
+
+# Convenience name for target.
+prupwm_gencpp: prupwm/CMakeFiles/prupwm_gencpp.dir/rule
+
+.PHONY : prupwm_gencpp
+
+# clean rule for target.
+prupwm/CMakeFiles/prupwm_gencpp.dir/clean:
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_gencpp.dir/build.make prupwm/CMakeFiles/prupwm_gencpp.dir/clean
+.PHONY : prupwm/CMakeFiles/prupwm_gencpp.dir/clean
+
+# clean rule for target.
+clean: prupwm/CMakeFiles/prupwm_gencpp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target prupwm/CMakeFiles/prupwm_generate_messages.dir
+
+# All Build rule for target.
+prupwm/CMakeFiles/prupwm_generate_messages.dir/all: prupwm/CMakeFiles/prupwm_generate_messages_eus.dir/all
+prupwm/CMakeFiles/prupwm_generate_messages.dir/all: prupwm/CMakeFiles/prupwm_generate_messages_cpp.dir/all
+prupwm/CMakeFiles/prupwm_generate_messages.dir/all: prupwm/CMakeFiles/prupwm_generate_messages_lisp.dir/all
+prupwm/CMakeFiles/prupwm_generate_messages.dir/all: prupwm/CMakeFiles/prupwm_generate_messages_nodejs.dir/all
+prupwm/CMakeFiles/prupwm_generate_messages.dir/all: prupwm/CMakeFiles/prupwm_generate_messages_py.dir/all
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_generate_messages.dir/build.make prupwm/CMakeFiles/prupwm_generate_messages.dir/depend
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_generate_messages.dir/build.make prupwm/CMakeFiles/prupwm_generate_messages.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target prupwm_generate_messages"
+.PHONY : prupwm/CMakeFiles/prupwm_generate_messages.dir/all
+
+# Include target in all.
+all: prupwm/CMakeFiles/prupwm_generate_messages.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+prupwm/CMakeFiles/prupwm_generate_messages.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 prupwm/CMakeFiles/prupwm_generate_messages.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
+.PHONY : prupwm/CMakeFiles/prupwm_generate_messages.dir/rule
+
+# Convenience name for target.
+prupwm_generate_messages: prupwm/CMakeFiles/prupwm_generate_messages.dir/rule
+
+.PHONY : prupwm_generate_messages
+
+# clean rule for target.
+prupwm/CMakeFiles/prupwm_generate_messages.dir/clean:
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_generate_messages.dir/build.make prupwm/CMakeFiles/prupwm_generate_messages.dir/clean
+.PHONY : prupwm/CMakeFiles/prupwm_generate_messages.dir/clean
+
+# clean rule for target.
+clean: prupwm/CMakeFiles/prupwm_generate_messages.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target prupwm/CMakeFiles/prupwm_gennodejs.dir
+
+# All Build rule for target.
+prupwm/CMakeFiles/prupwm_gennodejs.dir/all: prupwm/CMakeFiles/prupwm_generate_messages_nodejs.dir/all
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_gennodejs.dir/build.make prupwm/CMakeFiles/prupwm_gennodejs.dir/depend
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_gennodejs.dir/build.make prupwm/CMakeFiles/prupwm_gennodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target prupwm_gennodejs"
+.PHONY : prupwm/CMakeFiles/prupwm_gennodejs.dir/all
+
+# Build rule for subdir invocation for target.
+prupwm/CMakeFiles/prupwm_gennodejs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 prupwm/CMakeFiles/prupwm_gennodejs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
+.PHONY : prupwm/CMakeFiles/prupwm_gennodejs.dir/rule
+
+# Convenience name for target.
+prupwm_gennodejs: prupwm/CMakeFiles/prupwm_gennodejs.dir/rule
+
+.PHONY : prupwm_gennodejs
+
+# clean rule for target.
+prupwm/CMakeFiles/prupwm_gennodejs.dir/clean:
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_gennodejs.dir/build.make prupwm/CMakeFiles/prupwm_gennodejs.dir/clean
+.PHONY : prupwm/CMakeFiles/prupwm_gennodejs.dir/clean
+
+# clean rule for target.
+clean: prupwm/CMakeFiles/prupwm_gennodejs.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target prupwm/CMakeFiles/prupwm_generate_messages_cpp.dir
+
+# All Build rule for target.
+prupwm/CMakeFiles/prupwm_generate_messages_cpp.dir/all: arm/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_generate_messages_cpp.dir/build.make prupwm/CMakeFiles/prupwm_generate_messages_cpp.dir/depend
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_generate_messages_cpp.dir/build.make prupwm/CMakeFiles/prupwm_generate_messages_cpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target prupwm_generate_messages_cpp"
+.PHONY : prupwm/CMakeFiles/prupwm_generate_messages_cpp.dir/all
+
+# Build rule for subdir invocation for target.
+prupwm/CMakeFiles/prupwm_generate_messages_cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 prupwm/CMakeFiles/prupwm_generate_messages_cpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
+.PHONY : prupwm/CMakeFiles/prupwm_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+prupwm_generate_messages_cpp: prupwm/CMakeFiles/prupwm_generate_messages_cpp.dir/rule
+
+.PHONY : prupwm_generate_messages_cpp
+
+# clean rule for target.
+prupwm/CMakeFiles/prupwm_generate_messages_cpp.dir/clean:
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_generate_messages_cpp.dir/build.make prupwm/CMakeFiles/prupwm_generate_messages_cpp.dir/clean
+.PHONY : prupwm/CMakeFiles/prupwm_generate_messages_cpp.dir/clean
+
+# clean rule for target.
+clean: prupwm/CMakeFiles/prupwm_generate_messages_cpp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target prupwm/CMakeFiles/prupwm_generate_messages_lisp.dir
+
+# All Build rule for target.
+prupwm/CMakeFiles/prupwm_generate_messages_lisp.dir/all: arm/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_generate_messages_lisp.dir/build.make prupwm/CMakeFiles/prupwm_generate_messages_lisp.dir/depend
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_generate_messages_lisp.dir/build.make prupwm/CMakeFiles/prupwm_generate_messages_lisp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target prupwm_generate_messages_lisp"
+.PHONY : prupwm/CMakeFiles/prupwm_generate_messages_lisp.dir/all
+
+# Build rule for subdir invocation for target.
+prupwm/CMakeFiles/prupwm_generate_messages_lisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 prupwm/CMakeFiles/prupwm_generate_messages_lisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
+.PHONY : prupwm/CMakeFiles/prupwm_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+prupwm_generate_messages_lisp: prupwm/CMakeFiles/prupwm_generate_messages_lisp.dir/rule
+
+.PHONY : prupwm_generate_messages_lisp
+
+# clean rule for target.
+prupwm/CMakeFiles/prupwm_generate_messages_lisp.dir/clean:
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_generate_messages_lisp.dir/build.make prupwm/CMakeFiles/prupwm_generate_messages_lisp.dir/clean
+.PHONY : prupwm/CMakeFiles/prupwm_generate_messages_lisp.dir/clean
+
+# clean rule for target.
+clean: prupwm/CMakeFiles/prupwm_generate_messages_lisp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target prupwm/CMakeFiles/prupwm_geneus.dir
+
+# All Build rule for target.
+prupwm/CMakeFiles/prupwm_geneus.dir/all: prupwm/CMakeFiles/prupwm_generate_messages_eus.dir/all
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_geneus.dir/build.make prupwm/CMakeFiles/prupwm_geneus.dir/depend
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_geneus.dir/build.make prupwm/CMakeFiles/prupwm_geneus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target prupwm_geneus"
+.PHONY : prupwm/CMakeFiles/prupwm_geneus.dir/all
+
+# Build rule for subdir invocation for target.
+prupwm/CMakeFiles/prupwm_geneus.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 prupwm/CMakeFiles/prupwm_geneus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
+.PHONY : prupwm/CMakeFiles/prupwm_geneus.dir/rule
+
+# Convenience name for target.
+prupwm_geneus: prupwm/CMakeFiles/prupwm_geneus.dir/rule
+
+.PHONY : prupwm_geneus
+
+# clean rule for target.
+prupwm/CMakeFiles/prupwm_geneus.dir/clean:
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_geneus.dir/build.make prupwm/CMakeFiles/prupwm_geneus.dir/clean
+.PHONY : prupwm/CMakeFiles/prupwm_geneus.dir/clean
+
+# clean rule for target.
+clean: prupwm/CMakeFiles/prupwm_geneus.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target prupwm/CMakeFiles/prupwm_generate_messages_nodejs.dir
+
+# All Build rule for target.
+prupwm/CMakeFiles/prupwm_generate_messages_nodejs.dir/all: arm/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_generate_messages_nodejs.dir/build.make prupwm/CMakeFiles/prupwm_generate_messages_nodejs.dir/depend
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_generate_messages_nodejs.dir/build.make prupwm/CMakeFiles/prupwm_generate_messages_nodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target prupwm_generate_messages_nodejs"
+.PHONY : prupwm/CMakeFiles/prupwm_generate_messages_nodejs.dir/all
+
+# Build rule for subdir invocation for target.
+prupwm/CMakeFiles/prupwm_generate_messages_nodejs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 prupwm/CMakeFiles/prupwm_generate_messages_nodejs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
+.PHONY : prupwm/CMakeFiles/prupwm_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+prupwm_generate_messages_nodejs: prupwm/CMakeFiles/prupwm_generate_messages_nodejs.dir/rule
+
+.PHONY : prupwm_generate_messages_nodejs
+
+# clean rule for target.
+prupwm/CMakeFiles/prupwm_generate_messages_nodejs.dir/clean:
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_generate_messages_nodejs.dir/build.make prupwm/CMakeFiles/prupwm_generate_messages_nodejs.dir/clean
+.PHONY : prupwm/CMakeFiles/prupwm_generate_messages_nodejs.dir/clean
+
+# clean rule for target.
+clean: prupwm/CMakeFiles/prupwm_generate_messages_nodejs.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target prupwm/CMakeFiles/prupwm_node.dir
+
+# All Build rule for target.
+prupwm/CMakeFiles/prupwm_node.dir/all: arm/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+prupwm/CMakeFiles/prupwm_node.dir/all: arm/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+prupwm/CMakeFiles/prupwm_node.dir/all: arm/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+prupwm/CMakeFiles/prupwm_node.dir/all: arm/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+prupwm/CMakeFiles/prupwm_node.dir/all: arm/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+prupwm/CMakeFiles/prupwm_node.dir/all: arm/CMakeFiles/roscpp_generate_messages_eus.dir/all
+prupwm/CMakeFiles/prupwm_node.dir/all: arm/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+prupwm/CMakeFiles/prupwm_node.dir/all: arm/CMakeFiles/roscpp_generate_messages_cpp.dir/all
+prupwm/CMakeFiles/prupwm_node.dir/all: arm/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+prupwm/CMakeFiles/prupwm_node.dir/all: arm/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+prupwm/CMakeFiles/prupwm_node.dir/all: arm/CMakeFiles/roscpp_generate_messages_py.dir/all
+prupwm/CMakeFiles/prupwm_node.dir/all: arm/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+prupwm/CMakeFiles/prupwm_node.dir/all: arm/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+prupwm/CMakeFiles/prupwm_node.dir/all: arm/CMakeFiles/std_msgs_generate_messages_py.dir/all
+prupwm/CMakeFiles/prupwm_node.dir/all: arm/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+prupwm/CMakeFiles/prupwm_node.dir/all: body/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
+prupwm/CMakeFiles/prupwm_node.dir/all: body/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
+prupwm/CMakeFiles/prupwm_node.dir/all: body/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
+prupwm/CMakeFiles/prupwm_node.dir/all: body/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
+prupwm/CMakeFiles/prupwm_node.dir/all: body/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+prupwm/CMakeFiles/prupwm_node.dir/all: body/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+prupwm/CMakeFiles/prupwm_node.dir/all: body/CMakeFiles/xzio.dir/all
+prupwm/CMakeFiles/prupwm_node.dir/all: body/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
+prupwm/CMakeFiles/prupwm_node.dir/all: body/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+prupwm/CMakeFiles/prupwm_node.dir/all: body/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+prupwm/CMakeFiles/prupwm_node.dir/all: body/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+prupwm/CMakeFiles/prupwm_node.dir/all: body/CMakeFiles/imu.dir/all
+prupwm/CMakeFiles/prupwm_node.dir/all: prupwm/CMakeFiles/prupwm_generate_messages_eus.dir/all
+prupwm/CMakeFiles/prupwm_node.dir/all: prupwm/CMakeFiles/prupwm_generate_messages_cpp.dir/all
+prupwm/CMakeFiles/prupwm_node.dir/all: prupwm/CMakeFiles/prupwm_generate_messages_lisp.dir/all
+prupwm/CMakeFiles/prupwm_node.dir/all: prupwm/CMakeFiles/prupwm_generate_messages_nodejs.dir/all
+prupwm/CMakeFiles/prupwm_node.dir/all: prupwm/CMakeFiles/prupwm_generate_messages_py.dir/all
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_node.dir/build.make prupwm/CMakeFiles/prupwm_node.dir/depend
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_node.dir/build.make prupwm/CMakeFiles/prupwm_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=40,41,42,43 "Built target prupwm_node"
+.PHONY : prupwm/CMakeFiles/prupwm_node.dir/all
+
+# Include target in all.
+all: prupwm/CMakeFiles/prupwm_node.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+prupwm/CMakeFiles/prupwm_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 9
+	$(MAKE) -f CMakeFiles/Makefile2 prupwm/CMakeFiles/prupwm_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
+.PHONY : prupwm/CMakeFiles/prupwm_node.dir/rule
+
+# Convenience name for target.
+prupwm_node: prupwm/CMakeFiles/prupwm_node.dir/rule
+
+.PHONY : prupwm_node
+
+# Pre-install relink rule for target.
+prupwm/CMakeFiles/prupwm_node.dir/preinstall:
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_node.dir/build.make prupwm/CMakeFiles/prupwm_node.dir/preinstall
+.PHONY : prupwm/CMakeFiles/prupwm_node.dir/preinstall
+
+# Prepare target for install.
+preinstall: prupwm/CMakeFiles/prupwm_node.dir/preinstall
+
+.PHONY : preinstall
+
+# clean rule for target.
+prupwm/CMakeFiles/prupwm_node.dir/clean:
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_node.dir/build.make prupwm/CMakeFiles/prupwm_node.dir/clean
+.PHONY : prupwm/CMakeFiles/prupwm_node.dir/clean
+
+# clean rule for target.
+clean: prupwm/CMakeFiles/prupwm_node.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target prupwm/CMakeFiles/prupwm_genlisp.dir
+
+# All Build rule for target.
+prupwm/CMakeFiles/prupwm_genlisp.dir/all: prupwm/CMakeFiles/prupwm_generate_messages_lisp.dir/all
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_genlisp.dir/build.make prupwm/CMakeFiles/prupwm_genlisp.dir/depend
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_genlisp.dir/build.make prupwm/CMakeFiles/prupwm_genlisp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target prupwm_genlisp"
+.PHONY : prupwm/CMakeFiles/prupwm_genlisp.dir/all
+
+# Build rule for subdir invocation for target.
+prupwm/CMakeFiles/prupwm_genlisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 prupwm/CMakeFiles/prupwm_genlisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
+.PHONY : prupwm/CMakeFiles/prupwm_genlisp.dir/rule
+
+# Convenience name for target.
+prupwm_genlisp: prupwm/CMakeFiles/prupwm_genlisp.dir/rule
+
+.PHONY : prupwm_genlisp
+
+# clean rule for target.
+prupwm/CMakeFiles/prupwm_genlisp.dir/clean:
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_genlisp.dir/build.make prupwm/CMakeFiles/prupwm_genlisp.dir/clean
+.PHONY : prupwm/CMakeFiles/prupwm_genlisp.dir/clean
+
+# clean rule for target.
+clean: prupwm/CMakeFiles/prupwm_genlisp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target prupwm/CMakeFiles/prupwm_generate_messages_py.dir
+
+# All Build rule for target.
+prupwm/CMakeFiles/prupwm_generate_messages_py.dir/all: arm/CMakeFiles/std_msgs_generate_messages_py.dir/all
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_generate_messages_py.dir/build.make prupwm/CMakeFiles/prupwm_generate_messages_py.dir/depend
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_generate_messages_py.dir/build.make prupwm/CMakeFiles/prupwm_generate_messages_py.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target prupwm_generate_messages_py"
+.PHONY : prupwm/CMakeFiles/prupwm_generate_messages_py.dir/all
+
+# Build rule for subdir invocation for target.
+prupwm/CMakeFiles/prupwm_generate_messages_py.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 prupwm/CMakeFiles/prupwm_generate_messages_py.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
+.PHONY : prupwm/CMakeFiles/prupwm_generate_messages_py.dir/rule
+
+# Convenience name for target.
+prupwm_generate_messages_py: prupwm/CMakeFiles/prupwm_generate_messages_py.dir/rule
+
+.PHONY : prupwm_generate_messages_py
+
+# clean rule for target.
+prupwm/CMakeFiles/prupwm_generate_messages_py.dir/clean:
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_generate_messages_py.dir/build.make prupwm/CMakeFiles/prupwm_generate_messages_py.dir/clean
+.PHONY : prupwm/CMakeFiles/prupwm_generate_messages_py.dir/clean
+
+# clean rule for target.
+clean: prupwm/CMakeFiles/prupwm_generate_messages_py.dir/clean
 
 .PHONY : clean
 
@@ -2473,7 +2972,7 @@ eye/clean: eye/CMakeFiles/bond_generate_messages_lisp.dir/clean
 .PHONY : eye/clean
 
 # Convenience name for "preinstall" pass in the directory.
-eye/preinstall:
+eye/preinstall: eye/CMakeFiles/eye_node.dir/preinstall
 
 .PHONY : eye/preinstall
 
@@ -2518,7 +3017,7 @@ eye/CMakeFiles/uvc_stereo_node.dir/all: eye/CMakeFiles/bond_generate_messages_eu
 eye/CMakeFiles/uvc_stereo_node.dir/all: eye/CMakeFiles/bond_generate_messages_lisp.dir/all
 	$(MAKE) -f eye/CMakeFiles/uvc_stereo_node.dir/build.make eye/CMakeFiles/uvc_stereo_node.dir/depend
 	$(MAKE) -f eye/CMakeFiles/uvc_stereo_node.dir/build.make eye/CMakeFiles/uvc_stereo_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=39,40,41,42 "Built target uvc_stereo_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=48,49,50,51 "Built target uvc_stereo_node"
 .PHONY : eye/CMakeFiles/uvc_stereo_node.dir/all
 
 # Include target in all.
@@ -2528,9 +3027,9 @@ all: eye/CMakeFiles/uvc_stereo_node.dir/all
 
 # Build rule for subdir invocation for target.
 eye/CMakeFiles/uvc_stereo_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 eye/CMakeFiles/uvc_stereo_node.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : eye/CMakeFiles/uvc_stereo_node.dir/rule
 
 # Convenience name for target.
@@ -2555,14 +3054,14 @@ clean: eye/CMakeFiles/uvc_stereo_node.dir/clean
 eye/CMakeFiles/nodelet_generate_messages_nodejs.dir/all:
 	$(MAKE) -f eye/CMakeFiles/nodelet_generate_messages_nodejs.dir/build.make eye/CMakeFiles/nodelet_generate_messages_nodejs.dir/depend
 	$(MAKE) -f eye/CMakeFiles/nodelet_generate_messages_nodejs.dir/build.make eye/CMakeFiles/nodelet_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target nodelet_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target nodelet_generate_messages_nodejs"
 .PHONY : eye/CMakeFiles/nodelet_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
 eye/CMakeFiles/nodelet_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 eye/CMakeFiles/nodelet_generate_messages_nodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : eye/CMakeFiles/nodelet_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -2587,14 +3086,14 @@ clean: eye/CMakeFiles/nodelet_generate_messages_nodejs.dir/clean
 eye/CMakeFiles/bond_generate_messages_py.dir/all:
 	$(MAKE) -f eye/CMakeFiles/bond_generate_messages_py.dir/build.make eye/CMakeFiles/bond_generate_messages_py.dir/depend
 	$(MAKE) -f eye/CMakeFiles/bond_generate_messages_py.dir/build.make eye/CMakeFiles/bond_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target bond_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target bond_generate_messages_py"
 .PHONY : eye/CMakeFiles/bond_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
 eye/CMakeFiles/bond_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 eye/CMakeFiles/bond_generate_messages_py.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : eye/CMakeFiles/bond_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -2619,14 +3118,14 @@ clean: eye/CMakeFiles/bond_generate_messages_py.dir/clean
 eye/CMakeFiles/nodelet_generate_messages_eus.dir/all:
 	$(MAKE) -f eye/CMakeFiles/nodelet_generate_messages_eus.dir/build.make eye/CMakeFiles/nodelet_generate_messages_eus.dir/depend
 	$(MAKE) -f eye/CMakeFiles/nodelet_generate_messages_eus.dir/build.make eye/CMakeFiles/nodelet_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target nodelet_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target nodelet_generate_messages_eus"
 .PHONY : eye/CMakeFiles/nodelet_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
 eye/CMakeFiles/nodelet_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 eye/CMakeFiles/nodelet_generate_messages_eus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : eye/CMakeFiles/nodelet_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -2651,14 +3150,14 @@ clean: eye/CMakeFiles/nodelet_generate_messages_eus.dir/clean
 eye/CMakeFiles/nodelet_generate_messages_cpp.dir/all:
 	$(MAKE) -f eye/CMakeFiles/nodelet_generate_messages_cpp.dir/build.make eye/CMakeFiles/nodelet_generate_messages_cpp.dir/depend
 	$(MAKE) -f eye/CMakeFiles/nodelet_generate_messages_cpp.dir/build.make eye/CMakeFiles/nodelet_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target nodelet_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target nodelet_generate_messages_cpp"
 .PHONY : eye/CMakeFiles/nodelet_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
 eye/CMakeFiles/nodelet_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 eye/CMakeFiles/nodelet_generate_messages_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : eye/CMakeFiles/nodelet_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -2683,14 +3182,14 @@ clean: eye/CMakeFiles/nodelet_generate_messages_cpp.dir/clean
 eye/CMakeFiles/nodelet_generate_messages_py.dir/all:
 	$(MAKE) -f eye/CMakeFiles/nodelet_generate_messages_py.dir/build.make eye/CMakeFiles/nodelet_generate_messages_py.dir/depend
 	$(MAKE) -f eye/CMakeFiles/nodelet_generate_messages_py.dir/build.make eye/CMakeFiles/nodelet_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target nodelet_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target nodelet_generate_messages_py"
 .PHONY : eye/CMakeFiles/nodelet_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
 eye/CMakeFiles/nodelet_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 eye/CMakeFiles/nodelet_generate_messages_py.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : eye/CMakeFiles/nodelet_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -2715,14 +3214,14 @@ clean: eye/CMakeFiles/nodelet_generate_messages_py.dir/clean
 eye/CMakeFiles/bond_generate_messages_cpp.dir/all:
 	$(MAKE) -f eye/CMakeFiles/bond_generate_messages_cpp.dir/build.make eye/CMakeFiles/bond_generate_messages_cpp.dir/depend
 	$(MAKE) -f eye/CMakeFiles/bond_generate_messages_cpp.dir/build.make eye/CMakeFiles/bond_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target bond_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target bond_generate_messages_cpp"
 .PHONY : eye/CMakeFiles/bond_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
 eye/CMakeFiles/bond_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 eye/CMakeFiles/bond_generate_messages_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : eye/CMakeFiles/bond_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -2747,14 +3246,14 @@ clean: eye/CMakeFiles/bond_generate_messages_cpp.dir/clean
 eye/CMakeFiles/nodelet_generate_messages_lisp.dir/all:
 	$(MAKE) -f eye/CMakeFiles/nodelet_generate_messages_lisp.dir/build.make eye/CMakeFiles/nodelet_generate_messages_lisp.dir/depend
 	$(MAKE) -f eye/CMakeFiles/nodelet_generate_messages_lisp.dir/build.make eye/CMakeFiles/nodelet_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target nodelet_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target nodelet_generate_messages_lisp"
 .PHONY : eye/CMakeFiles/nodelet_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
 eye/CMakeFiles/nodelet_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 eye/CMakeFiles/nodelet_generate_messages_lisp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : eye/CMakeFiles/nodelet_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -2779,14 +3278,14 @@ clean: eye/CMakeFiles/nodelet_generate_messages_lisp.dir/clean
 eye/CMakeFiles/bond_generate_messages_nodejs.dir/all:
 	$(MAKE) -f eye/CMakeFiles/bond_generate_messages_nodejs.dir/build.make eye/CMakeFiles/bond_generate_messages_nodejs.dir/depend
 	$(MAKE) -f eye/CMakeFiles/bond_generate_messages_nodejs.dir/build.make eye/CMakeFiles/bond_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target bond_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target bond_generate_messages_nodejs"
 .PHONY : eye/CMakeFiles/bond_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
 eye/CMakeFiles/bond_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 eye/CMakeFiles/bond_generate_messages_nodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : eye/CMakeFiles/bond_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -2811,14 +3310,14 @@ clean: eye/CMakeFiles/bond_generate_messages_nodejs.dir/clean
 eye/CMakeFiles/bond_generate_messages_eus.dir/all:
 	$(MAKE) -f eye/CMakeFiles/bond_generate_messages_eus.dir/build.make eye/CMakeFiles/bond_generate_messages_eus.dir/depend
 	$(MAKE) -f eye/CMakeFiles/bond_generate_messages_eus.dir/build.make eye/CMakeFiles/bond_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target bond_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target bond_generate_messages_eus"
 .PHONY : eye/CMakeFiles/bond_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
 eye/CMakeFiles/bond_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 eye/CMakeFiles/bond_generate_messages_eus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : eye/CMakeFiles/bond_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -2877,7 +3376,7 @@ eye/CMakeFiles/eye_node.dir/all: eye/CMakeFiles/bond_generate_messages_eus.dir/a
 eye/CMakeFiles/eye_node.dir/all: eye/CMakeFiles/bond_generate_messages_lisp.dir/all
 	$(MAKE) -f eye/CMakeFiles/eye_node.dir/build.make eye/CMakeFiles/eye_node.dir/depend
 	$(MAKE) -f eye/CMakeFiles/eye_node.dir/build.make eye/CMakeFiles/eye_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=15,16,17,18 "Built target eye_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=17,18,19,20,21 "Built target eye_node"
 .PHONY : eye/CMakeFiles/eye_node.dir/all
 
 # Include target in all.
@@ -2887,15 +3386,25 @@ all: eye/CMakeFiles/eye_node.dir/all
 
 # Build rule for subdir invocation for target.
 eye/CMakeFiles/eye_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 eye/CMakeFiles/eye_node.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : eye/CMakeFiles/eye_node.dir/rule
 
 # Convenience name for target.
 eye_node: eye/CMakeFiles/eye_node.dir/rule
 
 .PHONY : eye_node
+
+# Pre-install relink rule for target.
+eye/CMakeFiles/eye_node.dir/preinstall:
+	$(MAKE) -f eye/CMakeFiles/eye_node.dir/build.make eye/CMakeFiles/eye_node.dir/preinstall
+.PHONY : eye/CMakeFiles/eye_node.dir/preinstall
+
+# Prepare target for install.
+preinstall: eye/CMakeFiles/eye_node.dir/preinstall
+
+.PHONY : preinstall
 
 # clean rule for target.
 eye/CMakeFiles/eye_node.dir/clean:
@@ -2914,14 +3423,14 @@ clean: eye/CMakeFiles/eye_node.dir/clean
 eye/CMakeFiles/bond_generate_messages_lisp.dir/all:
 	$(MAKE) -f eye/CMakeFiles/bond_generate_messages_lisp.dir/build.make eye/CMakeFiles/bond_generate_messages_lisp.dir/depend
 	$(MAKE) -f eye/CMakeFiles/bond_generate_messages_lisp.dir/build.make eye/CMakeFiles/bond_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num= "Built target bond_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num= "Built target bond_generate_messages_lisp"
 .PHONY : eye/CMakeFiles/bond_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
 eye/CMakeFiles/bond_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 eye/CMakeFiles/bond_generate_messages_lisp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : eye/CMakeFiles/bond_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -2966,7 +3475,7 @@ wheel/preinstall:
 wheel/CMakeFiles/wheel_node.dir/all:
 	$(MAKE) -f wheel/CMakeFiles/wheel_node.dir/build.make wheel/CMakeFiles/wheel_node.dir/depend
 	$(MAKE) -f wheel/CMakeFiles/wheel_node.dir/build.make wheel/CMakeFiles/wheel_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=43,44,45 "Built target wheel_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=52,53,54 "Built target wheel_node"
 .PHONY : wheel/CMakeFiles/wheel_node.dir/all
 
 # Include target in all.
@@ -2976,9 +3485,9 @@ all: wheel/CMakeFiles/wheel_node.dir/all
 
 # Build rule for subdir invocation for target.
 wheel/CMakeFiles/wheel_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 wheel/CMakeFiles/wheel_node.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : wheel/CMakeFiles/wheel_node.dir/rule
 
 # Convenience name for target.
@@ -3003,7 +3512,7 @@ clean: wheel/CMakeFiles/wheel_node.dir/clean
 wheel/CMakeFiles/prupwm.dir/all:
 	$(MAKE) -f wheel/CMakeFiles/prupwm.dir/build.make wheel/CMakeFiles/prupwm.dir/depend
 	$(MAKE) -f wheel/CMakeFiles/prupwm.dir/build.make wheel/CMakeFiles/prupwm.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=32,33,34 "Built target prupwm"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=36,37,38 "Built target prupwm"
 .PHONY : wheel/CMakeFiles/prupwm.dir/all
 
 # Include target in all.
@@ -3013,9 +3522,9 @@ all: wheel/CMakeFiles/prupwm.dir/all
 
 # Build rule for subdir invocation for target.
 wheel/CMakeFiles/prupwm.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 wheel/CMakeFiles/prupwm.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : wheel/CMakeFiles/prupwm.dir/rule
 
 # Convenience name for target.

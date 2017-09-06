@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bone/projects/xingzhe/src
+CMAKE_SOURCE_DIR = /home/ubuntu/projects/xingzhe/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bone/projects/xingzhe/src
+CMAKE_BINARY_DIR = /home/ubuntu/projects/xingzhe/src
 
 # Include any dependencies generated for this target.
 include wheel/CMakeFiles/prupwm.dir/depend.make
@@ -59,16 +59,16 @@ include wheel/CMakeFiles/prupwm.dir/flags.make
 
 wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/pru.cpp.o: wheel/CMakeFiles/prupwm.dir/flags.make
 wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/pru.cpp.o: libs/prupwm/pru.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/pru.cpp.o"
-	cd /home/bone/projects/xingzhe/src/wheel && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/prupwm.dir/__/libs/prupwm/pru.cpp.o -c /home/bone/projects/xingzhe/src/libs/prupwm/pru.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/pru.cpp.o"
+	cd /home/ubuntu/projects/xingzhe/src/wheel && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/prupwm.dir/__/libs/prupwm/pru.cpp.o -c /home/ubuntu/projects/xingzhe/src/libs/prupwm/pru.cpp
 
 wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/pru.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/prupwm.dir/__/libs/prupwm/pru.cpp.i"
-	cd /home/bone/projects/xingzhe/src/wheel && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bone/projects/xingzhe/src/libs/prupwm/pru.cpp > CMakeFiles/prupwm.dir/__/libs/prupwm/pru.cpp.i
+	cd /home/ubuntu/projects/xingzhe/src/wheel && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/projects/xingzhe/src/libs/prupwm/pru.cpp > CMakeFiles/prupwm.dir/__/libs/prupwm/pru.cpp.i
 
 wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/pru.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/prupwm.dir/__/libs/prupwm/pru.cpp.s"
-	cd /home/bone/projects/xingzhe/src/wheel && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bone/projects/xingzhe/src/libs/prupwm/pru.cpp -o CMakeFiles/prupwm.dir/__/libs/prupwm/pru.cpp.s
+	cd /home/ubuntu/projects/xingzhe/src/wheel && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/xingzhe/src/libs/prupwm/pru.cpp -o CMakeFiles/prupwm.dir/__/libs/prupwm/pru.cpp.s
 
 wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/pru.cpp.o.requires:
 
@@ -83,16 +83,16 @@ wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/pru.cpp.o.provides.build: wheel/CMake
 
 wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/prupwm.cpp.o: wheel/CMakeFiles/prupwm.dir/flags.make
 wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/prupwm.cpp.o: libs/prupwm/prupwm.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/prupwm.cpp.o"
-	cd /home/bone/projects/xingzhe/src/wheel && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/prupwm.dir/__/libs/prupwm/prupwm.cpp.o -c /home/bone/projects/xingzhe/src/libs/prupwm/prupwm.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/prupwm.cpp.o"
+	cd /home/ubuntu/projects/xingzhe/src/wheel && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/prupwm.dir/__/libs/prupwm/prupwm.cpp.o -c /home/ubuntu/projects/xingzhe/src/libs/prupwm/prupwm.cpp
 
 wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/prupwm.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/prupwm.dir/__/libs/prupwm/prupwm.cpp.i"
-	cd /home/bone/projects/xingzhe/src/wheel && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bone/projects/xingzhe/src/libs/prupwm/prupwm.cpp > CMakeFiles/prupwm.dir/__/libs/prupwm/prupwm.cpp.i
+	cd /home/ubuntu/projects/xingzhe/src/wheel && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/projects/xingzhe/src/libs/prupwm/prupwm.cpp > CMakeFiles/prupwm.dir/__/libs/prupwm/prupwm.cpp.i
 
 wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/prupwm.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/prupwm.dir/__/libs/prupwm/prupwm.cpp.s"
-	cd /home/bone/projects/xingzhe/src/wheel && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bone/projects/xingzhe/src/libs/prupwm/prupwm.cpp -o CMakeFiles/prupwm.dir/__/libs/prupwm/prupwm.cpp.s
+	cd /home/ubuntu/projects/xingzhe/src/wheel && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/xingzhe/src/libs/prupwm/prupwm.cpp -o CMakeFiles/prupwm.dir/__/libs/prupwm/prupwm.cpp.s
 
 wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/prupwm.cpp.o.requires:
 
@@ -113,15 +113,15 @@ prupwm_OBJECTS = \
 # External object files for target prupwm
 prupwm_EXTERNAL_OBJECTS =
 
-devel/lib/libprupwm.so: wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/pru.cpp.o
-devel/lib/libprupwm.so: wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/prupwm.cpp.o
-devel/lib/libprupwm.so: wheel/CMakeFiles/prupwm.dir/build.make
-devel/lib/libprupwm.so: wheel/CMakeFiles/prupwm.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared library ../devel/lib/libprupwm.so"
-	cd /home/bone/projects/xingzhe/src/wheel && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/prupwm.dir/link.txt --verbose=$(VERBOSE)
+/home/ubuntu/projects/xingzhe/devel/lib/libprupwm.so: wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/pru.cpp.o
+/home/ubuntu/projects/xingzhe/devel/lib/libprupwm.so: wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/prupwm.cpp.o
+/home/ubuntu/projects/xingzhe/devel/lib/libprupwm.so: wheel/CMakeFiles/prupwm.dir/build.make
+/home/ubuntu/projects/xingzhe/devel/lib/libprupwm.so: wheel/CMakeFiles/prupwm.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared library /home/ubuntu/projects/xingzhe/devel/lib/libprupwm.so"
+	cd /home/ubuntu/projects/xingzhe/src/wheel && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/prupwm.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-wheel/CMakeFiles/prupwm.dir/build: devel/lib/libprupwm.so
+wheel/CMakeFiles/prupwm.dir/build: /home/ubuntu/projects/xingzhe/devel/lib/libprupwm.so
 
 .PHONY : wheel/CMakeFiles/prupwm.dir/build
 
@@ -131,10 +131,10 @@ wheel/CMakeFiles/prupwm.dir/requires: wheel/CMakeFiles/prupwm.dir/__/libs/prupwm
 .PHONY : wheel/CMakeFiles/prupwm.dir/requires
 
 wheel/CMakeFiles/prupwm.dir/clean:
-	cd /home/bone/projects/xingzhe/src/wheel && $(CMAKE_COMMAND) -P CMakeFiles/prupwm.dir/cmake_clean.cmake
+	cd /home/ubuntu/projects/xingzhe/src/wheel && $(CMAKE_COMMAND) -P CMakeFiles/prupwm.dir/cmake_clean.cmake
 .PHONY : wheel/CMakeFiles/prupwm.dir/clean
 
 wheel/CMakeFiles/prupwm.dir/depend:
-	cd /home/bone/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bone/projects/xingzhe/src /home/bone/projects/xingzhe/src/wheel /home/bone/projects/xingzhe/src /home/bone/projects/xingzhe/src/wheel /home/bone/projects/xingzhe/src/wheel/CMakeFiles/prupwm.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/projects/xingzhe/src /home/ubuntu/projects/xingzhe/src/wheel /home/ubuntu/projects/xingzhe/src /home/ubuntu/projects/xingzhe/src/wheel /home/ubuntu/projects/xingzhe/src/wheel/CMakeFiles/prupwm.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : wheel/CMakeFiles/prupwm.dir/depend
 

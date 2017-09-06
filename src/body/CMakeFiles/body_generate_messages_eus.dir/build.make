@@ -43,25 +43,25 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bone/projects/xingzhe/src
+CMAKE_SOURCE_DIR = /home/ubuntu/projects/xingzhe/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bone/projects/xingzhe/src
+CMAKE_BINARY_DIR = /home/ubuntu/projects/xingzhe/src
 
 # Utility rule file for body_generate_messages_eus.
 
 # Include the progress variables for this target.
 include body/CMakeFiles/body_generate_messages_eus.dir/progress.make
 
-body/CMakeFiles/body_generate_messages_eus: devel/share/roseus/ros/body/manifest.l
+body/CMakeFiles/body_generate_messages_eus: /home/ubuntu/projects/xingzhe/devel/share/roseus/ros/body/manifest.l
 
 
-devel/share/roseus/ros/body/manifest.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp manifest code for body"
-	cd /home/bone/projects/xingzhe/src/body && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/bone/projects/xingzhe/src/devel/share/roseus/ros/body body std_msgs
+/home/ubuntu/projects/xingzhe/devel/share/roseus/ros/body/manifest.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp manifest code for body"
+	cd /home/ubuntu/projects/xingzhe/src/body && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/ubuntu/projects/xingzhe/devel/share/roseus/ros/body body std_msgs
 
 body_generate_messages_eus: body/CMakeFiles/body_generate_messages_eus
-body_generate_messages_eus: devel/share/roseus/ros/body/manifest.l
+body_generate_messages_eus: /home/ubuntu/projects/xingzhe/devel/share/roseus/ros/body/manifest.l
 body_generate_messages_eus: body/CMakeFiles/body_generate_messages_eus.dir/build.make
 
 .PHONY : body_generate_messages_eus
@@ -72,10 +72,10 @@ body/CMakeFiles/body_generate_messages_eus.dir/build: body_generate_messages_eus
 .PHONY : body/CMakeFiles/body_generate_messages_eus.dir/build
 
 body/CMakeFiles/body_generate_messages_eus.dir/clean:
-	cd /home/bone/projects/xingzhe/src/body && $(CMAKE_COMMAND) -P CMakeFiles/body_generate_messages_eus.dir/cmake_clean.cmake
+	cd /home/ubuntu/projects/xingzhe/src/body && $(CMAKE_COMMAND) -P CMakeFiles/body_generate_messages_eus.dir/cmake_clean.cmake
 .PHONY : body/CMakeFiles/body_generate_messages_eus.dir/clean
 
 body/CMakeFiles/body_generate_messages_eus.dir/depend:
-	cd /home/bone/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bone/projects/xingzhe/src /home/bone/projects/xingzhe/src/body /home/bone/projects/xingzhe/src /home/bone/projects/xingzhe/src/body /home/bone/projects/xingzhe/src/body/CMakeFiles/body_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/projects/xingzhe/src /home/ubuntu/projects/xingzhe/src/body /home/ubuntu/projects/xingzhe/src /home/ubuntu/projects/xingzhe/src/body /home/ubuntu/projects/xingzhe/src/body/CMakeFiles/body_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : body/CMakeFiles/body_generate_messages_eus.dir/depend
 

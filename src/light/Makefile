@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bone/projects/xingzhe/src
+CMAKE_SOURCE_DIR = /home/ubuntu/projects/xingzhe/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bone/projects/xingzhe/src
+CMAKE_BINARY_DIR = /home/ubuntu/projects/xingzhe/src
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -89,17 +89,6 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -110,17 +99,6 @@ test:
 test/fast: test
 
 .PHONY : test/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -133,16 +111,27 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	cd /home/bone/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles /home/bone/projects/xingzhe/src/light/CMakeFiles/progress.marks
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 light/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	cd /home/ubuntu/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles /home/ubuntu/projects/xingzhe/src/light/CMakeFiles/progress.marks
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 light/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 light/clean
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 light/clean
 .PHONY : clean
 
 # The main clean target
@@ -152,22 +141,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 light/preinstall
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 light/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 light/preinstall
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 light/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/bone/projects/xingzhe/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ubuntu/projects/xingzhe/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 light/CMakeFiles/light_node.dir/rule:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 light/CMakeFiles/light_node.dir/rule
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 light/CMakeFiles/light_node.dir/rule
 .PHONY : light/CMakeFiles/light_node.dir/rule
 
 # Convenience name for target.
@@ -177,8 +166,13 @@ light_node: light/CMakeFiles/light_node.dir/rule
 
 # fast build rule for target.
 light_node/fast:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f light/CMakeFiles/light_node.dir/build.make light/CMakeFiles/light_node.dir/build
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f light/CMakeFiles/light_node.dir/build.make light/CMakeFiles/light_node.dir/build
 .PHONY : light_node/fast
+
+# Manual pre-install relink rule for target.
+light_node/preinstall:
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 light/CMakeFiles/light_node.dir/preinstall
+.PHONY : light_node/preinstall
 
 src/light.o: src/light.cpp.o
 
@@ -186,7 +180,7 @@ src/light.o: src/light.cpp.o
 
 # target to build an object file
 src/light.cpp.o:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f light/CMakeFiles/light_node.dir/build.make light/CMakeFiles/light_node.dir/src/light.cpp.o
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f light/CMakeFiles/light_node.dir/build.make light/CMakeFiles/light_node.dir/src/light.cpp.o
 .PHONY : src/light.cpp.o
 
 src/light.i: src/light.cpp.i
@@ -195,7 +189,7 @@ src/light.i: src/light.cpp.i
 
 # target to preprocess a source file
 src/light.cpp.i:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f light/CMakeFiles/light_node.dir/build.make light/CMakeFiles/light_node.dir/src/light.cpp.i
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f light/CMakeFiles/light_node.dir/build.make light/CMakeFiles/light_node.dir/src/light.cpp.i
 .PHONY : src/light.cpp.i
 
 src/light.s: src/light.cpp.s
@@ -204,7 +198,7 @@ src/light.s: src/light.cpp.s
 
 # target to generate assembly for a file
 src/light.cpp.s:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f light/CMakeFiles/light_node.dir/build.make light/CMakeFiles/light_node.dir/src/light.cpp.s
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f light/CMakeFiles/light_node.dir/build.make light/CMakeFiles/light_node.dir/src/light.cpp.s
 .PHONY : src/light.cpp.s
 
 src/light_node.o: src/light_node.cpp.o
@@ -213,7 +207,7 @@ src/light_node.o: src/light_node.cpp.o
 
 # target to build an object file
 src/light_node.cpp.o:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f light/CMakeFiles/light_node.dir/build.make light/CMakeFiles/light_node.dir/src/light_node.cpp.o
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f light/CMakeFiles/light_node.dir/build.make light/CMakeFiles/light_node.dir/src/light_node.cpp.o
 .PHONY : src/light_node.cpp.o
 
 src/light_node.i: src/light_node.cpp.i
@@ -222,7 +216,7 @@ src/light_node.i: src/light_node.cpp.i
 
 # target to preprocess a source file
 src/light_node.cpp.i:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f light/CMakeFiles/light_node.dir/build.make light/CMakeFiles/light_node.dir/src/light_node.cpp.i
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f light/CMakeFiles/light_node.dir/build.make light/CMakeFiles/light_node.dir/src/light_node.cpp.i
 .PHONY : src/light_node.cpp.i
 
 src/light_node.s: src/light_node.cpp.s
@@ -231,7 +225,7 @@ src/light_node.s: src/light_node.cpp.s
 
 # target to generate assembly for a file
 src/light_node.cpp.s:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f light/CMakeFiles/light_node.dir/build.make light/CMakeFiles/light_node.dir/src/light_node.cpp.s
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f light/CMakeFiles/light_node.dir/build.make light/CMakeFiles/light_node.dir/src/light_node.cpp.s
 .PHONY : src/light_node.cpp.s
 
 # Help Target
@@ -243,11 +237,10 @@ help:
 	@echo "... list_install_components"
 	@echo "... install"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
 	@echo "... test"
 	@echo "... light_node"
-	@echo "... install/strip"
 	@echo "... install/local"
+	@echo "... edit_cache"
 	@echo "... src/light.o"
 	@echo "... src/light.i"
 	@echo "... src/light.s"
@@ -265,6 +258,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/bone/projects/xingzhe/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ubuntu/projects/xingzhe/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

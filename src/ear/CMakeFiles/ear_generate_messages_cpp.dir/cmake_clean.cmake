@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ear_generate_messages_cpp"
-  "../devel/include/ear/usonic.h"
+  "/home/ubuntu/projects/xingzhe/devel/include/ear/usonic.h"
 )
 
 # Per-language clean rules from dependency scanning.

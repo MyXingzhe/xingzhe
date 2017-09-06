@@ -43,33 +43,33 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bone/projects/xingzhe/src
+CMAKE_SOURCE_DIR = /home/ubuntu/projects/xingzhe/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bone/projects/xingzhe/src
+CMAKE_BINARY_DIR = /home/ubuntu/projects/xingzhe/src
 
 # Utility rule file for ear_generate_messages_py.
 
 # Include the progress variables for this target.
 include ear/CMakeFiles/ear_generate_messages_py.dir/progress.make
 
-ear/CMakeFiles/ear_generate_messages_py: devel/lib/python2.7/dist-packages/ear/msg/_usonic.py
-ear/CMakeFiles/ear_generate_messages_py: devel/lib/python2.7/dist-packages/ear/msg/__init__.py
+ear/CMakeFiles/ear_generate_messages_py: /home/ubuntu/projects/xingzhe/devel/lib/python2.7/dist-packages/ear/msg/_usonic.py
+ear/CMakeFiles/ear_generate_messages_py: /home/ubuntu/projects/xingzhe/devel/lib/python2.7/dist-packages/ear/msg/__init__.py
 
 
-devel/lib/python2.7/dist-packages/ear/msg/_usonic.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-devel/lib/python2.7/dist-packages/ear/msg/_usonic.py: /home/bone/projects/xingzhe/msg/usonic.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG ear/usonic"
-	cd /home/bone/projects/xingzhe/src/ear && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/bone/projects/xingzhe/src/ear/../../msg/usonic.msg -Iear:/home/bone/projects/xingzhe/src/ear/../../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ear -o /home/bone/projects/xingzhe/src/devel/lib/python2.7/dist-packages/ear/msg
+/home/ubuntu/projects/xingzhe/devel/lib/python2.7/dist-packages/ear/msg/_usonic.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/ubuntu/projects/xingzhe/devel/lib/python2.7/dist-packages/ear/msg/_usonic.py: /home/ubuntu/projects/xingzhe/msg/usonic.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG ear/usonic"
+	cd /home/ubuntu/projects/xingzhe/src/ear && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/ubuntu/projects/xingzhe/src/ear/../../msg/usonic.msg -Iear:/home/ubuntu/projects/xingzhe/src/ear/../../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ear -o /home/ubuntu/projects/xingzhe/devel/lib/python2.7/dist-packages/ear/msg
 
-devel/lib/python2.7/dist-packages/ear/msg/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-devel/lib/python2.7/dist-packages/ear/msg/__init__.py: devel/lib/python2.7/dist-packages/ear/msg/_usonic.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python msg __init__.py for ear"
-	cd /home/bone/projects/xingzhe/src/ear && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/bone/projects/xingzhe/src/devel/lib/python2.7/dist-packages/ear/msg --initpy
+/home/ubuntu/projects/xingzhe/devel/lib/python2.7/dist-packages/ear/msg/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/ubuntu/projects/xingzhe/devel/lib/python2.7/dist-packages/ear/msg/__init__.py: /home/ubuntu/projects/xingzhe/devel/lib/python2.7/dist-packages/ear/msg/_usonic.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python msg __init__.py for ear"
+	cd /home/ubuntu/projects/xingzhe/src/ear && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/ubuntu/projects/xingzhe/devel/lib/python2.7/dist-packages/ear/msg --initpy
 
 ear_generate_messages_py: ear/CMakeFiles/ear_generate_messages_py
-ear_generate_messages_py: devel/lib/python2.7/dist-packages/ear/msg/_usonic.py
-ear_generate_messages_py: devel/lib/python2.7/dist-packages/ear/msg/__init__.py
+ear_generate_messages_py: /home/ubuntu/projects/xingzhe/devel/lib/python2.7/dist-packages/ear/msg/_usonic.py
+ear_generate_messages_py: /home/ubuntu/projects/xingzhe/devel/lib/python2.7/dist-packages/ear/msg/__init__.py
 ear_generate_messages_py: ear/CMakeFiles/ear_generate_messages_py.dir/build.make
 
 .PHONY : ear_generate_messages_py
@@ -80,10 +80,10 @@ ear/CMakeFiles/ear_generate_messages_py.dir/build: ear_generate_messages_py
 .PHONY : ear/CMakeFiles/ear_generate_messages_py.dir/build
 
 ear/CMakeFiles/ear_generate_messages_py.dir/clean:
-	cd /home/bone/projects/xingzhe/src/ear && $(CMAKE_COMMAND) -P CMakeFiles/ear_generate_messages_py.dir/cmake_clean.cmake
+	cd /home/ubuntu/projects/xingzhe/src/ear && $(CMAKE_COMMAND) -P CMakeFiles/ear_generate_messages_py.dir/cmake_clean.cmake
 .PHONY : ear/CMakeFiles/ear_generate_messages_py.dir/clean
 
 ear/CMakeFiles/ear_generate_messages_py.dir/depend:
-	cd /home/bone/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bone/projects/xingzhe/src /home/bone/projects/xingzhe/src/ear /home/bone/projects/xingzhe/src /home/bone/projects/xingzhe/src/ear /home/bone/projects/xingzhe/src/ear/CMakeFiles/ear_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/projects/xingzhe/src /home/ubuntu/projects/xingzhe/src/ear /home/ubuntu/projects/xingzhe/src /home/ubuntu/projects/xingzhe/src/ear /home/ubuntu/projects/xingzhe/src/ear/CMakeFiles/ear_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : ear/CMakeFiles/ear_generate_messages_py.dir/depend
 

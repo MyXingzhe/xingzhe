@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bone/projects/xingzhe/src
+CMAKE_SOURCE_DIR = /home/ubuntu/projects/xingzhe/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bone/projects/xingzhe/src
+CMAKE_BINARY_DIR = /home/ubuntu/projects/xingzhe/src
 
 # Utility rule file for _ear_generate_messages_check_deps_usonic.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/bone/projects/xingzhe/src
 include ear/CMakeFiles/_ear_generate_messages_check_deps_usonic.dir/progress.make
 
 ear/CMakeFiles/_ear_generate_messages_check_deps_usonic:
-	cd /home/bone/projects/xingzhe/src/ear && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py ear /home/bone/projects/xingzhe/src/ear/../../msg/usonic.msg 
+	cd /home/ubuntu/projects/xingzhe/src/ear && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py ear /home/ubuntu/projects/xingzhe/src/ear/../../msg/usonic.msg 
 
 _ear_generate_messages_check_deps_usonic: ear/CMakeFiles/_ear_generate_messages_check_deps_usonic
 _ear_generate_messages_check_deps_usonic: ear/CMakeFiles/_ear_generate_messages_check_deps_usonic.dir/build.make
@@ -67,10 +67,10 @@ ear/CMakeFiles/_ear_generate_messages_check_deps_usonic.dir/build: _ear_generate
 .PHONY : ear/CMakeFiles/_ear_generate_messages_check_deps_usonic.dir/build
 
 ear/CMakeFiles/_ear_generate_messages_check_deps_usonic.dir/clean:
-	cd /home/bone/projects/xingzhe/src/ear && $(CMAKE_COMMAND) -P CMakeFiles/_ear_generate_messages_check_deps_usonic.dir/cmake_clean.cmake
+	cd /home/ubuntu/projects/xingzhe/src/ear && $(CMAKE_COMMAND) -P CMakeFiles/_ear_generate_messages_check_deps_usonic.dir/cmake_clean.cmake
 .PHONY : ear/CMakeFiles/_ear_generate_messages_check_deps_usonic.dir/clean
 
 ear/CMakeFiles/_ear_generate_messages_check_deps_usonic.dir/depend:
-	cd /home/bone/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bone/projects/xingzhe/src /home/bone/projects/xingzhe/src/ear /home/bone/projects/xingzhe/src /home/bone/projects/xingzhe/src/ear /home/bone/projects/xingzhe/src/ear/CMakeFiles/_ear_generate_messages_check_deps_usonic.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/projects/xingzhe/src /home/ubuntu/projects/xingzhe/src/ear /home/ubuntu/projects/xingzhe/src /home/ubuntu/projects/xingzhe/src/ear /home/ubuntu/projects/xingzhe/src/ear/CMakeFiles/_ear_generate_messages_check_deps_usonic.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : ear/CMakeFiles/_ear_generate_messages_check_deps_usonic.dir/depend
 

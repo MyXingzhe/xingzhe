@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /usr/local/setup.sh
+    local-name: /home/ubuntu/projects/xingzhe/install/setup.sh

@@ -580,3 +580,31 @@ Linking C executable cmTC_24ce5
 make[1]: Leaving directory '/home/bone/projects/xingzhe/src/CMakeFiles/CMakeTmp'
 
 
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/ubuntu/projects/xingzhe/src/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e1469/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e1469.dir/build.make CMakeFiles/cmTC_e1469.dir/build
+make[1]: Entering directory '/home/ubuntu/projects/xingzhe/src/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e1469.dir/CheckIncludeFile.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_e1469.dir/CheckIncludeFile.c.o   -c /home/ubuntu/projects/xingzhe/src/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_e1469
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e1469.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_e1469.dir/CheckIncludeFile.c.o  -o cmTC_e1469 -rdynamic 
+make[1]: Leaving directory '/home/ubuntu/projects/xingzhe/src/CMakeFiles/CMakeTmp'
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /home/ubuntu/projects/xingzhe/src/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_cf669/fast"
+/usr/bin/make -f CMakeFiles/cmTC_cf669.dir/build.make CMakeFiles/cmTC_cf669.dir/build
+make[1]: Entering directory '/home/ubuntu/projects/xingzhe/src/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cf669.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_cf669.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_cf669
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cf669.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_cf669.dir/CheckFunctionExists.c.o  -o cmTC_cf669 -rdynamic -lpthread 
+make[1]: Leaving directory '/home/ubuntu/projects/xingzhe/src/CMakeFiles/CMakeTmp'
+
+

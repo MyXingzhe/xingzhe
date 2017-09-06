@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/bone/projects/xingzhe/src/wheel/src/dc_motor.cpp" "/home/bone/projects/xingzhe/src/wheel/CMakeFiles/wheel_node.dir/src/dc_motor.cpp.o"
-  "/home/bone/projects/xingzhe/src/wheel/src/wheel_node.cpp" "/home/bone/projects/xingzhe/src/wheel/CMakeFiles/wheel_node.dir/src/wheel_node.cpp.o"
+  "/home/ubuntu/projects/xingzhe/src/wheel/src/dc_motor.cpp" "/home/ubuntu/projects/xingzhe/src/wheel/CMakeFiles/wheel_node.dir/src/dc_motor.cpp.o"
+  "/home/ubuntu/projects/xingzhe/src/wheel/src/wheel_node.cpp" "/home/ubuntu/projects/xingzhe/src/wheel/CMakeFiles/wheel_node.dir/src/wheel_node.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

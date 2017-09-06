@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/bone/projects/xingzhe/src/light/src/light.cpp" "/home/bone/projects/xingzhe/src/light/CMakeFiles/light_node.dir/src/light.cpp.o"
-  "/home/bone/projects/xingzhe/src/light/src/light_node.cpp" "/home/bone/projects/xingzhe/src/light/CMakeFiles/light_node.dir/src/light_node.cpp.o"
+  "/home/ubuntu/projects/xingzhe/src/light/src/light.cpp" "/home/ubuntu/projects/xingzhe/src/light/CMakeFiles/light_node.dir/src/light.cpp.o"
+  "/home/ubuntu/projects/xingzhe/src/light/src/light_node.cpp" "/home/ubuntu/projects/xingzhe/src/light/CMakeFiles/light_node.dir/src/light_node.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

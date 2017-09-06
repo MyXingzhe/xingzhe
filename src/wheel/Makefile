@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bone/projects/xingzhe/src
+CMAKE_SOURCE_DIR = /home/ubuntu/projects/xingzhe/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bone/projects/xingzhe/src
+CMAKE_BINARY_DIR = /home/ubuntu/projects/xingzhe/src
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -111,17 +111,6 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -135,14 +124,14 @@ install/local/fast: install/local
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/bone/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles /home/bone/projects/xingzhe/src/wheel/CMakeFiles/progress.marks
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 wheel/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	cd /home/ubuntu/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles /home/ubuntu/projects/xingzhe/src/wheel/CMakeFiles/progress.marks
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 wheel/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 wheel/clean
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 wheel/clean
 .PHONY : clean
 
 # The main clean target
@@ -152,22 +141,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 wheel/preinstall
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 wheel/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 wheel/preinstall
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 wheel/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/bone/projects/xingzhe/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ubuntu/projects/xingzhe/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 wheel/CMakeFiles/wheel_node.dir/rule:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 wheel/CMakeFiles/wheel_node.dir/rule
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 wheel/CMakeFiles/wheel_node.dir/rule
 .PHONY : wheel/CMakeFiles/wheel_node.dir/rule
 
 # Convenience name for target.
@@ -177,12 +166,12 @@ wheel_node: wheel/CMakeFiles/wheel_node.dir/rule
 
 # fast build rule for target.
 wheel_node/fast:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/wheel_node.dir/build.make wheel/CMakeFiles/wheel_node.dir/build
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/wheel_node.dir/build.make wheel/CMakeFiles/wheel_node.dir/build
 .PHONY : wheel_node/fast
 
 # Convenience name for target.
 wheel/CMakeFiles/prupwm.dir/rule:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 wheel/CMakeFiles/prupwm.dir/rule
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 wheel/CMakeFiles/prupwm.dir/rule
 .PHONY : wheel/CMakeFiles/prupwm.dir/rule
 
 # Convenience name for target.
@@ -192,7 +181,7 @@ prupwm: wheel/CMakeFiles/prupwm.dir/rule
 
 # fast build rule for target.
 prupwm/fast:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/prupwm.dir/build.make wheel/CMakeFiles/prupwm.dir/build
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/prupwm.dir/build.make wheel/CMakeFiles/prupwm.dir/build
 .PHONY : prupwm/fast
 
 __/libs/prupwm/pru.o: __/libs/prupwm/pru.cpp.o
@@ -201,7 +190,7 @@ __/libs/prupwm/pru.o: __/libs/prupwm/pru.cpp.o
 
 # target to build an object file
 __/libs/prupwm/pru.cpp.o:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/prupwm.dir/build.make wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/pru.cpp.o
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/prupwm.dir/build.make wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/pru.cpp.o
 .PHONY : __/libs/prupwm/pru.cpp.o
 
 __/libs/prupwm/pru.i: __/libs/prupwm/pru.cpp.i
@@ -210,7 +199,7 @@ __/libs/prupwm/pru.i: __/libs/prupwm/pru.cpp.i
 
 # target to preprocess a source file
 __/libs/prupwm/pru.cpp.i:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/prupwm.dir/build.make wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/pru.cpp.i
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/prupwm.dir/build.make wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/pru.cpp.i
 .PHONY : __/libs/prupwm/pru.cpp.i
 
 __/libs/prupwm/pru.s: __/libs/prupwm/pru.cpp.s
@@ -219,7 +208,7 @@ __/libs/prupwm/pru.s: __/libs/prupwm/pru.cpp.s
 
 # target to generate assembly for a file
 __/libs/prupwm/pru.cpp.s:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/prupwm.dir/build.make wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/pru.cpp.s
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/prupwm.dir/build.make wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/pru.cpp.s
 .PHONY : __/libs/prupwm/pru.cpp.s
 
 __/libs/prupwm/prupwm.o: __/libs/prupwm/prupwm.cpp.o
@@ -228,7 +217,7 @@ __/libs/prupwm/prupwm.o: __/libs/prupwm/prupwm.cpp.o
 
 # target to build an object file
 __/libs/prupwm/prupwm.cpp.o:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/prupwm.dir/build.make wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/prupwm.cpp.o
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/prupwm.dir/build.make wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/prupwm.cpp.o
 .PHONY : __/libs/prupwm/prupwm.cpp.o
 
 __/libs/prupwm/prupwm.i: __/libs/prupwm/prupwm.cpp.i
@@ -237,7 +226,7 @@ __/libs/prupwm/prupwm.i: __/libs/prupwm/prupwm.cpp.i
 
 # target to preprocess a source file
 __/libs/prupwm/prupwm.cpp.i:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/prupwm.dir/build.make wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/prupwm.cpp.i
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/prupwm.dir/build.make wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/prupwm.cpp.i
 .PHONY : __/libs/prupwm/prupwm.cpp.i
 
 __/libs/prupwm/prupwm.s: __/libs/prupwm/prupwm.cpp.s
@@ -246,7 +235,7 @@ __/libs/prupwm/prupwm.s: __/libs/prupwm/prupwm.cpp.s
 
 # target to generate assembly for a file
 __/libs/prupwm/prupwm.cpp.s:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/prupwm.dir/build.make wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/prupwm.cpp.s
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/prupwm.dir/build.make wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/prupwm.cpp.s
 .PHONY : __/libs/prupwm/prupwm.cpp.s
 
 src/dc_motor.o: src/dc_motor.cpp.o
@@ -255,7 +244,7 @@ src/dc_motor.o: src/dc_motor.cpp.o
 
 # target to build an object file
 src/dc_motor.cpp.o:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/wheel_node.dir/build.make wheel/CMakeFiles/wheel_node.dir/src/dc_motor.cpp.o
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/wheel_node.dir/build.make wheel/CMakeFiles/wheel_node.dir/src/dc_motor.cpp.o
 .PHONY : src/dc_motor.cpp.o
 
 src/dc_motor.i: src/dc_motor.cpp.i
@@ -264,7 +253,7 @@ src/dc_motor.i: src/dc_motor.cpp.i
 
 # target to preprocess a source file
 src/dc_motor.cpp.i:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/wheel_node.dir/build.make wheel/CMakeFiles/wheel_node.dir/src/dc_motor.cpp.i
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/wheel_node.dir/build.make wheel/CMakeFiles/wheel_node.dir/src/dc_motor.cpp.i
 .PHONY : src/dc_motor.cpp.i
 
 src/dc_motor.s: src/dc_motor.cpp.s
@@ -273,7 +262,7 @@ src/dc_motor.s: src/dc_motor.cpp.s
 
 # target to generate assembly for a file
 src/dc_motor.cpp.s:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/wheel_node.dir/build.make wheel/CMakeFiles/wheel_node.dir/src/dc_motor.cpp.s
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/wheel_node.dir/build.make wheel/CMakeFiles/wheel_node.dir/src/dc_motor.cpp.s
 .PHONY : src/dc_motor.cpp.s
 
 src/wheel_node.o: src/wheel_node.cpp.o
@@ -282,7 +271,7 @@ src/wheel_node.o: src/wheel_node.cpp.o
 
 # target to build an object file
 src/wheel_node.cpp.o:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/wheel_node.dir/build.make wheel/CMakeFiles/wheel_node.dir/src/wheel_node.cpp.o
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/wheel_node.dir/build.make wheel/CMakeFiles/wheel_node.dir/src/wheel_node.cpp.o
 .PHONY : src/wheel_node.cpp.o
 
 src/wheel_node.i: src/wheel_node.cpp.i
@@ -291,7 +280,7 @@ src/wheel_node.i: src/wheel_node.cpp.i
 
 # target to preprocess a source file
 src/wheel_node.cpp.i:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/wheel_node.dir/build.make wheel/CMakeFiles/wheel_node.dir/src/wheel_node.cpp.i
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/wheel_node.dir/build.make wheel/CMakeFiles/wheel_node.dir/src/wheel_node.cpp.i
 .PHONY : src/wheel_node.cpp.i
 
 src/wheel_node.s: src/wheel_node.cpp.s
@@ -300,7 +289,7 @@ src/wheel_node.s: src/wheel_node.cpp.s
 
 # target to generate assembly for a file
 src/wheel_node.cpp.s:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/wheel_node.dir/build.make wheel/CMakeFiles/wheel_node.dir/src/wheel_node.cpp.s
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f wheel/CMakeFiles/wheel_node.dir/build.make wheel/CMakeFiles/wheel_node.dir/src/wheel_node.cpp.s
 .PHONY : src/wheel_node.cpp.s
 
 # Help Target
@@ -313,10 +302,9 @@ help:
 	@echo "... install"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... test"
 	@echo "... wheel_node"
+	@echo "... test"
 	@echo "... prupwm"
-	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... __/libs/prupwm/pru.o"
 	@echo "... __/libs/prupwm/pru.i"
@@ -341,6 +329,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/bone/projects/xingzhe/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ubuntu/projects/xingzhe/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

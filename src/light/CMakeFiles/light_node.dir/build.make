@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bone/projects/xingzhe/src
+CMAKE_SOURCE_DIR = /home/ubuntu/projects/xingzhe/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bone/projects/xingzhe/src
+CMAKE_BINARY_DIR = /home/ubuntu/projects/xingzhe/src
 
 # Include any dependencies generated for this target.
 include light/CMakeFiles/light_node.dir/depend.make
@@ -59,16 +59,16 @@ include light/CMakeFiles/light_node.dir/flags.make
 
 light/CMakeFiles/light_node.dir/src/light_node.cpp.o: light/CMakeFiles/light_node.dir/flags.make
 light/CMakeFiles/light_node.dir/src/light_node.cpp.o: light/src/light_node.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object light/CMakeFiles/light_node.dir/src/light_node.cpp.o"
-	cd /home/bone/projects/xingzhe/src/light && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/light_node.dir/src/light_node.cpp.o -c /home/bone/projects/xingzhe/src/light/src/light_node.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object light/CMakeFiles/light_node.dir/src/light_node.cpp.o"
+	cd /home/ubuntu/projects/xingzhe/src/light && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/light_node.dir/src/light_node.cpp.o -c /home/ubuntu/projects/xingzhe/src/light/src/light_node.cpp
 
 light/CMakeFiles/light_node.dir/src/light_node.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/light_node.dir/src/light_node.cpp.i"
-	cd /home/bone/projects/xingzhe/src/light && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bone/projects/xingzhe/src/light/src/light_node.cpp > CMakeFiles/light_node.dir/src/light_node.cpp.i
+	cd /home/ubuntu/projects/xingzhe/src/light && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/projects/xingzhe/src/light/src/light_node.cpp > CMakeFiles/light_node.dir/src/light_node.cpp.i
 
 light/CMakeFiles/light_node.dir/src/light_node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/light_node.dir/src/light_node.cpp.s"
-	cd /home/bone/projects/xingzhe/src/light && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bone/projects/xingzhe/src/light/src/light_node.cpp -o CMakeFiles/light_node.dir/src/light_node.cpp.s
+	cd /home/ubuntu/projects/xingzhe/src/light && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/xingzhe/src/light/src/light_node.cpp -o CMakeFiles/light_node.dir/src/light_node.cpp.s
 
 light/CMakeFiles/light_node.dir/src/light_node.cpp.o.requires:
 
@@ -83,16 +83,16 @@ light/CMakeFiles/light_node.dir/src/light_node.cpp.o.provides.build: light/CMake
 
 light/CMakeFiles/light_node.dir/src/light.cpp.o: light/CMakeFiles/light_node.dir/flags.make
 light/CMakeFiles/light_node.dir/src/light.cpp.o: light/src/light.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object light/CMakeFiles/light_node.dir/src/light.cpp.o"
-	cd /home/bone/projects/xingzhe/src/light && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/light_node.dir/src/light.cpp.o -c /home/bone/projects/xingzhe/src/light/src/light.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object light/CMakeFiles/light_node.dir/src/light.cpp.o"
+	cd /home/ubuntu/projects/xingzhe/src/light && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/light_node.dir/src/light.cpp.o -c /home/ubuntu/projects/xingzhe/src/light/src/light.cpp
 
 light/CMakeFiles/light_node.dir/src/light.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/light_node.dir/src/light.cpp.i"
-	cd /home/bone/projects/xingzhe/src/light && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bone/projects/xingzhe/src/light/src/light.cpp > CMakeFiles/light_node.dir/src/light.cpp.i
+	cd /home/ubuntu/projects/xingzhe/src/light && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/projects/xingzhe/src/light/src/light.cpp > CMakeFiles/light_node.dir/src/light.cpp.i
 
 light/CMakeFiles/light_node.dir/src/light.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/light_node.dir/src/light.cpp.s"
-	cd /home/bone/projects/xingzhe/src/light && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bone/projects/xingzhe/src/light/src/light.cpp -o CMakeFiles/light_node.dir/src/light.cpp.s
+	cd /home/ubuntu/projects/xingzhe/src/light && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/xingzhe/src/light/src/light.cpp -o CMakeFiles/light_node.dir/src/light.cpp.s
 
 light/CMakeFiles/light_node.dir/src/light.cpp.o.requires:
 
@@ -113,36 +113,75 @@ light_node_OBJECTS = \
 # External object files for target light_node
 light_node_EXTERNAL_OBJECTS =
 
-devel/lib/light/light_node: light/CMakeFiles/light_node.dir/src/light_node.cpp.o
-devel/lib/light/light_node: light/CMakeFiles/light_node.dir/src/light.cpp.o
-devel/lib/light/light_node: light/CMakeFiles/light_node.dir/build.make
-devel/lib/light/light_node: /opt/ros/kinetic/lib/libroscpp.so
-devel/lib/light/light_node: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-devel/lib/light/light_node: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-devel/lib/light/light_node: /opt/ros/kinetic/lib/librosconsole.so
-devel/lib/light/light_node: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
-devel/lib/light/light_node: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
-devel/lib/light/light_node: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-devel/lib/light/light_node: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-devel/lib/light/light_node: /opt/ros/kinetic/lib/libxmlrpcpp.so
-devel/lib/light/light_node: /opt/ros/kinetic/lib/libroscpp_serialization.so
-devel/lib/light/light_node: /opt/ros/kinetic/lib/librostime.so
-devel/lib/light/light_node: /opt/ros/kinetic/lib/libcpp_common.so
-devel/lib/light/light_node: /usr/lib/x86_64-linux-gnu/libboost_system.so
-devel/lib/light/light_node: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-devel/lib/light/light_node: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-devel/lib/light/light_node: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-devel/lib/light/light_node: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-devel/lib/light/light_node: /usr/lib/x86_64-linux-gnu/libpthread.so
-devel/lib/light/light_node: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-devel/lib/light/light_node: light/CMakeFiles/light_node.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ../devel/lib/light/light_node"
-	cd /home/bone/projects/xingzhe/src/light && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/light_node.dir/link.txt --verbose=$(VERBOSE)
+/home/ubuntu/projects/xingzhe/devel/lib/light/light_node: light/CMakeFiles/light_node.dir/src/light_node.cpp.o
+/home/ubuntu/projects/xingzhe/devel/lib/light/light_node: light/CMakeFiles/light_node.dir/src/light.cpp.o
+/home/ubuntu/projects/xingzhe/devel/lib/light/light_node: light/CMakeFiles/light_node.dir/build.make
+/home/ubuntu/projects/xingzhe/devel/lib/light/light_node: /opt/ros/kinetic/lib/libroscpp.so
+/home/ubuntu/projects/xingzhe/devel/lib/light/light_node: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+/home/ubuntu/projects/xingzhe/devel/lib/light/light_node: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/ubuntu/projects/xingzhe/devel/lib/light/light_node: /opt/ros/kinetic/lib/librosconsole.so
+/home/ubuntu/projects/xingzhe/devel/lib/light/light_node: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
+/home/ubuntu/projects/xingzhe/devel/lib/light/light_node: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
+/home/ubuntu/projects/xingzhe/devel/lib/light/light_node: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/ubuntu/projects/xingzhe/devel/lib/light/light_node: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/ubuntu/projects/xingzhe/devel/lib/light/light_node: /opt/ros/kinetic/lib/libxmlrpcpp.so
+/home/ubuntu/projects/xingzhe/devel/lib/light/light_node: /opt/ros/kinetic/lib/libroscpp_serialization.so
+/home/ubuntu/projects/xingzhe/devel/lib/light/light_node: /opt/ros/kinetic/lib/librostime.so
+/home/ubuntu/projects/xingzhe/devel/lib/light/light_node: /opt/ros/kinetic/lib/libcpp_common.so
+/home/ubuntu/projects/xingzhe/devel/lib/light/light_node: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/ubuntu/projects/xingzhe/devel/lib/light/light_node: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/ubuntu/projects/xingzhe/devel/lib/light/light_node: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+/home/ubuntu/projects/xingzhe/devel/lib/light/light_node: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/ubuntu/projects/xingzhe/devel/lib/light/light_node: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+/home/ubuntu/projects/xingzhe/devel/lib/light/light_node: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/ubuntu/projects/xingzhe/devel/lib/light/light_node: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+/home/ubuntu/projects/xingzhe/devel/lib/light/light_node: light/CMakeFiles/light_node.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable /home/ubuntu/projects/xingzhe/devel/lib/light/light_node"
+	cd /home/ubuntu/projects/xingzhe/src/light && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/light_node.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-light/CMakeFiles/light_node.dir/build: devel/lib/light/light_node
+light/CMakeFiles/light_node.dir/build: /home/ubuntu/projects/xingzhe/devel/lib/light/light_node
 
 .PHONY : light/CMakeFiles/light_node.dir/build
+
+# Object files for target light_node
+light_node_OBJECTS = \
+"CMakeFiles/light_node.dir/src/light_node.cpp.o" \
+"CMakeFiles/light_node.dir/src/light.cpp.o"
+
+# External object files for target light_node
+light_node_EXTERNAL_OBJECTS =
+
+light/CMakeFiles/CMakeRelink.dir/light_node: light/CMakeFiles/light_node.dir/src/light_node.cpp.o
+light/CMakeFiles/CMakeRelink.dir/light_node: light/CMakeFiles/light_node.dir/src/light.cpp.o
+light/CMakeFiles/CMakeRelink.dir/light_node: light/CMakeFiles/light_node.dir/build.make
+light/CMakeFiles/CMakeRelink.dir/light_node: /opt/ros/kinetic/lib/libroscpp.so
+light/CMakeFiles/CMakeRelink.dir/light_node: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+light/CMakeFiles/CMakeRelink.dir/light_node: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+light/CMakeFiles/CMakeRelink.dir/light_node: /opt/ros/kinetic/lib/librosconsole.so
+light/CMakeFiles/CMakeRelink.dir/light_node: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
+light/CMakeFiles/CMakeRelink.dir/light_node: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
+light/CMakeFiles/CMakeRelink.dir/light_node: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+light/CMakeFiles/CMakeRelink.dir/light_node: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+light/CMakeFiles/CMakeRelink.dir/light_node: /opt/ros/kinetic/lib/libxmlrpcpp.so
+light/CMakeFiles/CMakeRelink.dir/light_node: /opt/ros/kinetic/lib/libroscpp_serialization.so
+light/CMakeFiles/CMakeRelink.dir/light_node: /opt/ros/kinetic/lib/librostime.so
+light/CMakeFiles/CMakeRelink.dir/light_node: /opt/ros/kinetic/lib/libcpp_common.so
+light/CMakeFiles/CMakeRelink.dir/light_node: /usr/lib/x86_64-linux-gnu/libboost_system.so
+light/CMakeFiles/CMakeRelink.dir/light_node: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+light/CMakeFiles/CMakeRelink.dir/light_node: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+light/CMakeFiles/CMakeRelink.dir/light_node: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+light/CMakeFiles/CMakeRelink.dir/light_node: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+light/CMakeFiles/CMakeRelink.dir/light_node: /usr/lib/x86_64-linux-gnu/libpthread.so
+light/CMakeFiles/CMakeRelink.dir/light_node: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+light/CMakeFiles/CMakeRelink.dir/light_node: light/CMakeFiles/light_node.dir/relink.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable CMakeFiles/CMakeRelink.dir/light_node"
+	cd /home/ubuntu/projects/xingzhe/src/light && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/light_node.dir/relink.txt --verbose=$(VERBOSE)
+
+# Rule to relink during preinstall.
+light/CMakeFiles/light_node.dir/preinstall: light/CMakeFiles/CMakeRelink.dir/light_node
+
+.PHONY : light/CMakeFiles/light_node.dir/preinstall
 
 light/CMakeFiles/light_node.dir/requires: light/CMakeFiles/light_node.dir/src/light_node.cpp.o.requires
 light/CMakeFiles/light_node.dir/requires: light/CMakeFiles/light_node.dir/src/light.cpp.o.requires
@@ -150,10 +189,10 @@ light/CMakeFiles/light_node.dir/requires: light/CMakeFiles/light_node.dir/src/li
 .PHONY : light/CMakeFiles/light_node.dir/requires
 
 light/CMakeFiles/light_node.dir/clean:
-	cd /home/bone/projects/xingzhe/src/light && $(CMAKE_COMMAND) -P CMakeFiles/light_node.dir/cmake_clean.cmake
+	cd /home/ubuntu/projects/xingzhe/src/light && $(CMAKE_COMMAND) -P CMakeFiles/light_node.dir/cmake_clean.cmake
 .PHONY : light/CMakeFiles/light_node.dir/clean
 
 light/CMakeFiles/light_node.dir/depend:
-	cd /home/bone/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bone/projects/xingzhe/src /home/bone/projects/xingzhe/src/light /home/bone/projects/xingzhe/src /home/bone/projects/xingzhe/src/light /home/bone/projects/xingzhe/src/light/CMakeFiles/light_node.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/projects/xingzhe/src /home/ubuntu/projects/xingzhe/src/light /home/ubuntu/projects/xingzhe/src /home/ubuntu/projects/xingzhe/src/light /home/ubuntu/projects/xingzhe/src/light/CMakeFiles/light_node.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : light/CMakeFiles/light_node.dir/depend
 

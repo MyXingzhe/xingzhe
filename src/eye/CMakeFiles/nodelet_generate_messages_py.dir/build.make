@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bone/projects/xingzhe/src
+CMAKE_SOURCE_DIR = /home/ubuntu/projects/xingzhe/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bone/projects/xingzhe/src
+CMAKE_BINARY_DIR = /home/ubuntu/projects/xingzhe/src
 
 # Utility rule file for nodelet_generate_messages_py.
 
@@ -63,10 +63,10 @@ eye/CMakeFiles/nodelet_generate_messages_py.dir/build: nodelet_generate_messages
 .PHONY : eye/CMakeFiles/nodelet_generate_messages_py.dir/build
 
 eye/CMakeFiles/nodelet_generate_messages_py.dir/clean:
-	cd /home/bone/projects/xingzhe/src/eye && $(CMAKE_COMMAND) -P CMakeFiles/nodelet_generate_messages_py.dir/cmake_clean.cmake
+	cd /home/ubuntu/projects/xingzhe/src/eye && $(CMAKE_COMMAND) -P CMakeFiles/nodelet_generate_messages_py.dir/cmake_clean.cmake
 .PHONY : eye/CMakeFiles/nodelet_generate_messages_py.dir/clean
 
 eye/CMakeFiles/nodelet_generate_messages_py.dir/depend:
-	cd /home/bone/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bone/projects/xingzhe/src /home/bone/projects/xingzhe/src/eye /home/bone/projects/xingzhe/src /home/bone/projects/xingzhe/src/eye /home/bone/projects/xingzhe/src/eye/CMakeFiles/nodelet_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/projects/xingzhe/src /home/ubuntu/projects/xingzhe/src/eye /home/ubuntu/projects/xingzhe/src /home/ubuntu/projects/xingzhe/src/eye /home/ubuntu/projects/xingzhe/src/eye/CMakeFiles/nodelet_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : eye/CMakeFiles/nodelet_generate_messages_py.dir/depend
 

@@ -1,8 +1,8 @@
-prefix=/home/bone/projects/xingzhe/src/devel
+prefix=/home/ubuntu/projects/xingzhe/src/devel
 
 Name: arm
 Description: Description of arm
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/bone/projects/xingzhe/src/devel/lib 
+Libs: -L/home/ubuntu/projects/xingzhe/src/devel/lib 
 Requires: 

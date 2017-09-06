@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"wheel\"
 
-CXX_INCLUDES = -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/home/bone/projects/xingzhe/src/wheel/../libs/prupwm -I/home/bone/projects/xingzhe/src/wheel/./include/wheel 
+CXX_INCLUDES = -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/home/ubuntu/projects/xingzhe/src/wheel/../libs/prupwm -I/home/ubuntu/projects/xingzhe/src/wheel/./include/wheel 
 

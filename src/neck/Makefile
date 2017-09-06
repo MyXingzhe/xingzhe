@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bone/projects/xingzhe/src
+CMAKE_SOURCE_DIR = /home/ubuntu/projects/xingzhe/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bone/projects/xingzhe/src
+CMAKE_BINARY_DIR = /home/ubuntu/projects/xingzhe/src
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -122,27 +122,16 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # The main all target
 all: cmake_check_build_system
-	cd /home/bone/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles /home/bone/projects/xingzhe/src/neck/CMakeFiles/progress.marks
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 neck/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	cd /home/ubuntu/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles /home/ubuntu/projects/xingzhe/src/neck/CMakeFiles/progress.marks
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 neck/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 neck/clean
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 neck/clean
 .PHONY : clean
 
 # The main clean target
@@ -152,22 +141,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 neck/preinstall
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 neck/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 neck/preinstall
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 neck/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/bone/projects/xingzhe/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ubuntu/projects/xingzhe/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 neck/CMakeFiles/pwmss.dir/rule:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 neck/CMakeFiles/pwmss.dir/rule
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 neck/CMakeFiles/pwmss.dir/rule
 .PHONY : neck/CMakeFiles/pwmss.dir/rule
 
 # Convenience name for target.
@@ -177,12 +166,12 @@ pwmss: neck/CMakeFiles/pwmss.dir/rule
 
 # fast build rule for target.
 pwmss/fast:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f neck/CMakeFiles/pwmss.dir/build.make neck/CMakeFiles/pwmss.dir/build
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f neck/CMakeFiles/pwmss.dir/build.make neck/CMakeFiles/pwmss.dir/build
 .PHONY : pwmss/fast
 
 # Convenience name for target.
 neck/CMakeFiles/servo.dir/rule:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 neck/CMakeFiles/servo.dir/rule
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 neck/CMakeFiles/servo.dir/rule
 .PHONY : neck/CMakeFiles/servo.dir/rule
 
 # Convenience name for target.
@@ -192,12 +181,12 @@ servo: neck/CMakeFiles/servo.dir/rule
 
 # fast build rule for target.
 servo/fast:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f neck/CMakeFiles/servo.dir/build.make neck/CMakeFiles/servo.dir/build
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f neck/CMakeFiles/servo.dir/build.make neck/CMakeFiles/servo.dir/build
 .PHONY : servo/fast
 
 # Convenience name for target.
 neck/CMakeFiles/neck_node.dir/rule:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 neck/CMakeFiles/neck_node.dir/rule
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 neck/CMakeFiles/neck_node.dir/rule
 .PHONY : neck/CMakeFiles/neck_node.dir/rule
 
 # Convenience name for target.
@@ -207,7 +196,7 @@ neck_node: neck/CMakeFiles/neck_node.dir/rule
 
 # fast build rule for target.
 neck_node/fast:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f neck/CMakeFiles/neck_node.dir/build.make neck/CMakeFiles/neck_node.dir/build
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f neck/CMakeFiles/neck_node.dir/build.make neck/CMakeFiles/neck_node.dir/build
 .PHONY : neck_node/fast
 
 __/libs/pwmss/pwmss.o: __/libs/pwmss/pwmss.cpp.o
@@ -216,7 +205,7 @@ __/libs/pwmss/pwmss.o: __/libs/pwmss/pwmss.cpp.o
 
 # target to build an object file
 __/libs/pwmss/pwmss.cpp.o:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f neck/CMakeFiles/pwmss.dir/build.make neck/CMakeFiles/pwmss.dir/__/libs/pwmss/pwmss.cpp.o
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f neck/CMakeFiles/pwmss.dir/build.make neck/CMakeFiles/pwmss.dir/__/libs/pwmss/pwmss.cpp.o
 .PHONY : __/libs/pwmss/pwmss.cpp.o
 
 __/libs/pwmss/pwmss.i: __/libs/pwmss/pwmss.cpp.i
@@ -225,7 +214,7 @@ __/libs/pwmss/pwmss.i: __/libs/pwmss/pwmss.cpp.i
 
 # target to preprocess a source file
 __/libs/pwmss/pwmss.cpp.i:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f neck/CMakeFiles/pwmss.dir/build.make neck/CMakeFiles/pwmss.dir/__/libs/pwmss/pwmss.cpp.i
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f neck/CMakeFiles/pwmss.dir/build.make neck/CMakeFiles/pwmss.dir/__/libs/pwmss/pwmss.cpp.i
 .PHONY : __/libs/pwmss/pwmss.cpp.i
 
 __/libs/pwmss/pwmss.s: __/libs/pwmss/pwmss.cpp.s
@@ -234,7 +223,7 @@ __/libs/pwmss/pwmss.s: __/libs/pwmss/pwmss.cpp.s
 
 # target to generate assembly for a file
 __/libs/pwmss/pwmss.cpp.s:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f neck/CMakeFiles/pwmss.dir/build.make neck/CMakeFiles/pwmss.dir/__/libs/pwmss/pwmss.cpp.s
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f neck/CMakeFiles/pwmss.dir/build.make neck/CMakeFiles/pwmss.dir/__/libs/pwmss/pwmss.cpp.s
 .PHONY : __/libs/pwmss/pwmss.cpp.s
 
 __/libs/servo/servo_motor.o: __/libs/servo/servo_motor.cpp.o
@@ -243,7 +232,7 @@ __/libs/servo/servo_motor.o: __/libs/servo/servo_motor.cpp.o
 
 # target to build an object file
 __/libs/servo/servo_motor.cpp.o:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f neck/CMakeFiles/servo.dir/build.make neck/CMakeFiles/servo.dir/__/libs/servo/servo_motor.cpp.o
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f neck/CMakeFiles/servo.dir/build.make neck/CMakeFiles/servo.dir/__/libs/servo/servo_motor.cpp.o
 .PHONY : __/libs/servo/servo_motor.cpp.o
 
 __/libs/servo/servo_motor.i: __/libs/servo/servo_motor.cpp.i
@@ -252,7 +241,7 @@ __/libs/servo/servo_motor.i: __/libs/servo/servo_motor.cpp.i
 
 # target to preprocess a source file
 __/libs/servo/servo_motor.cpp.i:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f neck/CMakeFiles/servo.dir/build.make neck/CMakeFiles/servo.dir/__/libs/servo/servo_motor.cpp.i
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f neck/CMakeFiles/servo.dir/build.make neck/CMakeFiles/servo.dir/__/libs/servo/servo_motor.cpp.i
 .PHONY : __/libs/servo/servo_motor.cpp.i
 
 __/libs/servo/servo_motor.s: __/libs/servo/servo_motor.cpp.s
@@ -261,7 +250,7 @@ __/libs/servo/servo_motor.s: __/libs/servo/servo_motor.cpp.s
 
 # target to generate assembly for a file
 __/libs/servo/servo_motor.cpp.s:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f neck/CMakeFiles/servo.dir/build.make neck/CMakeFiles/servo.dir/__/libs/servo/servo_motor.cpp.s
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f neck/CMakeFiles/servo.dir/build.make neck/CMakeFiles/servo.dir/__/libs/servo/servo_motor.cpp.s
 .PHONY : __/libs/servo/servo_motor.cpp.s
 
 src/neck_node.o: src/neck_node.cpp.o
@@ -270,7 +259,7 @@ src/neck_node.o: src/neck_node.cpp.o
 
 # target to build an object file
 src/neck_node.cpp.o:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f neck/CMakeFiles/neck_node.dir/build.make neck/CMakeFiles/neck_node.dir/src/neck_node.cpp.o
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f neck/CMakeFiles/neck_node.dir/build.make neck/CMakeFiles/neck_node.dir/src/neck_node.cpp.o
 .PHONY : src/neck_node.cpp.o
 
 src/neck_node.i: src/neck_node.cpp.i
@@ -279,7 +268,7 @@ src/neck_node.i: src/neck_node.cpp.i
 
 # target to preprocess a source file
 src/neck_node.cpp.i:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f neck/CMakeFiles/neck_node.dir/build.make neck/CMakeFiles/neck_node.dir/src/neck_node.cpp.i
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f neck/CMakeFiles/neck_node.dir/build.make neck/CMakeFiles/neck_node.dir/src/neck_node.cpp.i
 .PHONY : src/neck_node.cpp.i
 
 src/neck_node.s: src/neck_node.cpp.s
@@ -288,7 +277,7 @@ src/neck_node.s: src/neck_node.cpp.s
 
 # target to generate assembly for a file
 src/neck_node.cpp.s:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f neck/CMakeFiles/neck_node.dir/build.make neck/CMakeFiles/neck_node.dir/src/neck_node.cpp.s
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f neck/CMakeFiles/neck_node.dir/build.make neck/CMakeFiles/neck_node.dir/src/neck_node.cpp.s
 .PHONY : src/neck_node.cpp.s
 
 # Help Target
@@ -306,7 +295,6 @@ help:
 	@echo "... servo"
 	@echo "... neck_node"
 	@echo "... install/local"
-	@echo "... install/strip"
 	@echo "... __/libs/pwmss/pwmss.o"
 	@echo "... __/libs/pwmss/pwmss.i"
 	@echo "... __/libs/pwmss/pwmss.s"
@@ -327,6 +315,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/bone/projects/xingzhe/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ubuntu/projects/xingzhe/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

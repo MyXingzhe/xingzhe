@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /home/bone/projects/xingzhe/src
-# Build directory: /home/bone/projects/xingzhe/src
+# Source directory: /home/ubuntu/projects/xingzhe/src
+# Build directory: /home/ubuntu/projects/xingzhe/src
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
@@ -11,5 +11,6 @@ subdirs(ear)
 subdirs(light)
 subdirs(monkey)
 subdirs(neck)
+subdirs(prupwm)
 subdirs(eye)
 subdirs(wheel)

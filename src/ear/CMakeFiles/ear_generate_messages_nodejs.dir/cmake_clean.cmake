@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ear_generate_messages_nodejs"
-  "../devel/share/gennodejs/ros/ear/msg/usonic.js"
+  "/home/ubuntu/projects/xingzhe/devel/share/gennodejs/ros/ear/msg/usonic.js"
 )
 
 # Per-language clean rules from dependency scanning.

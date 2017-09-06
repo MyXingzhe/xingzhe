@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC   -shared -Wl,-soname,libimu.so -o ../devel/lib/libimu.so CMakeFiles/imu.dir/__/libs/imu/MPU6050.cpp.o 

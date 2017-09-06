@@ -1,8 +1,8 @@
-prefix=/home/bone/projects/xingzhe/src/devel
+prefix=/home/ubuntu/projects/xingzhe/src/devel
 
 Name: eye
 Description: Description of eye
 Version: 0.0.0
-Cflags: -I/home/bone/projects/xingzhe/src/eye/include
-Libs: -L/home/bone/projects/xingzhe/src/devel/lib -leye
+Cflags: -I/home/ubuntu/projects/xingzhe/src/eye/include
+Libs: -L/home/ubuntu/projects/xingzhe/src/devel/lib -leye
 Requires: image_transport roscpp cv_bridge sensor_msgs nodelet camera_info_manager

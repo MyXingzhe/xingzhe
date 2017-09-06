@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bone/projects/xingzhe/src
+CMAKE_SOURCE_DIR = /home/ubuntu/projects/xingzhe/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bone/projects/xingzhe/src
+CMAKE_BINARY_DIR = /home/ubuntu/projects/xingzhe/src
 
 # Include any dependencies generated for this target.
 include monkey/CMakeFiles/monkey_node.dir/depend.make
@@ -59,16 +59,16 @@ include monkey/CMakeFiles/monkey_node.dir/flags.make
 
 monkey/CMakeFiles/monkey_node.dir/src/monkey_node.cpp.o: monkey/CMakeFiles/monkey_node.dir/flags.make
 monkey/CMakeFiles/monkey_node.dir/src/monkey_node.cpp.o: monkey/src/monkey_node.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object monkey/CMakeFiles/monkey_node.dir/src/monkey_node.cpp.o"
-	cd /home/bone/projects/xingzhe/src/monkey && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/monkey_node.dir/src/monkey_node.cpp.o -c /home/bone/projects/xingzhe/src/monkey/src/monkey_node.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object monkey/CMakeFiles/monkey_node.dir/src/monkey_node.cpp.o"
+	cd /home/ubuntu/projects/xingzhe/src/monkey && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/monkey_node.dir/src/monkey_node.cpp.o -c /home/ubuntu/projects/xingzhe/src/monkey/src/monkey_node.cpp
 
 monkey/CMakeFiles/monkey_node.dir/src/monkey_node.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/monkey_node.dir/src/monkey_node.cpp.i"
-	cd /home/bone/projects/xingzhe/src/monkey && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bone/projects/xingzhe/src/monkey/src/monkey_node.cpp > CMakeFiles/monkey_node.dir/src/monkey_node.cpp.i
+	cd /home/ubuntu/projects/xingzhe/src/monkey && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/projects/xingzhe/src/monkey/src/monkey_node.cpp > CMakeFiles/monkey_node.dir/src/monkey_node.cpp.i
 
 monkey/CMakeFiles/monkey_node.dir/src/monkey_node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/monkey_node.dir/src/monkey_node.cpp.s"
-	cd /home/bone/projects/xingzhe/src/monkey && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bone/projects/xingzhe/src/monkey/src/monkey_node.cpp -o CMakeFiles/monkey_node.dir/src/monkey_node.cpp.s
+	cd /home/ubuntu/projects/xingzhe/src/monkey && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/xingzhe/src/monkey/src/monkey_node.cpp -o CMakeFiles/monkey_node.dir/src/monkey_node.cpp.s
 
 monkey/CMakeFiles/monkey_node.dir/src/monkey_node.cpp.o.requires:
 
@@ -88,33 +88,33 @@ monkey_node_OBJECTS = \
 # External object files for target monkey_node
 monkey_node_EXTERNAL_OBJECTS =
 
-devel/lib/monkey/monkey_node: monkey/CMakeFiles/monkey_node.dir/src/monkey_node.cpp.o
-devel/lib/monkey/monkey_node: monkey/CMakeFiles/monkey_node.dir/build.make
-devel/lib/monkey/monkey_node: /opt/ros/kinetic/lib/libroscpp.so
-devel/lib/monkey/monkey_node: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-devel/lib/monkey/monkey_node: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-devel/lib/monkey/monkey_node: /opt/ros/kinetic/lib/librosconsole.so
-devel/lib/monkey/monkey_node: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
-devel/lib/monkey/monkey_node: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
-devel/lib/monkey/monkey_node: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-devel/lib/monkey/monkey_node: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-devel/lib/monkey/monkey_node: /opt/ros/kinetic/lib/libxmlrpcpp.so
-devel/lib/monkey/monkey_node: /opt/ros/kinetic/lib/libroscpp_serialization.so
-devel/lib/monkey/monkey_node: /opt/ros/kinetic/lib/librostime.so
-devel/lib/monkey/monkey_node: /opt/ros/kinetic/lib/libcpp_common.so
-devel/lib/monkey/monkey_node: /usr/lib/x86_64-linux-gnu/libboost_system.so
-devel/lib/monkey/monkey_node: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-devel/lib/monkey/monkey_node: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-devel/lib/monkey/monkey_node: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-devel/lib/monkey/monkey_node: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-devel/lib/monkey/monkey_node: /usr/lib/x86_64-linux-gnu/libpthread.so
-devel/lib/monkey/monkey_node: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-devel/lib/monkey/monkey_node: monkey/CMakeFiles/monkey_node.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../devel/lib/monkey/monkey_node"
-	cd /home/bone/projects/xingzhe/src/monkey && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/monkey_node.dir/link.txt --verbose=$(VERBOSE)
+/home/ubuntu/projects/xingzhe/devel/lib/monkey/monkey_node: monkey/CMakeFiles/monkey_node.dir/src/monkey_node.cpp.o
+/home/ubuntu/projects/xingzhe/devel/lib/monkey/monkey_node: monkey/CMakeFiles/monkey_node.dir/build.make
+/home/ubuntu/projects/xingzhe/devel/lib/monkey/monkey_node: /opt/ros/kinetic/lib/libroscpp.so
+/home/ubuntu/projects/xingzhe/devel/lib/monkey/monkey_node: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+/home/ubuntu/projects/xingzhe/devel/lib/monkey/monkey_node: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/ubuntu/projects/xingzhe/devel/lib/monkey/monkey_node: /opt/ros/kinetic/lib/librosconsole.so
+/home/ubuntu/projects/xingzhe/devel/lib/monkey/monkey_node: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
+/home/ubuntu/projects/xingzhe/devel/lib/monkey/monkey_node: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
+/home/ubuntu/projects/xingzhe/devel/lib/monkey/monkey_node: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/ubuntu/projects/xingzhe/devel/lib/monkey/monkey_node: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/ubuntu/projects/xingzhe/devel/lib/monkey/monkey_node: /opt/ros/kinetic/lib/libxmlrpcpp.so
+/home/ubuntu/projects/xingzhe/devel/lib/monkey/monkey_node: /opt/ros/kinetic/lib/libroscpp_serialization.so
+/home/ubuntu/projects/xingzhe/devel/lib/monkey/monkey_node: /opt/ros/kinetic/lib/librostime.so
+/home/ubuntu/projects/xingzhe/devel/lib/monkey/monkey_node: /opt/ros/kinetic/lib/libcpp_common.so
+/home/ubuntu/projects/xingzhe/devel/lib/monkey/monkey_node: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/ubuntu/projects/xingzhe/devel/lib/monkey/monkey_node: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/ubuntu/projects/xingzhe/devel/lib/monkey/monkey_node: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+/home/ubuntu/projects/xingzhe/devel/lib/monkey/monkey_node: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/ubuntu/projects/xingzhe/devel/lib/monkey/monkey_node: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+/home/ubuntu/projects/xingzhe/devel/lib/monkey/monkey_node: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/ubuntu/projects/xingzhe/devel/lib/monkey/monkey_node: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+/home/ubuntu/projects/xingzhe/devel/lib/monkey/monkey_node: monkey/CMakeFiles/monkey_node.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/ubuntu/projects/xingzhe/devel/lib/monkey/monkey_node"
+	cd /home/ubuntu/projects/xingzhe/src/monkey && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/monkey_node.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-monkey/CMakeFiles/monkey_node.dir/build: devel/lib/monkey/monkey_node
+monkey/CMakeFiles/monkey_node.dir/build: /home/ubuntu/projects/xingzhe/devel/lib/monkey/monkey_node
 
 .PHONY : monkey/CMakeFiles/monkey_node.dir/build
 
@@ -123,10 +123,10 @@ monkey/CMakeFiles/monkey_node.dir/requires: monkey/CMakeFiles/monkey_node.dir/sr
 .PHONY : monkey/CMakeFiles/monkey_node.dir/requires
 
 monkey/CMakeFiles/monkey_node.dir/clean:
-	cd /home/bone/projects/xingzhe/src/monkey && $(CMAKE_COMMAND) -P CMakeFiles/monkey_node.dir/cmake_clean.cmake
+	cd /home/ubuntu/projects/xingzhe/src/monkey && $(CMAKE_COMMAND) -P CMakeFiles/monkey_node.dir/cmake_clean.cmake
 .PHONY : monkey/CMakeFiles/monkey_node.dir/clean
 
 monkey/CMakeFiles/monkey_node.dir/depend:
-	cd /home/bone/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bone/projects/xingzhe/src /home/bone/projects/xingzhe/src/monkey /home/bone/projects/xingzhe/src /home/bone/projects/xingzhe/src/monkey /home/bone/projects/xingzhe/src/monkey/CMakeFiles/monkey_node.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/projects/xingzhe/src /home/ubuntu/projects/xingzhe/src/monkey /home/ubuntu/projects/xingzhe/src /home/ubuntu/projects/xingzhe/src/monkey /home/ubuntu/projects/xingzhe/src/monkey/CMakeFiles/monkey_node.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : monkey/CMakeFiles/monkey_node.dir/depend
 

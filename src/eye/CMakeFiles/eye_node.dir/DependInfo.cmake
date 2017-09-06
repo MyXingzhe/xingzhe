@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/bone/projects/xingzhe/src/eye/src/eye.cpp" "/home/bone/projects/xingzhe/src/eye/CMakeFiles/eye_node.dir/src/eye.cpp.o"
-  "/home/bone/projects/xingzhe/src/eye/src/eye_node.cpp" "/home/bone/projects/xingzhe/src/eye/CMakeFiles/eye_node.dir/src/eye_node.cpp.o"
-  "/home/bone/projects/xingzhe/src/eye/src/uvc_cam.cpp" "/home/bone/projects/xingzhe/src/eye/CMakeFiles/eye_node.dir/src/uvc_cam.cpp.o"
+  "/home/ubuntu/projects/xingzhe/src/eye/src/eye.cpp" "/home/ubuntu/projects/xingzhe/src/eye/CMakeFiles/eye_node.dir/src/eye.cpp.o"
+  "/home/ubuntu/projects/xingzhe/src/eye/src/eye_node.cpp" "/home/ubuntu/projects/xingzhe/src/eye/CMakeFiles/eye_node.dir/src/eye_node.cpp.o"
+  "/home/ubuntu/projects/xingzhe/src/eye/src/uvc_cam.cpp" "/home/ubuntu/projects/xingzhe/src/eye/CMakeFiles/eye_node.dir/src/uvc_cam.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

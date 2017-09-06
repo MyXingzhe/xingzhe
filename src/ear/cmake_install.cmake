@@ -1,8 +1,8 @@
-# Install script for directory: /home/bone/projects/xingzhe/src/ear
+# Install script for directory: /home/ubuntu/projects/xingzhe/src/ear
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/usr/local")
+  set(CMAKE_INSTALL_PREFIX "/home/ubuntu/projects/xingzhe/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,81 +33,65 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ear/../../msg" TYPE FILE FILES "/home/bone/projects/xingzhe/src/ear/../../msg/usonic.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ear/../../msg" TYPE FILE FILES "/home/ubuntu/projects/xingzhe/src/ear/../../msg/usonic.msg")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ear/cmake" TYPE FILE FILES "/home/bone/projects/xingzhe/src/ear/catkin_generated/installspace/ear-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ear/cmake" TYPE FILE FILES "/home/ubuntu/projects/xingzhe/src/ear/catkin_generated/installspace/ear-msg-paths.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/bone/projects/xingzhe/src/devel/include/ear")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/ubuntu/projects/xingzhe/devel/include/ear")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/bone/projects/xingzhe/src/devel/share/roseus/ros/ear")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/ubuntu/projects/xingzhe/devel/share/roseus/ros/ear")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/bone/projects/xingzhe/src/devel/share/common-lisp/ros/ear")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/ubuntu/projects/xingzhe/devel/share/common-lisp/ros/ear")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/bone/projects/xingzhe/src/devel/share/gennodejs/ros/ear")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/ubuntu/projects/xingzhe/devel/share/gennodejs/ros/ear")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  execute_process(COMMAND "/usr/bin/python" -m compileall "/home/bone/projects/xingzhe/src/devel/lib/python2.7/dist-packages/ear")
+  execute_process(COMMAND "/usr/bin/python" -m compileall "/home/ubuntu/projects/xingzhe/devel/lib/python2.7/dist-packages/ear")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/bone/projects/xingzhe/src/devel/lib/python2.7/dist-packages/ear")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/ubuntu/projects/xingzhe/devel/lib/python2.7/dist-packages/ear")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/bone/projects/xingzhe/src/ear/catkin_generated/installspace/ear.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ubuntu/projects/xingzhe/src/ear/catkin_generated/installspace/ear.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ear/cmake" TYPE FILE FILES "/home/bone/projects/xingzhe/src/ear/catkin_generated/installspace/ear-msg-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ear/cmake" TYPE FILE FILES "/home/ubuntu/projects/xingzhe/src/ear/catkin_generated/installspace/ear-msg-extras.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ear/cmake" TYPE FILE FILES
-    "/home/bone/projects/xingzhe/src/ear/catkin_generated/installspace/earConfig.cmake"
-    "/home/bone/projects/xingzhe/src/ear/catkin_generated/installspace/earConfig-version.cmake"
+    "/home/ubuntu/projects/xingzhe/src/ear/catkin_generated/installspace/earConfig.cmake"
+    "/home/ubuntu/projects/xingzhe/src/ear/catkin_generated/installspace/earConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ear" TYPE FILE FILES "/home/bone/projects/xingzhe/src/ear/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ear" TYPE FILE FILES "/home/ubuntu/projects/xingzhe/src/ear/package.xml")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/ear" TYPE PROGRAM FILES "/home/bone/projects/xingzhe/src/ear/scripts/my_python_script")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/ear" TYPE PROGRAM FILES "/home/ubuntu/projects/xingzhe/src/ear/scripts/my_python_script")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/ear/ear_node" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/ear/ear_node")
-    file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/ear/ear_node"
-         RPATH "")
-  endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/ear" TYPE EXECUTABLE FILES "/home/bone/projects/xingzhe/src/devel/lib/ear/ear_node")
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/ear/ear_node" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/ear/ear_node")
-    file(RPATH_CHANGE
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/ear/ear_node"
-         OLD_RPATH "/opt/ros/kinetic/lib:"
-         NEW_RPATH "")
-    if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/ear/ear_node")
-    endif()
-  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/ear" TYPE EXECUTABLE FILES "/home/ubuntu/projects/xingzhe/src/ear/CMakeFiles/CMakeRelink.dir/ear_node")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/ear" TYPE DIRECTORY FILES "/home/bone/projects/xingzhe/src/ear/include/ear/" FILES_MATCHING REGEX "/[^/]*\\.h$" REGEX "/\\.svn$" EXCLUDE)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/ear" TYPE DIRECTORY FILES "/home/ubuntu/projects/xingzhe/src/ear/include/ear/" FILES_MATCHING REGEX "/[^/]*\\.h$" REGEX "/\\.svn$" EXCLUDE)
 endif()
 

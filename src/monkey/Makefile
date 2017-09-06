@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bone/projects/xingzhe/src
+CMAKE_SOURCE_DIR = /home/ubuntu/projects/xingzhe/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bone/projects/xingzhe/src
+CMAKE_BINARY_DIR = /home/ubuntu/projects/xingzhe/src
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -89,28 +89,6 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -133,16 +111,27 @@ test/fast: test
 
 .PHONY : test/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	cd /home/bone/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles /home/bone/projects/xingzhe/src/monkey/CMakeFiles/progress.marks
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 monkey/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	cd /home/ubuntu/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles /home/ubuntu/projects/xingzhe/src/monkey/CMakeFiles/progress.marks
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 monkey/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 monkey/clean
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 monkey/clean
 .PHONY : clean
 
 # The main clean target
@@ -152,22 +141,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 monkey/preinstall
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 monkey/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 monkey/preinstall
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 monkey/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/bone/projects/xingzhe/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ubuntu/projects/xingzhe/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 monkey/CMakeFiles/monkey_node.dir/rule:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 monkey/CMakeFiles/monkey_node.dir/rule
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 monkey/CMakeFiles/monkey_node.dir/rule
 .PHONY : monkey/CMakeFiles/monkey_node.dir/rule
 
 # Convenience name for target.
@@ -177,7 +166,7 @@ monkey_node: monkey/CMakeFiles/monkey_node.dir/rule
 
 # fast build rule for target.
 monkey_node/fast:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f monkey/CMakeFiles/monkey_node.dir/build.make monkey/CMakeFiles/monkey_node.dir/build
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f monkey/CMakeFiles/monkey_node.dir/build.make monkey/CMakeFiles/monkey_node.dir/build
 .PHONY : monkey_node/fast
 
 src/monkey_node.o: src/monkey_node.cpp.o
@@ -186,7 +175,7 @@ src/monkey_node.o: src/monkey_node.cpp.o
 
 # target to build an object file
 src/monkey_node.cpp.o:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f monkey/CMakeFiles/monkey_node.dir/build.make monkey/CMakeFiles/monkey_node.dir/src/monkey_node.cpp.o
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f monkey/CMakeFiles/monkey_node.dir/build.make monkey/CMakeFiles/monkey_node.dir/src/monkey_node.cpp.o
 .PHONY : src/monkey_node.cpp.o
 
 src/monkey_node.i: src/monkey_node.cpp.i
@@ -195,7 +184,7 @@ src/monkey_node.i: src/monkey_node.cpp.i
 
 # target to preprocess a source file
 src/monkey_node.cpp.i:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f monkey/CMakeFiles/monkey_node.dir/build.make monkey/CMakeFiles/monkey_node.dir/src/monkey_node.cpp.i
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f monkey/CMakeFiles/monkey_node.dir/build.make monkey/CMakeFiles/monkey_node.dir/src/monkey_node.cpp.i
 .PHONY : src/monkey_node.cpp.i
 
 src/monkey_node.s: src/monkey_node.cpp.s
@@ -204,7 +193,7 @@ src/monkey_node.s: src/monkey_node.cpp.s
 
 # target to generate assembly for a file
 src/monkey_node.cpp.s:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f monkey/CMakeFiles/monkey_node.dir/build.make monkey/CMakeFiles/monkey_node.dir/src/monkey_node.cpp.s
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f monkey/CMakeFiles/monkey_node.dir/build.make monkey/CMakeFiles/monkey_node.dir/src/monkey_node.cpp.s
 .PHONY : src/monkey_node.cpp.s
 
 # Help Target
@@ -216,11 +205,10 @@ help:
 	@echo "... list_install_components"
 	@echo "... install"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
 	@echo "... monkey_node"
-	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... test"
+	@echo "... edit_cache"
 	@echo "... src/monkey_node.o"
 	@echo "... src/monkey_node.i"
 	@echo "... src/monkey_node.s"
@@ -235,6 +223,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/bone/projects/xingzhe/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ubuntu/projects/xingzhe/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

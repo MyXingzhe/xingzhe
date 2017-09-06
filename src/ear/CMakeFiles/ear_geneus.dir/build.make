@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bone/projects/xingzhe/src
+CMAKE_SOURCE_DIR = /home/ubuntu/projects/xingzhe/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bone/projects/xingzhe/src
+CMAKE_BINARY_DIR = /home/ubuntu/projects/xingzhe/src
 
 # Utility rule file for ear_geneus.
 
@@ -63,10 +63,10 @@ ear/CMakeFiles/ear_geneus.dir/build: ear_geneus
 .PHONY : ear/CMakeFiles/ear_geneus.dir/build
 
 ear/CMakeFiles/ear_geneus.dir/clean:
-	cd /home/bone/projects/xingzhe/src/ear && $(CMAKE_COMMAND) -P CMakeFiles/ear_geneus.dir/cmake_clean.cmake
+	cd /home/ubuntu/projects/xingzhe/src/ear && $(CMAKE_COMMAND) -P CMakeFiles/ear_geneus.dir/cmake_clean.cmake
 .PHONY : ear/CMakeFiles/ear_geneus.dir/clean
 
 ear/CMakeFiles/ear_geneus.dir/depend:
-	cd /home/bone/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bone/projects/xingzhe/src /home/bone/projects/xingzhe/src/ear /home/bone/projects/xingzhe/src /home/bone/projects/xingzhe/src/ear /home/bone/projects/xingzhe/src/ear/CMakeFiles/ear_geneus.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/projects/xingzhe/src /home/ubuntu/projects/xingzhe/src/ear /home/ubuntu/projects/xingzhe/src /home/ubuntu/projects/xingzhe/src/ear /home/ubuntu/projects/xingzhe/src/ear/CMakeFiles/ear_geneus.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : ear/CMakeFiles/ear_geneus.dir/depend
 

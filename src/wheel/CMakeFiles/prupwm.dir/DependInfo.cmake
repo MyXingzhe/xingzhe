@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/bone/projects/xingzhe/src/libs/prupwm/pru.cpp" "/home/bone/projects/xingzhe/src/wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/pru.cpp.o"
-  "/home/bone/projects/xingzhe/src/libs/prupwm/prupwm.cpp" "/home/bone/projects/xingzhe/src/wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/prupwm.cpp.o"
+  "/home/ubuntu/projects/xingzhe/src/libs/prupwm/pru.cpp" "/home/ubuntu/projects/xingzhe/src/wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/pru.cpp.o"
+  "/home/ubuntu/projects/xingzhe/src/libs/prupwm/prupwm.cpp" "/home/ubuntu/projects/xingzhe/src/wheel/CMakeFiles/prupwm.dir/__/libs/prupwm/prupwm.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

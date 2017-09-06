@@ -48,13 +48,23 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bone/projects/xingzhe/src
+CMAKE_SOURCE_DIR = /home/ubuntu/projects/xingzhe/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bone/projects/xingzhe/src
+CMAKE_BINARY_DIR = /home/ubuntu/projects/xingzhe/src
 
 #=============================================================================
 # Targets provided globally by CMake.
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target install
 install: preinstall
@@ -78,27 +88,6 @@ install/local: preinstall
 install/local/fast: install/local
 
 .PHONY : install/local/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
 
 # Special rule for the target test
 test:
@@ -135,14 +124,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/bone/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles /home/bone/projects/xingzhe/src/arm/CMakeFiles/progress.marks
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	cd /home/ubuntu/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles /home/ubuntu/projects/xingzhe/src/arm/CMakeFiles/progress.marks
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/clean
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/clean
 .PHONY : clean
 
 # The main clean target
@@ -152,22 +141,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/preinstall
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/preinstall
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/bone/projects/xingzhe/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ubuntu/projects/xingzhe/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 arm/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
 .PHONY : arm/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -177,12 +166,12 @@ std_msgs_generate_messages_lisp: arm/CMakeFiles/std_msgs_generate_messages_lisp.
 
 # fast build rule for target.
 std_msgs_generate_messages_lisp/fast:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f arm/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make arm/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f arm/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make arm/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
 .PHONY : std_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 arm/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
 .PHONY : arm/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -192,12 +181,12 @@ std_msgs_generate_messages_eus: arm/CMakeFiles/std_msgs_generate_messages_eus.di
 
 # fast build rule for target.
 std_msgs_generate_messages_eus/fast:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f arm/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make arm/CMakeFiles/std_msgs_generate_messages_eus.dir/build
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f arm/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make arm/CMakeFiles/std_msgs_generate_messages_eus.dir/build
 .PHONY : std_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 arm/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
 .PHONY : arm/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -207,12 +196,12 @@ std_msgs_generate_messages_nodejs: arm/CMakeFiles/std_msgs_generate_messages_nod
 
 # fast build rule for target.
 std_msgs_generate_messages_nodejs/fast:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f arm/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make arm/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f arm/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make arm/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
 .PHONY : std_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 arm/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
 .PHONY : arm/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -222,12 +211,12 @@ roscpp_generate_messages_lisp: arm/CMakeFiles/roscpp_generate_messages_lisp.dir/
 
 # fast build rule for target.
 roscpp_generate_messages_lisp/fast:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f arm/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make arm/CMakeFiles/roscpp_generate_messages_lisp.dir/build
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f arm/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make arm/CMakeFiles/roscpp_generate_messages_lisp.dir/build
 .PHONY : roscpp_generate_messages_lisp/fast
 
 # Convenience name for target.
 arm/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
 .PHONY : arm/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -237,12 +226,12 @@ roscpp_generate_messages_nodejs: arm/CMakeFiles/roscpp_generate_messages_nodejs.
 
 # fast build rule for target.
 roscpp_generate_messages_nodejs/fast:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f arm/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make arm/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f arm/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make arm/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
 .PHONY : roscpp_generate_messages_nodejs/fast
 
 # Convenience name for target.
 arm/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/roscpp_generate_messages_eus.dir/rule
 .PHONY : arm/CMakeFiles/roscpp_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -252,12 +241,12 @@ roscpp_generate_messages_eus: arm/CMakeFiles/roscpp_generate_messages_eus.dir/ru
 
 # fast build rule for target.
 roscpp_generate_messages_eus/fast:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f arm/CMakeFiles/roscpp_generate_messages_eus.dir/build.make arm/CMakeFiles/roscpp_generate_messages_eus.dir/build
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f arm/CMakeFiles/roscpp_generate_messages_eus.dir/build.make arm/CMakeFiles/roscpp_generate_messages_eus.dir/build
 .PHONY : roscpp_generate_messages_eus/fast
 
 # Convenience name for target.
 arm/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
 .PHONY : arm/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -267,12 +256,12 @@ std_msgs_generate_messages_cpp: arm/CMakeFiles/std_msgs_generate_messages_cpp.di
 
 # fast build rule for target.
 std_msgs_generate_messages_cpp/fast:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f arm/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make arm/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f arm/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make arm/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
 .PHONY : std_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 arm/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
 .PHONY : arm/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -282,12 +271,12 @@ roscpp_generate_messages_cpp: arm/CMakeFiles/roscpp_generate_messages_cpp.dir/ru
 
 # fast build rule for target.
 roscpp_generate_messages_cpp/fast:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f arm/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make arm/CMakeFiles/roscpp_generate_messages_cpp.dir/build
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f arm/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make arm/CMakeFiles/roscpp_generate_messages_cpp.dir/build
 .PHONY : roscpp_generate_messages_cpp/fast
 
 # Convenience name for target.
 arm/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
 .PHONY : arm/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -297,12 +286,12 @@ rosgraph_msgs_generate_messages_nodejs: arm/CMakeFiles/rosgraph_msgs_generate_me
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_nodejs/fast:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f arm/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make arm/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f arm/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make arm/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
 .PHONY : rosgraph_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 arm/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
 .PHONY : arm/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -312,12 +301,12 @@ rosgraph_msgs_generate_messages_eus: arm/CMakeFiles/rosgraph_msgs_generate_messa
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_eus/fast:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f arm/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make arm/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f arm/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make arm/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
 .PHONY : rosgraph_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 arm/CMakeFiles/roscpp_generate_messages_py.dir/rule:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/roscpp_generate_messages_py.dir/rule
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/roscpp_generate_messages_py.dir/rule
 .PHONY : arm/CMakeFiles/roscpp_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -327,12 +316,12 @@ roscpp_generate_messages_py: arm/CMakeFiles/roscpp_generate_messages_py.dir/rule
 
 # fast build rule for target.
 roscpp_generate_messages_py/fast:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f arm/CMakeFiles/roscpp_generate_messages_py.dir/build.make arm/CMakeFiles/roscpp_generate_messages_py.dir/build
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f arm/CMakeFiles/roscpp_generate_messages_py.dir/build.make arm/CMakeFiles/roscpp_generate_messages_py.dir/build
 .PHONY : roscpp_generate_messages_py/fast
 
 # Convenience name for target.
 arm/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
 .PHONY : arm/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -342,12 +331,12 @@ rosgraph_msgs_generate_messages_cpp: arm/CMakeFiles/rosgraph_msgs_generate_messa
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_cpp/fast:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f arm/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make arm/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f arm/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make arm/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 arm/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
 .PHONY : arm/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -357,12 +346,12 @@ rosgraph_msgs_generate_messages_lisp: arm/CMakeFiles/rosgraph_msgs_generate_mess
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_lisp/fast:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f arm/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make arm/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f arm/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make arm/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 arm/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/std_msgs_generate_messages_py.dir/rule
 .PHONY : arm/CMakeFiles/std_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -372,12 +361,12 @@ std_msgs_generate_messages_py: arm/CMakeFiles/std_msgs_generate_messages_py.dir/
 
 # fast build rule for target.
 std_msgs_generate_messages_py/fast:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f arm/CMakeFiles/std_msgs_generate_messages_py.dir/build.make arm/CMakeFiles/std_msgs_generate_messages_py.dir/build
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f arm/CMakeFiles/std_msgs_generate_messages_py.dir/build.make arm/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 arm/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f CMakeFiles/Makefile2 arm/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
 .PHONY : arm/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -387,7 +376,7 @@ rosgraph_msgs_generate_messages_py: arm/CMakeFiles/rosgraph_msgs_generate_messag
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_py/fast:
-	cd /home/bone/projects/xingzhe/src && $(MAKE) -f arm/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make arm/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
+	cd /home/ubuntu/projects/xingzhe/src && $(MAKE) -f arm/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make arm/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
 .PHONY : rosgraph_msgs_generate_messages_py/fast
 
 # Help Target
@@ -396,10 +385,9 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... list_install_components"
 	@echo "... install"
 	@echo "... install/local"
-	@echo "... list_install_components"
-	@echo "... install/strip"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... std_msgs_generate_messages_nodejs"
@@ -429,6 +417,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/bone/projects/xingzhe/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ubuntu/projects/xingzhe/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

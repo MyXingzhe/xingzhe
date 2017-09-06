@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/servo.dir/__/libs/servo/servo_motor.cpp.o"
-  "../devel/lib/libservo.pdb"
-  "../devel/lib/libservo.so"
+  "/home/ubuntu/projects/xingzhe/devel/lib/libservo.pdb"
+  "/home/ubuntu/projects/xingzhe/devel/lib/libservo.so"
 )
 
 # Per-language clean rules from dependency scanning.

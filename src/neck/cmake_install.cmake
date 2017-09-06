@@ -1,8 +1,8 @@
-# Install script for directory: /home/bone/projects/xingzhe/src/neck
+# Install script for directory: /home/ubuntu/projects/xingzhe/src/neck
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/usr/local")
+  set(CMAKE_INSTALL_PREFIX "/home/ubuntu/projects/xingzhe/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,17 +33,17 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/bone/projects/xingzhe/src/neck/catkin_generated/installspace/neck.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ubuntu/projects/xingzhe/src/neck/catkin_generated/installspace/neck.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/neck/cmake" TYPE FILE FILES
-    "/home/bone/projects/xingzhe/src/neck/catkin_generated/installspace/neckConfig.cmake"
-    "/home/bone/projects/xingzhe/src/neck/catkin_generated/installspace/neckConfig-version.cmake"
+    "/home/ubuntu/projects/xingzhe/src/neck/catkin_generated/installspace/neckConfig.cmake"
+    "/home/ubuntu/projects/xingzhe/src/neck/catkin_generated/installspace/neckConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/neck" TYPE FILE FILES "/home/bone/projects/xingzhe/src/neck/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/neck" TYPE FILE FILES "/home/ubuntu/projects/xingzhe/src/neck/package.xml")
 endif()
 

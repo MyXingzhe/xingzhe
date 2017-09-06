@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/monkey_node.dir/src/monkey_node.cpp.o"
-  "../devel/lib/monkey/monkey_node.pdb"
-  "../devel/lib/monkey/monkey_node"
+  "/home/ubuntu/projects/xingzhe/devel/lib/monkey/monkey_node.pdb"
+  "/home/ubuntu/projects/xingzhe/devel/lib/monkey/monkey_node"
 )
 
 # Per-language clean rules from dependency scanning.

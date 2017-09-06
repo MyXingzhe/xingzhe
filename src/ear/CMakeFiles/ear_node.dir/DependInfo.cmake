@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/bone/projects/xingzhe/src/ear/src/ear.cpp" "/home/bone/projects/xingzhe/src/ear/CMakeFiles/ear_node.dir/src/ear.cpp.o"
-  "/home/bone/projects/xingzhe/src/ear/src/ear_node.cpp" "/home/bone/projects/xingzhe/src/ear/CMakeFiles/ear_node.dir/src/ear_node.cpp.o"
+  "/home/ubuntu/projects/xingzhe/src/ear/src/ear.cpp" "/home/ubuntu/projects/xingzhe/src/ear/CMakeFiles/ear_node.dir/src/ear.cpp.o"
+  "/home/ubuntu/projects/xingzhe/src/ear/src/ear_node.cpp" "/home/ubuntu/projects/xingzhe/src/ear/CMakeFiles/ear_node.dir/src/ear_node.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -18,7 +18,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "devel/include"
+  "/home/ubuntu/projects/xingzhe/devel/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   "ear/./include/ear"

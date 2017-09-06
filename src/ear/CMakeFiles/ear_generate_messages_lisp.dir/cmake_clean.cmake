@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ear_generate_messages_lisp"
-  "../devel/share/common-lisp/ros/ear/msg/usonic.lisp"
+  "/home/ubuntu/projects/xingzhe/devel/share/common-lisp/ros/ear/msg/usonic.lisp"
 )
 
 # Per-language clean rules from dependency scanning.

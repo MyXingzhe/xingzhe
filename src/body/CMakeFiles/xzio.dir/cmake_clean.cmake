@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/xzio.dir/__/libs/xzio/xzio.cpp.o"
-  "../devel/lib/libxzio.pdb"
-  "../devel/lib/libxzio.so"
+  "/home/ubuntu/projects/xingzhe/devel/lib/libxzio.pdb"
+  "/home/ubuntu/projects/xingzhe/devel/lib/libxzio.so"
 )
 
 # Per-language clean rules from dependency scanning.

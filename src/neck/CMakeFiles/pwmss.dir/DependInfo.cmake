@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/bone/projects/xingzhe/src/libs/pwmss/pwmss.cpp" "/home/bone/projects/xingzhe/src/neck/CMakeFiles/pwmss.dir/__/libs/pwmss/pwmss.cpp.o"
+  "/home/ubuntu/projects/xingzhe/src/libs/pwmss/pwmss.cpp" "/home/ubuntu/projects/xingzhe/src/neck/CMakeFiles/pwmss.dir/__/libs/pwmss/pwmss.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

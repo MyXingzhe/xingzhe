@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ear_generate_messages_py"
-  "../devel/lib/python2.7/dist-packages/ear/msg/_usonic.py"
-  "../devel/lib/python2.7/dist-packages/ear/msg/__init__.py"
+  "/home/ubuntu/projects/xingzhe/devel/lib/python2.7/dist-packages/ear/msg/_usonic.py"
+  "/home/ubuntu/projects/xingzhe/devel/lib/python2.7/dist-packages/ear/msg/__init__.py"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/pwmss.dir/__/libs/pwmss/pwmss.cpp.o"
-  "../devel/lib/libpwmss.pdb"
-  "../devel/lib/libpwmss.so"
+  "/home/ubuntu/projects/xingzhe/devel/lib/libpwmss.pdb"
+  "/home/ubuntu/projects/xingzhe/devel/lib/libpwmss.so"
 )
 
 # Per-language clean rules from dependency scanning.

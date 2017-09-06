@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bone/projects/xingzhe/src
+CMAKE_SOURCE_DIR = /home/ubuntu/projects/xingzhe/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bone/projects/xingzhe/src
+CMAKE_BINARY_DIR = /home/ubuntu/projects/xingzhe/src
 
 # Include any dependencies generated for this target.
 include wheel/CMakeFiles/wheel_node.dir/depend.make
@@ -59,16 +59,16 @@ include wheel/CMakeFiles/wheel_node.dir/flags.make
 
 wheel/CMakeFiles/wheel_node.dir/src/wheel_node.cpp.o: wheel/CMakeFiles/wheel_node.dir/flags.make
 wheel/CMakeFiles/wheel_node.dir/src/wheel_node.cpp.o: wheel/src/wheel_node.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object wheel/CMakeFiles/wheel_node.dir/src/wheel_node.cpp.o"
-	cd /home/bone/projects/xingzhe/src/wheel && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wheel_node.dir/src/wheel_node.cpp.o -c /home/bone/projects/xingzhe/src/wheel/src/wheel_node.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object wheel/CMakeFiles/wheel_node.dir/src/wheel_node.cpp.o"
+	cd /home/ubuntu/projects/xingzhe/src/wheel && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wheel_node.dir/src/wheel_node.cpp.o -c /home/ubuntu/projects/xingzhe/src/wheel/src/wheel_node.cpp
 
 wheel/CMakeFiles/wheel_node.dir/src/wheel_node.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/wheel_node.dir/src/wheel_node.cpp.i"
-	cd /home/bone/projects/xingzhe/src/wheel && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bone/projects/xingzhe/src/wheel/src/wheel_node.cpp > CMakeFiles/wheel_node.dir/src/wheel_node.cpp.i
+	cd /home/ubuntu/projects/xingzhe/src/wheel && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/projects/xingzhe/src/wheel/src/wheel_node.cpp > CMakeFiles/wheel_node.dir/src/wheel_node.cpp.i
 
 wheel/CMakeFiles/wheel_node.dir/src/wheel_node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/wheel_node.dir/src/wheel_node.cpp.s"
-	cd /home/bone/projects/xingzhe/src/wheel && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bone/projects/xingzhe/src/wheel/src/wheel_node.cpp -o CMakeFiles/wheel_node.dir/src/wheel_node.cpp.s
+	cd /home/ubuntu/projects/xingzhe/src/wheel && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/xingzhe/src/wheel/src/wheel_node.cpp -o CMakeFiles/wheel_node.dir/src/wheel_node.cpp.s
 
 wheel/CMakeFiles/wheel_node.dir/src/wheel_node.cpp.o.requires:
 
@@ -83,16 +83,16 @@ wheel/CMakeFiles/wheel_node.dir/src/wheel_node.cpp.o.provides.build: wheel/CMake
 
 wheel/CMakeFiles/wheel_node.dir/src/dc_motor.cpp.o: wheel/CMakeFiles/wheel_node.dir/flags.make
 wheel/CMakeFiles/wheel_node.dir/src/dc_motor.cpp.o: wheel/src/dc_motor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object wheel/CMakeFiles/wheel_node.dir/src/dc_motor.cpp.o"
-	cd /home/bone/projects/xingzhe/src/wheel && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wheel_node.dir/src/dc_motor.cpp.o -c /home/bone/projects/xingzhe/src/wheel/src/dc_motor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object wheel/CMakeFiles/wheel_node.dir/src/dc_motor.cpp.o"
+	cd /home/ubuntu/projects/xingzhe/src/wheel && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wheel_node.dir/src/dc_motor.cpp.o -c /home/ubuntu/projects/xingzhe/src/wheel/src/dc_motor.cpp
 
 wheel/CMakeFiles/wheel_node.dir/src/dc_motor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/wheel_node.dir/src/dc_motor.cpp.i"
-	cd /home/bone/projects/xingzhe/src/wheel && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bone/projects/xingzhe/src/wheel/src/dc_motor.cpp > CMakeFiles/wheel_node.dir/src/dc_motor.cpp.i
+	cd /home/ubuntu/projects/xingzhe/src/wheel && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/projects/xingzhe/src/wheel/src/dc_motor.cpp > CMakeFiles/wheel_node.dir/src/dc_motor.cpp.i
 
 wheel/CMakeFiles/wheel_node.dir/src/dc_motor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/wheel_node.dir/src/dc_motor.cpp.s"
-	cd /home/bone/projects/xingzhe/src/wheel && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bone/projects/xingzhe/src/wheel/src/dc_motor.cpp -o CMakeFiles/wheel_node.dir/src/dc_motor.cpp.s
+	cd /home/ubuntu/projects/xingzhe/src/wheel && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/xingzhe/src/wheel/src/dc_motor.cpp -o CMakeFiles/wheel_node.dir/src/dc_motor.cpp.s
 
 wheel/CMakeFiles/wheel_node.dir/src/dc_motor.cpp.o.requires:
 
@@ -113,34 +113,34 @@ wheel_node_OBJECTS = \
 # External object files for target wheel_node
 wheel_node_EXTERNAL_OBJECTS =
 
-devel/lib/wheel/wheel_node: wheel/CMakeFiles/wheel_node.dir/src/wheel_node.cpp.o
-devel/lib/wheel/wheel_node: wheel/CMakeFiles/wheel_node.dir/src/dc_motor.cpp.o
-devel/lib/wheel/wheel_node: wheel/CMakeFiles/wheel_node.dir/build.make
-devel/lib/wheel/wheel_node: /opt/ros/kinetic/lib/libroscpp.so
-devel/lib/wheel/wheel_node: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-devel/lib/wheel/wheel_node: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-devel/lib/wheel/wheel_node: /opt/ros/kinetic/lib/librosconsole.so
-devel/lib/wheel/wheel_node: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
-devel/lib/wheel/wheel_node: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
-devel/lib/wheel/wheel_node: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-devel/lib/wheel/wheel_node: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-devel/lib/wheel/wheel_node: /opt/ros/kinetic/lib/libxmlrpcpp.so
-devel/lib/wheel/wheel_node: /opt/ros/kinetic/lib/libroscpp_serialization.so
-devel/lib/wheel/wheel_node: /opt/ros/kinetic/lib/librostime.so
-devel/lib/wheel/wheel_node: /opt/ros/kinetic/lib/libcpp_common.so
-devel/lib/wheel/wheel_node: /usr/lib/x86_64-linux-gnu/libboost_system.so
-devel/lib/wheel/wheel_node: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-devel/lib/wheel/wheel_node: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-devel/lib/wheel/wheel_node: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-devel/lib/wheel/wheel_node: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-devel/lib/wheel/wheel_node: /usr/lib/x86_64-linux-gnu/libpthread.so
-devel/lib/wheel/wheel_node: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-devel/lib/wheel/wheel_node: wheel/CMakeFiles/wheel_node.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ../devel/lib/wheel/wheel_node"
-	cd /home/bone/projects/xingzhe/src/wheel && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/wheel_node.dir/link.txt --verbose=$(VERBOSE)
+/home/ubuntu/projects/xingzhe/devel/lib/wheel/wheel_node: wheel/CMakeFiles/wheel_node.dir/src/wheel_node.cpp.o
+/home/ubuntu/projects/xingzhe/devel/lib/wheel/wheel_node: wheel/CMakeFiles/wheel_node.dir/src/dc_motor.cpp.o
+/home/ubuntu/projects/xingzhe/devel/lib/wheel/wheel_node: wheel/CMakeFiles/wheel_node.dir/build.make
+/home/ubuntu/projects/xingzhe/devel/lib/wheel/wheel_node: /opt/ros/kinetic/lib/libroscpp.so
+/home/ubuntu/projects/xingzhe/devel/lib/wheel/wheel_node: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+/home/ubuntu/projects/xingzhe/devel/lib/wheel/wheel_node: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/ubuntu/projects/xingzhe/devel/lib/wheel/wheel_node: /opt/ros/kinetic/lib/librosconsole.so
+/home/ubuntu/projects/xingzhe/devel/lib/wheel/wheel_node: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
+/home/ubuntu/projects/xingzhe/devel/lib/wheel/wheel_node: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
+/home/ubuntu/projects/xingzhe/devel/lib/wheel/wheel_node: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/ubuntu/projects/xingzhe/devel/lib/wheel/wheel_node: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/ubuntu/projects/xingzhe/devel/lib/wheel/wheel_node: /opt/ros/kinetic/lib/libxmlrpcpp.so
+/home/ubuntu/projects/xingzhe/devel/lib/wheel/wheel_node: /opt/ros/kinetic/lib/libroscpp_serialization.so
+/home/ubuntu/projects/xingzhe/devel/lib/wheel/wheel_node: /opt/ros/kinetic/lib/librostime.so
+/home/ubuntu/projects/xingzhe/devel/lib/wheel/wheel_node: /opt/ros/kinetic/lib/libcpp_common.so
+/home/ubuntu/projects/xingzhe/devel/lib/wheel/wheel_node: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/ubuntu/projects/xingzhe/devel/lib/wheel/wheel_node: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/ubuntu/projects/xingzhe/devel/lib/wheel/wheel_node: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+/home/ubuntu/projects/xingzhe/devel/lib/wheel/wheel_node: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/ubuntu/projects/xingzhe/devel/lib/wheel/wheel_node: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+/home/ubuntu/projects/xingzhe/devel/lib/wheel/wheel_node: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/ubuntu/projects/xingzhe/devel/lib/wheel/wheel_node: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+/home/ubuntu/projects/xingzhe/devel/lib/wheel/wheel_node: wheel/CMakeFiles/wheel_node.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable /home/ubuntu/projects/xingzhe/devel/lib/wheel/wheel_node"
+	cd /home/ubuntu/projects/xingzhe/src/wheel && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/wheel_node.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-wheel/CMakeFiles/wheel_node.dir/build: devel/lib/wheel/wheel_node
+wheel/CMakeFiles/wheel_node.dir/build: /home/ubuntu/projects/xingzhe/devel/lib/wheel/wheel_node
 
 .PHONY : wheel/CMakeFiles/wheel_node.dir/build
 
@@ -150,10 +150,10 @@ wheel/CMakeFiles/wheel_node.dir/requires: wheel/CMakeFiles/wheel_node.dir/src/dc
 .PHONY : wheel/CMakeFiles/wheel_node.dir/requires
 
 wheel/CMakeFiles/wheel_node.dir/clean:
-	cd /home/bone/projects/xingzhe/src/wheel && $(CMAKE_COMMAND) -P CMakeFiles/wheel_node.dir/cmake_clean.cmake
+	cd /home/ubuntu/projects/xingzhe/src/wheel && $(CMAKE_COMMAND) -P CMakeFiles/wheel_node.dir/cmake_clean.cmake
 .PHONY : wheel/CMakeFiles/wheel_node.dir/clean
 
 wheel/CMakeFiles/wheel_node.dir/depend:
-	cd /home/bone/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bone/projects/xingzhe/src /home/bone/projects/xingzhe/src/wheel /home/bone/projects/xingzhe/src /home/bone/projects/xingzhe/src/wheel /home/bone/projects/xingzhe/src/wheel/CMakeFiles/wheel_node.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/projects/xingzhe/src /home/ubuntu/projects/xingzhe/src/wheel /home/ubuntu/projects/xingzhe/src /home/ubuntu/projects/xingzhe/src/wheel /home/ubuntu/projects/xingzhe/src/wheel/CMakeFiles/wheel_node.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : wheel/CMakeFiles/wheel_node.dir/depend
 

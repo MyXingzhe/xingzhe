@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bone/projects/xingzhe/src
+CMAKE_SOURCE_DIR = /home/ubuntu/projects/xingzhe/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bone/projects/xingzhe/src
+CMAKE_BINARY_DIR = /home/ubuntu/projects/xingzhe/src
 
 # Utility rule file for roscpp_generate_messages_eus.
 
@@ -63,10 +63,10 @@ arm/CMakeFiles/roscpp_generate_messages_eus.dir/build: roscpp_generate_messages_
 .PHONY : arm/CMakeFiles/roscpp_generate_messages_eus.dir/build
 
 arm/CMakeFiles/roscpp_generate_messages_eus.dir/clean:
-	cd /home/bone/projects/xingzhe/src/arm && $(CMAKE_COMMAND) -P CMakeFiles/roscpp_generate_messages_eus.dir/cmake_clean.cmake
+	cd /home/ubuntu/projects/xingzhe/src/arm && $(CMAKE_COMMAND) -P CMakeFiles/roscpp_generate_messages_eus.dir/cmake_clean.cmake
 .PHONY : arm/CMakeFiles/roscpp_generate_messages_eus.dir/clean
 
 arm/CMakeFiles/roscpp_generate_messages_eus.dir/depend:
-	cd /home/bone/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bone/projects/xingzhe/src /home/bone/projects/xingzhe/src/arm /home/bone/projects/xingzhe/src /home/bone/projects/xingzhe/src/arm /home/bone/projects/xingzhe/src/arm/CMakeFiles/roscpp_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/projects/xingzhe/src /home/ubuntu/projects/xingzhe/src/arm /home/ubuntu/projects/xingzhe/src /home/ubuntu/projects/xingzhe/src/arm /home/ubuntu/projects/xingzhe/src/arm/CMakeFiles/roscpp_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : arm/CMakeFiles/roscpp_generate_messages_eus.dir/depend
 

@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/neck_node.dir/src/neck_node.cpp.o"
-  "../devel/lib/neck/neck_node.pdb"
-  "../devel/lib/neck/neck_node"
+  "/home/ubuntu/projects/xingzhe/devel/lib/neck/neck_node.pdb"
+  "/home/ubuntu/projects/xingzhe/devel/lib/neck/neck_node"
 )
 
 # Per-language clean rules from dependency scanning.

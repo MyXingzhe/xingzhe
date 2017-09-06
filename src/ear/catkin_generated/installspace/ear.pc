@@ -1,8 +1,8 @@
-prefix=/usr/local
+prefix=/home/ubuntu/projects/xingzhe/install
 
 Name: ear
 Description: Description of ear
 Version: 0.0.0
-Cflags: -I/usr/local/include
-Libs: -L/usr/local/lib -lear
+Cflags: -I/home/ubuntu/projects/xingzhe/install/include
+Libs: -L/home/ubuntu/projects/xingzhe/install/lib -lear
 Requires: roscpp std_msgs message_runtime

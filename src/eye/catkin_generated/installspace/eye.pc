@@ -1,8 +1,8 @@
-prefix=/usr/local
+prefix=/home/ubuntu/projects/xingzhe/install
 
 Name: eye
 Description: Description of eye
 Version: 0.0.0
-Cflags: -I/usr/local/include
-Libs: -L/usr/local/lib -leye
+Cflags: -I/home/ubuntu/projects/xingzhe/install/include
+Libs: -L/home/ubuntu/projects/xingzhe/install/lib -leye
 Requires: image_transport roscpp cv_bridge sensor_msgs nodelet camera_info_manager

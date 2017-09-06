@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/bone/projects/xingzhe/src/eye/src/stereo.cpp" "/home/bone/projects/xingzhe/src/eye/CMakeFiles/uvc_stereo_node.dir/src/stereo.cpp.o"
-  "/home/bone/projects/xingzhe/src/eye/src/stereo_node.cpp" "/home/bone/projects/xingzhe/src/eye/CMakeFiles/uvc_stereo_node.dir/src/stereo_node.cpp.o"
-  "/home/bone/projects/xingzhe/src/eye/src/uvc_cam.cpp" "/home/bone/projects/xingzhe/src/eye/CMakeFiles/uvc_stereo_node.dir/src/uvc_cam.cpp.o"
+  "/home/ubuntu/projects/xingzhe/src/eye/src/stereo.cpp" "/home/ubuntu/projects/xingzhe/src/eye/CMakeFiles/uvc_stereo_node.dir/src/stereo.cpp.o"
+  "/home/ubuntu/projects/xingzhe/src/eye/src/stereo_node.cpp" "/home/ubuntu/projects/xingzhe/src/eye/CMakeFiles/uvc_stereo_node.dir/src/stereo_node.cpp.o"
+  "/home/ubuntu/projects/xingzhe/src/eye/src/uvc_cam.cpp" "/home/ubuntu/projects/xingzhe/src/eye/CMakeFiles/uvc_stereo_node.dir/src/uvc_cam.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -43,32 +43,32 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bone/projects/xingzhe/src
+CMAKE_SOURCE_DIR = /home/ubuntu/projects/xingzhe/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bone/projects/xingzhe/src
+CMAKE_BINARY_DIR = /home/ubuntu/projects/xingzhe/src
 
 # Utility rule file for ear_generate_messages_eus.
 
 # Include the progress variables for this target.
 include ear/CMakeFiles/ear_generate_messages_eus.dir/progress.make
 
-ear/CMakeFiles/ear_generate_messages_eus: devel/share/roseus/ros/ear/msg/usonic.l
-ear/CMakeFiles/ear_generate_messages_eus: devel/share/roseus/ros/ear/manifest.l
+ear/CMakeFiles/ear_generate_messages_eus: /home/ubuntu/projects/xingzhe/devel/share/roseus/ros/ear/msg/usonic.l
+ear/CMakeFiles/ear_generate_messages_eus: /home/ubuntu/projects/xingzhe/devel/share/roseus/ros/ear/manifest.l
 
 
-devel/share/roseus/ros/ear/msg/usonic.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-devel/share/roseus/ros/ear/msg/usonic.l: /home/bone/projects/xingzhe/msg/usonic.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from ear/usonic.msg"
-	cd /home/bone/projects/xingzhe/src/ear && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/bone/projects/xingzhe/src/ear/../../msg/usonic.msg -Iear:/home/bone/projects/xingzhe/src/ear/../../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ear -o /home/bone/projects/xingzhe/src/devel/share/roseus/ros/ear/msg
+/home/ubuntu/projects/xingzhe/devel/share/roseus/ros/ear/msg/usonic.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+/home/ubuntu/projects/xingzhe/devel/share/roseus/ros/ear/msg/usonic.l: /home/ubuntu/projects/xingzhe/msg/usonic.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from ear/usonic.msg"
+	cd /home/ubuntu/projects/xingzhe/src/ear && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/ubuntu/projects/xingzhe/src/ear/../../msg/usonic.msg -Iear:/home/ubuntu/projects/xingzhe/src/ear/../../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ear -o /home/ubuntu/projects/xingzhe/devel/share/roseus/ros/ear/msg
 
-devel/share/roseus/ros/ear/manifest.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bone/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp manifest code for ear"
-	cd /home/bone/projects/xingzhe/src/ear && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/bone/projects/xingzhe/src/devel/share/roseus/ros/ear ear std_msgs
+/home/ubuntu/projects/xingzhe/devel/share/roseus/ros/ear/manifest.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/projects/xingzhe/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp manifest code for ear"
+	cd /home/ubuntu/projects/xingzhe/src/ear && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/ubuntu/projects/xingzhe/devel/share/roseus/ros/ear ear std_msgs
 
 ear_generate_messages_eus: ear/CMakeFiles/ear_generate_messages_eus
-ear_generate_messages_eus: devel/share/roseus/ros/ear/msg/usonic.l
-ear_generate_messages_eus: devel/share/roseus/ros/ear/manifest.l
+ear_generate_messages_eus: /home/ubuntu/projects/xingzhe/devel/share/roseus/ros/ear/msg/usonic.l
+ear_generate_messages_eus: /home/ubuntu/projects/xingzhe/devel/share/roseus/ros/ear/manifest.l
 ear_generate_messages_eus: ear/CMakeFiles/ear_generate_messages_eus.dir/build.make
 
 .PHONY : ear_generate_messages_eus
@@ -79,10 +79,10 @@ ear/CMakeFiles/ear_generate_messages_eus.dir/build: ear_generate_messages_eus
 .PHONY : ear/CMakeFiles/ear_generate_messages_eus.dir/build
 
 ear/CMakeFiles/ear_generate_messages_eus.dir/clean:
-	cd /home/bone/projects/xingzhe/src/ear && $(CMAKE_COMMAND) -P CMakeFiles/ear_generate_messages_eus.dir/cmake_clean.cmake
+	cd /home/ubuntu/projects/xingzhe/src/ear && $(CMAKE_COMMAND) -P CMakeFiles/ear_generate_messages_eus.dir/cmake_clean.cmake
 .PHONY : ear/CMakeFiles/ear_generate_messages_eus.dir/clean
 
 ear/CMakeFiles/ear_generate_messages_eus.dir/depend:
-	cd /home/bone/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bone/projects/xingzhe/src /home/bone/projects/xingzhe/src/ear /home/bone/projects/xingzhe/src /home/bone/projects/xingzhe/src/ear /home/bone/projects/xingzhe/src/ear/CMakeFiles/ear_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/projects/xingzhe/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/projects/xingzhe/src /home/ubuntu/projects/xingzhe/src/ear /home/ubuntu/projects/xingzhe/src /home/ubuntu/projects/xingzhe/src/ear /home/ubuntu/projects/xingzhe/src/ear/CMakeFiles/ear_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : ear/CMakeFiles/ear_generate_messages_eus.dir/depend
 

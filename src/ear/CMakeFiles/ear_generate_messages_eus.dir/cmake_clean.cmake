@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ear_generate_messages_eus"
-  "../devel/share/roseus/ros/ear/msg/usonic.l"
-  "../devel/share/roseus/ros/ear/manifest.l"
+  "/home/ubuntu/projects/xingzhe/devel/share/roseus/ros/ear/msg/usonic.l"
+  "/home/ubuntu/projects/xingzhe/devel/share/roseus/ros/ear/manifest.l"
 )
 
 # Per-language clean rules from dependency scanning.

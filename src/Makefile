@@ -48,25 +48,23 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bone/projects/xingzhe/src
+CMAKE_SOURCE_DIR = /home/ubuntu/projects/xingzhe/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bone/projects/xingzhe/src
+CMAKE_BINARY_DIR = /home/ubuntu/projects/xingzhe/src
 
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -90,27 +88,6 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -133,11 +110,23 @@ test/fast: test
 
 .PHONY : test/fast
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles /home/bone/projects/xingzhe/src/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles /home/ubuntu/projects/xingzhe/src/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bone/projects/xingzhe/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/xingzhe/src/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -633,6 +622,11 @@ body_node/fast:
 	$(MAKE) -f body/CMakeFiles/body_node.dir/build.make body/CMakeFiles/body_node.dir/build
 .PHONY : body_node/fast
 
+# Manual pre-install relink rule for target.
+body_node/preinstall:
+	$(MAKE) -f body/CMakeFiles/body_node.dir/build.make body/CMakeFiles/body_node.dir/preinstall
+.PHONY : body_node/preinstall
+
 #=============================================================================
 # Target rules for targets named body_gennodejs
 
@@ -775,6 +769,11 @@ ear_node: cmake_check_build_system
 ear_node/fast:
 	$(MAKE) -f ear/CMakeFiles/ear_node.dir/build.make ear/CMakeFiles/ear_node.dir/build
 .PHONY : ear_node/fast
+
+# Manual pre-install relink rule for target.
+ear_node/preinstall:
+	$(MAKE) -f ear/CMakeFiles/ear_node.dir/build.make ear/CMakeFiles/ear_node.dir/preinstall
+.PHONY : ear_node/preinstall
 
 #=============================================================================
 # Target rules for targets named ear_genpy
@@ -945,6 +944,11 @@ light_node/fast:
 	$(MAKE) -f light/CMakeFiles/light_node.dir/build.make light/CMakeFiles/light_node.dir/build
 .PHONY : light_node/fast
 
+# Manual pre-install relink rule for target.
+light_node/preinstall:
+	$(MAKE) -f light/CMakeFiles/light_node.dir/build.make light/CMakeFiles/light_node.dir/preinstall
+.PHONY : light_node/preinstall
+
 #=============================================================================
 # Target rules for targets named monkey_node
 
@@ -996,6 +1000,167 @@ neck_node: cmake_check_build_system
 neck_node/fast:
 	$(MAKE) -f neck/CMakeFiles/neck_node.dir/build.make neck/CMakeFiles/neck_node.dir/build
 .PHONY : neck_node/fast
+
+#=============================================================================
+# Target rules for targets named prupwm_genpy
+
+# Build rule for target.
+prupwm_genpy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 prupwm_genpy
+.PHONY : prupwm_genpy
+
+# fast build rule for target.
+prupwm_genpy/fast:
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_genpy.dir/build.make prupwm/CMakeFiles/prupwm_genpy.dir/build
+.PHONY : prupwm_genpy/fast
+
+#=============================================================================
+# Target rules for targets named prupwm_generate_messages_eus
+
+# Build rule for target.
+prupwm_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 prupwm_generate_messages_eus
+.PHONY : prupwm_generate_messages_eus
+
+# fast build rule for target.
+prupwm_generate_messages_eus/fast:
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_generate_messages_eus.dir/build.make prupwm/CMakeFiles/prupwm_generate_messages_eus.dir/build
+.PHONY : prupwm_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named prupwm_gencpp
+
+# Build rule for target.
+prupwm_gencpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 prupwm_gencpp
+.PHONY : prupwm_gencpp
+
+# fast build rule for target.
+prupwm_gencpp/fast:
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_gencpp.dir/build.make prupwm/CMakeFiles/prupwm_gencpp.dir/build
+.PHONY : prupwm_gencpp/fast
+
+#=============================================================================
+# Target rules for targets named prupwm_generate_messages
+
+# Build rule for target.
+prupwm_generate_messages: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 prupwm_generate_messages
+.PHONY : prupwm_generate_messages
+
+# fast build rule for target.
+prupwm_generate_messages/fast:
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_generate_messages.dir/build.make prupwm/CMakeFiles/prupwm_generate_messages.dir/build
+.PHONY : prupwm_generate_messages/fast
+
+#=============================================================================
+# Target rules for targets named prupwm_gennodejs
+
+# Build rule for target.
+prupwm_gennodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 prupwm_gennodejs
+.PHONY : prupwm_gennodejs
+
+# fast build rule for target.
+prupwm_gennodejs/fast:
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_gennodejs.dir/build.make prupwm/CMakeFiles/prupwm_gennodejs.dir/build
+.PHONY : prupwm_gennodejs/fast
+
+#=============================================================================
+# Target rules for targets named prupwm_generate_messages_cpp
+
+# Build rule for target.
+prupwm_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 prupwm_generate_messages_cpp
+.PHONY : prupwm_generate_messages_cpp
+
+# fast build rule for target.
+prupwm_generate_messages_cpp/fast:
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_generate_messages_cpp.dir/build.make prupwm/CMakeFiles/prupwm_generate_messages_cpp.dir/build
+.PHONY : prupwm_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named prupwm_generate_messages_lisp
+
+# Build rule for target.
+prupwm_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 prupwm_generate_messages_lisp
+.PHONY : prupwm_generate_messages_lisp
+
+# fast build rule for target.
+prupwm_generate_messages_lisp/fast:
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_generate_messages_lisp.dir/build.make prupwm/CMakeFiles/prupwm_generate_messages_lisp.dir/build
+.PHONY : prupwm_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named prupwm_geneus
+
+# Build rule for target.
+prupwm_geneus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 prupwm_geneus
+.PHONY : prupwm_geneus
+
+# fast build rule for target.
+prupwm_geneus/fast:
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_geneus.dir/build.make prupwm/CMakeFiles/prupwm_geneus.dir/build
+.PHONY : prupwm_geneus/fast
+
+#=============================================================================
+# Target rules for targets named prupwm_generate_messages_nodejs
+
+# Build rule for target.
+prupwm_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 prupwm_generate_messages_nodejs
+.PHONY : prupwm_generate_messages_nodejs
+
+# fast build rule for target.
+prupwm_generate_messages_nodejs/fast:
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_generate_messages_nodejs.dir/build.make prupwm/CMakeFiles/prupwm_generate_messages_nodejs.dir/build
+.PHONY : prupwm_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named prupwm_node
+
+# Build rule for target.
+prupwm_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 prupwm_node
+.PHONY : prupwm_node
+
+# fast build rule for target.
+prupwm_node/fast:
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_node.dir/build.make prupwm/CMakeFiles/prupwm_node.dir/build
+.PHONY : prupwm_node/fast
+
+# Manual pre-install relink rule for target.
+prupwm_node/preinstall:
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_node.dir/build.make prupwm/CMakeFiles/prupwm_node.dir/preinstall
+.PHONY : prupwm_node/preinstall
+
+#=============================================================================
+# Target rules for targets named prupwm_genlisp
+
+# Build rule for target.
+prupwm_genlisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 prupwm_genlisp
+.PHONY : prupwm_genlisp
+
+# fast build rule for target.
+prupwm_genlisp/fast:
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_genlisp.dir/build.make prupwm/CMakeFiles/prupwm_genlisp.dir/build
+.PHONY : prupwm_genlisp/fast
+
+#=============================================================================
+# Target rules for targets named prupwm_generate_messages_py
+
+# Build rule for target.
+prupwm_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 prupwm_generate_messages_py
+.PHONY : prupwm_generate_messages_py
+
+# fast build rule for target.
+prupwm_generate_messages_py/fast:
+	$(MAKE) -f prupwm/CMakeFiles/prupwm_generate_messages_py.dir/build.make prupwm/CMakeFiles/prupwm_generate_messages_py.dir/build
+.PHONY : prupwm_generate_messages_py/fast
 
 #=============================================================================
 # Target rules for targets named uvc_stereo_node
@@ -1140,6 +1305,11 @@ eye_node/fast:
 	$(MAKE) -f eye/CMakeFiles/eye_node.dir/build.make eye/CMakeFiles/eye_node.dir/build
 .PHONY : eye_node/fast
 
+# Manual pre-install relink rule for target.
+eye_node/preinstall:
+	$(MAKE) -f eye/CMakeFiles/eye_node.dir/build.make eye/CMakeFiles/eye_node.dir/preinstall
+.PHONY : eye_node/preinstall
+
 #=============================================================================
 # Target rules for targets named bond_generate_messages_lisp
 
@@ -1185,7 +1355,7 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install"
+	@echo "... list_install_components"
 	@echo "... clean_test_results"
 	@echo "... run_tests"
 	@echo "... download_extra_data"
@@ -1193,10 +1363,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... doxygen"
 	@echo "... rebuild_cache"
-	@echo "... list_install_components"
-	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... test"
+	@echo "... install"
 	@echo "... gtest"
 	@echo "... gtest_main"
 	@echo "... std_msgs_generate_messages_lisp"
@@ -1256,6 +1425,18 @@ help:
 	@echo "... pwmss"
 	@echo "... servo"
 	@echo "... neck_node"
+	@echo "... prupwm_genpy"
+	@echo "... prupwm_generate_messages_eus"
+	@echo "... prupwm_gencpp"
+	@echo "... prupwm_generate_messages"
+	@echo "... prupwm_gennodejs"
+	@echo "... prupwm_generate_messages_cpp"
+	@echo "... prupwm_generate_messages_lisp"
+	@echo "... prupwm_geneus"
+	@echo "... prupwm_generate_messages_nodejs"
+	@echo "... prupwm_node"
+	@echo "... prupwm_genlisp"
+	@echo "... prupwm_generate_messages_py"
 	@echo "... uvc_stereo_node"
 	@echo "... nodelet_generate_messages_nodejs"
 	@echo "... bond_generate_messages_py"
