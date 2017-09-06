@@ -1,8 +1,0 @@
-prefix=/home/ubuntu/projects/xingzhe/install
-
-Name: prupwm
-Description: Description of prupwm
-Version: 0.0.0
-Cflags: -I/home/ubuntu/projects/xingzhe/install/include
-Libs: -L/home/ubuntu/projects/xingzhe/install/lib -lprupwm
-Requires: roscpp std_msgs message_runtime

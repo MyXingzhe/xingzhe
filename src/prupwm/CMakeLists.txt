@@ -101,7 +101,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
   INCLUDE_DIRS include
-  LIBRARIES prupwm
+  LIBRARIES 
   CATKIN_DEPENDS roscpp std_msgs message_runtime
 #  DEPENDS system_lib
 )
@@ -138,7 +138,7 @@ include_directories(include
  add_dependencies(prupwm_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
- target_link_libraries(prupwm_node ${catkin_LIBRARIES} imu xzio mraa)
+ target_link_libraries(prupwm_node ${catkin_LIBRARIES} imu xzio mraa prussdrv)
 
 #############
 ## Install ##
