@@ -1,12 +1,10 @@
-#include "body.h"
+#include "prupwm.h"
 #include "mraa.hpp"
 
 #define OUTPUT_READABLE_QUATERNION
 #define OUTPUT_READABLE_YAWPITCHROLL
 
 const double UPDATE_RATE = 50; // desired publication rate of IMU data
-
-uint8_t mpuIntStatus;   // holds actual interrupt status byte from MPU
 
 
 PruPwm::PruPwm(ros::NodeHandle* nodehandle)

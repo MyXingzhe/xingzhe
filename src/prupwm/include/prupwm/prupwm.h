@@ -8,9 +8,6 @@
 
 #include <ros/ros.h>
 #include <sensor_msgs/Imu.h>
-// message type used to communicate GPIO output
-
-// actually, this is MPU6050 SENSOR
 
 
 class PruPwm
@@ -28,9 +25,6 @@ private:
 public:
 
 private:
-	MPU6050 *m_imu;
-	MPU6050 mpu;
-
 	bool m_ready;
 	uint8_t m_status;
 	uint16_t packet_size;    // expected DMP packet size (default is 42 bytes)
@@ -39,17 +33,6 @@ private:
 
 	ros::NodeHandle nh_;
 	ros::Publisher imu_publisher;
-	sensor_msgs::Imu imu_data;  // variable name for our sensor_msgs::Imu output
-
-	Quaternion q;           // [w, x, y, z]         quaternion container
-	VectorInt16 accel;      // [x, y, z]            accel sensor measurements
-	VectorInt16 aaReal;     // [x, y, z]            gravity-free accel sensor measurements
-	VectorInt16 aaWorld;    // [x, y, z]            world-frame accel sensor measurements
-	VectorFloat gravity;    // [x, y, z]            gravity vector
-	float euler[3];         // [psi, theta, phi]    Euler angle container
-	float ypr[3];           // [yaw, pitch, roll]   yaw/pitch/roll container and gravity vector
-
-
 };
 
 

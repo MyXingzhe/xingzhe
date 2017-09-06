@@ -1,8 +1,0 @@
-prefix=/home/ubuntu/projects/xingzhe/src/devel
-
-Name: ear
-Description: Description of ear
-Version: 0.0.0
-Cflags: -I/home/ubuntu/projects/xingzhe/src/devel/include -I/home/ubuntu/projects/xingzhe/src/ear/include
-Libs: -L/home/ubuntu/projects/xingzhe/src/devel/lib -lear
-Requires: roscpp std_msgs message_runtime
