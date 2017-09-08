@@ -27,11 +27,13 @@ public:
 	~PruPwm();
 
 	void Setup();
+	void Close();
 	struct prupwm_param *Report();
 
 private:
 	int mem_fd;
 	void *ddrMem;
+	void *sharedMem;
 	struct prupwm_param *pwm_param;
 
 public:

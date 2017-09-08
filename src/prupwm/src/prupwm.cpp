@@ -68,6 +68,7 @@ void PruPwm::Setup()
 
     pwm_param = (struct prupwm_param *)(ddrMem + OFFSET_DDR);
     memset(pwm_param, 0, sizeof(struct prupwm_param));
+    pwm_param->flag = 0xff;
     pwm_param->period = MS_TO_CYCLE(0.5);
 
     /* Get the interrupt initialized */
@@ -82,7 +83,15 @@ void PruPwm::Setup()
 
 struct prupwm_param *PruPwm::Report()
 {
-	return pwm_param;
+	struct prupwm_param *param;
+    prussdrv_map_prumem(PRUSS0_SHARED_DATARAM, &sharedMem);
+    param = (struct prupwm_param *) sharedMem;
+
+	return param;
 }
 
-
+void PruPwm::Close()
+{
+    munmap(ddrMem, 0x0FFFFFFF);
+    close(mem_fd);
+}
