@@ -25,7 +25,7 @@ int main(int argc, char **argv)
         ros::spinOnce();
 
         pru = prupwm->Report();
-        ROS_INFO("flag=%d, period=%d, cycle0=%d, cycle1=%d, cycle3=%d, cycle4=%d", pru->flag, pru->period, pru->cycle[0], pru->cycle[1], pru->cycle[2], pru->cycle[3]);
+        ROS_INFO("flag=0x%x, period=0x%x, cycle0=0x%x, cycle1=0x%x, cycle3=0x%x, cycle4=0x%x", pru->flag, pru->period, pru->cycle[0], pru->cycle[1], pru->cycle[2], pru->cycle[3]);
 
         sleep_timer.sleep();  // finish sleep time
     }

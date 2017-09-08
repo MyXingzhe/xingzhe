@@ -68,7 +68,7 @@ void PruPwm::Setup()
 
     pwm_param = (struct prupwm_param *)(ddrMem + OFFSET_DDR);
     memset(pwm_param, 0, sizeof(struct prupwm_param));
-    pwm_param->flag = 0xff;
+    pwm_param->flag = 0xcf;
     pwm_param->period = MS_TO_CYCLE(0.5);
 
     /* Get the interrupt initialized */
