@@ -51,7 +51,10 @@ void PruPwm::Setup()
         return ;
     }
 
-    /* open the device */
+     /* Get the interrupt initialized */
+    prussdrv_pruintc_init(&pruss_intc_initdata);
+
+   /* open the device */
     mem_fd = open("/dev/mem", O_RDWR);
     if (mem_fd < 0) {
         printf("Failed to open /dev/mem (%s)\n", strerror(errno));
