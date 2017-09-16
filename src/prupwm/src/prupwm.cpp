@@ -76,9 +76,6 @@ void PruPwm::Setup()
     pwm_param->flag = 0xcf;
     pwm_param->period = MS_TO_CYCLE(0.5);
 
-    /* Get the interrupt initialized */
-    prussdrv_pruintc_init(&pruss_intc_initdata);
-
     /* Execute example on PRU */
     ret = prussdrv_exec_program (0, PRU_BIN_NAME);
     printf("\tINFO: Executing PRU. ret=%d\r\n", ret);
