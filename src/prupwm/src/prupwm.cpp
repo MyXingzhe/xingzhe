@@ -97,7 +97,7 @@ struct prupwm_param *PruPwm::Report()
     param = (struct prupwm_param *) ((unsigned int*)sharedMem + OFFSET_SHAREDRAM);
 
     for(i=0;i<18;i++) {
-    	printf("0x%x,", (unsigned int*)sharedMem + OFFSET_SHAREDRAM + i*4));
+    	printf("0x%x,", (unsigned int*)sharedMem + OFFSET_SHAREDRAM + i*4);
     }
     printf("\n");
 
