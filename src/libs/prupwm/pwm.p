@@ -38,59 +38,6 @@ LOOP_POINT:
     LBBO    r11, r10, 0xC, 4 // read the cycle counter into r11
     ADD     r21, r12, r1  // timeout of period
 
-PWM_0_Hi:
-    QBBC    PWM_1_Hi, r0, 0    // pwm_0 is not used
-    SET     r30.t0
-SBCO  r11, CONST_PRUSHAREDRAM, 40, 4
-
-PWM_1_Hi:
-    QBBC    PWM_2_Hi, r0, 0    // pwm_0 is not used
-    SET     r30.t1
-SBCO  r11, CONST_PRUSHAREDRAM, 44, 4
-
-PWM_2_Hi:
-    QBBC    PWM_3_Hi, r0, 0    // pwm_0 is not used
-    SET     r30.t2
-SBCO  r11, CONST_PRUSHAREDRAM, 48, 4
-
-PWM_3_Hi:
-    QBBC    PWM_4_Hi, r0, 0    // pwm_0 is not used
-    SET     r30.t3
-SBCO  r11, CONST_PRUSHAREDRAM, 52, 4
-
-PWM_4_Hi:
-    QBBC    PWM_5_Hi, r0, 0    // pwm_0 is not used
-    SET     r30.t4
-SBCO  r11, CONST_PRUSHAREDRAM, 56, 4
-
-PWM_5_Hi:
-    QBBC    PWM_6_Hi, r0, 0    // pwm_0 is not used
-    SET     r30.t5
-SBCO  r11, CONST_PRUSHAREDRAM, 60, 4
-
-PWM_6_Hi:
-    QBBC    PWM_7_Hi, r0, 0    // pwm_0 is not used
-    SET     r30.t6
-SBCO  r11, CONST_PRUSHAREDRAM, 64, 4
-
-PWM_7_Hi:
-    QBBC    PWM_1_Hi, r0, 0    // pwm_0 is not used
-    SET     r30.t7
-SBCO  r11, CONST_PRUSHAREDRAM, 68, 4
-
-
-WAITING_FOR_DUTY_OUT:
-
-
-
-    JMP LOOP_POINT
-
-
-
-
-
-
-
 
 PWM_0:
     QBBC    PWM_1, r0, 0    // pwm_0 is not used
