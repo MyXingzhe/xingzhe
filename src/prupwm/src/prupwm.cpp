@@ -90,9 +90,16 @@ struct prupwm_param *param = Report();
 
 struct prupwm_param *PruPwm::Report()
 {
+	int i;
+
 	struct prupwm_param *param;
     prussdrv_map_prumem(PRUSS0_SHARED_DATARAM, &sharedMem);
     param = (struct prupwm_param *) ((unsigned int*)sharedMem + OFFSET_SHAREDRAM);
+
+    for(i=0;i<18;i++) {
+    	printf("0x%x,", (unsigned int*)sharedMem + OFFSET_SHAREDRAM + i*4));
+    }
+    printf("\n");
 
 	return param;
 }
