@@ -23,6 +23,8 @@ const double UPDATE_RATE = 50; // desired publication rate of IMU data
 
 #define MS_TO_CYCLE(ms)    ((ms)*200000)
 
+static int mem_fd;
+static void *ddrMem, *sharedMem;
 
 PruPwm::PruPwm()
 {
