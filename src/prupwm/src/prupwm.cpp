@@ -79,7 +79,7 @@ void PruPwm::Setup()
 
     for(i=0;i<8;i++) {
     	pwm_param->duty[i] = MS_TO_CYCLE(0.1);
-    	param->cycle[i] = i;
+    	pwm_param->cycle[i] = i;
     }
 
     /* Execute example on PRU */
