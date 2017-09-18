@@ -37,7 +37,7 @@ LOOP_POINT:
 SBCO  r0, CONST_PRUSHAREDRAM, 0, 40
 
     MOV     r10, 0x22000
-    LBBO    r11, r10, 0xC, 4 // read the cycle counter into r11
+    LBCO    r11, c1, TCRR, 4 // timestamp of start of pulse
     ADD     r21, r12, r1  // timeout of period
 
 PWM_0_Hi:

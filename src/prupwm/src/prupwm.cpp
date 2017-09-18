@@ -39,6 +39,7 @@ PruPwm::~PruPwm()
 void PruPwm::Setup()
 {
     int ret;
+    int i;
     tpruss_intc_initdata pruss_intc_initdata = PRUSS_INTC_INITDATA;
 
     printf("\nINFO: Starting PRU.\r\n");
@@ -75,6 +76,11 @@ void PruPwm::Setup()
     memset(pwm_param, 0, sizeof(struct prupwm_param));
     pwm_param->flag = 0xcf;
     pwm_param->period = MS_TO_CYCLE(0.5);
+
+    for(i=0;i<8;i++) {
+    	pwm_param->duty[i] = MS_TO_CYCLE(0.1);
+    	param->cycle[i] = i;
+    }
 
     /* Execute example on PRU */
     ret = prussdrv_exec_program (0, PRU_BIN_NAME);
