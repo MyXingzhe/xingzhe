@@ -75,7 +75,7 @@ PWM_6_Hi:
 SBCO  r11, CONST_PRUSHAREDRAM, 64, 4
 
 PWM_7_Hi:
-    QBBC    PWM_0_Hi, r0.t7    // pwm_0 is not used
+    QBBC    WAITING_FOR_DUTY_OUT, r0.t7    // pwm_0 is not used
     SET     r30.t7
 SBCO  r11, CONST_PRUSHAREDRAM, 68, 4
 
