@@ -43,7 +43,7 @@ START_PWM:
 LOOP_POINT:
     
     LBCO    r0, CONST_DDR, 0, SIZE(pwm_param)
-    .assign pwm_param, r0, r10, param
+    .assign pwm_param, r0, r9, param
 
     SBCO    r0, CONST_PRUSHAREDRAM, 0, 40
 
@@ -52,7 +52,7 @@ LOOP_POINT:
     SBCO    r29, C26, IEP_GLOBAL_CFG, 4
 
     MOV     r29, 1
-    SBC0    r29, C26, IEP_COUNT, 4
+    SBCO    r29, C26, IEP_COUNT, 4
 
 PERIOD_LOOP:
     LBCO    r29, C26, IEP_COUNT, 4
