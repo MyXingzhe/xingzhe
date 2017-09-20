@@ -16,17 +16,16 @@ START_PWM:
     // field to 0x0120.  This will make C28 point to 0x00012000 (PRU shared RAM).
     MOV     r0, 0x00000120
     MOV     r1, CTPPR_0
-    MOV     r0, r1
+    ST32    r0, r1
 
     // Configure the programmable pointer register for PRU0 by setting c31_pointer[15:0]
     // field to 0x0010.  This will make C31 point to 0x80001000 (DDR memory).
     MOV     r0, 0x00100000
     MOV     r1, CTPPR_1
-    MOV     r0, r1
+    ST32    r0, r1
 
     MOV     r10, 0x22000
     LBBO    r11, r10, 0xC, 4 // read the cycle counter
-    MOV     r12 , r11    // r12 stores start time of period
 
 LOOP_POINT:
     
@@ -34,49 +33,49 @@ LOOP_POINT:
                                     // r1: period of PWM, all pwms used the same period
                                     // r2~r9: duty of each pwm
 
-SBCO  r0, CONST_PRUSHAREDRAM, 0, 40
+    SBCO  r0, CONST_PRUSHAREDRAM, 0, 40
 
     MOV     r10, 0x22000
     LBCO    r11, c1, TCRR, 4 // timestamp of start of pulse
-    ADD     r21, r12, r1  // timeout of period
+    ADD     r21, r11, r1  // timeout of period
 
 PWM_0_Hi:
-    QBBC    PWM_1_Hi, r0, 0    // pwm_0 is not used
+    QBBC    PWM_1_Hi, r0.t0    // pwm_0 is not used
     SET     r30.t0
 SBCO  r11, CONST_PRUSHAREDRAM, 40, 4
 
 PWM_1_Hi:
-    QBBC    PWM_2_Hi, r0, 0    // pwm_0 is not used
+    QBBC    PWM_2_Hi, r0.t1    // pwm_0 is not used
     SET     r30.t1
 SBCO  r11, CONST_PRUSHAREDRAM, 44, 4
 
 PWM_2_Hi:
-    QBBC    PWM_3_Hi, r0, 0    // pwm_0 is not used
+    QBBC    PWM_3_Hi, r0.t2    // pwm_0 is not used
     SET     r30.t2
 SBCO  r11, CONST_PRUSHAREDRAM, 48, 4
 
 PWM_3_Hi:
-    QBBC    PWM_4_Hi, r0, 0    // pwm_0 is not used
+    QBBC    PWM_4_Hi, r0.t3    // pwm_0 is not used
     SET     r30.t3
 SBCO  r11, CONST_PRUSHAREDRAM, 52, 4
 
 PWM_4_Hi:
-    QBBC    PWM_5_Hi, r0, 0    // pwm_0 is not used
+    QBBC    PWM_5_Hi, r0.t4    // pwm_0 is not used
     SET     r30.t4
 SBCO  r11, CONST_PRUSHAREDRAM, 56, 4
 
 PWM_5_Hi:
-    QBBC    PWM_6_Hi, r0, 0    // pwm_0 is not used
+    QBBC    PWM_6_Hi, r0.t5    // pwm_0 is not used
     SET     r30.t5
 SBCO  r11, CONST_PRUSHAREDRAM, 60, 4
 
 PWM_6_Hi:
-    QBBC    PWM_7_Hi, r0, 0    // pwm_0 is not used
+    QBBC    PWM_7_Hi, r0.t6    // pwm_0 is not used
     SET     r30.t6
 SBCO  r11, CONST_PRUSHAREDRAM, 64, 4
 
 PWM_7_Hi:
-    QBBC    PWM_1_Hi, r0, 0    // pwm_0 is not used
+    QBBC    PWM_0_Hi, r0.t7    // pwm_0 is not used
     SET     r30.t7
 SBCO  r11, CONST_PRUSHAREDRAM, 68, 4
 
