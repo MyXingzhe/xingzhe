@@ -119,6 +119,23 @@
 #define PRU_EVTOUT_1_CODE 4
 
 
+// IEP 
+#define IEP_GLOBAL_CFG		0
+#define IEP_GLOBAL_STATUS	4
+#define IEP_COMPEN			8
+#define IEP_COUNT			12
+#define IEP_CMP_CFG			16
+#define IEP_CMP0_REG		20
+#define IEP_CMP1_REG		24
+#define IEP_CMP2_REG		28
+#define IEP_CMP3_REG		32
+#define IEP_CMP4_REG		36
+#define IEP_CMP5_REG		40
+#define IEP_CMP6_REG		44
+#define IEP_CMP7_REG		48
+
+
+
 // PRU CFG (configuration)
 // Access the CFG block through register C4.
 
