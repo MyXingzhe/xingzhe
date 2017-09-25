@@ -51,7 +51,7 @@ START_PWM:
 LOOP_POINT:
     
     LBCO    r0, CONST_DDR, 0, SIZE(pwm_param)
-    .assign pwm_param, r0, r9, param
+    .assign pwm_param, r0, r17, param
 
     SBCO    r0, CONST_PRUSHAREDRAM, 0, 40
 
