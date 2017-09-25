@@ -21,7 +21,7 @@ const double UPDATE_RATE = 50; // desired publication rate of IMU data
 
 #define PRU_BIN_NAME  "/lib/firmware/pru0.bin"
 
-#define MS_TO_CYCLE(ms)    ((ms)*200000)
+#define MS_TO_CYCLE(ms)    ((ms)*2000000)
 
 static int mem_fd;
 static void *ddrMem, *sharedMem;
@@ -75,10 +75,10 @@ void PruPwm::Setup()
     pwm_param = (struct prupwm_param *)(ddrMem + OFFSET_DDR);
     memset(pwm_param, 0, sizeof(struct prupwm_param));
     pwm_param->flag = 0xcf;
-    pwm_param->period = MS_TO_CYCLE(0.5);
+    pwm_param->period = MS_TO_CYCLE(20);
 
     for(i=0;i<8;i++) {
-    	pwm_param->duty[i] = MS_TO_CYCLE(0.1);
+    	pwm_param->duty[i] = MS_TO_CYCLE(1.5);
     	pwm_param->cycle[i] = i;
     }
 
@@ -101,11 +101,6 @@ struct prupwm_param *PruPwm::Report()
 	struct prupwm_param *param;
     prussdrv_map_prumem(PRUSS0_SHARED_DATARAM, &sharedMem);
     param = (struct prupwm_param *) ((unsigned int*)sharedMem + OFFSET_SHAREDRAM);
-
-    for(i=0;i<18;i++) {
-    	printf("0x%x,", *((unsigned int*)sharedMem + OFFSET_SHAREDRAM + i));
-    }
-    printf("\n");
 
 	return param;
 }
