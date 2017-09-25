@@ -15,6 +15,14 @@
     .u32    duty5
     .u32    duty6
     .u32    duty7
+    .u32    cycle0
+    .u32    cycle1
+    .u32    cycle2
+    .u32    cycle3
+    .u32    cycle4
+    .u32    cycle5
+    .u32    cycle6
+    .u32    cycle7
 .ends
 
 

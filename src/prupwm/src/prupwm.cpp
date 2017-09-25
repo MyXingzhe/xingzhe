@@ -21,7 +21,7 @@ const double UPDATE_RATE = 50; // desired publication rate of IMU data
 
 #define PRU_BIN_NAME  "/lib/firmware/pru0.bin"
 
-#define MS_TO_CYCLE(ms)    ((ms)*2000000)
+#define MS_TO_CYCLE(ms)    ((ms)*2000000/1000)
 
 static int mem_fd;
 static void *ddrMem, *sharedMem;
