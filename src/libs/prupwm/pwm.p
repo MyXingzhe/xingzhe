@@ -55,14 +55,20 @@ LOOP_POINT:
 
     SBCO    r0, CONST_PRUSHAREDRAM, 0, 72
 
-    LBCO    r29, C26, IEP_GLOBAL_CFG, 4
-    set     r29.t0
-    SBCO    r29, C26, IEP_GLOBAL_CFG, 4
+    LBCO    r29, c1, TCRR, 4
+    ADD     param.duty0, param.duty0, r29
+    ADD     param.duty1, param.duty1, r29
+    ADD     param.duty2, param.duty2, r29
+    ADD     param.duty3, param.duty3, r29
+    ADD     param.duty4, param.duty4, r29
+    ADD     param.duty5, param.duty5, r29
+    ADD     param.duty6, param.duty6, r29
+    ADD     param.duty7, param.duty7, r29
 
 PERIOD_LOOP:
     LBCO    r29, c1, TCRR, 4
 
-    QBLE    PERIOD_TIMEOUT, r29, param.period
+ #   QBLE    PERIOD_TIMEOUT, r29, param.period
 
 PWM_0:
 mov param.cycle0, r29
