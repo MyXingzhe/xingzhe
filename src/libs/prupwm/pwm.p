@@ -53,7 +53,7 @@ LOOP_POINT:
     LBCO    r0, CONST_DDR, 0, SIZE(pwm_param)
     .assign pwm_param, r0, r17, param
 
-    SBCO    r0, CONST_PRUSHAREDRAM, 0, 40
+    SBCO    r0, CONST_PRUSHAREDRAM, 0, 72
 
     LBCO    r29, C26, IEP_GLOBAL_CFG, 4
     set     r29.t0
@@ -68,6 +68,8 @@ PERIOD_LOOP:
     QBLE    PERIOD_TIMEOUT, r29, param.period
 
 PWM_0:
+mov pwm_param.cycle0, r29
+SBCO    r0, CONST_PRUSHAREDRAM, 0, 72
     QBBC    PWM_1, r0.t0    // pwm_0 is not used
     QBLE    PWM_0_DUTY_TIMEOUT, r29, param.duty0
     SET     r30.t0
