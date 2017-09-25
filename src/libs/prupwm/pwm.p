@@ -68,7 +68,7 @@ LOOP_POINT:
 PERIOD_LOOP:
     LBCO    r29, c1, TCRR, 4
 
- #   QBLE    PERIOD_TIMEOUT, r29, param.period
+//   QBLE    PERIOD_TIMEOUT, r29, param.period
 
 PWM_0:
 mov param.cycle0, r29
