@@ -59,16 +59,13 @@ LOOP_POINT:
     set     r29.t0
     SBCO    r29, C26, IEP_GLOBAL_CFG, 4
 
-    MOV     r29, 1
-    SBCO    r29, C26, IEP_COUNT, 4
-
 PERIOD_LOOP:
-    LBCO    r29, C26, IEP_COUNT, 4
+    LBCO    r29, c1, TCRR, 4
 
     QBLE    PERIOD_TIMEOUT, r29, param.period
 
 PWM_0:
-mov pwm_param.cycle0, r29
+mov param.cycle0, r29
 SBCO    r0, CONST_PRUSHAREDRAM, 0, 72
     QBBC    PWM_1, r0.t0    // pwm_0 is not used
     QBLE    PWM_0_DUTY_TIMEOUT, r29, param.duty0
