@@ -45,8 +45,8 @@ START_PWM:
     MOV     r1, CTPPR_1
     ST32    r0, r1
 
-    MOV     r10, 0x22000
-    LBBO    r11, r10, 0xC, 4 // read the cycle counter
+    MOV     r28, PRUSS_CYCLE
+    LD32    r29, r28 // read the cycle counter
 
 LOOP_POINT:
     
@@ -55,7 +55,7 @@ LOOP_POINT:
 
     SBCO    r0, CONST_PRUSHAREDRAM, 0, 72
 
-    LBCO    r29, c1, TCRR, 4
+    LD32    r29, r28 // read the cycle counter
     ADD     param.duty0, param.duty0, r29
     ADD     param.duty1, param.duty1, r29
     ADD     param.duty2, param.duty2, r29
@@ -73,6 +73,7 @@ PERIOD_LOOP:
 PWM_0:
 mov param.cycle0, r29
 SBCO    r0, CONST_PRUSHAREDRAM, 0, 72
+jmp LOOP_POINT
     QBBC    PWM_1, r0.t0    // pwm_0 is not used
     QBLE    PWM_0_DUTY_TIMEOUT, r29, param.duty0
     SET     r30.t0

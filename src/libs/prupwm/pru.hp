@@ -149,6 +149,7 @@
 // You really don't need the above two constants on the PRU: the base address
 // of the control registers for the currently running PRU is in register C4.
 
+#define PRUSS_CYCLE		0x2200c
 // offsets
 #define CTBIR0 0x20 // constants table block index register 0
 
