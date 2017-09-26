@@ -45,6 +45,11 @@ START_PWM:
     MOV     r1, CTPPR_1
     ST32    r0, r1
 
+    MOV     r28, PRU_ICSS_PRU0_CTRL
+    LD32    r29, r28
+    SET     r29, COUNTER_ENABLE_BIT
+    ST32    r29, r28
+
     MOV     r28, PRUSS_CYCLE
     LD32    r29, r28 // read the cycle counter
 
