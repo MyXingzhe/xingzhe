@@ -66,7 +66,7 @@ LOOP_POINT:
     ADD     param.duty7, param.duty7, r29
 
 PERIOD_LOOP:
-    LBCO    r29, c1, TCRR, 4
+    LD32    r29, r28 // read the cycle counter
 
 //   QBLE    PERIOD_TIMEOUT, r29, param.period
 
