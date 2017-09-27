@@ -25,13 +25,13 @@ int main(int argc, char **argv)
         ros::spinOnce();
 
         pru = prupwm->Report();
-        ROS_INFO("flag=0x%x, period=0x%x, duty0=%d, duty1=%d, duty2=%d, \
+/*        ROS_INFO("flag=0x%x, period=0x%x, duty0=%d, duty1=%d, duty2=%d, \
             duty3=%d, duty4=%d, duty5=%d, duty6=%d, duty7=%d, cycle0=0x%x, \
             cycle1=0x%x, cycle2=0x%x, cycle3=0x%x, cycle4=0x%x, \
             cycle5=0x%x, cycle6=0x%x, cycle7=0x%x", 
             pru->flag, pru->period, pru->duty[0], pru->duty[1], pru->duty[2], pru->duty[3], pru->duty[4], pru->duty[5], pru->duty[6], pru->duty[7],
             pru->cycle[0], pru->cycle[1], pru->cycle[2], pru->cycle[3], pru->cycle[4], pru->cycle[5], pru->cycle[6], pru->cycle[7]);
-
+*/
         sleep_timer.sleep();  // finish sleep time
     }
     return 0;

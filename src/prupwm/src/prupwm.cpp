@@ -88,9 +88,6 @@ void PruPwm::Setup()
 
     usleep(100);
 
-struct prupwm_param *param = Report();
-    printf("flag=0x%x, period=0x%x, cycle0=0x%x, cycle1=0x%x, cycle3=0x%x, cycle4=0x%x\n", param->flag, param->period, param->cycle[0], param->cycle[1], param->cycle[2], param->cycle[3]);
-
     return ;
 }
 
