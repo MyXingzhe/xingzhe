@@ -61,6 +61,7 @@ LOOP_POINT:
     SBCO    r0, CONST_PRUSHAREDRAM, 0, 72
 
     LD32    r29, r28 // read the cycle counter
+    ADD     param.period, param.period, r29
     ADD     param.duty0, param.duty0, r29
     ADD     param.duty1, param.duty1, r29
     ADD     param.duty2, param.duty2, r29
