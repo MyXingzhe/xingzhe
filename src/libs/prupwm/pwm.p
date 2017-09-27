@@ -51,9 +51,10 @@ START_PWM:
     ST32    r29, r28
 
     MOV     r28, PRUSS_CYCLE
-    LD32    r29, r28 // read the cycle counter
 
 LOOP_POINT:
+    MOV     r29, 0
+    ST32    r29, r28
     
     LBCO    r0, CONST_DDR, 0, SIZE(pwm_param)
     .assign pwm_param, r0, r17, param
@@ -62,24 +63,21 @@ LOOP_POINT:
 
     LD32    r29, r28 // read the cycle counter
     ADD     param.period, param.period, r29
-    ADD     param.duty0, param.duty0, r29
-    ADD     param.duty1, param.duty1, r29
-    ADD     param.duty2, param.duty2, r29
-    ADD     param.duty3, param.duty3, r29
-    ADD     param.duty4, param.duty4, r29
-    ADD     param.duty5, param.duty5, r29
-    ADD     param.duty6, param.duty6, r29
-    ADD     param.duty7, param.duty7, r29
+    ADD     param.duty0,  param.duty0,  r29
+    ADD     param.duty1,  param.duty1,  r29
+    ADD     param.duty2,  param.duty2,  r29
+    ADD     param.duty3,  param.duty3,  r29
+    ADD     param.duty4,  param.duty4,  r29
+    ADD     param.duty5,  param.duty5,  r29
+    ADD     param.duty6,  param.duty6,  r29
+    ADD     param.duty7,  param.duty7,  r29
 
 PERIOD_LOOP:
     LD32    r29, r28 // read the cycle counter
 
-//   QBLE    PERIOD_TIMEOUT, r29, param.period
+   QBLE    PERIOD_TIMEOUT, r29, param.period
 
 PWM_0:
-mov param.cycle0, r29
-SBCO    r0, CONST_PRUSHAREDRAM, 0, 72
-jmp PERIOD_LOOP
     QBBC    PWM_1, r0.t0    // pwm_0 is not used
     QBLE    PWM_0_DUTY_TIMEOUT, r29, param.duty0
     SET     r30.t0
