@@ -28,6 +28,8 @@ public:
 
 	void Setup();
 	void Close();
+	void SetDuty(uint32_t channel, float duty);
+	void SetPeriod(float period);
 	struct prupwm_param *Report();
 
 private:

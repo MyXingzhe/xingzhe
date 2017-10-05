@@ -102,6 +102,16 @@ struct prupwm_param *PruPwm::Report()
 	return param;
 }
 
+void PruPwm::SetDuty(uint32_t channel, float duty)
+{
+    prupwm_param->duty[channel] = duty;
+}
+
+void PruPwm::SetPeriod(float period)
+{
+    prupwm_param->period = period;
+}
+
 void PruPwm::Close()
 {
     munmap(ddrMem, 0x0FFFFFFF);

@@ -54,7 +54,8 @@ find_package(catkin REQUIRED COMPONENTS
  add_service_files(
    DIRECTORY ../../serv
    FILES
-#   Service2.srv
+   prupwm_duty.srv
+   prupwm_period.srv
  )
 
 ## Generate actions in the 'action' folder
