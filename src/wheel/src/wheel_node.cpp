@@ -6,7 +6,7 @@
 int main(int argc, char **argv)
 {
 	// Set up ROS node.
-	ros::init(argc, argv, "Ear");
+	ros::init(argc, argv, "wheel");
 	ros::NodeHandle n;
 	int rate = 5;
 
@@ -19,7 +19,7 @@ int main(int argc, char **argv)
 	// Tell ROS how fast to run this node.
 	ros::Rate r(rate);
 
-	ROS_INFO("Start Ear Node");
+	ROS_INFO("Start wheel Node");
 
 	// Main loop.
 	while (n.ok())
