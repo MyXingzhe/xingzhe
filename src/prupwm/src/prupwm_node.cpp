@@ -1,22 +1,28 @@
 #include "ros/ros.h"
 #include "std_msgs/Float32.h"
 #include "sensor_msgs/Imu.h"
-#include "prupwm_duty.h"
-#include "prupwm_period.h"
-
 #include "prupwm.h"
+#include "prupwm/prupwm_duty.h"
+#include "prupwm/prupwm_period.h"
+
 
 const double UPDATE_RATE = 50; // desired publication rate of IMU data
 
-PruPwm *prupwm;
-void SetDuty(prupwm::prupwm_duty::Request &Req)
+PruPwm *m_prupwm;
+bool SetDuty(prupwm::prupwm_duty::Request &Req,
+             prupwm::prupwm_duty::Response &)
 {
-    prupwm->SetPwmDuty(Req.duty);
+    m_prupwm->SetDuty(Req.channel, Req.duty);
+
+    return true;
 }
 
-void SetPeriod(prupwm::prupwm_period::Request &Req)
+bool SetPeriod(prupwm::prupwm_period::Request &Req,
+               prupwm::prupwm_period::Response &)
 {
-    prupwm->SetPeriod(Req.period);
+    m_prupwm->SetPeriod(Req.period);
+
+    return true;
 }
 
 int main(int argc, char **argv)
@@ -28,8 +34,8 @@ int main(int argc, char **argv)
     ros::NodeHandle nh;  // create a node handle to pass to the class constructor
 
     ROS_INFO("main;: instantiating an object of type pru pwm");
-    prupwm = new PruPwm();  // instantiate an ros_mpu6050 object and pass in pointer to nodehandle for constructor to use
-    prupwm->Setup();
+    m_prupwm = new PruPwm();  // instantiate an ros_mpu6050 object and pass in pointer to nodehandle for constructor to use
+    m_prupwm->Setup();
     ros::Rate sleep_timer(UPDATE_RATE);  // a timer for desired rate, 50Hz is a good speed. We set to half for 2 seperate sleeps
 
     ros::ServiceServer service_duty = nh.advertiseService("SetDuty", SetDuty);
@@ -39,7 +45,7 @@ int main(int argc, char **argv)
     while (ros::ok()) {
         ros::spinOnce();
 
-        pru = prupwm->Report();
+//        pru = m_prupwm->Report();
 /*        ROS_INFO("flag=0x%x, period=0x%x, duty0=%d, duty1=%d, duty2=%d, \
             duty3=%d, duty4=%d, duty5=%d, duty6=%d, duty7=%d, cycle0=0x%x, \
             cycle1=0x%x, cycle2=0x%x, cycle3=0x%x, cycle4=0x%x, \

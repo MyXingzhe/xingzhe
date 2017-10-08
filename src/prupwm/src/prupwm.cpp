@@ -104,12 +104,12 @@ struct prupwm_param *PruPwm::Report()
 
 void PruPwm::SetDuty(uint32_t channel, float duty)
 {
-    prupwm_param->duty[channel] = duty;
+    pwm_param->duty[channel] = duty;
 }
 
 void PruPwm::SetPeriod(float period)
 {
-    prupwm_param->period = period;
+    pwm_param->period = period;
 }
 
 void PruPwm::Close()
