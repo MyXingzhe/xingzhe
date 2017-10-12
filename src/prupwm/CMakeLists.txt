@@ -116,9 +116,9 @@ catkin_package(
 #include_directories(include)
 include_directories(include
   ${catkin_INCLUDE_DIRS}
-  ${prupwm_DEVEL_PREFIX}/include/prupwm/
+  ${prupwm_DEVEL_PREFIX}/prupwm/
   ../libs/imu/
-  ./include/prupwm/
+  ./prupwm/
 )
 
 ## Declare a C++ library
