@@ -14,9 +14,7 @@
 struct prupwm_param{
     uint32_t flag;
     uint32_t period;
-    uint32_t duty[8];
-
-    uint32_t cycle[8];
+    uint32_t duty[6];
 };
 
 class PruPwm

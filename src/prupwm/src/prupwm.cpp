@@ -77,9 +77,8 @@ void PruPwm::Setup()
     pwm_param->flag = 0xcf;
     pwm_param->period = MS_TO_CYCLE(20);
 
-    for(i=0;i<8;i++) {
+    for(i=0;i<6;i++) {
     	pwm_param->duty[i] = MS_TO_CYCLE(1.5);
-    	pwm_param->cycle[i] = i;
     }
 
     /* Execute example on PRU */

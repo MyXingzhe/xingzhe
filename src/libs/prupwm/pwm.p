@@ -13,16 +13,6 @@
     .u32    duty3
     .u32    duty4
     .u32    duty5
-    .u32    duty6
-    .u32    duty7
-    .u32    cycle0
-    .u32    cycle1
-    .u32    cycle2
-    .u32    cycle3
-    .u32    cycle4
-    .u32    cycle5
-    .u32    cycle6
-    .u32    cycle7
 .ends
 
 
@@ -69,8 +59,6 @@ LOOP_POINT:
     ADD     param.duty3,  param.duty3,  r29
     ADD     param.duty4,  param.duty4,  r29
     ADD     param.duty5,  param.duty5,  r29
-    ADD     param.duty6,  param.duty6,  r29
-    ADD     param.duty7,  param.duty7,  r29
 
 PERIOD_LOOP:
     LD32    r29, r28 // read the cycle counter
@@ -112,34 +100,19 @@ PWM_3_DUTY_TIMEOUT:
 PWM_4:
     QBBC    PWM_5, r0.t4    // pwm_0 is not used
     QBLE    PWM_4_DUTY_TIMEOUT, r29, param.duty4
-    SET     r30.t4
+    SET     r30.t14
     JMP     PWM_5
 PWM_4_DUTY_TIMEOUT:
     CLR     r30.t4
 
 PWM_5:
-    QBBC    PWM_6, r0.t5    // pwm_0 is not used
+    QBBC    PERIOD_LOOP, r0.t5    // pwm_0 is not used
     QBLE    PWM_5_DUTY_TIMEOUT, r29, param.duty5
-    SET     r30.t5
-    JMP     PWM_6
-PWM_5_DUTY_TIMEOUT:
-    CLR     r30.t5
-
-PWM_6:
-    QBBC    PWM_7, r0.t6    // pwm_0 is not used
-    QBLE    PWM_6_DUTY_TIMEOUT, r29, param.duty6
-    SET     r30.t6
-    JMP     PWM_7
-PWM_6_DUTY_TIMEOUT:
-    CLR     r30.t6
-
-PWM_7:
-    QBBC    PERIOD_LOOP, r0.t7    // pwm_0 is not used
-    QBLE    PWM_7_DUTY_TIMEOUT, r29, param.duty7
-    SET     r30.t7
+    SET     r30.t15
     JMP     PERIOD_LOOP
-PWM_7_DUTY_TIMEOUT:
-    CLR     r30.t7
+PWM_5_DUTY_TIMEOUT:PERIOD_LOOP
+    CLR     r30.t15
+
 
 
 PERIOD_TIMEOUT:
@@ -157,16 +130,10 @@ PERIOD_TIMEOUT_PWM_3:
     SET     r30.t3
 PERIOD_TIMEOUT_PWM_4:
     QBBC    PERIOD_TIMEOUT_PWM_1, r0.t4    // pwm_0 is not used
-    SET     r30.t4
+    SET     r30.t14
 PERIOD_TIMEOUT_PWM_5:
     QBBC    PERIOD_TIMEOUT_PWM_1, r0.t5    // pwm_0 is not used
-    SET     r30.t5
-PERIOD_TIMEOUT_PWM_6:
-    QBBC    PERIOD_TIMEOUT_PWM_1, r0.t6    // pwm_0 is not used
-    SET     r30.t6
-PERIOD_TIMEOUT_PWM_7:
-    QBBC    PERIOD_TIMEOUT_PWM_1, r0.t7    // pwm_0 is not used
-    SET     r30.t7
+    SET     r30.t15
     
     JMP LOOP_POINT
 
