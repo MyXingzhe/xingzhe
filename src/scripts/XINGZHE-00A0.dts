@@ -19,10 +19,10 @@
         "P8.28",    /* pr1_pru1_pru_r31_10 */
         "P8.29",    /* pr1_pru1_pru_r31_9 */
 
-        "P8.22",    /* motor, enable */
-        "P8.23",    /* motor, enable */
-        "P8.24",    /* motor, enable */
-        "P8.25",    /* motor, enable */
+        "P9.21",    /* motor, enable */
+        "P9.22",    /* motor, enable */
+        "P9.17",    /* motor, enable */
+        "P9.18",    /* motor, enable */
 
         "P9.17",    /*I2C1_SCL*/
         "P9.18",    /*I2C1_SDA*/
