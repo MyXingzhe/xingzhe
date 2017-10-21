@@ -1,7 +1,7 @@
 .origin 0
 .entrypoint START_PWM
 
-#include "pru.hp"
+#include "../include/pru.hp"
 
 
 .struct pwm_param
