@@ -56,6 +56,7 @@ find_package(catkin REQUIRED COMPONENTS
    FILES
    prupwm_duty.srv
    prupwm_period.srv
+   dc_motor.srv
  )
 
 ## Generate actions in the 'action' folder

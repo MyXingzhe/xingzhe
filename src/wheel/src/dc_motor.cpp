@@ -6,7 +6,7 @@
 #include "dc_motor.h"
 
 #include "prupwm/prupwm_duty.h"
-#include "prupwm/prupwm_period.h"
+
 
 DCMotor::DCMotor(uint32_t channel, uint32_t connector, uint32_t pin)
 {

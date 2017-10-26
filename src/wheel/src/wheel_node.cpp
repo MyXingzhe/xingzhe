@@ -1,7 +1,26 @@
 #include "ros/ros.h"
 #include "std_msgs/Float32.h"
 
+#include "wheel/dc_motor.h"
 #include "wheel.h"
+
+bool StartMotor(wheel::dc_motor::Request &Req,
+             wheel::dc_motor::Response &)
+{
+//    dc_motor->SetDuty(Req.channel, Req.duty);
+
+    return true;
+}
+
+bool StopMotor(wheel::dc_motor::Request &Req,
+             wheel::dc_motor::Response &)
+{
+//    dc_motor->SetDuty(Req.channel, Req.duty);
+
+    return true;
+}
+
+
 
 int main(int argc, char **argv)
 {
