@@ -118,7 +118,7 @@ catkin_package(
 include_directories(
   ${catkin_INCLUDE_DIRS}
   ../libs/prupwm/
-  ./include/wheel/
+  ./include/
 )
 
 ## Declare a C++ library
@@ -139,6 +139,7 @@ include_directories(
 ## Specify libraries to link a library or executable target against
  target_link_libraries(wheel_node
    ${catkin_LIBRARIES}
+   mraa
  )
 
 #############

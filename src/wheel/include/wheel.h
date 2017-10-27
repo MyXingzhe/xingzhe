@@ -7,10 +7,11 @@ public:
 	~Wheel();
 
 private:
+	char desc[16];
 
 public:
 
 private:
-	PRUPWM *m_left_pwm;
-	PRUPWM *m_right_pwm;
+	uint32_t radius;
+
 };

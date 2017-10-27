@@ -2,6 +2,7 @@
 #include <time.h>
 #include <stdint.h>
 
+#include "mraa.hpp"
 #include "ros/ros.h"
 #include "dc_motor.h"
 
