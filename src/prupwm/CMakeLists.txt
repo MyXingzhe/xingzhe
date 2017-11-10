@@ -52,7 +52,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 ## Generate services in the 'srv' folder
  add_service_files(
-   DIRECTORY ../../serv
+   DIRECTORY ../../srv
    FILES
    prupwm_duty.srv
    prupwm_period.srv

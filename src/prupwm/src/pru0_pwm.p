@@ -4,6 +4,16 @@
 #include "../include/pru.hp"
 
 
+// currently we support 6 pwms in pru0
+//
+//   PWM0     "P9.31",    /* pr1_pru0_pru_r30_0 */
+//   PWM1     "P9.29",    /* pr1_pru0_pru_r30_1 */
+//   PWM2     "P9.30",    /* pr1_pru0_pru_r30_2 */
+//   PWM3     "P9.28",    /* pr1_pru0_pru_r30_3 */
+//   PWM4     "P8.11",    /* pr1_pru0_pru_r30_15 */
+//   PWM5     "P8.12",    /* pr1_pru0_pru_r30_14 */
+
+
 .struct pwm_param
     .u32    flag
     .u32    period
@@ -120,19 +130,19 @@ PERIOD_TIMEOUT_PWM_0:
     QBBC    PERIOD_TIMEOUT_PWM_1, r0.t0    // pwm_0 is not used
     SET     r30.t0
 PERIOD_TIMEOUT_PWM_1:
-    QBBC    PERIOD_TIMEOUT_PWM_1, r0.t1    // pwm_0 is not used
+    QBBC    PERIOD_TIMEOUT_PWM_1, r0.t1    // pwm_1 is not used
     SET     r30.t1
 PERIOD_TIMEOUT_PWM_2:
-    QBBC    PERIOD_TIMEOUT_PWM_1, r0.t2    // pwm_0 is not used
+    QBBC    PERIOD_TIMEOUT_PWM_1, r0.t2    // pwm_2 is not used
     SET     r30.t2
 PERIOD_TIMEOUT_PWM_3:
-    QBBC    PERIOD_TIMEOUT_PWM_1, r0.t3    // pwm_0 is not used
+    QBBC    PERIOD_TIMEOUT_PWM_1, r0.t3    // pwm_3 is not used
     SET     r30.t3
 PERIOD_TIMEOUT_PWM_4:
-    QBBC    PERIOD_TIMEOUT_PWM_1, r0.t4    // pwm_0 is not used
+    QBBC    PERIOD_TIMEOUT_PWM_1, r0.t4    // pwm_4 is not used
     SET     r30.t14
 PERIOD_TIMEOUT_PWM_5:
-    QBBC    PERIOD_TIMEOUT_PWM_1, r0.t5    // pwm_0 is not used
+    QBBC    PERIOD_TIMEOUT_PWM_1, r0.t5    // pwm_5 is not used
     SET     r30.t15
     
     JMP LOOP_POINT
