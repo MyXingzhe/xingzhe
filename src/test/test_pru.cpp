@@ -110,8 +110,13 @@ main(int argc, char const *argv[])
                 else
                     pwm_param->duty[0] = pwm_param->period;
 
-                break;
                 dump_data(pwm_param);
+                break;
+
+            case '0':
+                pwm_param->duty[0] = 0;
+                dump_data(pwm_param);
+                break;
 
             case 'q':
                 return -1;
