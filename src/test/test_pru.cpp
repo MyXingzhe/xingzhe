@@ -101,6 +101,7 @@ main(int argc, char const *argv[])
                 else
                     pwm_param->duty[0] = 0;
 
+                dump_data(pwm_param);
                 break;
 
             case 'u':
@@ -110,11 +111,13 @@ main(int argc, char const *argv[])
                     pwm_param->duty[0] = pwm_param->period;
 
                 break;
+                dump_data(pwm_param);
 
             case 'q':
                 return -1;
 
             default:
+                dump_data(pwm_param);
                 break;
         }
         usleep(100);
