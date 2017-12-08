@@ -1,12 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 #include <prussdrv.h>
 #include <pruss_intc_mapping.h>
 
+#define PRU_BIN_NAME  "/lib/firmware/pru0.bin"
 
 int
 main(int argc, char const *argv[])
 {
     int ret;
     int i;
+    int mem_fd;
+
     tpruss_intc_initdata pruss_intc_initdata = PRUSS_INTC_INITDATA;
 
     printf("\nINFO: Starting PRU.\r\n");
