@@ -4,6 +4,8 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#include <errno.h>
+#include <string.h>
 
 #include <prussdrv.h>
 #include <pruss_intc_mapping.h>
@@ -11,6 +13,13 @@
 #define PRU_BIN_NAME  "/lib/firmware/pru0.bin"
 
 #define MS_TO_CYCLE(ms)    ((ms)*2000000/1000)
+
+#define DDR_BASEADDR     0x80000000
+#define OFFSET_DDR       0x00001000
+#define OFFSET_SHAREDRAM 2048       //equivalent with 0x00002000
+
+#define PRUSS0_SHARED_DATARAM    4
+
 
 typedef unsigned int uint32_t;
 
@@ -26,6 +35,7 @@ main(int argc, char const *argv[])
     int ret;
     int i;
     int mem_fd;
+    void *ddrMem;
 
     tpruss_intc_initdata pruss_intc_initdata = PRUSS_INTC_INITDATA;
 
