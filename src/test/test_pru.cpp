@@ -6,6 +6,14 @@
 
 #define PRU_BIN_NAME  "/lib/firmware/pru0.bin"
 
+#define MS_TO_CYCLE(ms)    ((ms)*2000000/1000)
+
+struct prupwm_param{
+    uint32_t flag;
+    uint32_t period;
+    uint32_t duty[6];
+};
+
 int
 main(int argc, char const *argv[])
 {
@@ -57,8 +65,6 @@ main(int argc, char const *argv[])
     /* Execute example on PRU */
     ret = prussdrv_exec_program (0, PRU_BIN_NAME);
     printf("\tINFO: Executing PRU. ret=%d\r\n", ret);
-
-    usleep(100);
 
     return 0;
 }
