@@ -84,5 +84,9 @@ main(int argc, char const *argv[])
     ret = prussdrv_exec_program (0, PRU_BIN_NAME);
     printf("\tINFO: Executing PRU. ret=%d\r\n", ret);
 
+    while(getchar()!= 'q') {
+        usleep(100);
+    }
+
     return 0;
 }
