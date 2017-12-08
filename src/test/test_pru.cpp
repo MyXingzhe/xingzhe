@@ -84,22 +84,22 @@ main(int argc, char const *argv[])
     ret = prussdrv_exec_program (0, PRU_BIN_NAME);
     printf("\tINFO: Executing PRU. ret=%d\r\n", ret);
 
-    while() {
+    while(1) {
         switch(getchar())
         {
             case 'd':
-                if(pwm_param->duty > 100)
-                    pwm_param->duty -= 100;
+                if(pwm_param->duty[0] > 100)
+                    pwm_param->duty[0] -= 100;
                 else
-                    pwm_param->duty = 0;
+                    pwm_param->duty[0] = 0;
 
                 break;
 
             case 'u':
-                if(pwm_param->duty < pwm_param->period)
-                    pwm_param->duty += 100;
+                if(pwm_param->duty[0] < pwm_param->period)
+                    pwm_param->duty[0] += 100;
                 else
-                    pwm_param->duty = pwm_param->period;
+                    pwm_param->duty[0] = pwm_param->period;
 
                 break;
 
