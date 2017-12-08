@@ -1,5 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/mman.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 
 #include <prussdrv.h>
 #include <pruss_intc_mapping.h>
@@ -7,6 +11,8 @@
 #define PRU_BIN_NAME  "/lib/firmware/pru0.bin"
 
 #define MS_TO_CYCLE(ms)    ((ms)*2000000/1000)
+
+typedef unsigned int uint32_t;
 
 struct prupwm_param{
     uint32_t flag;
@@ -32,7 +38,7 @@ main(int argc, char const *argv[])
     if (ret)
     {
         printf("prussdrv_open open failed\n");
-        return ;
+        return -1;
     }
 
      /* Get the interrupt initialized */
@@ -42,7 +48,7 @@ main(int argc, char const *argv[])
     mem_fd = open("/dev/mem", O_RDWR);
     if (mem_fd < 0) {
         printf("Failed to open /dev/mem (%s)\n", strerror(errno));
-        return ;
+        return -1;
     }
 
     /* map the DDR memory */
@@ -50,7 +56,7 @@ main(int argc, char const *argv[])
     if (ddrMem == NULL) {
         printf("Failed to map the device (%s)\n", strerror(errno));
         close(mem_fd);
-        return ;
+        return -1;
     }
 
     pwm_param = (struct prupwm_param *)(ddrMem + OFFSET_DDR);
