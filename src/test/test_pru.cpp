@@ -30,6 +30,14 @@ struct prupwm_param{
     uint32_t duty[6];
 };
 
+void dump_data(struct prupwm_param *pwm_param)
+{
+    printf("PARAM FOR PRM PWM:\n");
+    printf("==============================================\n");
+    printf("%x08    %x08    %x08    %x08    %x08    %x08\n", pwm_param->duty[0], pwm_param->duty[1], pwm_param->duty[2], pwm_param->duty[3], pwm_param->duty[4], pwm_param->duty[5]);
+    printf("==============================================\n");
+}
+
 int
 main(int argc, char const *argv[])
 {
