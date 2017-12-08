@@ -6,6 +6,7 @@
 #include <fcntl.h>
 #include <errno.h>
 #include <string.h>
+#include <unistd.h>
 
 #include <prussdrv.h>
 #include <pruss_intc_mapping.h>
@@ -36,6 +37,7 @@ main(int argc, char const *argv[])
     int i;
     int mem_fd;
     void *ddrMem;
+    struct prupwm_param *pwm_param;
 
     tpruss_intc_initdata pruss_intc_initdata = PRUSS_INTC_INITDATA;
 
