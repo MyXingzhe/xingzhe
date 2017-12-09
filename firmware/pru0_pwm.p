@@ -113,7 +113,7 @@ PWM_4:
     SET     r30.t14
     JMP     PWM_5
 PWM_4_DUTY_TIMEOUT:
-    CLR     r30.t4
+    CLR     r30.t14
 
 PWM_5:
     QBBC    PERIOD_LOOP, r0.t5    // pwm_0 is not used
