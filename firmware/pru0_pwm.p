@@ -1,7 +1,7 @@
 .origin 0
 .entrypoint START_PWM
 
-#include "../include/pru.hp"
+#include "pru.hp"
 
 
 // currently we support 6 pwms in pru0
