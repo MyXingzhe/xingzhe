@@ -53,7 +53,9 @@ START_PWM:
     MOV     r28, PRUSS_CYCLE
 
 LOOP_POINT:
-    LBCO    r0, CONST_DDR, 0, 4
+    LBCO    r0, CONST_PRUDRAM, 0, 4
+    MOV     r0, 0x5a
+    SBCO    r0, CONST_PRUDRAM, 0, 4
 
 PWM_0:
     QBBC    CLR_PWM_0, r0.t0    // pwm_0 is not used
@@ -84,18 +86,18 @@ CLR_PWM_3:
     CLR     r30.t3
 
 PWM_4:
-    QBBC    CLR_PWM_4, r0.t4    // pwm_0 is not used
-    SET     r30.t4
+    QBBC    CLR_PWM_4, r0.t14    // pwm_0 is not used
+    SET     r30.t14
     JMP     PWM_5
 CLR_PWM_4:
-    CLR     r30.t4
+    CLR     r30.t14
 
 PWM_5:
-    QBBC    CLR_PWM_5, r0.t5    // pwm_0 is not used
-    SET     r30.t5
+    QBBC    CLR_PWM_5, r0.t15    // pwm_0 is not used
+    SET     r30.t15
     JMP     LOOP_POINT
 CLR_PWM_5:
-    CLR     r30.t5
+    CLR     r30.t15
 
 
     JMP LOOP_POINT
