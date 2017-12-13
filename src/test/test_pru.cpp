@@ -30,12 +30,41 @@ struct prupwm_param{
     uint32_t duty[6];
 };
 
-void dump_data(struct prupwm_param *pwm_param)
+void dump_data_duty(struct prupwm_param *pwm_param)
 {
-    printf("PARAM FOR PRM PWM:\n");
+    int i;
+
+    printf("Duty FOR PRM PWM:\n");
     printf("==============================================\n");
-    printf("%x08    %x08    %x08    %x08    %x08    %x08\n", pwm_param->duty[0], pwm_param->duty[1], pwm_param->duty[2], pwm_param->duty[3], pwm_param->duty[4], pwm_param->duty[5]);
+    fir(i=0;i<6;i++) {
+        printf("%x08", pwm_param->duty[i]);
+    }
+    printf("\n==============================================\n");
+}
+
+void dump_data_flag(struct prupwm_param *pwm_param)
+{
+    int i;
+
+    printf("switch FOR PRM PWM:\n");
     printf("==============================================\n");
+    fir(i=0;i<6;i++) {
+        printf("PWM-%d: ", i);
+        if(pwm_param->flag & (1 << i))
+            printf("ON\n");
+        else
+            printf("OFF\n");
+    }
+    printf("\n==============================================\n");
+}
+
+void switch_flag(struct prupwm_param *pwm_param, int bit)
+{
+    if(pwm_param->flag & (1<<bit)) {
+        pwm_param->flag &= (~(1<<bit));
+    } else {
+        pwm_param->flag |= (1<<bit);
+    }
 }
 
 int
@@ -101,7 +130,7 @@ main(int argc, char const *argv[])
                 else
                     pwm_param->duty[0] = 0;
 
-                dump_data(pwm_param);
+                dump_data_duty(pwm_param);
                 break;
 
             case 'u':
@@ -110,19 +139,35 @@ main(int argc, char const *argv[])
                 else
                     pwm_param->duty[0] = pwm_param->period;
 
-                dump_data(pwm_param);
+                dump_data_duty(pwm_param);
                 break;
 
             case '0':
                 pwm_param->duty[0] = 0;
-                dump_data(pwm_param);
+                dump_data_duty(pwm_param);
                 break;
 
             case 'q':
                 return -1;
 
+            case 0:
+                switch_flag(0);
+            case 1:
+                switch_flag(1);
+            case 2:
+                switch_flag(2);
+            case 3:
+                switch_flag(3);
+            case 4:
+                switch_flag(4);
+            case 5:
+                switch_flag(5);
+                dump_data_flag(pwm_param);
+                break;
+
             default:
-                dump_data(pwm_param);
+                dump_data_flag(pwm_param);
+                dump_data_duty(pwm_param);
                 break;
         }
         usleep(100);
