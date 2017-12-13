@@ -47,7 +47,7 @@ void dump_data_flag(struct prupwm_param *pwm_param)
     int i;
 
     printf("switch FOR PRM PWM:\n");
-    printf("==============================================\n");
+    printf("============================================== %x, %x\n", pwm_param->flag, pwm_param->period);
     for(i=0;i<6;i++) {
         printf("PWM-%d: ", i);
         if(pwm_param->flag & (1 << i))

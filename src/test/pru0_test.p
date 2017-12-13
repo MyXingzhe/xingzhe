@@ -54,8 +54,8 @@ START_PWM:
 
 LOOP_POINT:
     LBCO    r0, CONST_PRUSHAREDRAM, 0, 4
-    MOV     r0, 0x5a
-    SBCO    r0, CONST_PRUSHAREDRAM, 0, 4
+    LBCO    r0, CONST_PRUSHAREDRAM, 4, 4
+
 
 PWM_0:
     QBBC    CLR_PWM_0, r0.t0    // pwm_0 is not used
