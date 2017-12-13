@@ -135,14 +135,24 @@ main(int argc, char const *argv[])
 
             case '0':
                 switch_flag(pwm_param, 0);
+                dump_data_flag(pwm_param);
+                break;
             case '1':
                 switch_flag(pwm_param, 1);
+                dump_data_flag(pwm_param);
+                break;
             case '2':
                 switch_flag(pwm_param, 2);
+                dump_data_flag(pwm_param);
+                break;
             case '3':
                 switch_flag(pwm_param, 3);
+                dump_data_flag(pwm_param);
+                break;
             case '4':
                 switch_flag(pwm_param, 4);
+                dump_data_flag(pwm_param);
+                break;
             case '5':
                 switch_flag(pwm_param, 5);
                 dump_data_flag(pwm_param);
