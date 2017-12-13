@@ -37,9 +37,9 @@ void dump_data_duty(struct prupwm_param *pwm_param)
     printf("Duty FOR PRM PWM:\n");
     printf("==============================================\n");
     for(i=0;i<6;i++) {
-        printf("%x08", pwm_param->duty[i]);
+        printf("%x08\n", pwm_param->duty[i]);
     }
-    printf("\n==============================================\n");
+    printf("==============================================\n");
 }
 
 void dump_data_flag(struct prupwm_param *pwm_param)
@@ -49,22 +49,24 @@ void dump_data_flag(struct prupwm_param *pwm_param)
     printf("switch FOR PRM PWM:\n");
     printf("==============================================\n");
     for(i=0;i<6;i++) {
-        printf("PWM-%d: ", i);
+        printf("PWM-%d: %x", i, pwm_param->flag);
         if(pwm_param->flag & (1 << i))
             printf("ON\n");
         else
             printf("OFF\n");
     }
-    printf("\n==============================================\n");
+    printf("==============================================\n");
 }
 
 void switch_flag(struct prupwm_param *pwm_param, int bit)
 {
+    printf("before switch flag: %x\n", pwm_param->flag);
     if(pwm_param->flag & (1<<bit)) {
         pwm_param->flag &= (~(1<<bit));
     } else {
         pwm_param->flag |= (1<<bit);
     }
+    printf("after switch flag: %x\n", pwm_param->flag);
 }
 
 int
