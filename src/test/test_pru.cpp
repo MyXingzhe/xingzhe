@@ -94,7 +94,7 @@ main(int argc, char const *argv[])
 
     prussdrv_map_prumem(PRUSS0_SHARED_DATARAM, &sharedMem);
 
-    pwm_param = (struct prupwm_param *)(sharedMem + OFFSET_DDR);
+    pwm_param = (struct prupwm_param *)(sharedMem + OFFSET_SHAREDRAM);
     memset(pwm_param, 0, sizeof(struct prupwm_param));
     pwm_param->flag = 0xcf;
     pwm_param->period = MS_TO_CYCLE(20);
