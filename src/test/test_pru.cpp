@@ -72,8 +72,7 @@ main(int argc, char const *argv[])
 {
     int ret;
     int i;
-    int mem_fd;
-    void *ddrMem;
+    void *sharedMem;
     struct prupwm_param *pwm_param;
 
     tpruss_intc_initdata pruss_intc_initdata = PRUSS_INTC_INITDATA;
@@ -93,22 +92,9 @@ main(int argc, char const *argv[])
      /* Get the interrupt initialized */
     prussdrv_pruintc_init(&pruss_intc_initdata);
 
-   /* open the device */
-    mem_fd = open("/dev/mem", O_RDWR);
-    if (mem_fd < 0) {
-        printf("Failed to open /dev/mem (%s)\n", strerror(errno));
-        return -1;
-    }
+    prussdrv_map_prumem(PRUSS0_SHARED_DATARAM, &sharedMem);
 
-    /* map the DDR memory */
-    ddrMem = mmap(0, 0x0FFFFFFF, PROT_WRITE | PROT_READ, MAP_SHARED, mem_fd, DDR_BASEADDR);
-    if (ddrMem == NULL) {
-        printf("Failed to map the device (%s)\n", strerror(errno));
-        close(mem_fd);
-        return -1;
-    }
-
-    pwm_param = (struct prupwm_param *)(ddrMem + OFFSET_DDR);
+    pwm_param = (struct prupwm_param *)(sharedMem + OFFSET_DDR);
     memset(pwm_param, 0, sizeof(struct prupwm_param));
     pwm_param->flag = 0xcf;
     pwm_param->period = MS_TO_CYCLE(20);
