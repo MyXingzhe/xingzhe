@@ -150,17 +150,17 @@ main(int argc, char const *argv[])
             case 'q':
                 return -1;
 
-            case 0:
+            case '0':
                 switch_flag(0);
-            case 1:
+            case '1':
                 switch_flag(1);
-            case 2:
+            case '2':
                 switch_flag(2);
-            case 3:
+            case '3':
                 switch_flag(3);
-            case 4:
+            case '4':
                 switch_flag(4);
-            case 5:
+            case '5':
                 switch_flag(5);
                 dump_data_flag(pwm_param);
                 break;
