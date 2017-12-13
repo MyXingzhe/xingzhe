@@ -92,9 +92,9 @@ main(int argc, char const *argv[])
      /* Get the interrupt initialized */
     prussdrv_pruintc_init(&pruss_intc_initdata);
 
-    prussdrv_map_prumem(PRUSS0_SHARED_DATARAM, &sharedMem);
+    prussdrv_map_prumem(PRUSS0_PRU0_DATARAM, &sharedMem);
 
-    pwm_param = (struct prupwm_param *)(sharedMem + OFFSET_SHAREDRAM);
+    pwm_param = (struct prupwm_param *)(sharedMem);
     memset(pwm_param, 0, sizeof(struct prupwm_param));
     pwm_param->flag = 0xcf;
     pwm_param->period = MS_TO_CYCLE(20);
