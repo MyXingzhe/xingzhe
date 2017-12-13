@@ -56,34 +56,46 @@ LOOP_POINT:
     LBCO    r0, CONST_DDR, 0, 4
 
 PWM_0:
-    QBBC    PWM_1, r0.t0    // pwm_0 is not used
+    QBBC    CLR_PWM_0, r0.t0    // pwm_0 is not used
     SET     r30.t0
+    JMP     PWM_1
+CLR_PWM_0:
     CLR     r30.t0
 
 PWM_1:
-    QBBC    PWM_2, r0.t1    // pwm_0 is not used
+    QBBC    CLR_PWM_1, r0.t1    // pwm_0 is not used
     SET     r30.t1
+    JMP     PWM_2
+CLR_PWM_1:
     CLR     r30.t1
 
 PWM_2:
-    QBBC    PWM_3, r0.t2    // pwm_0 is not used
+    QBBC    CLR_PWM_2, r0.t2    // pwm_0 is not used
     SET     r30.t2
+    JMP     PWM_3
+CLR_PWM_2:
     CLR     r30.t2
 
 PWM_3:
-    QBBC    PWM_4, r0.t3    // pwm_0 is not used
+    QBBC    CLR_PWM_3, r0.t3    // pwm_0 is not used
     SET     r30.t3
+    JMP     PWM_4
+CLR_PWM_3:
     CLR     r30.t3
 
 PWM_4:
-    QBBC    PWM_5, r0.t4    // pwm_0 is not used
-    SET     r30.t14
-    CLR     r30.t14
+    QBBC    CLR_PWM_4, r0.t4    // pwm_0 is not used
+    SET     r30.t4
+    JMP     PWM_5
+CLR_PWM_4:
+    CLR     r30.t4
 
 PWM_5:
-    QBBC    PERIOD_LOOP, r0.t5    // pwm_0 is not used
-    SET     r30.t15
-    CLR     r30.t15
+    QBBC    CLR_PWM_5, r0.t5    // pwm_0 is not used
+    SET     r30.t5
+    JMP     LOOP_POINT
+CLR_PWM_5:
+    CLR     r30.t5
 
 
     JMP LOOP_POINT
