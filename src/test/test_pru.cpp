@@ -36,7 +36,7 @@ void dump_data_duty(struct prupwm_param *pwm_param)
 
     printf("Duty FOR PRM PWM:\n");
     printf("==============================================\n");
-    fir(i=0;i<6;i++) {
+    for(i=0;i<6;i++) {
         printf("%x08", pwm_param->duty[i]);
     }
     printf("\n==============================================\n");
@@ -48,7 +48,7 @@ void dump_data_flag(struct prupwm_param *pwm_param)
 
     printf("switch FOR PRM PWM:\n");
     printf("==============================================\n");
-    fir(i=0;i<6;i++) {
+    for(i=0;i<6;i++) {
         printf("PWM-%d: ", i);
         if(pwm_param->flag & (1 << i))
             printf("ON\n");
@@ -139,11 +139,6 @@ main(int argc, char const *argv[])
                 else
                     pwm_param->duty[0] = pwm_param->period;
 
-                dump_data_duty(pwm_param);
-                break;
-
-            case '0':
-                pwm_param->duty[0] = 0;
                 dump_data_duty(pwm_param);
                 break;
 
