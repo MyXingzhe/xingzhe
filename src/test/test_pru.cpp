@@ -11,7 +11,7 @@
 #include <prussdrv.h>
 #include <pruss_intc_mapping.h>
 
-#define PRU_BIN_NAME  "/lib/firmware/pru0.bin"
+#define PRU_BIN_NAME  "./pru0.bin"
 
 #define MS_TO_CYCLE(ms)    ((ms)*2000000/1000)
 
