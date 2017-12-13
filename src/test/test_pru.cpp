@@ -163,6 +163,8 @@ main(int argc, char const *argv[])
         }
         usleep(100);
     }
+    prussdrv_pru_disable(0); 
+    prussdrv_exit ();
 
     return 0;
 }
