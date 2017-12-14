@@ -53,8 +53,9 @@ START_PWM:
     MOV     r28, PRUSS_CYCLE
 
 LOOP_POINT:
+    ST32    r29, r28
     LBCO    r0, CONST_PRUDRAM, 0, 4
-    SBCO    r0, CONST_PRUDRAM, 4, 4
+    SBCO    r28, CONST_PRUDRAM, 4, 4
 
 
 PWM_0:

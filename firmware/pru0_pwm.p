@@ -56,10 +56,8 @@ LOOP_POINT:
     MOV     r29, 0
     ST32    r29, r28
     
-    LBCO    r0, CONST_DDR, 0, SIZE(pwm_param)
+    LBCO    r0, CONST_PRUDRAM, 0, SIZE(pwm_param)
     .assign pwm_param, r0, r7, param
-
-    SBCO    r0, CONST_PRUSHAREDRAM, 0, 32
 
     LD32    r29, r28 // read the cycle counter
     ADD     param.period, param.period, r29
