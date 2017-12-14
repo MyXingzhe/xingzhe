@@ -52,6 +52,8 @@ START_PWM:
     ST32    r29, r28
 
     MOV     r28, PRUSS_CYCLE
+    MOV     r29, 0
+    ST32    r29, r28
 
 LOOP_POINT:
     LD32    r29, r28
