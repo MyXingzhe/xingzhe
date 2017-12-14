@@ -147,6 +147,7 @@
 #define PRU_ICSS_PRU0_CTRL 0x00022000
 #define PRU_ICSS_PRU1_CTRL 0x00024000
 #define COUNTER_ENABLE_BIT 3
+#define PREFETCH_ENABLE_BIT 1
 // You really don't need the above two constants on the PRU: the base address
 // of the control registers for the currently running PRU is in register C4.
 

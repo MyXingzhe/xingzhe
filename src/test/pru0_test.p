@@ -48,14 +48,15 @@ START_PWM:
     MOV     r28, PRU_ICSS_PRU0_CTRL
     LD32    r29, r28
     SET     r29, COUNTER_ENABLE_BIT
+    SET     r29, PREFETCH_ENABLE_BIT
     ST32    r29, r28
 
     MOV     r28, PRUSS_CYCLE
 
 LOOP_POINT:
-    ST32    r29, r28
+    LD32    r29, r28
     LBCO    r0, CONST_PRUDRAM, 0, 4
-    SBCO    r28, CONST_PRUDRAM, 4, 4
+    SBCO    r29, CONST_PRUDRAM, 4, 4
 
 
 PWM_0:
