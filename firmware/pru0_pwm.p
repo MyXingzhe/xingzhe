@@ -15,7 +15,6 @@
 
 
 .struct pwm_param
-    .u32    flag
     .u32    period
     .u32    duty0
     .u32    duty1
@@ -45,31 +44,21 @@ START_PWM:
     MOV     r1, CTPPR_1
     ST32    r0, r1
 
-    MOV     r28, PRU_ICSS_PRU0_CTRL
-    LD32    r29, r28
-    SET     r29, COUNTER_ENABLE_BIT
-    ST32    r29, r28
 
-    MOV     r28, PRUSS_CYCLE
-
-LOOP_POINT:
-    MOV     r29, 0
-    ST32    r29, r28
+PERIOD_POINT:
     
     LBCO    r0, CONST_PRUDRAM, 0, SIZE(pwm_param)
-    .assign pwm_param, r0, r7, param
+    .assign pwm_param, r0, r6, param
 
-    LD32    r29, r28 // read the cycle counter
-    ADD     param.period, param.period, r29
-    ADD     param.duty0,  param.duty0,  r29
-    ADD     param.duty1,  param.duty1,  r29
-    ADD     param.duty2,  param.duty2,  r29
-    ADD     param.duty3,  param.duty3,  r29
-    ADD     param.duty4,  param.duty4,  r29
-    ADD     param.duty5,  param.duty5,  r29
+    SUB     param.period, param.period, 1
+    SUB     param.duty0,  param.duty0,  1
+    SUB     param.duty1,  param.duty1,  1
+    SUB     param.duty2,  param.duty2,  1
+    SUB     param.duty3,  param.duty3,  1
+    SUB     param.duty4,  param.duty4,  1
+    SUB     param.duty5,  param.duty5,  1
 
-PERIOD_LOOP:
-    LD32    r29, r28 // read the cycle counter
+DUTY_LOOP:
 
    QBLE    PERIOD_TIMEOUT, r29, param.period
 
@@ -121,29 +110,8 @@ PWM_5:
 PWM_5_DUTY_TIMEOUT:
     CLR     r30.t15
 
-
-
-PERIOD_TIMEOUT:
-PERIOD_TIMEOUT_PWM_0:
-    QBBC    PERIOD_TIMEOUT_PWM_1, r0.t0    // pwm_0 is not used
-    SET     r30.t0
-PERIOD_TIMEOUT_PWM_1:
-    QBBC    PERIOD_TIMEOUT_PWM_1, r0.t1    // pwm_1 is not used
-    SET     r30.t1
-PERIOD_TIMEOUT_PWM_2:
-    QBBC    PERIOD_TIMEOUT_PWM_1, r0.t2    // pwm_2 is not used
-    SET     r30.t2
-PERIOD_TIMEOUT_PWM_3:
-    QBBC    PERIOD_TIMEOUT_PWM_1, r0.t3    // pwm_3 is not used
-    SET     r30.t3
-PERIOD_TIMEOUT_PWM_4:
-    QBBC    PERIOD_TIMEOUT_PWM_1, r0.t4    // pwm_4 is not used
-    SET     r30.t14
-PERIOD_TIMEOUT_PWM_5:
-    QBBC    PERIOD_TIMEOUT_PWM_1, r0.t5    // pwm_5 is not used
-    SET     r30.t15
     
-    JMP LOOP_POINT
+    JMP PERIOD_POINT
 
     // Halt the processor
     HALT
