@@ -54,9 +54,8 @@ TARGET_LINK_LIBRARIES(r_base
 	""  # Optional extra libs...
 	)
 
-INCLUDE_DIRECTORIES(/usr/local/include/wx-3.1/)
 #LINK_DIRECTORIES(/usr/local/lib/)
-TARGET_LINK_LIBRARIES(r_base libwx_baseu-3.1 libwx_gtk2u_core-3.1 libwx_baseu_net-3.1 libwx_baseu_xml-3.1 libwx_gtk2u_adv-3.1 libwx_gtk2u_aui-3.1 libwx_gtk2u_gl-3.1 libwx_gtk2u_ribbon-3.1 libwx_gtk2u_richtext-3.1)
+add_compile_options("`wx-config --cxxflags --unicode=yes --static=no --toolkit=gtk3 --version=3.0`")
 
 # Set optimized building:
 IF((${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang" OR CMAKE_COMPILER_IS_GNUCXX) AND NOT CMAKE_BUILD_TYPE MATCHES "Debug")
