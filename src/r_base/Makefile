@@ -51,7 +51,9 @@ WX_VERSION_MINOR = $(shell echo $(WX_VERSION) | cut -c2,2)
 WX_CONFIG_FLAGS = $(WX_CONFIG_UNICODE_FLAG) $(WX_CONFIG_SHARED_FLAG) \
 	--toolkit=$(WX_PORT) --version=$(WX_VERSION_MAJOR).$(WX_VERSION_MINOR)
 RIBBON_CXXFLAGS = -I. `$(WX_CONFIG) --cxxflags $(WX_CONFIG_FLAGS)` $(CPPFLAGS) \
-	$(CXXFLAGS)
+	$(CXXFLAGS) -I /usr/include/mrpt/slam/include/ -I /usr/include/mrpt/maps/include/ -I /usr/include/mrpt/obs/include/ \
+	-I /usr/include/mrpt/base/include/ -I /usr/include/mrpt/bayes/include/ -I /usr/local/include/mrpt/mrpt-config/ \
+	-I /usr/include/mrpt/opengl/include/ -I /usr/include/mrpt/graphs/include/ -I /usr/include/mrpt/gui/include/ -I /usr/include/eigen3
 OBJS =  \
 	gui.o
 
@@ -88,9 +90,15 @@ test_for_selected_wxbuild:
 	@$(WX_CONFIG) $(WX_CONFIG_FLAGS)
 
 r_base: $(OBJS)
-	$(CXX) -o $@ $(OBJS)   $(LDFLAGS)  `$(WX_CONFIG) $(WX_CONFIG_FLAGS) --libs ribbon,adv,core,base`
+	$(CXX) -o $@ $(OBJS)   $(LDFLAGS)  `$(WX_CONFIG) $(WX_CONFIG_FLAGS) --libs ribbon,adv,core,base`  -llibmrpt-maps -llibmrpt-graphs  -llibmrpt-opengl.so -llibmrpt-slam.so \
+						 -llibmrpt-hmtslam.so -llibmrpt-comms.so -llibmrpt-vision.so \
+						 -llibmrpt-nav.so -llibmrpt-pbmap.so -llibmrpt-gui.so  -llibmrpt-obs.so  -llibmrpt-base.so
+
 
 gui.o: ./src/gui.cpp
+	$(CXX) -c -o $@ $(RIBBON_CXXFLAGS) $(CPPDEPS) $<
+
+odometer.o: ./src/odometer.cpp
 	$(CXX) -c -o $@ $(RIBBON_CXXFLAGS) $(CPPDEPS) $<
 
 .PHONY: all install uninstall clean
