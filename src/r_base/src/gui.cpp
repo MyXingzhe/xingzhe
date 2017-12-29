@@ -271,7 +271,7 @@ void test_icp3D()
     window3.get3DSceneAndLock() = scene3;
     window3.unlockAccess3DScene();
 
-    std::this_thread::sleep_for(20ms);
+//    std::this_thread::sleep_for(20);
     window.forceRepaint();
     window2.forceRepaint();
 

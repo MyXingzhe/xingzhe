@@ -17,7 +17,7 @@ CXX = `$(WX_CONFIG) --cxx`
 CXXFLAGS ?= 
 
 # Standard preprocessor flags (common for CC and CXX) 
-CPPFLAGS ?= 
+CPPFLAGS ?= -Wno-long-long -Wno-variadic-macros -std=gnu++14
 
 # Standard linker flags 
 LDFLAGS ?= 
@@ -51,9 +51,12 @@ WX_VERSION_MINOR = $(shell echo $(WX_VERSION) | cut -c2,2)
 WX_CONFIG_FLAGS = $(WX_CONFIG_UNICODE_FLAG) $(WX_CONFIG_SHARED_FLAG) \
 	--toolkit=$(WX_PORT) --version=$(WX_VERSION_MAJOR).$(WX_VERSION_MINOR)
 RIBBON_CXXFLAGS = -I. `$(WX_CONFIG) --cxxflags $(WX_CONFIG_FLAGS)` $(CPPFLAGS) \
-	$(CXXFLAGS) -I /usr/include/mrpt/slam/include/ -I /usr/include/mrpt/maps/include/ -I /usr/include/mrpt/obs/include/ \
-	-I /usr/include/mrpt/base/include/ -I /usr/include/mrpt/bayes/include/ -I /usr/local/include/mrpt/mrpt-config/ \
-	-I /usr/include/mrpt/opengl/include/ -I /usr/include/mrpt/graphs/include/ -I /usr/include/mrpt/gui/include/ -I /usr/include/eigen3
+	$(CXXFLAGS)  -I/usr/include/eigen3  -I/usr/local/include/mrpt/mrpt-config/ -I/usr/local/include/mrpt/bayes/include \
+	-I/usr/local/include/mrpt/graphs/include -I/usr/local/include/mrpt/vision/include -I/usr/local/include/mrpt/tfest/include \
+	-I/usr/local/include/mrpt/maps/include -I/usr/local/include/mrpt/obs/include -I/usr/local/include/mrpt/opengl/include \
+	-I/usr/local/include/mrpt/base/include -I/usr/local/include/mrpt/slam/include -I/usr/local/include/mrpt/gui/include \
+	-I/usr/local/include/mrpt/topography/include 
+
 OBJS =  \
 	gui.o
 
@@ -90,9 +93,7 @@ test_for_selected_wxbuild:
 	@$(WX_CONFIG) $(WX_CONFIG_FLAGS)
 
 r_base: $(OBJS)
-	$(CXX) -o $@ $(OBJS)   $(LDFLAGS)  `$(WX_CONFIG) $(WX_CONFIG_FLAGS) --libs ribbon,adv,core,base`  -llibmrpt-maps -llibmrpt-graphs  -llibmrpt-opengl.so -llibmrpt-slam.so \
-						 -llibmrpt-hmtslam.so -llibmrpt-comms.so -llibmrpt-vision.so \
-						 -llibmrpt-nav.so -llibmrpt-pbmap.so -llibmrpt-gui.so  -llibmrpt-obs.so  -llibmrpt-base.so
+	$(CXX) -o $@ $(OBJS)   $(LDFLAGS)  `$(WX_CONFIG) $(WX_CONFIG_FLAGS) --libs ribbon,adv,core,base`  -L/usr/local/lib/mrpt/lib -rdynamic -lmrpt-graphs -lmrpt-vision -lmrpt-tfest -lmrpt-maps -lmrpt-obs -lmrpt-opengl -lmrpt-base -lmrpt-slam -lmrpt-gui -lmrpt-topography -Wl,-rpath,/usr/local/include/lib 
 
 
 gui.o: ./src/gui.cpp
