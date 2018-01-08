@@ -35,27 +35,18 @@
 #include "wx/srchctrl.h"
 #include "wx/wrapsizer.h"
 
-#include <mrpt/slam/CICP.h>
-
-#include <mrpt/poses/CPose3DPDF.h>
-#include <mrpt/obs/CObservation2DRangeScan.h>
-#include <mrpt/maps/CSimplePointsMap.h>
-#include <mrpt/gui/CDisplayWindow3D.h>
+#include <mrpt/gui.h>
+#include <mrpt/utils/CObserver.h>
 #include <mrpt/opengl/CGridPlaneXY.h>
-#include <mrpt/opengl/CSphere.h>
-#include <mrpt/opengl/CAngularObservationMesh.h>
-#include <mrpt/opengl/CDisk.h>
-#include <mrpt/opengl/stock_objects.h>
 
-using namespace std;
+#include "odometer.h"
+
 using namespace mrpt;
 using namespace mrpt::gui;
-using namespace mrpt::opengl;
-using namespace mrpt::poses;
-using namespace mrpt::slam;
-using namespace mrpt::maps;
-using namespace mrpt::obs;
+using namespace mrpt::math;
 using namespace mrpt::utils;
+using namespace std;
+
 
 // define this to use XPMs everywhere (by default, BMPs are used under Win)
 // BMPs use less space, but aren't compiled into the executable on other platforms
@@ -97,200 +88,71 @@ enum Positions
 
 
 
-// Increase this values to get more precision. It will also increase run time.
-const size_t HOW_MANY_YAWS = 120;
-const size_t HOW_MANY_PITCHS = 120;
-
-// The scans of the 3D object, taken from 2 different places:
-vector<CObservation2DRangeScan> sequence_scans1, sequence_scans2;
-
-// The two origins for the 3D scans
-CPose3D viewpoint1(-0.3, 0.7, 3, DEG2RAD(5), DEG2RAD(80), DEG2RAD(3));
-CPose3D viewpoint2(0.5, -0.2, 2.6, DEG2RAD(-5), DEG2RAD(100), DEG2RAD(-7));
-
-CPose3D SCAN2_POSE_ERROR(0.15, -0.07, 0.10, -0.03, 0.1, 0.1);
-
-/**
- * Generate 3 objects to work with - 1 sphere, 2 disks
- */
-void generateObjects(CSetOfObjects::Ptr& world)
+class MyObserver : public mrpt::utils::CObserver
 {
-    CSphere::Ptr sph = mrpt::make_aligned_shared<CSphere>(0.5);
-    sph->setLocation(0, 0, 0);
-    sph->setColor(1, 0, 0);
-    world->insert(sph);
-
-    CDisk::Ptr pln = mrpt::make_aligned_shared<opengl::CDisk>();
-    pln->setDiskRadius(2);
-    pln->setPose(CPose3D(0, 0, 0, 0, DEG2RAD(5), DEG2RAD(5)));
-    pln->setColor(0.8, 0, 0);
-    world->insert(pln);
-
+   protected:
+    void OnEvent(const mrptEvent& e)
     {
-        CDisk::Ptr pln = mrpt::make_aligned_shared<opengl::CDisk>();
-        pln->setDiskRadius(2);
-        pln->setPose(CPose3D(0, 0, 0, DEG2RAD(30), DEG2RAD(-20), DEG2RAD(-2)));
-        pln->setColor(0.9, 0, 0);
-        world->insert(pln);
+        if (e.isOfType<mrptEventOnDestroy>())
+            cout << "[MyObserver] Event received: mrptEventOnDestroy\n";
+        else if (e.isOfType<mrptEventWindowResize>())
+        {
+            const mrptEventWindowResize& ee =
+                static_cast<const mrptEventWindowResize&>(e);
+            cout << "[MyObserver] Resize event received from: "
+                 << ee.source_object << ", new size: " << ee.new_width << " x "
+                 << ee.new_height << "\n";
+        }
+        else if (e.isOfType<mrptEventWindowChar>())
+        {
+            const mrptEventWindowChar& ee =
+                static_cast<const mrptEventWindowChar&>(e);
+            cout << "[MyObserver] Char event received from: "
+                 << ee.source_object << ". Char code: " << ee.char_code
+                 << " modif: " << ee.key_modifiers << "\n";
+        }
+        else if (e.isOfType<mrptEventWindowClosed>())
+        {
+            const mrptEventWindowClosed& ee =
+                static_cast<const mrptEventWindowClosed&>(e);
+            cout << "[MyObserver] Window closed event received from: "
+                 << ee.source_object << "\n";
+        }
+        else if (e.isOfType<mrptEventMouseDown>())
+        {
+            const mrptEventMouseDown& ee =
+                static_cast<const mrptEventMouseDown&>(e);
+            cout << "[MyObserver] Mouse down event received from: "
+                 << ee.source_object << "pt: " << ee.coords.x << ","
+                 << ee.coords.y << "\n";
+        }
+        else
+            cout << "[MyObserver] Event received: Another mrptEvent \n";
     }
-}
+};
 
-void test_icp3D()
+// Observe windows for events.
+// Declared out of the scope of windows so we can observe their destructors
+MyObserver observer;
+
+CDisplayWindow3D *TestGuiWindowsEvents()
 {
-    // Create the reference objects:
-    COpenGLScene::Ptr scene1 = mrpt::make_aligned_shared<COpenGLScene>();
-    COpenGLScene::Ptr scene2 = mrpt::make_aligned_shared<COpenGLScene>();
-    COpenGLScene::Ptr scene3 = mrpt::make_aligned_shared<COpenGLScene>();
+    CDisplayWindow3D win3D("3D window", 300, 300);
 
-    opengl::CGridPlaneXY::Ptr plane1 =
-        mrpt::make_aligned_shared<CGridPlaneXY>(-20, 20, -20, 20, 0, 1);
-    plane1->setColor(0.3, 0.3, 0.3);
-    scene1->insert(plane1);
-    scene2->insert(plane1);
-    scene3->insert(plane1);
-
-    CSetOfObjects::Ptr world = mrpt::make_aligned_shared<CSetOfObjects>();
-    generateObjects(world);
-    scene1->insert(world);
-
-    // Perform the 3D scans:
-    CAngularObservationMesh::Ptr aom1 =
-        mrpt::make_aligned_shared<CAngularObservationMesh>();
-    CAngularObservationMesh::Ptr aom2 =
-        mrpt::make_aligned_shared<CAngularObservationMesh>();
-
-    cout << "Performing ray-tracing..." << endl;
-    CAngularObservationMesh::trace2DSetOfRays(
-        scene1, viewpoint1, aom1,
-        CAngularObservationMesh::TDoubleRange::CreateFromAperture(
-            M_PI, HOW_MANY_PITCHS),
-        CAngularObservationMesh::TDoubleRange::CreateFromAperture(
-            M_PI, HOW_MANY_YAWS));
-    CAngularObservationMesh::trace2DSetOfRays(
-        scene1, viewpoint2, aom2,
-        CAngularObservationMesh::TDoubleRange::CreateFromAperture(
-            M_PI, HOW_MANY_PITCHS),
-        CAngularObservationMesh::TDoubleRange::CreateFromAperture(
-            M_PI, HOW_MANY_YAWS));
-    cout << "Ray-tracing done" << endl;
-
-    // Put the viewpoints origins:
     {
-        CSetOfObjects::Ptr origin1 = opengl::stock_objects::CornerXYZ();
-        origin1->setPose(viewpoint1);
-        origin1->setScale(0.6);
-        scene1->insert(origin1);
-        scene2->insert(origin1);
-    }
-    {
-        CSetOfObjects::Ptr origin2 = opengl::stock_objects::CornerXYZ();
-        origin2->setPose(viewpoint2);
-        origin2->setScale(0.6);
-        scene1->insert(origin2);
-        scene2->insert(origin2);
+        mrpt::opengl::COpenGLScene::Ptr& scene = win3D.get3DSceneAndLock();
+        scene->insert(mrpt::make_aligned_shared<mrpt::opengl::CGridPlaneXY>());
+        win3D.unlockAccess3DScene();
+        win3D.repaint();
     }
 
-    // Show the scanned points:
-    CSimplePointsMap M1, M2;
+    win3D.setPos(340, 10);
 
-    aom1->generatePointCloud(&M1);
-    aom2->generatePointCloud(&M2);
+//    observer.observeBegin(win3D);
 
-    // Create the wrongly-localized M2:
-    CSimplePointsMap M2_noisy;
-    M2_noisy = M2;
-    M2_noisy.changeCoordinatesReference(SCAN2_POSE_ERROR);
+    return &win3D;
 
-    CSetOfObjects::Ptr PTNS1 = mrpt::make_aligned_shared<CSetOfObjects>();
-    CSetOfObjects::Ptr PTNS2 = mrpt::make_aligned_shared<CSetOfObjects>();
-
-    CPointsMap::COLOR_3DSCENE(mrpt::utils::TColorf(1, 0, 0));
-    M1.getAs3DObject(PTNS1);
-
-    CPointsMap::COLOR_3DSCENE(mrpt::utils::TColorf(0, 0, 1));
-    M2_noisy.getAs3DObject(PTNS2);
-
-    scene2->insert(PTNS1);
-    scene2->insert(PTNS2);
-
-    // --------------------------------------
-    // Do the ICP-3D
-    // --------------------------------------
-    float run_time;
-    CICP icp;
-    CICP::TReturnInfo icp_info;
-
-    icp.options.thresholdDist = 0.40;
-    icp.options.thresholdAng = 0;
-
-    std::vector<double> xs, ys, zs;
-    M1.getAllPoints(xs, ys, ys);
-    cout << "Size of  xs in M1: " << xs.size() << endl;
-    M2.getAllPoints(xs, ys, ys);
-    cout << "Size of  xs in M2: " << xs.size() << endl;
-
-    CPose3DPDF::Ptr pdf = icp.Align3D(
-        &M2_noisy,  // Map to align
-        &M1,  // Reference map
-        CPose3D(),  // Initial gross estimate
-        &run_time, &icp_info);
-
-    CPose3D mean = pdf->getMeanVal();
-
-    cout << "ICP run took " << run_time << " secs." << endl;
-    cout << "Goodness: " << 100 * icp_info.goodness
-         << "% , # of iterations= " << icp_info.nIterations
-         << " Quality: " << icp_info.quality << endl;
-    cout << "ICP output: mean= " << mean << endl;
-    cout << "Real displacement: " << SCAN2_POSE_ERROR << endl;
-
-    // Aligned maps:
-    CSetOfObjects::Ptr PTNS2_ALIGN = mrpt::make_aligned_shared<CSetOfObjects>();
-
-    M2_noisy.changeCoordinatesReference(CPose3D() - mean);
-    M2_noisy.getAs3DObject(PTNS2_ALIGN);
-
-    scene3->insert(PTNS1);
-    scene3->insert(PTNS2_ALIGN);
-
-    // Show in Windows:
-    CDisplayWindow3D window("ICP-3D demo: scene", 500, 500);
-    CDisplayWindow3D window2("ICP-3D demo: UNALIGNED scans", 500, 500);
-    CDisplayWindow3D window3("ICP-3D demo: ICP-ALIGNED scans", 500, 500);
-
-    window.setPos(10, 10);
-    window2.setPos(530, 10);
-    window3.setPos(10, 520);
-
-    window.get3DSceneAndLock() = scene1;
-    window.unlockAccess3DScene();
-
-    window2.get3DSceneAndLock() = scene2;
-    window2.unlockAccess3DScene();
-
-    window3.get3DSceneAndLock() = scene3;
-    window3.unlockAccess3DScene();
-
-//    std::this_thread::sleep_for(20);
-    window.forceRepaint();
-    window2.forceRepaint();
-
-    window.setCameraElevationDeg(15);
-    window.setCameraAzimuthDeg(90);
-    window.setCameraZoom(15);
-
-    window2.setCameraElevationDeg(15);
-    window2.setCameraAzimuthDeg(90);
-    window2.setCameraZoom(15);
-
-    window3.setCameraElevationDeg(15);
-    window3.setCameraAzimuthDeg(90);
-    window3.setCameraZoom(15);
-
-    cout << "Press any key to exit..." << endl;
-    window.waitForKey();
 }
-
 
 // ----------------------------------------------------------------------------
 // classes
@@ -374,7 +236,7 @@ private:
 
     wxPanel             *m_ctrl_panel;
 
-    wxPanel             *m_main_panel;
+    wxPanel             *m_panel;
 
     wxToolBar          *m_tbar;
 
@@ -423,6 +285,9 @@ enum
     IDM_TOOLBAR_INSERTPRINT,
     IDM_TOOLBAR_TOGGLESEARCH,
     IDM_TOOLBAR_CHANGE_TOOLTIP,
+
+    IDM_LEFTWHEEL_SLIDER,
+    IDM_RIGHTWHEEL_SLIDER,
 
     ID_COMBO = 1000
 };
@@ -504,16 +369,8 @@ bool BaseApp::OnInit()
 }
 
 
-
-
 void RBaseFrame::RecreateToolbar()
 {
-#ifdef __WXWINCE__
-    // On Windows CE, we should not delete the
-    // previous toolbar in case it contains the menubar.
-    // We'll try to accommodate this usage in due course.
-    wxToolBar* toolBar = CreateToolBar();
-#else
     // delete and recreate the toolbar
     wxToolBarBase *toolBar = GetToolBar();
     long style = toolBar ? toolBar->GetWindowStyle() : TOOLBAR_STYLE;
@@ -555,7 +412,6 @@ void RBaseFrame::RecreateToolbar()
         style |= wxTB_HORZ_LAYOUT;
 
     toolBar = CreateToolBar(style, ID_TOOLBAR);
-#endif
 
     PopulateToolbar(toolBar);
 }
@@ -813,25 +669,38 @@ RBaseFrame::RBaseFrame(wxFrame* parent,
     menuBar->Check(IDM_TOOLBAR_TOP_ORIENTATION, true );
     m_toolbarPosition = TOOLBAR_TOP;
 
-    CreateLeftToolbar();
+//    CreateLeftToolbar();
 
     // Create the toolbar
     RecreateToolbar();
 
-    m_main_panel = new wxPanel(this, wxID_ANY);
+    m_panel = new wxPanel(this);
 
     // Root sizer, vertical
     wxSizer * const sizerRoot = new wxBoxSizer(wxHORIZONTAL);
 
+    // Some toolbars in a wrap sizer
+    wxSizer * const sizerTop = new wxWrapSizer( wxHORIZONTAL );
+    sizerRoot->Add(sizerTop, wxSizerFlags().Expand().Border());
+
     // A number of checkboxes inside a wrap sizer
-    wxSizer *sizerMid = new wxStaticBoxSizer(wxVERTICAL, m_main_panel,
-                                                "With check-boxes");
-    wxSizer * const sizerMidWrap = new wxWrapSizer(wxHORIZONTAL);
-/*    for ( int nCheck = 0; nCheck < 1; nCheck++ )
+    wxSizer *sizerMid = new wxStaticBoxSizer(wxVERTICAL, m_panel, "");
+
+    wxBoxSizer *hbox = new wxBoxSizer(wxHORIZONTAL);
+    OdoPanel *m_odo = new OdoPanel(m_panel, wxID_ANY);
+    hbox->Add(m_odo, 1, wxEXPAND);
+
+
+/*    wxSizer * const sizerMidWrap = new wxWrapSizer(wxVERTICAL);
+
+    OdoPanel *m_odometer = new OdoPanel(m_panel, wxID_ANY);
+    sizerMidWrap->Add(m_odometer, wxSizerFlags().Centre().Border());
+
+    for ( int nCheck = 0; nCheck < 6; nCheck++ )
     {
         wxCheckBox *chk = new wxCheckBox
                                 (
-                                m_main_panel,
+                                m_panel,
                                 wxID_ANY,
                                 wxString::Format("Option %d", nCheck)
                                 );
@@ -839,27 +708,33 @@ RBaseFrame::RBaseFrame(wxFrame* parent,
         sizerMidWrap->Add(chk, wxSizerFlags().Centre().Border());
     }
 */
-//    sizerMid->Add(sizerMidWrap, wxSizerFlags(100).Expand());
+    sizerMid->Add(hbox, wxSizerFlags(100).Expand());
     sizerRoot->Add(sizerMid, wxSizerFlags(100).Expand().Border());
 
+
     // A shaped item inside a box sizer
-    wxSizer *sizerBottom = new wxStaticBoxSizer(wxVERTICAL, m_main_panel,
+    wxSizer *sizerBottom = new wxStaticBoxSizer(wxVERTICAL, m_panel,
                                                 "With wxSHAPED item");
     wxSizer *sizerBottomBox = new wxBoxSizer(wxHORIZONTAL);
     sizerBottom->Add(sizerBottomBox, wxSizerFlags(100).Expand());
 
-    sizerBottomBox->Add(new wxListBox(m_main_panel, wxID_ANY,
+    sizerBottomBox->Add(new wxListBox(m_panel, wxID_ANY,
                                         wxPoint(0, 0), wxSize(70, 70)),
                         wxSizerFlags().Expand().Shaped());
     sizerBottomBox->AddSpacer(10);
-    sizerBottomBox->Add(new wxCheckBox(m_main_panel, wxID_ANY,
+    sizerBottomBox->Add(new wxCheckBox(m_panel, wxID_ANY,
                                         "A much longer option..."),
                         wxSizerFlags(100).Border());
     sizerRoot->Add(sizerBottom, wxSizerFlags(100).Expand().Border());
 
-    // Set sizer for the panel
-    m_main_panel->SetSizer(sizerRoot);
+    // OK Button
+    sizerRoot->Add(new wxButton(m_panel, wxID_OK),
+                    wxSizerFlags().Centre().DoubleBorder());
 
+    // Set sizer for the panel
+    m_panel->SetSizer(sizerRoot);
+
+    Show();
 }
 
 RBaseFrame::~RBaseFrame()
@@ -889,7 +764,7 @@ void RBaseFrame::LayoutChildren()
         offset = 0;
     }
 
-    m_main_panel->SetSize(offset, 0, size.x - offset, size.y);
+    m_panel->SetSize(offset, 0, size.x - offset, size.y);
 }
 
 void RBaseFrame::OnSize(wxSizeEvent& event)

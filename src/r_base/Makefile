@@ -58,7 +58,7 @@ RIBBON_CXXFLAGS = -I. `$(WX_CONFIG) --cxxflags $(WX_CONFIG_FLAGS)` $(CPPFLAGS) \
 	-I/usr/local/include/mrpt/topography/include 
 
 OBJS =  \
-	gui.o
+	gui.o odometer.o
 
 ### Conditionally set variables: ###
 
