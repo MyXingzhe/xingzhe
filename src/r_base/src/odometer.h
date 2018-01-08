@@ -32,13 +32,9 @@ public:
     OdoMeter(const wxString& title);
 
     void OnScroll(wxScrollEvent& event);
-    int GetCurWidth();
-
 
     wxSlider *m_slider;
     OdoPanel *m_wid;
-
-    int cur_width;
 
 };
 

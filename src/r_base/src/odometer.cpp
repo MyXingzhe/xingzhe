@@ -20,47 +20,39 @@ void OdoPanel::OnPaint(wxPaintEvent& event)
   wxFont font(9, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL,
             wxFONTWEIGHT_NORMAL, false, wxT("Courier 10 Pitch"));
 
+  int border_width = 20;
   wxPaintDC dc(this);
-  dc.SetFont(font);
+  wxColour color;
   wxSize size = GetSize();
   int width = size.GetWidth();
+  int height = size.GetHeight();
 
-  OdoMeter *burn = (OdoMeter *) m_parent->GetParent();
+  wxPoint center(width/2, height/2);
+  wxCoord radius = ((width<height)?(width/2 - border_width):(height/2 - border_width));
+  wxCoord r = radius;
 
-  int cur_width = burn->GetCurWidth();
+  color.Set(wxT("#7f8382"));
+  dc.SetPen(wxPen(color, border_width, wxSOLID));
+  dc.SetBrush(wxBrush(color));
+  dc.DrawCircle(center, r);
 
-  int step = (int) round(width / 10.0);
+  r = radius * 0.96;
+  color.Set(wxT("#30363c"));
+  dc.SetPen(wxPen(color, border_width, wxSOLID));
+  dc.SetBrush(wxBrush(color));
+  dc.DrawCircle(center, r);
+//  dc.SetFont(font);
 
+  color.Set(wxT("#7d8c8f"));
+  r = radius * 0.8;
+  dc.SetBrush(wxBrush(color));
+  dc.DrawCircle(center, r);
 
-  int till = (int) ((width / 750.0) * cur_width);
-  int full = (int) ((width / 750.0) * 700);
+  color.Set(wxT("#000906"));
+  r = radius * 0.72;
+  dc.SetBrush(wxBrush(color));
+  dc.DrawCircle(center, r);
 
-
-  if (cur_width >= 700) {
-
-      dc.SetPen(wxPen(wxColour(255, 255, 184))); 
-      dc.SetBrush(wxBrush(wxColour(255, 255, 184)));
-      dc.DrawRectangle(0, 0, full, 30);
-      dc.SetPen(wxPen(wxColour(255, 175, 175)));
-      dc.SetBrush(wxBrush(wxColour(255, 175, 175)));
-      dc.DrawRectangle(full, 0, till-full, 30);
-
-  } else { 
-
-      dc.SetPen(wxPen(wxColour(255, 255, 184)));
-      dc.SetBrush(wxBrush(wxColour(255, 255, 184)));
-      dc.DrawRectangle(0, 0, till, 30);
-
-  }
-
-  dc.SetPen(wxPen(wxColour(90, 80, 60)));
-  for ( int i=1; i <= asize; i++ ) {
-
-  dc.DrawLine(i*step, 0, i*step, 6);
-  wxSize size = dc.GetTextExtent(wxString::Format(wxT("%d"), num[i-1]));
-  dc.DrawText(wxString::Format(wxT("%d"), num[i-1]), 
-      i*step-size.GetWidth()/2, 8);
-   }
 }
 
 void OdoPanel::OnSize(wxSizeEvent& event)
@@ -71,8 +63,6 @@ void OdoPanel::OnSize(wxSizeEvent& event)
 OdoMeter::OdoMeter(const wxString& title)
        : wxFrame(NULL, wxID_ANY, title, wxDefaultPosition, wxSize(350, 200))
 {
-
-  cur_width = 75;
 
   wxPanel *panel = new wxPanel(this, wxID_ANY);
   wxPanel *centerPanel = new wxPanel(panel, wxID_ANY);
@@ -108,13 +98,6 @@ OdoMeter::OdoMeter(const wxString& title)
 
 void OdoMeter::OnScroll(wxScrollEvent& WXUNUSED(event))
 {
-  cur_width = m_slider->GetValue();
   m_wid->Refresh();
-}
-
-
-int OdoMeter::GetCurWidth() 
-{
-  return cur_width;
 }
 
