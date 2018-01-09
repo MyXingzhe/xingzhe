@@ -35,17 +35,7 @@
 #include "wx/srchctrl.h"
 #include "wx/wrapsizer.h"
 
-#include <mrpt/gui.h>
-#include <mrpt/utils/CObserver.h>
-#include <mrpt/opengl/CGridPlaneXY.h>
-
 #include "odometer.h"
-
-using namespace mrpt;
-using namespace mrpt::gui;
-using namespace mrpt::math;
-using namespace mrpt::utils;
-using namespace std;
 
 
 // define this to use XPMs everywhere (by default, BMPs are used under Win)
@@ -86,73 +76,6 @@ enum Positions
     TOOLBAR_BOTTOM
 };
 
-
-
-class MyObserver : public mrpt::utils::CObserver
-{
-   protected:
-    void OnEvent(const mrptEvent& e)
-    {
-        if (e.isOfType<mrptEventOnDestroy>())
-            cout << "[MyObserver] Event received: mrptEventOnDestroy\n";
-        else if (e.isOfType<mrptEventWindowResize>())
-        {
-            const mrptEventWindowResize& ee =
-                static_cast<const mrptEventWindowResize&>(e);
-            cout << "[MyObserver] Resize event received from: "
-                 << ee.source_object << ", new size: " << ee.new_width << " x "
-                 << ee.new_height << "\n";
-        }
-        else if (e.isOfType<mrptEventWindowChar>())
-        {
-            const mrptEventWindowChar& ee =
-                static_cast<const mrptEventWindowChar&>(e);
-            cout << "[MyObserver] Char event received from: "
-                 << ee.source_object << ". Char code: " << ee.char_code
-                 << " modif: " << ee.key_modifiers << "\n";
-        }
-        else if (e.isOfType<mrptEventWindowClosed>())
-        {
-            const mrptEventWindowClosed& ee =
-                static_cast<const mrptEventWindowClosed&>(e);
-            cout << "[MyObserver] Window closed event received from: "
-                 << ee.source_object << "\n";
-        }
-        else if (e.isOfType<mrptEventMouseDown>())
-        {
-            const mrptEventMouseDown& ee =
-                static_cast<const mrptEventMouseDown&>(e);
-            cout << "[MyObserver] Mouse down event received from: "
-                 << ee.source_object << "pt: " << ee.coords.x << ","
-                 << ee.coords.y << "\n";
-        }
-        else
-            cout << "[MyObserver] Event received: Another mrptEvent \n";
-    }
-};
-
-// Observe windows for events.
-// Declared out of the scope of windows so we can observe their destructors
-MyObserver observer;
-
-CDisplayWindow3D *TestGuiWindowsEvents()
-{
-    CDisplayWindow3D win3D("3D window", 300, 300);
-
-    {
-        mrpt::opengl::COpenGLScene::Ptr& scene = win3D.get3DSceneAndLock();
-        scene->insert(mrpt::make_aligned_shared<mrpt::opengl::CGridPlaneXY>());
-        win3D.unlockAccess3DScene();
-        win3D.repaint();
-    }
-
-    win3D.setPos(340, 10);
-
-//    observer.observeBegin(win3D);
-
-    return &win3D;
-
-}
 
 // ----------------------------------------------------------------------------
 // classes
@@ -690,27 +613,8 @@ RBaseFrame::RBaseFrame(wxFrame* parent,
     OdoPanel *m_odo = new OdoPanel(m_panel, wxID_ANY);
     hbox->Add(m_odo, 1, wxEXPAND);
 
-
-/*    wxSizer * const sizerMidWrap = new wxWrapSizer(wxVERTICAL);
-
-    OdoPanel *m_odometer = new OdoPanel(m_panel, wxID_ANY);
-    sizerMidWrap->Add(m_odometer, wxSizerFlags().Centre().Border());
-
-    for ( int nCheck = 0; nCheck < 6; nCheck++ )
-    {
-        wxCheckBox *chk = new wxCheckBox
-                                (
-                                m_panel,
-                                wxID_ANY,
-                                wxString::Format("Option %d", nCheck)
-                                );
-
-        sizerMidWrap->Add(chk, wxSizerFlags().Centre().Border());
-    }
-*/
     sizerMid->Add(hbox, wxSizerFlags(100).Expand());
     sizerRoot->Add(sizerMid, wxSizerFlags(100).Expand().Border());
-
 
     // A shaped item inside a box sizer
     wxSizer *sizerBottom = new wxStaticBoxSizer(wxVERTICAL, m_panel,

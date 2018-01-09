@@ -51,11 +51,7 @@ WX_VERSION_MINOR = $(shell echo $(WX_VERSION) | cut -c2,2)
 WX_CONFIG_FLAGS = $(WX_CONFIG_UNICODE_FLAG) $(WX_CONFIG_SHARED_FLAG) \
 	--toolkit=$(WX_PORT) --version=$(WX_VERSION_MAJOR).$(WX_VERSION_MINOR)
 RIBBON_CXXFLAGS = -I. `$(WX_CONFIG) --cxxflags $(WX_CONFIG_FLAGS)` $(CPPFLAGS) \
-	$(CXXFLAGS)  -I/usr/include/eigen3  -I/usr/local/include/mrpt/mrpt-config/ -I/usr/local/include/mrpt/bayes/include \
-	-I/usr/local/include/mrpt/graphs/include -I/usr/local/include/mrpt/vision/include -I/usr/local/include/mrpt/tfest/include \
-	-I/usr/local/include/mrpt/maps/include -I/usr/local/include/mrpt/obs/include -I/usr/local/include/mrpt/opengl/include \
-	-I/usr/local/include/mrpt/base/include -I/usr/local/include/mrpt/slam/include -I/usr/local/include/mrpt/gui/include \
-	-I/usr/local/include/mrpt/topography/include 
+	$(CXXFLAGS) 
 
 OBJS =  \
 	gui.o odometer.o

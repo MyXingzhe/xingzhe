@@ -12,7 +12,6 @@
 #include <wx/panel.h>
 
 
-
 class OdoPanel : public wxPanel
 {
 public:
@@ -23,18 +22,6 @@ public:
 
     void OnSize(wxSizeEvent& event);
     void OnPaint(wxPaintEvent& event);  
-
-};
-
-class OdoMeter : public wxFrame
-{
-public:
-    OdoMeter(const wxString& title);
-
-    void OnScroll(wxScrollEvent& event);
-
-    wxSlider *m_slider;
-    OdoPanel *m_wid;
 
 };
 
