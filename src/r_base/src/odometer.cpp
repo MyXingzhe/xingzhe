@@ -86,24 +86,21 @@ void OdoPanel::OnPaint(wxPaintEvent& event)
   color.Set(wxT("#ffffff"));
   dc.SetPen(wxPen(color, border_width*0.1, wxSOLID));
   dc.SetBrush(wxBrush(color));
-  wxFont font(radius/20, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_SLANT,
-            wxFONTWEIGHT_NORMAL, false, wxT("Courier 10 Pitch"));
-
-  dc.SetFont(font);
+  dc.SetFont(wxFont(radius/18, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_SLANT,wxFONTWEIGHT_NORMAL, false, wxT("Courier 10 Pitch")));
   dc.SetTextForeground(*wxWHITE);
   for(i=0;i<dialsize;i++)
   {
     if((i%5)==0)
     {
-      dc.DrawLine(center.x - radius*(cos(dial[i]/60.0*M_PI)), center.y - radius*(sin(dial[i]/60.0*M_PI)),
-                  center.x - radius*0.85*(cos(dial[i]/60.0*M_PI)), center.y - radius*0.85*(sin(dial[i]/60.0*M_PI)));
+      dc.DrawLine(center.x - radius*(cos(dial[i]/60.0*M_PI*1.5-M_PI/4)), center.y - radius*(sin(dial[i]/60.0*M_PI*1.5-M_PI/4)),
+                  center.x - radius*0.85*(cos(dial[i]/60.0*M_PI*1.5-M_PI/4)), center.y - radius*0.85*(sin(dial[i]/60.0*M_PI*1.5-M_PI/4)));
 
-      dc.DrawRotatedText(wxString::Format("%d", (int)dial[i]), center.x - radius*0.85*(cos(dial[i]/60.0*M_PI)), center.y - radius*0.85*(sin(dial[i]/60.0*M_PI)), dial[i]/60.0*M_PI);
+      dc.DrawRotatedText(wxString::Format("%d", (int)dial[i]), center.x - radius*0.85*(cos(dial[i]/60.0*M_PI*1.5-M_PI/4)), center.y - radius*0.85*(sin(dial[i]/60.0*M_PI*1.5-M_PI/4)), dial[i]/60.0*M_PI*1.5-M_PI/4);
     }
     else
     {
-      dc.DrawLine(center.x - radius*(cos(dial[i]/60.0*M_PI)), center.y - radius*(sin(dial[i]/60.0*M_PI)),
-                  center.x - radius*0.9*(cos(dial[i]/60.0*M_PI)), center.y - radius*0.9*(sin(dial[i]/60.0*M_PI)));
+      dc.DrawLine(center.x - radius*(cos(dial[i]/60.0*M_PI*1.5-M_PI/4)), center.y - radius*(sin(dial[i]/60.0*M_PI*1.5-M_PI/4)),
+                  center.x - radius*0.9*(cos(dial[i]/60.0*M_PI*1.5-M_PI/4)), center.y - radius*0.9*(sin(dial[i]/60.0*M_PI*1.5-M_PI/4)));
     }
   }
 
@@ -115,10 +112,18 @@ void OdoPanel::OnPaint(wxPaintEvent& event)
   dc.DrawLine(center.x - radius*(cos(speed/60.0*M_PI)), center.y - radius*(sin(speed/60.0*M_PI)),
               center.x - radius*0.35*(cos(speed/60.0*M_PI)), center.y - radius*0.35*(sin(speed/60.0*M_PI)));
 
+  color.Set(wxT("#859480"));
+  dc.SetPen(wxPen(color, border_width*0.01, wxSOLID));
+  dc.SetBrush(wxBrush(color));
+  dc.DrawRectangle(center.x - radius*0.55, center.y + radius*0.1, radius*1.1, radius*0.25);
 
+  dc.SetFont(wxFont(radius/5, wxFONTFAMILY_DEFAULT,  wxFONTSTYLE_ITALIC,wxFONTWEIGHT_NORMAL, false, wxT("Courier 10 Pitch")));
+  dc.SetTextForeground(*wxLIGHT_GREY);
+  int distance=123456;
+  dc.DrawText(wxString::Format("%07d", distance), (int)(center.x - radius*0.55), (int)(center.y + radius*0.1));
 }
 
 void OdoPanel::OnSize(wxSizeEvent& event)
 {
-  Refresh();
+  Refresh(); 
 }
