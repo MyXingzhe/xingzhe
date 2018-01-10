@@ -16,7 +16,9 @@ class SwitchPanel : public wxPanel
 {
 public:
     SwitchPanel(wxPanel *parent, int id );
+    int GetState();
 
+private:
     int m_state;
 
     void OnSize(wxSizeEvent& event);

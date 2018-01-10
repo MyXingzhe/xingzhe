@@ -128,6 +128,7 @@ void OdoPanel::OnSize(wxSizeEvent& event)
 
 void OdoPanel::SetSpeed(float speed)
 {
+  printf("SetSpeed:%f\n", speed);
   m_speed = speed;
   Refresh(); 
 }

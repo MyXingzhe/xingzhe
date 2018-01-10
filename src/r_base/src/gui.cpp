@@ -138,6 +138,8 @@ public:
     void OnUpdateToggleRadioBtn(wxUpdateUIEvent& event)
         { event.Enable( m_tbar != NULL ); }
 
+    void OnLeftScroll(wxScrollEvent& event);
+    void OnRightScroll(wxScrollEvent& event);
 private:
     void DoEnablePrint();
     void DoDeletePrint();
@@ -162,7 +164,10 @@ private:
 
     wxPanel             *m_panel;
 
-    wxToolBar          *m_tbar;
+    wxToolBar           *m_tbar;
+    OdoPanel            *m_odo;;
+    wxSlider            *m_leftslider;
+    wxSlider            *m_rightslider;
 
     // the path to the custom bitmap for the test toolbar tool
     wxString            m_pathBmp;
@@ -347,7 +352,6 @@ void RBaseFrame::PopulateToolbar(wxToolBarBase* toolBar)
     // Set up toolbar
     enum
     {
-        Tool_new,
         Tool_connect,
         Tool_disconnect,
         Tool_open,
@@ -370,7 +374,6 @@ void RBaseFrame::PopulateToolbar(wxToolBarBase* toolBar)
         toolBarBitmaps[Tool_##bmp] = wxBITMAP(bmp)
 #endif // USE_XPM_BITMAPS/!USE_XPM_BITMAPS
 
-    INIT_TOOL_BMP(new);
     INIT_TOOL_BMP(connect);
     INIT_TOOL_BMP(disconnect);
     INIT_TOOL_BMP(open);
@@ -381,15 +384,15 @@ void RBaseFrame::PopulateToolbar(wxToolBarBase* toolBar)
     INIT_TOOL_BMP(print);
     INIT_TOOL_BMP(exit);
 
-    int w = toolBarBitmaps[Tool_new].GetWidth(),
-        h = toolBarBitmaps[Tool_new].GetHeight();
+    int w = toolBarBitmaps[Tool_connect].GetWidth(),
+        h = toolBarBitmaps[Tool_connect].GetHeight();
 
     if ( !m_smallToolbar )
     {
         w *= 2;
         h *= 2;
 
-        for ( size_t n = Tool_new; n < WXSIZEOF(toolBarBitmaps); n++ )
+        for ( size_t n = Tool_connect; n < WXSIZEOF(toolBarBitmaps); n++ )
         {
             toolBarBitmaps[n] =
                 wxBitmap(toolBarBitmaps[n].ConvertToImage().Scale(w, h));
@@ -400,19 +403,13 @@ void RBaseFrame::PopulateToolbar(wxToolBarBase* toolBar)
     // size to fit the biggest icon used anyhow but it doesn't hurt neither
     toolBar->SetToolBitmapSize(wxSize(w, h));
 
-    toolBar->AddTool(wxID_NEW, wxT("New"),
-                     toolBarBitmaps[Tool_new], wxNullBitmap, wxITEM_DROPDOWN,
+    toolBar->AddTool(wxID_NEW, wxT("Conect"),
+                     toolBarBitmaps[Tool_connect], wxNullBitmap, wxITEM_NORMAL,
                      wxT("New file"), wxT("This is help for new file tool"));
 
-    wxMenu* menu = new wxMenu;
-    menu->Append(wxID_ANY, wxT("&First dummy item"));
-    menu->Append(wxID_ANY, wxT("&Second dummy item"));
-    menu->AppendSeparator();
-    menu->Append(wxID_EXIT, wxT("Exit"));
-    toolBar->SetDropdownMenu(wxID_NEW, menu);
 
-    toolBar->AddTool(wxID_OPEN, wxT("Open"),
-                     toolBarBitmaps[Tool_open], wxNullBitmap, wxITEM_NORMAL,
+    toolBar->AddTool(wxID_OPEN, wxT("Disconnect"),
+                     toolBarBitmaps[Tool_disconnect], wxNullBitmap, wxITEM_NORMAL,
                      wxT("Open file"), wxT("This is help for open file tool"));
 
 #if USE_CONTROLS_IN_TOOLBAR
@@ -613,23 +610,28 @@ RBaseFrame::RBaseFrame(wxFrame* parent,
     wxSizer *sizerMid = new wxStaticBoxSizer(wxVERTICAL, m_panel, "");
 
     wxBoxSizer *hbox = new wxBoxSizer(wxHORIZONTAL);
-    OdoPanel *m_odo = new OdoPanel(m_panel, wxID_ANY);
+    m_odo = new OdoPanel(m_panel, wxID_ANY);
     hbox->Add(m_odo, 1, wxEXPAND);
 
     wxFlexGridSizer *m_sizer1 = new wxFlexGridSizer(2, 3, 5, 5);
     wxPanel *m_panel1 = new wxPanel(m_panel);
     m_panel1->SetSizer(m_sizer1);
     m_leftswitch = new SwitchPanel(m_panel1, wxID_ANY);
-    wxSlider *m_leftslider = new wxSlider(m_panel1, wxID_ANY,
+    m_leftslider = new wxSlider(m_panel1, wxID_ANY,
                             0, 0, 100,
                             wxDefaultPosition, wxSize(400,20),
                             wxSL_LABELS);
 
     m_rightswitch = new SwitchPanel(m_panel1, wxID_ANY);
-    wxSlider *m_rightslider = new wxSlider(m_panel1, wxID_ANY,
+    m_rightslider = new wxSlider(m_panel1, wxID_ANY,
                             0, 0, 100,
                             wxDefaultPosition, wxSize(400,20),
                             wxSL_LABELS);
+
+    Connect(IDM_LEFTWHEEL_SLIDER, wxEVT_COMMAND_SLIDER_UPDATED, 
+            wxScrollEventHandler(RBaseFrame::OnLeftScroll)); 
+    Connect(IDM_RIGHTWHEEL_SLIDER, wxEVT_COMMAND_SLIDER_UPDATED, 
+            wxScrollEventHandler(RBaseFrame::OnRightScroll)); 
 
     m_sizer1->Add(new wxStaticText(m_panel1, wxID_ANY, wxT("LEFT WHEEL"), wxDefaultPosition, wxSize(100,10), 0, wxT("LEFT WHEEL")));
     m_sizer1->Add(m_leftswitch, 1, wxEXPAND);
@@ -990,3 +992,21 @@ void RBaseFrame::OnInsertPrint(wxCommandEvent& WXUNUSED(event))
     tb->Realize();
 }
 
+void RBaseFrame::OnLeftScroll(wxScrollEvent& WXUNUSED(event))
+{
+printf("on left scroll!\n");
+    if(m_leftslider->GetValue()<60)
+    {
+        printf("on left scroll!\n");
+        m_odo->SetSpeed(m_leftslider->GetValue());
+    }
+    
+    Refresh();
+}
+
+void RBaseFrame::OnRightScroll(wxScrollEvent& WXUNUSED(event))
+{
+printf("on right scroll!\n");
+
+    Refresh();
+}

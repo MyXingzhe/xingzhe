@@ -14,6 +14,7 @@ SwitchPanel::SwitchPanel(wxPanel *parent, int id)
   Connect(wxEVT_SIZE, wxSizeEventHandler(SwitchPanel::OnSize));
 
   this->Connect(wxEVT_LEFT_UP, wxMouseEventHandler(SwitchPanel::ChangeState), NULL, this);
+
 }
 
 void SwitchPanel::OnPaint(wxPaintEvent& event)
@@ -61,4 +62,9 @@ void SwitchPanel::ChangeState(wxMouseEvent& event)
     m_state=0;
 
   Refresh();
+}
+
+int SwitchPanel::GetState()
+{
+  return m_state;
 }
