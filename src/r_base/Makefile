@@ -54,7 +54,7 @@ RIBBON_CXXFLAGS = -I. `$(WX_CONFIG) --cxxflags $(WX_CONFIG_FLAGS)` $(CPPFLAGS) \
 	$(CXXFLAGS) 
 
 OBJS =  \
-	gui.o odometer.o
+	gui.o odometer.o switch.o
 
 ### Conditionally set variables: ###
 
@@ -89,13 +89,16 @@ test_for_selected_wxbuild:
 	@$(WX_CONFIG) $(WX_CONFIG_FLAGS)
 
 r_base: $(OBJS)
-	$(CXX) -o $@ $(OBJS)   $(LDFLAGS)  `$(WX_CONFIG) $(WX_CONFIG_FLAGS) --libs ribbon,adv,core,base`  -L/usr/local/lib/mrpt/lib -rdynamic -lmrpt-graphs -lmrpt-vision -lmrpt-tfest -lmrpt-maps -lmrpt-obs -lmrpt-opengl -lmrpt-base -lmrpt-slam -lmrpt-gui -lmrpt-topography -Wl,-rpath,/usr/local/include/lib 
+	$(CXX) -o $@ $(OBJS)   $(LDFLAGS)  `$(WX_CONFIG) $(WX_CONFIG_FLAGS) --libs ribbon,adv,core,base` -Wl,-rpath,/usr/local/include/lib 
 
 
 gui.o: ./src/gui.cpp
 	$(CXX) -c -o $@ $(RIBBON_CXXFLAGS) $(CPPDEPS) $<
 
 odometer.o: ./src/odometer.cpp
+	$(CXX) -c -o $@ $(RIBBON_CXXFLAGS) $(CPPDEPS) $<
+
+switch.o: ./src/switch.cpp
 	$(CXX) -c -o $@ $(RIBBON_CXXFLAGS) $(CPPDEPS) $<
 
 .PHONY: all install uninstall clean

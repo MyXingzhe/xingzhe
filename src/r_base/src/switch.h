@@ -1,5 +1,5 @@
-#ifndef __ODO_METER__
-#define __ODO_METER__
+#ifndef __SWITCH_PANEL__
+#define __SWITCH_PANEL__
 
 #include <wx/bitmap.h>
 #include <wx/checkbox.h>
@@ -12,21 +12,16 @@
 #include <wx/panel.h>
 
 
-class OdoPanel : public wxPanel
+class SwitchPanel : public wxPanel
 {
 public:
-    OdoPanel(wxPanel *parent, int id );
+    SwitchPanel(wxPanel *parent, int id );
 
-	void SetSpeed(float speed);
-	void SetDistance(int distance);
+    int m_state;
 
-private:
     void OnSize(wxSizeEvent& event);
-    void OnPaint(wxPaintEvent& event);;
-
-	float m_speed = 18.0;
-	int m_distance = 0;
-
+    void OnPaint(wxPaintEvent& event);
+    void ChangeState(wxMouseEvent& event);
 };
 
 

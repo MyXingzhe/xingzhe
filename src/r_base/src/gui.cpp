@@ -36,6 +36,7 @@
 #include "wx/wrapsizer.h"
 
 #include "odometer.h"
+#include "switch.h"
 
 
 // define this to use XPMs everywhere (by default, BMPs are used under Win)
@@ -97,7 +98,7 @@ public:
             const wxString& title = wxT("wxToolBar Sample"),
             const wxPoint& pos = wxDefaultPosition,
             const wxSize& size = wxDefaultSize,
-            long style = wxDEFAULT_FRAME_STYLE|wxCLIP_CHILDREN|wxNO_FULL_REPAINT_ON_RESIZE);
+            long style = wxDEFAULT_FRAME_STYLE|wxCLIP_CHILDREN|wxNO_FULL_REPAINT_ON_RESIZE|wxMAXIMIZE);
     virtual ~RBaseFrame();
 
     void PopulateToolbar(wxToolBarBase* toolBar);
@@ -165,6 +166,8 @@ private:
 
     // the path to the custom bitmap for the test toolbar tool
     wxString            m_pathBmp;
+    SwitchPanel         *m_leftswitch;
+    SwitchPanel         *m_rightswitch;
 
     // the search tool, initially NULL
     wxToolBarToolBase *m_searchTool;
@@ -278,7 +281,7 @@ bool BaseApp::OnInit()
     // Create the main frame window
     RBaseFrame* frame = new RBaseFrame((wxFrame *) NULL, wxID_ANY,
                                  wxT("wxToolBar Sample"),
-                                  wxPoint(100, 100), wxSize(650, 350));
+                                  wxPoint(0, 0), wxSize(1280, 800));
 
     frame->Show(true);
 
@@ -613,7 +616,33 @@ RBaseFrame::RBaseFrame(wxFrame* parent,
     OdoPanel *m_odo = new OdoPanel(m_panel, wxID_ANY);
     hbox->Add(m_odo, 1, wxEXPAND);
 
+    wxFlexGridSizer *m_sizer1 = new wxFlexGridSizer(2, 3, 5, 5);
+    wxPanel *m_panel1 = new wxPanel(m_panel);
+    m_panel1->SetSizer(m_sizer1);
+    m_leftswitch = new SwitchPanel(m_panel1, wxID_ANY);
+    wxSlider *m_leftslider = new wxSlider(m_panel1, wxID_ANY,
+                            0, 0, 100,
+                            wxDefaultPosition, wxSize(400,20),
+                            wxSL_LABELS);
+
+    m_rightswitch = new SwitchPanel(m_panel1, wxID_ANY);
+    wxSlider *m_rightslider = new wxSlider(m_panel1, wxID_ANY,
+                            0, 0, 100,
+                            wxDefaultPosition, wxSize(400,20),
+                            wxSL_LABELS);
+
+    m_sizer1->Add(new wxStaticText(m_panel1, wxID_ANY, wxT("LEFT WHEEL"), wxDefaultPosition, wxSize(100,10), 0, wxT("LEFT WHEEL")));
+    m_sizer1->Add(m_leftswitch, 1, wxEXPAND);
+    m_sizer1->Add(m_leftslider, 1, wxEXPAND);
+    m_sizer1->Add(new wxStaticText(m_panel1, wxID_ANY, wxT("LEFT WHEEL"), wxDefaultPosition, wxSize(100,10), 0, wxT("RIGHT WHEEL")));
+    m_sizer1->Add(m_rightswitch, 1, wxEXPAND);
+    m_sizer1->Add(m_rightslider, 1, wxEXPAND);
+    m_sizer1->AddGrowableCol(1, 1);
+    m_sizer1->AddGrowableRow(0, 1);
+    m_sizer1->AddGrowableRow(1, 1);
+
     sizerMid->Add(hbox, wxSizerFlags(100).Expand());
+    sizerMid->Add(m_panel1, wxSizerFlags(100).Expand());
     sizerRoot->Add(sizerMid, wxSizerFlags(100).Expand().Border());
 
     // A shaped item inside a box sizer

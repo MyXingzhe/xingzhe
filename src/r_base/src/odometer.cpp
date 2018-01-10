@@ -107,10 +107,9 @@ void OdoPanel::OnPaint(wxPaintEvent& event)
 
   color.Set(wxT("#ff0030"));
   r = radius * 0.72;
-  float speed = 18.0;
   dc.SetPen(wxPen(color, border_width*0.3, wxSOLID));
-  dc.DrawLine(center.x - radius*(cos(speed/60.0*M_PI)), center.y - radius*(sin(speed/60.0*M_PI)),
-              center.x - radius*0.35*(cos(speed/60.0*M_PI)), center.y - radius*0.35*(sin(speed/60.0*M_PI)));
+  dc.DrawLine(center.x - radius*(cos(m_speed/60.0*M_PI)), center.y - radius*(sin(m_speed/60.0*M_PI)),
+              center.x - radius*0.35*(cos(m_speed/60.0*M_PI)), center.y - radius*0.35*(sin(m_speed/60.0*M_PI)));
 
   color.Set(wxT("#859480"));
   dc.SetPen(wxPen(color, border_width*0.01, wxSOLID));
@@ -119,11 +118,22 @@ void OdoPanel::OnPaint(wxPaintEvent& event)
 
   dc.SetFont(wxFont(radius/5, wxFONTFAMILY_DEFAULT,  wxFONTSTYLE_ITALIC,wxFONTWEIGHT_NORMAL, false, wxT("Courier 10 Pitch")));
   dc.SetTextForeground(*wxLIGHT_GREY);
-  int distance=123456;
-  dc.DrawText(wxString::Format("%07d", distance), (int)(center.x - radius*0.55), (int)(center.y + radius*0.1));
+  dc.DrawText(wxString::Format("%07d", m_distance), (int)(center.x - radius*0.55), (int)(center.y + radius*0.1));
 }
 
 void OdoPanel::OnSize(wxSizeEvent& event)
 {
+  Refresh(); 
+}
+
+void OdoPanel::SetSpeed(float speed)
+{
+  m_speed = speed;
+  Refresh(); 
+}
+
+void OdoPanel::SetDistance(int distance)
+{
+  m_distance = distance;
   Refresh(); 
 }
